@@ -1,0 +1,183 @@
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Spinners
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Base
+                                        li.breadcrumb-item.active Spinners
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-header
+                              h5 Loader Style
+                            .card-body.row
+                              .col-md-3
+                                h6.sub-title.mb-0 Default Loader
+                                .loader-box
+                                  .loader
+                                    .line.bg-primary
+                                    .line.bg-primary
+                                    .line.bg-primary
+                                    .line.bg-primary
+                              .col-md-3
+                                h6.sub-title.mb-0 Dotted style
+                                .loader-box
+                                  span.rotate.dotted
+                              .col-md-3
+                                h6.sub-title.mb-0 Dashed style
+                                .loader-box
+                                  span.rotate.dashed
+                              .col-md-3
+                                h6.sub-title.mb-0 Double style
+                                .loader-box
+                                  span.rotate.double
+                              .col-md-3
+                                h6.sub-title.mb-0 Groove style
+                                .loader-box
+                                  span.rotate.groove
+                              .col-md-3
+                                h6.sub-title.mb-0 Ridge style
+                                .loader-box
+                                  span.rotate.ridge
+                              .col-md-3
+                                h6.sub-title.mb-0 Inset style
+                                .loader-box
+                                  span.rotate.inset
+                              .col-md-3
+                                h6.sub-title.mb-0 Outset style
+                                .loader-box
+                                  span.rotate.outset
+                          .card
+                            .card-header
+                              h5 Loader Color
+                            .card-body.row
+                              .col-md-3
+                                h6.sub-title.mb-0 Default
+                                .loader-box
+                                  .loader
+                                    .line
+                                    .line
+                                    .line
+                                    .line
+                              .col-md-3
+                                h6.sub-title.mb-0 Primary
+                                .loader-box
+                                  .loader
+                                    .line.bg-primary
+                                    .line.bg-primary
+                                    .line.bg-primary
+                                    .line.bg-primary
+                              .col-md-3
+                                h6.sub-title.mb-0 Secondary
+                                .loader-box
+                                  .loader
+                                    .line.bg-secondary
+                                    .line.bg-secondary
+                                    .line.bg-secondary
+                                    .line.bg-secondary
+                              .col-md-3
+                                h6.sub-title.mb-0 Success
+                                .loader-box
+                                  .loader
+                                    .line.bg-success
+                                    .line.bg-success
+                                    .line.bg-success
+                                    .line.bg-success
+                              .col-md-3
+                                h6.sub-title.mb-0 Info
+                                .loader-box
+                                  .loader
+                                    .line.bg-info
+                                    .line.bg-info
+                                    .line.bg-info
+                                    .line.bg-info
+                              .col-md-3
+                                h6.sub-title.mb-0 Warning
+                                .loader-box
+                                  .loader
+                                    .line.bg-warning
+                                    .line.bg-warning
+                                    .line.bg-warning
+                                    .line.bg-warning
+                              .col-md-3
+                                h6.sub-title.mb-0 Danger
+                                .loader-box
+                                  .loader
+                                    .line.bg-danger
+                                    .line.bg-danger
+                                    .line.bg-danger
+                                    .line.bg-danger
+                              .col-md-3
+                                h6.sub-title.mb-0 Dark
+                                .loader-box
+                                  .loader
+                                    .line.bg-dark
+                                    .line.bg-dark
+                                    .line.bg-dark
+                                    .line.bg-dark
+                          .card
+                            .card-header
+                              h5 Loader Multi Color
+                            .card-body.row
+                              .col-md-3
+                                h6.sub-title.mb-0 Solid style
+                                .loader-box
+                                  span.rotate.solid.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Dotted style
+                                .loader-box
+                                  span.rotate.dotted.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Dashed style
+                                .loader-box
+                                  span.rotate.dashed.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Double style
+                                .loader-box
+                                  span.rotate.double.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Groove style
+                                .loader-box
+                                  span.rotate.groove.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Ridge style
+                                .loader-box
+                                  span.rotate.ridge.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Inset style
+                                .loader-box
+                                  span.rotate.inset.colored
+                              .col-md-3
+                                h6.sub-title.mb-0 Outset style
+                                .loader-box
+                                  span.rotate.outset.colored
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

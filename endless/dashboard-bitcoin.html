@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="endless admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, endless admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>Endless - Premium Admin Template</title>
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" type="text/css" href="assets/css/fontawesome.css">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="assets/css/icofont.css">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="assets/css/themify.css">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="assets/css/flag-icon.css">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="assets/css/feather-icon.css">
+    <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="assets/css/chartist.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/prism.css">
+    <!-- Plugins css Ends-->
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link id="color" rel="stylesheet" href="assets/css/light-1.css" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  </head>
+  <body>
+    <!-- Loader starts-->
+    <div class="loader-wrapper">
+      <div class="loader bg-white">
+        <div class="whirly-loader"> </div>
+      </div>
+    </div>
+    <!-- Loader ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper">
+      <!-- Page Header Start-->
+      <div class="page-main-header">
+        <div class="main-header-right row">
+          <div class="main-header-left d-lg-none">
+            <div class="logo-wrapper"><a href="index.html"><img src="assets/images/endless-logo.png" alt=""></a></div>
+          </div>
+          <div class="mobile-sidebar d-block">
+            <div class="media-body text-right switch-sm">
+              <label class="switch"><a href="#"><i id="sidebar-toggle" data-feather="align-left"></i></a></label>
+            </div>
+          </div>
+          <div class="nav-right col p-0">
+            <ul class="nav-menus">
+              <li>
+                <form class="form-inline search-form" action="#" method="get">
+                  <div class="form-group">
+                    <div class="Typeahead Typeahead--twitterUsers">
+                      <div class="u-posRelative">
+                        <input class="Typeahead-input form-control-plaintext" id="demo-input" type="text" name="q" placeholder="Search...">
+                        <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span></div><span class="d-sm-none mobile-search"><i data-feather="search"></i></span>
+                      </div>
+                      <div class="Typeahead-menu"></div>
+                    </div>
+                  </div>
+                </form>
+              </li>
+              <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
+              <li class="onhover-dropdown"><a class="txt-dark" href="#">
+                  <h6>EN</h6></a>
+                <ul class="language-dropdown onhover-show-div p-20">
+                  <li><a href="#" data-lng="en"><i class="flag-icon flag-icon-is"></i> English</a></li>
+                  <li><a href="#" data-lng="es"><i class="flag-icon flag-icon-um"></i> Spanish</a></li>
+                  <li><a href="#" data-lng="pt"><i class="flag-icon flag-icon-uy"></i> Portuguese</a></li>
+                  <li><a href="#" data-lng="fr"><i class="flag-icon flag-icon-nz"></i> French</a></li>
+                </ul>
+              </li>
+              <li class="onhover-dropdown"><i data-feather="bell"></i><span class="dot"></span>
+                <ul class="notification-dropdown onhover-show-div">
+                  <li>Notification <span class="badge badge-pill badge-primary pull-right">3</span></li>
+                  <li>
+                    <div class="media">
+                      <div class="media-body">
+                        <h6 class="mt-0"><span><i class="shopping-color" data-feather="shopping-bag"></i></span>Your order ready for Ship..!<small class="pull-right">9:00 AM</small></h6>
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <div class="media-body">
+                        <h6 class="mt-0 txt-success"><span><i class="download-color font-success" data-feather="download"></i></span>Download Complete<small class="pull-right">2:30 PM</small></h6>
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media">
+                      <div class="media-body">
+                        <h6 class="mt-0 txt-danger"><span><i class="alert-color font-danger" data-feather="alert-circle"></i></span>250 MB trash files<small class="pull-right">5:00 PM</small></h6>
+                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="bg-light txt-dark"><a href="#">All</a> notification</li>
+                </ul>
+              </li>
+              <li><a href="#"><i class="right_side_toggle" data-feather="message-circle"></i><span class="dot"></span></a></li>
+              <li class="onhover-dropdown">
+                <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle" src="assets/images/dashboard/user.png" alt="header-user">
+                  <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
+                </div>
+                <ul class="profile-dropdown onhover-show-div p-20">
+                  <li><a href="#"><i data-feather="user"></i>                                    Edit Profile</a></li>
+                  <li><a href="#"><i data-feather="mail"></i>                                    Inbox</a></li>
+                  <li><a href="#"><i data-feather="lock"></i>                                    Lock Screen</a></li>
+                  <li><a href="#"><i data-feather="settings"></i>                                    Settings</a></li>
+                  <li><a href="#"><i data-feather="log-out"></i>                                    Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
+          </div>
+          <script id="result-template" type="text/x-handlebars-template">
+            <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+            <div class="ProfileCard-details">
+            <div class="ProfileCard-realName">{{name}}</div>
+            </div>
+            </div>
+          </script>
+          <script id="empty-template" type="text/x-handlebars-template">
+            <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
+            
+          </script>
+        </div>
+      </div>
+      <!-- Page Header Ends                              -->
+      <!-- Page Body Start-->
+      <div class="page-body-wrapper">
+        <!-- Page Sidebar Start-->
+        <div class="page-sidebar">
+          <div class="main-header-left d-none d-lg-block">
+            <div class="logo-wrapper"><a href="index.html"><img src="assets/images/endless-logo.png" alt=""></a></div>
+          </div>
+          <div class="sidebar custom-scrollbar">
+            <div class="sidebar-user text-center">
+              <div><img class="img-60 rounded-circle" src="assets/images/user/1.jpg" alt="#">
+                <div class="profile-edit"><a href="edit-profile.html" target="_blank"><i data-feather="edit"></i></a></div>
+              </div>
+              <h6 class="mt-3 f-14">ELANA</h6>
+              <p>general manager.</p>
+            </div>
+            <ul class="sidebar-menu">
+              <li><a class="sidebar-header" href="#"><i data-feather="home"></i><span>Dashboard</span><span class="badge badge-pill badge-primary">6</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="index.html"><i class="fa fa-circle"></i><span>Default</span></a></li>
+                  <li><a href="dashboard-ecommerce.html"><i class="fa fa-circle"></i><span>E-commerce</span></a></li>
+                  <li><a href="dashboard-university.html"><i class="fa fa-circle"></i><span>University</span></a></li>
+                  <li><a href="dashboard-bitcoin.html"><i class="fa fa-circle"></i><span>Crypto</span></a></li>
+                  <li><a href="dashboard-server.html"><i class="fa fa-circle"></i><span>Server</span></a></li>
+                  <li><a href="dashboard-project.html"><i class="fa fa-circle"></i><span>Project</span></a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="airplay"></i><span>Widgets</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="general-widget.html"><i class="fa fa-circle"></i>General</a></li>
+                  <li><a href="chart-widget.html"><i class="fa fa-circle"></i>Chart</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="../starter-kit/layout-light.html"><i data-feather="anchor"></i><span> Starter kit</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="disc"></i><span>Color Version</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="layout-light.html"><i class="fa fa-circle"></i>Layout Light</a></li>
+                  <li><a href="layout-dark.html"><i class="fa fa-circle"></i>Layout Dark</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="sidebar"></i><span>Sidebar</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="compact.html"><i class="fa fa-circle"></i>Compact Sidebar</a></li>
+                  <li><a href="compact-small.html"><i class="fa fa-circle"></i>Compact Icon Sidebar</a></li>
+                  <li><a href="sidebar-hidden.html"><i class="fa fa-circle"></i>Sidebar Hidden</a></li>
+                  <li><a href="sidebar-fixed.html"><i class="fa fa-circle"></i>Sidebar Fixed</a></li>
+                  <li><a class="disabled" href="" onclick="return false;"><i class="fa fa-circle"></i>Disable</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="layout"></i><span>Page layout</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="box-layout.html"><i class="fa fa-circle"></i>Boxed</a></li>
+                  <li><a href="layout-rtl.html"><i class="fa fa-circle"></i>RTL</a></li>
+                  <li><a href="1-column.html"><i class="fa fa-circle"></i>1 Column</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="align-justify"></i><span>Menu Options</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="hide-on-scroll.html"><i class="fa fa-circle"></i>Hide menu on Scroll</a></li>
+                  <li><a href="vertical.html"><i class="fa fa-circle"></i>Vertical Menu</a></li>
+                  <li><a href="mega-menu.html"><i class="fa fa-circle"></i>Mega Menu</a></li>
+                  <li><a href="fix-header.html"><i class="fa fa-circle"></i>Fix header</a></li>
+                  <li><a href="fix-header-sidebar.html"><i class="fa fa-circle"></i>Fix Header & sidebar</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="cloud-lightning"></i><span>Footers</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="footer-light.html"><i class="fa fa-circle"></i>Footer Light</a></li>
+                  <li><a href="footer-dark.html"><i class="fa fa-circle"></i>Footer Dark</a></li>
+                  <li><a href="footer-fixed.html"><i class="fa fa-circle"></i>Footer Fixed</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="pagebuild.html"><i data-feather="clipboard"></i><span>Page Builder</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="edit-3"></i><span>Form Builders</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="form-builder-1.html"><i class="fa fa-circle"></i>Form Builder 1</a></li>
+                  <li><a href="form-builder-2.html"><i class="fa fa-circle"></i>Form Builder 2</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="button-builder.html"><i data-feather="bookmark"></i><span>Button Builder</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="box"></i><span> Base</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="state-color.html"><i class="fa fa-circle"></i>State color</a></li>
+                  <li><a href="typography.html"><i class="fa fa-circle"></i>Typography</a></li>
+                  <li><a href="avatars.html"><i class="fa fa-circle"></i>Avatars</a></li>
+                  <li><a href="helper-classes.html"><i class="fa fa-circle"></i>helper classes</a></li>
+                  <li><a href="grid.html"><i class="fa fa-circle"></i>Grid</a></li>
+                  <li><a href="tag-pills.html"><i class="fa fa-circle"></i>Tag & pills</a></li>
+                  <li><a href="progress-bar.html"><i class="fa fa-circle"></i>Progress</a></li>
+                  <li><a href="modal.html"><i class="fa fa-circle"></i>Modal</a></li>
+                  <li><a href="alert.html"><i class="fa fa-circle"></i>Alert</a></li>
+                  <li><a href="popover.html"><i class="fa fa-circle"></i>Popover</a></li>
+                  <li><a href="tooltip.html"><i class="fa fa-circle"></i>Tooltip</a></li>
+                  <li><a href="loader.html"><i class="fa fa-circle"></i>Spinners</a></li>
+                  <li><a href="dropdown.html"><i class="fa fa-circle"></i>Dropdown</a></li>
+                  <li><a href="#"><i class="fa fa-circle"></i>Tabs<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="tab-bootstrap.html"><i class="fa fa-circle"></i>Bootstrap Tabs</a></li>
+                      <li><a href="tab-material.html"><i class="fa fa-circle"></i>Line Tabs</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="according.html"><i class="fa fa-circle"></i>Accordion</a></li>
+                  <li><a href="navs.html"><i class="fa fa-circle"></i>Navs</a></li>
+                  <li><a href="box-shadow.html"><i class="fa fa-circle"></i>Shadow</a></li>
+                  <li><a href="list.html"><i class="fa fa-circle"></i>Lists</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="folder-plus"></i><span> Advance</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="scrollable.html"><i class="fa fa-circle"></i>Scrollable</a></li>
+                  <li><a href="tree.html"><i class="fa fa-circle"></i>Tree view</a></li>
+                  <li><a href="bootstrap-notify.html"><i class="fa fa-circle"></i>Bootstrap Notify</a></li>
+                  <li><a href="rating.html"><i class="fa fa-circle"></i>Rating</a></li>
+                  <li><a href="dropzone.html"><i class="fa fa-circle"></i>dropzone</a></li>
+                  <li><a href="tour.html"><i class="fa fa-circle"></i>Tour</a></li>
+                  <li><a href="sweet-alert2.html"><i class="fa fa-circle"></i>SweetAlert2</a></li>
+                  <li><a href="modal-animated.html"><i class="fa fa-circle"></i>Animated Modal</a></li>
+                  <li><a href="owl-carousel.html"><i class="fa fa-circle"></i>Owl Carousel</a></li>
+                  <li><a href="ribbons.html"><i class="fa fa-circle"></i>Ribbons</a></li>
+                  <li><a href="pagination.html"><i class="fa fa-circle"></i>Pagination</a></li>
+                  <li><a href="steps.html"><i class="fa fa-circle"></i>Steps</a></li>
+                  <li><a href="breadcrumb.html"><i class="fa fa-circle"></i>Breadcrumb</a></li>
+                  <li><a href="range-slider.html"><i class="fa fa-circle"></i>Range Slider</a></li>
+                  <li><a href="image-cropper.html"><i class="fa fa-circle"></i>Image cropper</a></li>
+                  <li><a href="sticky.html"><i class="fa fa-circle"></i>Sticky</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="cloud-drizzle"></i><span>Animation<span class="badge badge-danger ml-3">Hot</span></span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="animate.html"><i class="fa fa-circle"></i>Animate</a></li>
+                  <li><a href="scroll-reval.html"><i class="fa fa-circle"></i>Scroll Reveal</a></li>
+                  <li><a href="AOS.html"><i class="fa fa-circle"></i>AOS animation</a></li>
+                  <li><a href="tilt.html"><i class="fa fa-circle"></i>Tilt Animation</a></li>
+                  <li><a href="wow.html"><i class="fa fa-circle"></i>Wow Animation</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="command"></i><span>Icons</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="flag-icon.html"><i class="fa fa-circle"></i>Flag icon</a></li>
+                  <li><a href="font-awesome.html"><i class="fa fa-circle"></i>Fontawesome Icon</a></li>
+                  <li><a href="ico-icon.html"><i class="fa fa-circle"></i>Ico Icon</a></li>
+                  <li><a href="themify-icon.html"><i class="fa fa-circle"></i>Thimify Icon</a></li>
+                  <li><a href="feather-icon.html"><i class="fa fa-circle"></i>Feather icon</a></li>
+                  <li><a href="whether-icon.html"><i class="fa fa-circle"></i>Whether Icon</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="cloud"></i><span>Buttons</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="buttons.html"><i class="fa fa-circle"></i>Default Style</a></li>
+                  <li><a href="buttons-flat.html"><i class="fa fa-circle"></i>Flat Style</a></li>
+                  <li><a href="buttons-edge.html"><i class="fa fa-circle"></i>Edge Style</a></li>
+                  <li><a href="raised-button.html"><i class="fa fa-circle"></i>Raised Style</a></li>
+                  <li><a href="button-group.html"><i class="fa fa-circle"></i>Button Group</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="file-text"></i><span>Forms</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="#"><i class="fa fa-circle"></i>Form Controls<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="form-validation.html"><i class="fa fa-circle"></i>Form Validation</a></li>
+                      <li><a href="base-input.html"><i class="fa fa-circle"></i>Base Inputs</a></li>
+                      <li><a href="radio-checkbox-control.html"><i class="fa fa-circle"></i>Checkbox & Radio</a></li>
+                      <li><a href="input-group.html"><i class="fa fa-circle"></i>Input Groups</a></li>
+                      <li><a href="megaoptions.html"><i class="fa fa-circle"></i>Mega Options</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-circle"></i>Form Widgets<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="datepicker.html"><i class="fa fa-circle"></i>Datepicker</a></li>
+                      <li><a href="time-picker.html"><i class="fa fa-circle"></i>Timepicker</a></li>
+                      <li><a href="datetimepicker.html"><i class="fa fa-circle"></i>Datetimepicker</a></li>
+                      <li><a href="daterangepicker.html"><i class="fa fa-circle"></i>Daterangepicker</a></li>
+                      <li><a href="touchspin.html"><i class="fa fa-circle"></i>Touchspin</a></li>
+                      <li><a href="select2.html"><i class="fa fa-circle"></i>Select2</a></li>
+                      <li><a href="switch.html"><i class="fa fa-circle"></i>Switch</a></li>
+                      <li><a href="typeahead.html"><i class="fa fa-circle"></i>Typeahead</a></li>
+                      <li><a href="clipboard.html"><i class="fa fa-circle"></i>Clipboard</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-circle"></i>Form Layout<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="default-form.html"><i class="fa fa-circle"></i>Default Forms</a></li>
+                      <li><a href="form-wizard.html"><i class="fa fa-circle"></i>Form Wizard 1</a></li>
+                      <li><a href="form-wizard-two.html"><i class="fa fa-circle"></i>Form Wizard 2</a></li>
+                      <li><a href="form-wizard-three.html"><i class="fa fa-circle"></i>Form Wizard 3</a></li>
+                      <li><a href="form-wizard-four.html"><i class="fa fa-circle"></i>Form Wizard 4</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="server"></i><span>Tables</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="#"><i class="fa fa-circle"></i>Bootstrap Tables<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="bootstrap-basic-table.html"><i class="fa fa-circle"></i>Basic Tables</a></li>
+                      <li><a href="bootstrap-sizing-table.html"><i class="fa fa-circle"></i>Sizing Tables</a></li>
+                      <li><a href="bootstrap-border-table.html"><i class="fa fa-circle"></i>Border Tables</a></li>
+                      <li><a href="bootstrap-styling-table.html"><i class="fa fa-circle"></i>Styling Tables</a></li>
+                      <li><a href="table-components.html"><i class="fa fa-circle"></i>Table components</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-circle"></i>Data Tables<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="datatable-basic-init.html"><i class="fa fa-circle"></i>Basic Init</a></li>
+                      <li><a href="datatable-advance.html"><i class="fa fa-circle"></i>Advance Init</a></li>
+                      <li><a href="datatable-styling.html"><i class="fa fa-circle"></i>Styling</a></li>
+                      <li><a href="datatable-AJAX.html"><i class="fa fa-circle"></i>AJAX</a></li>
+                      <li><a href="datatable-server-side.html"><i class="fa fa-circle"></i>Server Side</a></li>
+                      <li><a href="datatable-plugin.html"><i class="fa fa-circle"></i>Plug-in</a></li>
+                      <li><a href="datatable-API.html"><i class="fa fa-circle"></i>API</a></li>
+                      <li><a href="datatable-data-source.html"><i class="fa fa-circle"></i>Data Sources</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#"><i class="fa fa-circle"></i>Extension Data Tables<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="datatable-ext-autofill.html"><i class="fa fa-circle"></i>Auto Fill</a></li>
+                      <li><a href="datatable-ext-basic-button.html"><i class="fa fa-circle"></i>Basic Button</a></li>
+                      <li><a href="datatable-ext-col-reorder.html"><i class="fa fa-circle"></i>Column Reorder</a></li>
+                      <li><a href="datatable-ext-fixed-header.html"><i class="fa fa-circle"></i>Fixed Header</a></li>
+                      <li><a href="datatable-ext-html-5-data-export.html"><i class="fa fa-circle"></i>HTML 5 Export</a></li>
+                      <li><a href="datatable-ext-key-table.html"><i class="fa fa-circle"></i>Key Table</a></li>
+                      <li><a href="datatable-ext-responsive.html"><i class="fa fa-circle"></i>Responsive</a></li>
+                      <li><a href="datatable-ext-row-reorder.html"><i class="fa fa-circle"></i>Row Reorder</a></li>
+                      <li><a href="datatable-ext-scroller.html"><i class="fa fa-circle"></i>Scroller</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="jsgrid-table.html"><i class="fa fa-circle"></i>Js Grid Table</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="book"></i><span>Cards</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="basic-card.html"><i class="fa fa-circle"></i>Basic Card</a></li>
+                  <li><a href="creative-card.html"><i class="fa fa-circle"></i>Creative Card</a></li>
+                  <li><a href="tabbed-card.html"><i class="fa fa-circle"></i>Tabbed Card</a></li>
+                  <li><a href="dragable-card.html"><i class="fa fa-circle"></i>Draggable Card</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="sliders"></i><span>Timeline</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="timeline-v-1.html"><i class="fa fa-circle"></i>Timeline 1</a></li>
+                  <li><a href="timeline-v-2.html"><i class="fa fa-circle"></i>Timeline 2</a></li>
+                  <li><a href="timeline-small.html"><i class="fa fa-circle"></i>Timeline 3</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="bar-chart"></i><span>Charts</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="chart-google.html"><i class="fa fa-circle"></i>Google Chart</a></li>
+                  <li><a href="chart-sparkline.html"><i class="fa fa-circle"></i>sparkline chart</a></li>
+                  <li><a href="chart-flot.html"><i class="fa fa-circle"></i>Flot Chart</a></li>
+                  <li><a href="chart-knob.html"><i class="fa fa-circle"></i>Knob Chart</a></li>
+                  <li><a href="chart-morris.html"><i class="fa fa-circle"></i>Morris Chart</a></li>
+                  <li><a href="chartjs.html"><i class="fa fa-circle"></i>chatjs Chart</a></li>
+                  <li><a href="chartist.html"><i class="fa fa-circle"></i>chartist Chart</a></li>
+                  <li><a href="chart-peity.html"><i class="fa fa-circle"></i>Peity Chart</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="map"></i><span>Maps</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="map-js.html"><i class="fa fa-circle"></i>Maps JS</a></li>
+                  <li><a href="vector-map.html"><i class="fa fa-circle"></i>Vector Maps</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="printer"></i><span>Email Templates</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="#"><i class="fa fa-circle"></i>Basic<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="basic-template.html" target="_blank"><i class="fa fa-circle"></i>Basic Email</a></li>
+                      <li><a href="email-header.html" target="_blank"><i class="fa fa-circle"></i>Basic With Header</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="sidebar-submenu">
+                  <li><a href="#"><i class="fa fa-circle"></i>Ecommerce<i class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="template-email.html" target="_blank"><i class="fa fa-circle"></i>Email Template</a></li>
+                      <li><a href="template-email-2.html" target="_blank"><i class="fa fa-circle"></i>Email Template 2</a></li>
+                      <li><a href="ecommerce-templates.html" target="_blank"><i class="fa fa-circle"></i>Ecommerce Email</a></li>
+                      <li><a href="email-order-success.html" target="_blank"><i class="fa fa-circle"></i>Order Success </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="git-pull-request"></i><span>Editors</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="summernote.html"><i class="fa fa-circle"></i>Summer Note</a></li>
+                  <li><a href="ckeditor.html"><i class="fa fa-circle"></i>CK editor</a></li>
+                  <li><a href="simple-MDE.html"><i class="fa fa-circle"></i>MDE editor</a></li>
+                  <li><a href="ace-code-editor.html"><i class="fa fa-circle"></i>ACE code editor</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="users"></i><span>Users</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="user-profile.html"><i class="fa fa-circle"></i>Users Profile</a></li>
+                  <li><a href="edit-profile.html"><i class="fa fa-circle"></i>Users Edit</a></li>
+                  <li><a href="user-cards.html"><i class="fa fa-circle"></i>Users Cards</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="calendar"></i><span>Calender</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="calendar.html"><i class="fa fa-circle"></i>Full Calender Basic</a></li>
+                  <li><a href="calendar-event.html"><i class="fa fa-circle"></i>Full Calender Events</a></li>
+                  <li><a href="calendar-advanced.html"><i class="fa fa-circle"></i>Full Calender Advance</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="internationalization.html"><i data-feather="aperture"></i><span>Internationalization</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="image"></i><span>Gallery</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="gallery.html"><i class="fa fa-circle"></i>Gallery Grid</a></li>
+                  <li><a href="gallery-with-description.html"><i class="fa fa-circle"></i>Gallery Grid with Desc</a></li>
+                  <li><a href="gallery-masonry.html"><i class="fa fa-circle"></i>Masonry Gallery</a></li>
+                  <li><a href="masonry-gallery-with-disc.html"><i class="fa fa-circle"></i>Masonry Gallery Desc</a></li>
+                  <li><a href="gallery-hover.html"><i class="fa fa-circle"></i>Hover Effects</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="mail"></i><span>Email</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="email-application.html"><i class="fa fa-circle"></i>Email App</a></li>
+                  <li><a href="email-compose.html"><i class="fa fa-circle"></i>Email Compose</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="edit"></i><span> Blog</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="blog.html"><i class="fa fa-circle"></i>Blog Details</a></li>
+                  <li><a href="blog-single.html"><i class="fa fa-circle"></i>Blog Single</a></li>
+                  <li><a href="add-post.html"><i class="fa fa-circle"></i>Add Post</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="message-square"></i><span>Chat</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="chat.html"><i class="fa fa-circle"></i>Chat App</a></li>
+                  <li><a href="chat-video.html"><i class="fa fa-circle"></i>Video chat</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="social-app.html"><i data-feather="chrome"></i><span>Social App</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="user-check"></i><span>Job Search</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="job-cards-view.html"><i class="fa fa-circle"></i>Cards view</a></li>
+                  <li><a href="job-list-view.html"><i class="fa fa-circle"></i>List View</a></li>
+                  <li><a href="job-details.html"><i class="fa fa-circle"></i>Job Details</a></li>
+                  <li><a href="job-apply.html"><i class="fa fa-circle"></i>Apply</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="layers"></i><span>Learning</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="learning-list-view.html"><i class="fa fa-circle"></i>Learning List</a></li>
+                  <li><a href="learning-detailed.html"><i class="fa fa-circle"></i>Detailed Course </a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="faq.html"><i data-feather="help-circle"></i><span>FAQ</span></a></li>
+              <li><a class="sidebar-header" href="knowledgebase.html"><i data-feather="database"></i><span>Knowledgebase</span></a></li>
+              <li><a class="sidebar-header" href="support-ticket.html"><i data-feather="headphones"></i><span>Support Ticket</span></a></li>
+              <li><a class="sidebar-header" href="to-do.html"><i data-feather="mic"></i><span>To-Do</span></a></li>
+              <li><a class="sidebar-header" href="landing-page.html" target="_blank"><i data-feather="navigation-2"></i><span>Landing page</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="shopping-bag"></i><span>Ecommerce</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="product.html"><i class="fa fa-circle"></i>Product</a></li>
+                  <li><a href="product-page.html"><i class="fa fa-circle"></i>Product page</a></li>
+                  <li><a href="list-products.html"><i class="fa fa-circle"></i>Product list</a></li>
+                  <li><a href="payment-details.html"><i class="fa fa-circle"></i>Payment Details</a></li>
+                  <li><a href="order-history.html"><i class="fa fa-circle"></i>Order History</a></li>
+                  <li><a href="invoice-template.html"><i class="fa fa-circle"></i>Invoice</a></li>
+                  <li><a href="cart.html"><i class="fa fa-circle"></i>Cart</a></li>
+                  <li><a href="list-wish.html"><i class="fa fa-circle"></i>Wishlist</a></li>
+                  <li><a href="checkout.html"><i class="fa fa-circle"></i>Checkout</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="pricing.html"><i data-feather="dollar-sign"></i><span> Pricing</span></a></li>
+              <li><a class="sidebar-header" href="sample-page.html"><i data-feather="file"></i><span> Sample page</span></a></li>
+              <li><a class="sidebar-header" href="#"><i data-feather="search"></i><span>Search Pages</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="search.html"><i class="fa fa-circle"></i>Search Website</a></li>
+                  <li><a href="search-images.html"><i class="fa fa-circle"></i>Search Images</a></li>
+                  <li><a href="search-video.html"><i class="fa fa-circle"></i>Search Video</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="alert-octagon"></i><span> Error Page</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="error-400.html" target="_blank"><i class="fa fa-circle"></i>Error 400</a></li>
+                  <li><a href="error-401.html" target="_blank"><i class="fa fa-circle"></i>Error 401</a></li>
+                  <li><a href="error-403.html" target="_blank"><i class="fa fa-circle"></i>Error 403</a></li>
+                  <li><a href="error-404.html" target="_blank"><i class="fa fa-circle"></i>Error 404</a></li>
+                  <li><a href="error-500.html" target="_blank"><i class="fa fa-circle"></i>Error 500</a></li>
+                  <li><a href="error-503.html" target="_blank"><i class="fa fa-circle"></i>Error 503</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="unlock"></i><span> Authentication</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="login.html" target="_blank"><i class="fa fa-circle"></i>Login Simple</a></li>
+                  <li><a href="login-image.html" target="_blank"><i class="fa fa-circle"></i>Login with Bg Image</a></li>
+                  <li><a href="login-video.html" target="_blank"><i class="fa fa-circle"></i>Login with Bg video</a></li>
+                  <li><a href="signup.html" target="_blank"><i class="fa fa-circle"></i>Register Simple</a></li>
+                  <li><a href="signup-image.html" target="_blank"><i class="fa fa-circle"></i>Register with Bg Image</a></li>
+                  <li><a href="signup-video.html" target="_blank"><i class="fa fa-circle"></i>Register with Bg video</a></li>
+                  <li><a href="unlock.html" target="_blank"><i class="fa fa-circle"></i>Unlock User</a></li>
+                  <li><a href="forget-password.html" target="_blank"><i class="fa fa-circle"></i>Forget Password</a></li>
+                  <li><a href="reset-password.html" target="_blank"><i class="fa fa-circle"></i>Reset Password</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="#"><i data-feather="briefcase"></i><span>Coming Soon</span><i class="fa fa-angle-right pull-right"></i></a>
+                <ul class="sidebar-submenu">
+                  <li><a href="comingsoon.html" target="_blank"><i class="fa fa-circle"></i>Coming Simple</a></li>
+                  <li><a href="comingsoon-bg-video.html" target="_blank"><i class="fa fa-circle"></i>Coming with Bg video</a></li>
+                  <li><a href="comingsoon-bg-img.html" target="_blank"><i class="fa fa-circle"></i>Coming with Bg Image</a></li>
+                </ul>
+              </li>
+              <li><a class="sidebar-header" href="maintenance.html" target="_blank"><i data-feather="settings"></i><span> Maintenance</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Page Sidebar Ends-->
+        <!-- Right sidebar Start-->
+        <div class="right-sidebar" id="right_side_bar">
+          <div class="container p-0">
+            <div class="modal-header p-l-20 p-r-20">
+              <div class="col-sm-8 p-0">
+                <h6 class="modal-title font-weight-bold">FRIEND LIST</h6>
+              </div>
+              <div class="col-sm-4 text-right p-0"><i class="mr-2" data-feather="settings"></i></div>
+            </div>
+          </div>
+          <div class="friend-list-search mt-0">
+            <input type="text" placeholder="search friend"><i class="fa fa-search"></i>
+          </div>
+          <div class="chat-box">
+            <div class="people-list friend-list">
+              <ul class="list">
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/1.jpg" alt="">
+                  <div class="status-circle online"></div>
+                  <div class="about">
+                    <div class="name">Vincent Porter</div>
+                    <div class="status"> Online</div>
+                  </div>
+                </li>
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/2.png" alt="">
+                  <div class="status-circle away"></div>
+                  <div class="about">
+                    <div class="name">Ain Chavez</div>
+                    <div class="status"> 28 minutes ago</div>
+                  </div>
+                </li>
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/8.jpg" alt="">
+                  <div class="status-circle online"></div>
+                  <div class="about">
+                    <div class="name">Kori Thomas</div>
+                    <div class="status"> Online</div>
+                  </div>
+                </li>
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/4.jpg" alt="">
+                  <div class="status-circle online"></div>
+                  <div class="about">
+                    <div class="name">Erica Hughes</div>
+                    <div class="status"> Online</div>
+                  </div>
+                </li>
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/5.jpg" alt="">
+                  <div class="status-circle offline"></div>
+                  <div class="about">
+                    <div class="name">Ginger Johnston</div>
+                    <div class="status"> 2 minutes ago</div>
+                  </div>
+                </li>
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/6.jpg" alt="">
+                  <div class="status-circle away"></div>
+                  <div class="about">
+                    <div class="name">Prasanth Anand</div>
+                    <div class="status"> 2 hour ago</div>
+                  </div>
+                </li>
+                <li class="clearfix"><img class="rounded-circle user-image" src="./assets/images/user/7.jpg" alt="">
+                  <div class="status-circle online"></div>
+                  <div class="about">
+                    <div class="name">Hileri Jecno</div>
+                    <div class="status"> Online</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Right sidebar Ends-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="page-header">
+              <div class="row">
+                <div class="col">
+                  <div class="page-header-left">
+                    <h3>Crypto</h3>
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                      <li class="breadcrumb-item">Dashboard</li>
+                      <li class="breadcrumb-item active">Crypto</li>
+                    </ol>
+                  </div>
+                </div>
+                <!-- Bookmark Start-->
+                <div class="col">
+                  <div class="bookmark pull-right">
+                    <ul>
+                      <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Calendar"><i data-feather="calendar"></i></a></li>
+                      <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Mail"><i data-feather="mail"></i></a></li>
+                      <li><a href="#" data-container="body" data-toggle="popover" data-placement="top" title="" data-original-title="Chat"><i data-feather="message-square"></i></a></li>
+                      <li><a href="#"><i class="bookmark-search" data-feather="star"></i></a>
+                        <form class="form-inline search-form">
+                          <div class="form-group form-control-search">
+                            <input type="text" placeholder="Search..">
+                          </div>
+                        </form>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- Bookmark Ends-->
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xl-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media bitcoin-graph">
+                      <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.4 511.4" style="enable-background:new 0 0 511.4 511.4;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <g>
+                              <path d="M418.967,102.891l23.376-21.856c-7.78-8.307-16.096-16.094-24.896-23.312l-20.288,24.752                                        C404.873,88.79,412.158,95.611,418.967,102.891z"></path>
+                              <path d="M453.527,151.371l28.288-14.944c-5.305-10.06-11.282-19.751-17.888-29.008l-26.064,18.56                                        C443.643,134.086,448.876,142.569,453.527,151.371z"></path>
+                              <path d="M495.703,167.547v0.016l-30.032,11.04c42.684,116.115-16.843,244.847-132.958,287.531S87.867,449.292,45.182,333.177                                        S62.025,88.33,178.14,45.646c64.467-23.698,136.244-16.51,194.731,19.502l16.816-27.2                                        C269.426-36.042,111.955,1.469,37.965,121.73S1.486,399.463,121.748,473.452s277.733,36.479,351.722-83.783                                        C514.521,322.946,522.715,241.084,495.703,167.547z"></path>
+                              <path d="M303.367,431.899v-48.816c39.225-4.087,67.711-39.198,63.624-78.423c-2.003-19.228-11.716-36.821-26.92-48.761                                        c17.166-13.524,27.218-34.146,27.296-56c-0.115-36.555-27.663-67.195-64-71.184V79.899h-32v48h-32v-48h-32v48h-64v256h64v48h32                                        v-48h32v48H303.367z M175.367,159.899h120c22.091,0,40,17.909,40,40s-17.909,40-40,40h-120V159.899z M175.367,351.899v-80h120                                        c22.091,0,40,17.909,40,40c0,22.091-17.909,40-40,40H175.367z"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      <div class="top-bitcoin">
+                        <h5>BTC</h5><span>Bitcoin</span>
+                      </div>
+                      <div class="media-body">
+                        <div class="bitcoin-content text-right">
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 1h</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-down"></i></span> 0.12</h6>
+                          </div>
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 24h</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-up"></i></span> +0.30</h6>
+                          </div>
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 7d</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-down"></i></span> -0.20</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dashboard-chart-container">
+                    <div class="bitcoinchart-1"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media bitcoin-graph">
+                      <svg id="Capa_2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 510.8 510.8" style="enable-background:new 0 0 510.8 510.8;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <g>
+                              <path d="M465.099,178.447l30.032-11.024c-3.93-10.682-8.569-21.089-13.888-31.152l-28.304,14.944                                        C457.591,160.013,461.653,169.11,465.099,178.447z"></path>
+                              <path d="M463.339,107.263c-6.613-9.254-13.829-18.063-21.6-26.368l-23.36,21.856c6.806,7.276,13.124,14.995,18.912,23.104                                        L463.339,107.263z"></path>
+                              <path d="M504.731,200.079v0.08l-31.248,6.928c26.89,120.808-49.245,240.542-170.053,267.432S62.888,425.274,35.998,304.465                                        C9.107,183.657,85.243,63.924,206.051,37.033c67.091-14.934,137.325,1.747,190.536,45.253l20.272-24.768                                        C307.572-31.651,146.691-15.343,57.522,93.944S-15.34,364.111,93.946,453.281s270.168,72.862,359.337-36.425                                        C502.709,356.281,521.666,276.404,504.731,200.079z"></path>
+                              <path d="M143.195,266.687l111.6,161.2l111.6-161.2l-111.6-186.016L143.195,266.687z M254.795,371.663l-46.96-67.888l46.96,20.944                                        l46.96-20.944L254.795,371.663z M254.795,289.695l-69.552-30.912l69.552-115.904l69.552,115.904L254.795,289.695z"></path>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      <div class="top-bitcoin">
+                        <h5>DASH</h5><span>Tranding</span>
+                      </div>
+                      <div class="media-body">
+                        <div class="bitcoin-content text-right">
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 1h</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-down"></i></span> 0.12</h6>
+                          </div>
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 24h</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-up"></i></span> +0.30</h6>
+                          </div>
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 7d</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-down"></i></span> -0.20</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dashboard-chart-container">
+                    <div class="bitcoinchart-2"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media bitcoin-graph">
+                      <svg id="Capa_3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.496 511.496" style="enable-background:new 0 0 511.496 511.496;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <g>
+                              <path d="M495.791,167.563l-30.032,11.04c42.696,116.111-16.819,244.849-132.93,287.544                                        c-116.111,42.696-244.849-16.819-287.544-132.93S62.104,88.369,178.214,45.674c64.469-23.706,136.251-16.523,194.744,19.49                                        l16.816-27.2C269.496-36.048,111.992,1.46,37.981,121.739S1.477,399.521,121.756,473.533                                        c120.279,74.011,277.783,36.504,351.794-83.775C514.62,323.013,522.816,241.123,495.791,167.563z"></path>
+                              <path d="M453.615,151.355l28.288-14.96c-5.317-10.048-11.293-19.733-17.888-28.992l-26.064,18.576                                        C443.731,134.08,448.964,142.557,453.615,151.355z"></path>
+                              <path d="M419.055,102.891l23.36-21.872c-7.775-8.306-16.092-16.089-24.896-23.296l-20.256,24.768                                        C404.971,88.8,412.252,95.615,419.055,102.891z"></path>
+                              <path d="M352.863,309.339l27.696-95.04l0.528-2.464c0.155-1.306,0.235-2.62,0.24-3.936c0-17.673-14.327-32-32-32H191.455v32                                        h157.664l-27.2,93.52l-0.592,2.48H159.455v32h161.872C336.902,335.9,350.215,324.687,352.863,309.339z"></path>
+                              <rect x="127.455" y="239.899" width="96" height="32"></rect>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      <div class="top-bitcoin">
+                        <h5>ETH</h5><span>Ethereum</span>
+                      </div>
+                      <div class="media-body">
+                        <div class="bitcoin-content text-right">
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 1h</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-down"></i></span> 0.12</h6>
+                          </div>
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 24h</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-up"></i></span> +0.30</h6>
+                          </div>
+                          <div class="bitcoin-numbers d-inline-block">
+                            <h6 class="mb-0">% 7d</h6>
+                            <h6 class="mb-0 font-primary"><span><i class="font-primary" data-feather="arrow-down"></i></span> -0.20</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dashboard-chart-container">
+                    <div class="bitcoinchart-3"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-100">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Market Value</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="market-chart"></div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="market-chart"&gt;&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-50">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <h5 class="bitcoin-header">Buy</h5>
+                      </div>
+                      <div class="col-sm-7">
+                        <div class="text-right right-header-color">
+                          <p class="mb-0">USD Balance: $ 5000.00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="bitcoin-form">
+                      <div class="form-row">
+                        <div class="col-xl-4 mb-3 col-sm-3">
+                          <label class="f-w-600">Parchase</label>
+                          <div class="bitcoin-form-dropdown">
+                            <div class="onhover-dropdown">
+                              <button class="btn f-12" type="button">Amount <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                              <div class="onhover-show-div"><a class="d-block" href="#">Link 1</a><a class="d-block" href="#">Link 2</a><a class="d-block" href="#">Link 3</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-8 mb-3 col-sm-9">
+                          <label class="f-w-600" for="validationCustomUsername">Units</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend"><i class="fa fa-btc font-primary"></i></span></div>
+                            <input class="form-control" id="validationCustomUsername" type="text" aria-describedby="inputGroupPrepend" required="">
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4 mb-3 col-sm-3">
+                          <label class="f-w-600">Bid</label>
+                          <div class="bitcoin-form-dropdown">
+                            <div class="onhover-dropdown">
+                              <button class="btn f-12" type="button">Limit <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                              <div class="onhover-show-div"><a class="d-block" href="#">Link 1</a><a class="d-block" href="#">Link 2</a><a class="d-block" href="#">Link 3</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-8 mb-3 col-sm-9">
+                          <label class="f-w-600" for="validationCustomUsername">Bid</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend1"><i class="fa fa-btc font-primary"></i></span></div>
+                            <input class="form-control" id="validationCustomUsername1" type="text" aria-describedby="inputGroupPrepend" required="">
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <label class="f-w-600" for="validationCustomUsername">Total</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend2"><i class="fa fa-btc font-primary"></i></span></div>
+                            <input class="form-control" id="validationCustomUsername2" type="text" aria-describedby="inputGroupPrepend" required="">
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="btn-bottom">
+                            <button class="btn btn-primary" type="button">Buy Now!</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-50">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <h5 class="bitcoin-header">Sell</h5>
+                      </div>
+                      <div class="col-sm-7">
+                        <div class="text-right right-header-color">
+                          <p class="mb-0">BTC Balance: $ 5000.00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="bitcoin-form">
+                      <div class="form-row">
+                        <div class="col-xl-4 mb-3 col-sm-3">
+                          <label class="f-w-600">Sell</label>
+                          <div class="bitcoin-form-dropdown">
+                            <div class="onhover-dropdown">
+                              <button class="btn f-12" type="button">Amount  <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                              <div class="onhover-show-div"><a class="d-block" href="#">Link 1</a><a class="d-block" href="#">Link 2</a><a class="d-block" href="#">Link 3</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-8 mb-3 col-sm-9">
+                          <label class="f-w-600" for="validationCustomUsername">Units</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend3"><i class="fa fa-btc font-primary"></i></span></div>
+                            <input class="form-control" id="validationCustomUsername3" type="text" aria-describedby="inputGroupPrepend" required="">
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+                        <div class="col-xl-4 mb-3 col-sm-3">
+                          <label class="f-w-600">Bid</label>
+                          <div class="bitcoin-form-dropdown">
+                            <div class="onhover-dropdown">
+                              <button class="btn f-12" type="button">Limit <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                              <div class="onhover-show-div"><a class="d-block" href="#">Link 1</a><a class="d-block" href="#">Link 2</a><a class="d-block" href="#">Link 3</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-8 mb-3 col-sm-9">
+                          <label class="f-w-600" for="validationCustomUsername">Bid</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend5"><i class="fa fa-btc font-primary"></i></span></div>
+                            <input class="form-control" id="validationCustomUsername5" type="text" aria-describedby="inputGroupPrepend" required="">
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                          <label class="f-w-600" for="validationCustomUsername">Total</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend6"><i class="fa fa-btc font-primary"></i></span></div>
+                            <input class="form-control" id="validationCustomUsername6" type="text" aria-describedby="inputGroupPrepend" required="">
+                            <div class="invalid-feedback">Please choose a username.</div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="btn-bottom">
+                            <button class="btn btn-primary" type="button">Sell Now!</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 xl-50">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Active Order</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive active-order-table">
+                      <table class="table table-bordernone">
+                        <thead>
+                          <tr>
+                            <th scope="col">Data</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">USD</th>
+                            <th scope="col">Fee(%)</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p>2018-01-31</p>
+                              <p class="mb-0">6:51:51</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-pill" type="button">Buy</button>
+                            </td>
+                            <td>
+                              <div class="customers">
+                                <ul>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg" alt=""></li>
+                                  <li class="d-inline-block">
+                                    <p class="f-12">+10 More</p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>
+                              <p>11900.12</p>
+                            </td>
+                            <td>
+                              <p>$ 6979.78</p>
+                            </td>
+                            <td>
+                              <p>0.2</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-pill" type="button">Status</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>2018-01-31</p>
+                              <p class="mb-0">06:50:50</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-secondary btn-pill" type="button">Sell</button>
+                            </td>
+                            <td>
+                              <div class="customers">
+                                <ul>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg" alt=""></li>
+                                  <li class="d-inline-block">
+                                    <p class="f-12">+10 More</p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>
+                              <p>11900.12</p>
+                            </td>
+                            <td>
+                              <p>$ 6979.78</p>
+                            </td>
+                            <td>
+                              <p>0.2</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-pill" type="button">Status</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>2018-01-31</p>
+                              <p class="mb-0">06:49:51</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-pill" type="button">Buy</button>
+                            </td>
+                            <td>
+                              <div class="customers">
+                                <ul>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg" alt=""></li>
+                                  <li class="d-inline-block">
+                                    <p class="f-12">+10 More</p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>
+                              <p>11900.12</p>
+                            </td>
+                            <td>
+                              <p>$ 6979.78</p>
+                            </td>
+                            <td>
+                              <p>0.2</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-pill" type="button">Status</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p>2018-01-31</p>
+                              <p class="mb-0">06:50:50</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-secondary btn-pill" type="button">Sell</button>
+                            </td>
+                            <td>
+                              <div class="customers">
+                                <ul>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg" alt=""></li>
+                                  <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg" alt=""></li>
+                                  <li class="d-inline-block">
+                                    <p class="f-12">+10 More</p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                            <td>
+                              <p>11900.12</p>
+                            </td>
+                            <td>
+                              <p>$ 6979.78</p>
+                            </td>
+                            <td>
+                              <p>0.2</p>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary btn-pill" type="button">Status</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head1" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head1">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="table-responsive active-order-table"&gt;
+  &lt;table class="table table-bordernone"&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;Data&lt;/th&gt;
+        &lt;th scope="col"&gt;Type&lt;/th&gt;
+        &lt;th scope="col"&gt;Customer&lt;/th&gt;
+        &lt;th scope="col"&gt;Price&lt;/th&gt;
+        &lt;th scope="col"&gt;USD&lt;/th&gt;
+        &lt;th scope="col"&gt;Fee(%)&lt;/th&gt;
+        &lt;th scope="col"&gt;Status&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;p&gt;2018-01-31&lt;/p&gt;
+          &lt;p class="mb-0"&gt;6:51:51&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Buy&lt;/button&gt;&lt;/td&gt;
+        &lt;td&gt;
+          &lt;div class="customers"&gt;
+            &lt;ul&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;p&gt;2018-01-31&lt;/p&gt;
+          &lt;p class="mb-0"&gt;06:50:50&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-secondary btn-pill"&gt;Sell&lt;/button&gt;&lt;/td&gt;
+        &lt;td&gt;
+          &lt;div class="customers"&gt;
+            &lt;ul&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;p&gt;2018-01-31&lt;/p&gt;
+          &lt;p class="mb-0"&gt;06:49:51&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Buy&lt;/button&gt;&lt;/td&gt;
+        &lt;td&gt;
+          &lt;div class="customers"&gt;
+            &lt;ul&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;
+          &lt;p&gt;2018-01-31&lt;/p&gt;
+          &lt;p class="mb-0"&gt;06:50:50&lt;/p&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-secondary btn-pill"&gt;Sell&lt;/button&gt;&lt;/td&gt;
+        &lt;td&gt;
+          &lt;div class="customers"&gt;
+            &lt;ul&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;img src="assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+              &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-50">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Market News</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="media markets"><img src="assets/images/bitcoin/market-1.jpg" alt="">
+                      <div class="media-body">
+                        <h5 class="font-primary">03 Jan</h5>
+                        <p>
+                          Lorem Ipsum is simply dummy text of the printing
+                          and typesetting industry. Lorem Ipsum
+                        </p>
+                      </div>
+                    </div>
+                    <div class="media markets"><img src="assets/images/bitcoin/market-2.jpg" alt="">
+                      <div class="media-body">
+                        <h5 class="font-primary">03 Jan</h5>
+                        <p>
+                          Lorem Ipsum is simply dummy text of the printing
+                          and typesetting industry. Lorem Ipsum
+                        </p>
+                      </div>
+                    </div>
+                    <div class="media markets"><img src="assets/images/bitcoin/market-3.jpg" alt="">
+                      <div class="media-body">
+                        <h5 class="font-primary">03 Jan</h5>
+                        <p>
+                          Lorem Ipsum is simply dummy text of the printing
+                          and typesetting industry. Lorem Ipsum
+                        </p>
+                      </div>
+                    </div>
+                    <div class="media markets mb-0"><img src="assets/images/bitcoin/market-4.jpg" alt="">
+                      <div class="media-body">
+                        <h5 class="font-primary">03 Jan</h5>
+                        <p>
+                          Lorem Ipsum is simply dummy text of the printing
+                          and typesetting industry. Lorem Ipsum
+                        </p>
+                      </div>
+                    </div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head2" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head2">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="media markets"&gt;
+  &lt;img src="assets/images/bitcoin/market-news/1.jpg" alt=""&gt;
+  &lt;div class="media-body"&gt;
+    &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+    &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="media markets"&gt;
+  &lt;img src="assets/images/bitcoin/market-news/2.jpg" alt=""&gt;
+  &lt;div class="media-body"&gt;
+    &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+    &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="media markets"&gt;
+  &lt;img src="assets/images/bitcoin/market-news/3.jpg" alt=""&gt;
+  &lt;div class="media-body"&gt;
+    &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+    &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="media markets mb-0"&gt;
+  &lt;img src="assets/images/bitcoin/market-news/4.jpg" alt=""&gt;
+  &lt;div class="media-body"&gt;
+    &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+    &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Sales Statistics</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="show-value-top d-flex pull-right">
+                      <div class="value-left d-inline-block">
+                        <div class="circle-graph bg-primary d-inline-block m-r-5"></div><span>Total Earning</span>
+                      </div>
+                      <div class="value-right d-inline-block">
+                        <div class="circle-graph d-inline-block bg-secondary m-r-5"></div><span>Total Tax</span>
+                      </div>
+                    </div>
+                    <div class="chart-block">
+                      <canvas id="linecharts-bitcoin"></canvas>
+                    </div>
+                    <div class="row chart-bottom">
+                      <div class="col text-center">
+                        <div class="d-inline-block">
+                          <h5 class="font-primary counter">75,000</h5>
+                          <h6 class="mb-0">Total Sale</h6>
+                        </div>
+                      </div>
+                      <div class="col text-center">
+                        <div class="d-inline-block">
+                          <h5 class="font-primary counter">40,000</h5>
+                          <h6 class="mb-0">Bitcoin Sale</h6>
+                        </div>
+                      </div>
+                      <div class="col text-center">
+                        <div class="d-inline-block">
+                          <h5 class="font-primary counter">35,000</h5>
+                          <h6 class="mb-0">Ethereum Sale</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head3" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head3">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="show-value-top d-flex pull-right"&gt;
+  &lt;div class="value-left d-inline-block"&gt;
+    &lt;div class="circle-graph bg-primary d-inline-block"&gt;&lt;/div&gt;
+    &lt;span&gt;Total Earning&lt;/span&gt;
+&lt;/div&gt;
+  &lt;div class="value-right d-inline-block"&gt;
+    &lt;div class="circle-graph d-inline-block bg-secondary"&gt;&lt;/div&gt;
+    &lt;span&gt;Total Tax&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="chart-block"&gt;
+  &lt;canvas id="linecharts-bitcoin"&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+&lt;div class="row chart-bottom"&gt;
+  &lt;div class="col text-center"&gt;
+    &lt;div class="d-inline-block"&gt;
+      &lt;h5 class="font-primary counter"&gt;75,000&lt;/h5&gt;
+      &lt;h6 class="mb-0"&gt;Total Sale&lt;/h6&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col text-center"&gt;
+    &lt;div class="d-inline-block"&gt;
+      &lt;h5 class="font-primary counter"&gt;40,000&lt;/h5&gt;
+      &lt;h6 class="mb-0"&gt;Bitcoin Sale&lt;/h6&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col text-center"&gt;
+    &lt;div class="d-inline-block"&gt;
+      &lt;h5 class="font-primary counter"&gt;35,000&lt;/h5&gt;
+      &lt;h6 class="mb-0"&gt;Ethereum Sale&lt;/h6&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Datatables Market</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body tab-content">
+                    <div class="market-table table-responsive tab-pane active" id="htc">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Market</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Change</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 02157</p>
+                            </td>
+                            <td>
+                              <p>0.025486854</p>
+                            </td>
+                            <td>
+                              <p>-05.15%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>-18.23%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="market-table table-responsive tab-pane fade" id="eth">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Market</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Change</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 02157</p>
+                            </td>
+                            <td>
+                              <p>0.025486854</p>
+                            </td>
+                            <td>
+                              <p>-05.15%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>-18.23%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="market-table table-responsive tab-pane fade" id="dash">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Market</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Change</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 02157</p>
+                            </td>
+                            <td>
+                              <p>0.025486854</p>
+                            </td>
+                            <td>
+                              <p>-05.15%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>-18.23%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="market-table table-responsive tab-pane fade" id="ltc">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Market</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Change</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 02157</p>
+                            </td>
+                            <td>
+                              <p>0.025486854</p>
+                            </td>
+                            <td>
+                              <p>-05.15%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>-18.23%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="market-table table-responsive tab-pane fade" id="xrp">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Market</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Change</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 02157</p>
+                            </td>
+                            <td>
+                              <p>0.025486854</p>
+                            </td>
+                            <td>
+                              <p>-05.15%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>+16.23%</p>
+                              <div class="text-center"><i class="font-primary" data-feather="arrow-up"></i></div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="font-primary">BTC - 12458</p>
+                            </td>
+                            <td>
+                              <p>0.002548548</p>
+                            </td>
+                            <td>
+                              <p>-18.23%</p>
+                              <div class="text-center"><i class="font-secondary" data-feather="arrow-down"></i></div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head4" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head4">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="card-body tab-content"&gt;
+  &lt;div class="market-table table-responsive tab-pane active" id="htc"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Market&lt;/th&gt;
+          &lt;th scope="col"&gt;Price&lt;/th&gt;
+          &lt;th scope="col"&gt;Change&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class="market-table table-responsive tab-pane fade" id="eth"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Market&lt;/th&gt;
+          &lt;th scope="col"&gt;Price&lt;/th&gt;
+          &lt;th scope="col"&gt;Change&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class="market-table table-responsive tab-pane fade" id="dash"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Market&lt;/th&gt;
+          &lt;th scope="col"&gt;Price&lt;/th&gt;
+          &lt;th scope="col"&gt;Change&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class="market-table table-responsive tab-pane fade" id="dash"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Market&lt;/th&gt;
+          &lt;th scope="col"&gt;Price&lt;/th&gt;
+          &lt;th scope="col"&gt;Change&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class="market-table table-responsive tab-pane fade" id="ltc"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Market&lt;/th&gt;
+          &lt;th scope="col"&gt;Price&lt;/th&gt;
+          &lt;th scope="col"&gt;Change&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+  &lt;div class="market-table table-responsive tab-pane fade" id="xrp"&gt;
+    &lt;table class="table"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th scope="col"&gt;Market&lt;/th&gt;
+          &lt;th scope="col"&gt;Price&lt;/th&gt;
+          &lt;th scope="col"&gt;Change&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+            &lt;div class="text-center"&gt;
+              &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+            &lt;/div&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="card-footer b-t-primary market-tabs p-0"&gt;
+  &lt;ul class="nav nav-pills" role="tablist"&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a class="nav-link active" data-toggle="pill" href="#htc"&gt;Users&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a class="nav-link" data-toggle="pill" href="#eth"&gt;Email&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a class="nav-link" data-toggle="pill" href="#dash"&gt;Blog&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a class="nav-link" data-toggle="pill" href="#ltc"&gt;Chat&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="nav-item"&gt;
+      &lt;a class="nav-link" data-toggle="pill" href="#xrp"&gt;Ecommerce&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                  <div class="card-footer b-t-primary market-tabs p-0">
+                    <ul class="nav nav-pills" role="tablist">
+                      <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#htc">Users</a></li>
+                      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#eth">Email</a></li>
+                      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#dash">Blog</a></li>
+                      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#ltc">Chat</a></li>
+                      <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#xrp">Ecommerce</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 xl-100">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body bg-primary">
+                        <div class="icons-section text-center"><img src="assets/images/bitcoin/1.png" alt="">
+                          <h6>Bitcoin</h6>
+                          <h5><span><i data-feather="dollar-sign"></i></span>760.03 <span><i data-feather="arrow-down"></i></span></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body bg-secondary">
+                        <div class="icons-section text-center"><img src="assets/images/bitcoin/2.png" alt="">
+                          <h6>Ethereum</h6>
+                          <h5><span><i data-feather="dollar-sign"></i></span>750.03 <span><i data-feather="arrow-up"></i></span></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="card">
+                      <div class="card-body bg-primary">
+                        <div class="icons-section text-center"><img src="assets/images/bitcoin/3.png" alt="">
+                          <h6>Balance</h6>
+                          <h5><span><i data-feather="dollar-sign"></i></span>9,980 <span><i data-feather="arrow-down"></i></span></h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-50">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Chat</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body chat-box">
+                    <div class="chat-right-aside bitcoin-chat">
+                      <div class="chat">
+                        <div class="chat-history chat-msg-box custom-scrollbar">
+                          <ul>
+                            <li>
+                              <div class="message my-message"><img class="rounded-circle float-left chat-user-img" src="assets/images/bitcoin/chat-1.jpg" alt="">
+                                <div class="message-data text-right"><span class="message-data-time">1:00 pm</span></div>                                                        Project has been already finished and
+                                                                                        I have results to show you.
+                              </div>
+                            </li>
+                            <li class="clearfix">
+                              <div class="message other-message pull-right"><img class="rounded-circle float-right chat-user-img" src="assets/images/bitcoin/chat-2.jpg" alt="">
+                                <div class="message-data"><span class="message-data-time">1:08 pm</span></div>                                                        Well I am not sure. The rest of the
+                                                                                        team is not here yet.
+                              </div>
+                            </li>
+                            <li>
+                              <div class="message my-message mb-0"><img class="rounded-circle float-left chat-user-img" src="assets/images/bitcoin/chat-1.jpg" alt="">
+                                <div class="message-data text-right"><span class="message-data-time">1:12 pm</span></div>                                                        Actually everything was fine. I'm very
+                                                                                        excited to show this to our team.
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="bitcoin-message clearfix">
+                          <div class="row">
+                            <div class="col-xl-12 d-flex">
+                              <div class="smiley-box bg-primary">
+                                <div class="picker"><img src="assets/images/smiley.png" alt=""></div>
+                              </div>
+                              <div class="input-group text-box">
+                                <input class="form-control input-txt-bx" id="message-to-send" type="text" name="message-to-send" placeholder="Type a message......">
+                                <div class="input-group-append">
+                                  <button class="btn btn-primary" type="button">SEND</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head5" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head5">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="card-body chat-box"&gt;
+  &lt;div class="chat-right-aside bitcoin-chat"&gt;
+    &lt;div class="chat"&gt;
+      &lt;div class="chat-history chat-msg-box custom-scrollbar"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;div class="message my-message"&gt;
+              &lt;img src="assets/images/bitcoin/chat/2.jpg" class="rounded-circle float-left chat-user-img" alt=""&gt;
+              &lt;div class="message-data text-right"&gt;
+                &lt;span class="message-data-time"&gt;1:00 pm&lt;/span&gt;
+              &lt;/div&gt;
+Project has been already finished and I have results to show you.
+            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li class="clearfix"&gt;
+            &lt;div class="message other-message pull-right"&gt;
+              &lt;img src="assets/images/bitcoin/chat/1.jpg" class="rounded-circle float-right chat-user-img" alt=""&gt;
+              &lt;div class="message-data"&gt;
+                &lt;span class="message-data-time"&gt;1:08 pm&lt;/span&gt;
+              &lt;/div&gt;
+Well I am not sure. The rest of the team is not here yet.
+            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;div class="message my-message mb-0"&gt;
+              &lt;img src="assets/images/bitcoin/chat/2.jpg" class="rounded-circle float-left chat-user-img" alt=""&gt;
+              &lt;div class="message-data text-right"&gt;
+                &lt;span class="message-data-time"&gt;1:12 pm&lt;/span&gt;
+              &lt;/div&gt;
+Actually everything was fine. I'm very excited to show this to our team.
+            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class="bitcoin-message clearfix"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-xl-12 d-flex"&gt;
+            &lt;div class="smiley-box bg-primary"&gt;
+              &lt;div class="picker"&gt;&lt;img src="assets/images/smiley.png" class="" alt=""&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="input-group text-box"&gt;
+              &lt;input type="text" class="form-control input-txt-bx" name="message-to-send" id="message-to-send" placeholder="Type a message......"&gt;
+              &lt;div class="input-group-append"&gt;
+                &lt;button class="btn btn-primary" type="button"&gt;SEND&lt;/button&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-50">
+                <div class="card">
+                  <div class="default-according style-1 bitcoin-accordion" id="accordionoc">
+                    <div class="card">
+                      <div class="card-header bg-primary">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link txt-white" data-toggle="collapse" data-target="#collapseicon" aria-expanded="true" aria-controls="collapseicon">BTC</button>
+                        </h5>
+                      </div>
+                      <div class="collapse show" id="collapseicon" aria-labelledby="collapseicon" data-parent="#accordionoc">
+                        <div class="media-accordion">
+                          <div class="media">
+                            <div>
+                              <h6>BTC/USD</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>11916.9</p>
+                              <p class="font-primary">283.1 USD (+2.33%)</p>
+                              <p class="font-secondary">1029.1906 BTC</p>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div>
+                              <h6>BTC/EUR</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>9213.9</p>
+                              <p class="font-primary">200.1 EUR (+2.33%)</p>
+                              <p class="font-secondary">1599.1906 BTC</p>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div>
+                              <h6>BTC/GBP</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>1459.9</p>
+                              <p class="font-primary">-283.1 USD (-2.33%)</p>
+                              <p class="font-secondary">350.1906 BTC</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header bg-primary">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed txt-white" data-toggle="collapse" data-target="#collapseicon1" aria-expanded="false">ETH</button>
+                        </h5>
+                      </div>
+                      <div class="collapse" id="collapseicon1" aria-labelledby="collapseicon1" data-parent="#accordionoc">
+                        <div class="media-accordion">
+                          <div class="media">
+                            <div>
+                              <h6>BTC/USD</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>11916.9</p>
+                              <p class="font-primary">283.1 USD (+2.33%)</p>
+                              <p class="font-secondary">1029.1906 BTC</p>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div>
+                              <h6>BTC/EUR</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>9213.9</p>
+                              <p class="font-primary">200.1 EUR (+2.33%)</p>
+                              <p class="font-secondary">1599.1906 BTC</p>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div>
+                              <h6>BTC/GBP</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>1459.9</p>
+                              <p class="font-primary">-283.1 USD (-2.33%)</p>
+                              <p class="font-secondary">350.1906 BTC</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header bg-primary">
+                        <h5 class="mb-0">
+                          <button class="btn btn-link collapsed txt-white" data-toggle="collapse" data-target="#collapseicon2" aria-expanded="false" aria-controls="collapseicon2">DASH</button>
+                        </h5>
+                      </div>
+                      <div class="collapse" id="collapseicon2" data-parent="#accordionoc">
+                        <div class="media-accordion">
+                          <div class="media">
+                            <div>
+                              <h6>BTC/USD</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>11916.9</p>
+                              <p class="font-primary">283.1 USD (+2.33%)</p>
+                              <p class="font-secondary">1029.1906 BTC</p>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div>
+                              <h6>BTC/EUR</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>9213.9</p>
+                              <p class="font-primary">200.1 EUR (+2.33%)</p>
+                              <p class="font-secondary">1599.1906 BTC</p>
+                            </div>
+                          </div>
+                          <div class="media">
+                            <div>
+                              <h6>BTC/GBP</h6>
+                              <p>24h Change</p>
+                              <p>24h Volume</p>
+                            </div>
+                            <div class="media-body text-right">
+                              <p>1459.9</p>
+                              <p class="font-primary">-283.1 USD (-2.33%)</p>
+                              <p class="font-secondary">350.1906 BTC</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-4 xl-100">
+                <div class="card">
+                  <div class="card-header b-l-primary">
+                    <h5>Invest</h5>
+                    <div class="card-header-right">
+                      <ul class="list-unstyled card-option">
+                        <li><i class="icofont icofont-simple-left"></i></li>
+                        <li><i class="view-html fa fa-code"></i></li>
+                        <li><i class="icofont icofont-maximize full-card"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card"></i></li>
+                        <li><i class="icofont icofont-error close-card"></i></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card-body chart-block">
+                    <div class="pull-right right-header invest-dropdown">
+                      <div class="onhover-dropdown">
+                        <button class="btn" type="button">Today <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                        <div class="onhover-show-div right-header-dropdown"><a class="d-block" href="#">Link 1</a><a class="d-block" href="#">Link 2</a><a class="d-block" href="#">Link 3</a></div>
+                      </div>
+                    </div>
+                    <div class="flot-chart-container">
+                      <div class="flot-chart-placeholder" id="bitcoin-morris"></div>
+                    </div>
+                    <div class="show-value-top d-flex mb-0 bottom-morris-chart">
+                      <div class="value-left d-inline-block">
+                        <div class="circle-graph bg-primary d-inline-block m-r-5"></div><span>Bitcoin</span>
+                      </div>
+                      <div class="value-right d-inline-block">
+                        <div class="circle-graph d-inline-block bg-secondary m-r-5"></div><span>Ripple</span>
+                      </div>
+                      <div class="value-third d-inline-block">
+                        <div class="circle-graph d-inline-block bg-light m-r-5"></div><span>Invest</span>
+                      </div>
+                    </div>
+                    <div class="code-box-copy">
+                      <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head6" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
+                      <pre><code class="language-html" id="example-head6">&lt;!-- Cod Box Copy begin --&gt;
+&lt;div class="card-body chart-block"&gt;
+  &lt;div class="pull-right right-header invest-dropdown"&gt;
+    &lt;div class="onhover-dropdown"&gt;
+      &lt;button type="button" class="btn"&gt;
+Today &lt;span class="pr-0"&gt;&lt;i class="fa fa-angle-down"&gt;&lt;/i&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div class="onhover-show-div right-header-dropdown"&gt;
+        &lt;a class="d-block" href="#"&gt;Link 1&lt;/a&gt;
+        &lt;a class="d-block" href="#"&gt;Link 2&lt;/a&gt;
+        &lt;a class="d-block" href="#"&gt;Link 3&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="flot-chart-container"&gt;
+    &lt;div id="bitcoin-morris" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="show-value-top d-flex mb-0 bottom-morris-chart"&gt;
+    &lt;div class="value-left d-inline-block"&gt;
+      &lt;div class="circle-graph bg-primary d-inline-block"&gt;&lt;/div&gt;
+      &lt;span&gt;Bitcoin&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="value-right d-inline-block"&gt;
+      &lt;div class="circle-graph d-inline-block bg-secondary"&gt;&lt;/div&gt;
+      &lt;span&gt;Ripple&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="value-third d-inline-block"&gt;
+      &lt;div class="circle-graph d-inline-block bg-light"&gt;&lt;/div&gt;
+      &lt;span&gt;Invest&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+        </div>
+        <!-- footer start-->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 footer-copyright">
+                <p class="mb-0">Copyright 2018 © Endless All rights reserved.</p>
+              </div>
+              <div class="col-md-6">
+                <p class="pull-right mb-0">Hand crafted & made with<i class="fa fa-heart"></i></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- latest jquery-->
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.js"></script>
+    <!-- feather icon js-->
+    <script src="assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="assets/js/icons/feather-icon/feather-icon.js"></script>
+    <!-- Sidebar jquery-->
+    <script src="assets/js/sidebar-menu.js"></script>
+    <script src="assets/js/config.js"></script>
+    <!-- Plugins JS start-->
+    <script src="assets/js/chart/chartist/chartist.js"></script>
+    <script src="assets/js/chart/morris-chart/raphael.js"></script>
+    <script src="assets/js/chart/morris-chart/morris.js"></script>
+    <script src="assets/js/chart/morris-chart/prettify.min.js"></script>
+    <script src="assets/js/chart/chartjs/chart.min.js"></script>
+    <script src="assets/js/chart/knob/knob.min.js"></script>
+    <script src="assets/js/chart/knob/knob-chart.js"></script>
+    <script src="assets/js/prism/prism.min.js"></script>
+    <script src="assets/js/clipboard/clipboard.min.js"></script>
+    <script src="assets/js/counter/jquery.waypoints.min.js"></script>
+    <script src="assets/js/counter/jquery.counterup.min.js"></script>
+    <script src="assets/js/counter/counter-custom.js"></script>
+    <script src="assets/js/custom-card/custom-card.js"></script>
+    <script src="assets/js/dashboard/bitcoin-custom.js"></script>
+    <script src="assets/js/typeahead/handlebars.js"></script>
+    <script src="assets/js/typeahead/typeahead.bundle.js"></script>
+    <script src="assets/js/typeahead/typeahead.custom.js"></script>
+    <script src="assets/js/chat-menu.js"></script>
+    <script src="assets/js/tooltip-init.js"></script>
+    <script src="assets/js/typeahead-search/handlebars.js"></script>
+    <script src="assets/js/typeahead-search/typeahead-custom.js"></script>
+    <!-- Plugins JS Ends-->
+    <!-- Theme js-->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/theme-customizer/customizer.js"></script>
+    <!-- Plugin used-->
+  </body>
+</html>

@@ -1,0 +1,1186 @@
+- var prism                 = true;
+- var flotchart             = true;
+- var chartjs               = true;
+- var datatable             = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var dashboard_server      = true;
+- var counter               = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.box-layout
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Server
+                                    ol.breadcrumb.pull-right
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Dashboard
+                                        li.breadcrumb-item.active Server
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card.server-card-bg
+                            .card-body.server-widgets
+                              .media
+                                i(data-feather='codepen')
+                                .top-server
+                                  h6.mb-0 Storage
+                              .bottom-server
+                                h5.mb-0
+                                  | 85GB / 
+                                  span 100Gb
+                              .progress
+                                .progress-bar-animated.bg-primary.progress-bar-striped(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card.server-card-bg
+                            .card-body.server-widgets
+                              .media
+                                i(data-feather='clock')
+                                .top-server
+                                  h6.mb-0 Latency
+                              .bottom-server.mb-0
+                                h5.mb-0
+                                  span.second-color.counter 40
+                                  | ms
+                            .server-chart
+                              #latency-chart.flot-chart-placeholder
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card.server-card-bg
+                            .card-body.server-widgets
+                              .media
+                                i(data-feather='server')
+                                .top-server
+                                  h6.mb-0 Bandwidth
+                              .bottom-server
+                                h5.mb-0
+                                  | 75GB / 
+                                  span 100Gb
+                              .progress
+                                .progress-bar-animated.bg-primary.progress-bar-striped(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card.server-card-bg
+                            .card-body.server-widgets
+                              .media
+                                i(data-feather='anchor')
+                                .top-server
+                                  h6.mb-0 Cluster Load
+                              .bottom-server
+                                h5.mb-0
+                                  | 70% 
+                                  span
+                                    i(data-feather='trending-down')
+                              .last-server
+                                h6.mb-0.f-14 Lower than average
+                        .col-sm-12
+                          .card
+                            .card-header
+                              h5 Live CPU Usage
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block
+                              .server-chart-container
+                                #cpu-updating.flot-chart-placeholder
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chart-block"&gt;
+                                      |   &lt;div class="server-chart-container"&gt;
+                                      |     &lt;div id="cpu-updating" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-sm-12
+                          .card
+                            .card-header
+                              h5 Memory Usage
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.server-canvas
+                              canvas#myGraph
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body server-canvas"&gt;
+                                      |   &lt;canvas id="myGraph"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-8.xl-100.set-col-7
+                          .card
+                            .card-header.server-header
+                              h5.d-inline-block Process Explorer
+                              span.badge.badge-primary.m-l-10.d-inline-block.mt-0 57 Process
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .table-responsive
+                                table#basic-1.display
+                                  thead
+                                    tr
+                                      th Name
+                                      th User
+                                      th Avg. Io
+                                      th Avg. CPU
+                                      th Avg. Mem
+                                  tbody
+                                    tr
+                                      td Tiger
+                                      td
+                                        span.badge.badge-primary Tig
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 50 MB
+                                    tr
+                                      td Garrett
+                                      td
+                                        span.badge.badge-secondary Great
+                                      td 0.54 KB/s
+                                      td 0.20 %
+                                      td 1 MB
+                                    tr
+                                      td Ashton
+                                      td
+                                        span.badge.badge-primary Root
+                                      td 20 KB/s
+                                      td 0.50 %
+                                      td 13 MB
+                                    tr
+                                      td Cedric
+                                      td
+                                        span.badge.badge-secondary Ced
+                                      td 50 KB/s
+                                      td 0.40 %
+                                      td 25 MB
+                                    tr
+                                      td Airi
+                                      td
+                                        span.badge.badge-primary Airi
+                                      td 0.40 KB/s
+                                      td 0 %
+                                      td 13 MB
+                                    tr
+                                      td Brielle
+                                      td
+                                        span.badge.badge-secondary Brie
+                                      td 25 KB/s
+                                      td 0.60 %
+                                      td 25 MB
+                                    tr
+                                      td Herrod
+                                      td
+                                        span.badge.badge-primary Herr
+                                      td 57 KB/s
+                                      td 0 %
+                                      td 1 MB
+                                    tr
+                                      td Rhona
+                                      td
+                                        span.badge.badge-secondary Rho
+                                      td 24 KB/s
+                                      td 0 %
+                                      td 1 MB
+                                    tr
+                                      td Colleen
+                                      td
+                                        span.badge.badge-primary Coll
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 14 MB
+                                    tr
+                                      td Sonya
+                                      td
+                                        span.badge.badge-secondary Sony
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 13 MB
+                                    tr
+                                      td Jena
+                                      td
+                                        span.badge.badge-primary Jen
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 1 MB
+                                    tr
+                                      td Quinn
+                                      td
+                                        span.badge.badge-secondary Quin
+                                      td 75 KB/s
+                                      td 0.50 %
+                                      td 42 MB
+                                    tr
+                                      td Charde
+                                      td
+                                        span.badge.badge-primary Char
+                                      td 30 KB/s
+                                      td 0.20 %
+                                      td 10 MB
+                                    tr
+                                      td Haley
+                                      td
+                                        span.badge.badge-secondary Hal
+                                      td 56 KB/s
+                                      td 0.10 %
+                                      td 20 MB
+                                    tr
+                                      td Tatyana
+                                      td
+                                        span.badge.badge-primary Taty
+                                      td 20 KB/s
+                                      td 0.80 %
+                                      td 77 MB
+                                    tr
+                                      td Michael
+                                      td
+                                        span.badge.badge-secondary Micha
+                                      td 0 KB/s
+                                      td 0.70 %
+                                      td 30 MB
+                                    tr
+                                      td Paul
+                                      td
+                                        span.badge.badge-primary Paul
+                                      td 0 KB/s
+                                      td 0.50 %
+                                      td 11 MB
+                                    tr
+                                      td Gloria
+                                      td
+                                        span.badge.badge-secondary Glori
+                                      td 65 KB/s
+                                      td 0.20 %
+                                      td 1 MB
+                                    tr
+                                      td Bradley
+                                      td
+                                        span.badge.badge-primary Bradl
+                                      td 40 KB/s
+                                      td 0 %
+                                      td 15 MB
+                                    tr
+                                      td Dai
+                                      td
+                                        span.badge.badge-secondary Da
+                                      td 10 KB/s
+                                      td 0 %
+                                      td 15 MB
+                                    tr
+                                      td Jenette
+                                      td
+                                        span.badge.badge-primary Jene
+                                      td 37 KB/s
+                                      td 0.30 %
+                                      td 20 MB
+                                    tr
+                                      td Yuri
+                                      td
+                                        span.badge.badge-secondary Yur
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 25 MB
+                                    tr
+                                      td Caesar
+                                      td
+                                        span.badge.badge-primary Caes
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 20 MB
+                                    tr
+                                      td Doris
+                                      td
+                                        span.badge.badge-secondary Dori
+                                      td 38 KB/s
+                                      td 0.10 %
+                                      td 14 MB
+                                    tr
+                                      td Angelica
+                                      td
+                                        span.badge.badge-primary Angel
+                                      td 40 KB/s
+                                      td 0.50 %
+                                      td 1 MB
+                                    tr
+                                      td Gavin
+                                      td
+                                        span.badge.badge-secondary Gavi
+                                      td 0 KB/s
+                                      td 0.20 %
+                                      td 1 MB
+                                    tr
+                                      td Jennifer
+                                      td
+                                        span.badge.badge-primary Jeni
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 20 MB
+                                    tr
+                                      td Brenden
+                                      td
+                                        span.badge.badge-secondary Bren
+                                      td 16 KB/s
+                                      td 0 %
+                                      td 23 MB
+                                    tr
+                                      td Fiona
+                                      td
+                                        span.badge.badge-primary Fio
+                                      td 50 KB/s
+                                      td 0.30 %
+                                      td 75 MB
+                                    tr
+                                      td Shou
+                                      td
+                                        span.badge.badge-primary Sho
+                                      td 37 KB/s
+                                      td 0.20 %
+                                      td 22 MB
+                                    tr
+                                      td Michelle
+                                      td
+                                        span.badge.badge-primary Mich
+                                      td 0 KB/s
+                                      td 0.50 %
+                                      td 16 MB
+                                    tr
+                                      td Suki
+                                      td
+                                        span.badge.badge-secondary Suk
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 42 MB
+                                    tr
+                                      td Prescott
+                                      td
+                                        span.badge.badge-primary Pres
+                                      td 56 KB/s
+                                      td 0.27 %
+                                      td 1 MB
+                                    tr
+                                      td Gavin
+                                      td
+                                        span.badge.badge-secondary Gavi
+                                      td 0 KB/s
+                                      td 0.22 %
+                                      td 70 MB
+                                    tr
+                                      td Martena
+                                      td
+                                        span.badge.badge-primary Mart
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 20 MB
+                                    tr
+                                      td Unity
+                                      td
+                                        span.badge.badge-primary Unity
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 1 MB
+                                    tr
+                                      td Howard
+                                      td
+                                        span.badge.badge-secondary Howa
+                                      td 65 KB/s
+                                      td 0.20 %
+                                      td 1 MB
+                                    tr
+                                      td Hope
+                                      td
+                                        span.badge.badge-primary Hop
+                                      td 5 KB/s
+                                      td 0.04 %
+                                      td 145 MB
+                                    tr
+                                      td Vivian
+                                      td
+                                        span.badge.badge-primary Vivi
+                                      td 80 KB/s
+                                      td 0.50 %
+                                      td 25 MB
+                                    tr
+                                      td Timothy
+                                      td
+                                        span.badge.badge-primary Timo
+                                      td 50 KB/s
+                                      td 0.30 %
+                                      td 13 MB
+                                    tr
+                                      td Jackson
+                                      td
+                                        span.badge.badge-secondary Jack
+                                      td 37 KB/s
+                                      td 0.10 %
+                                      td 10 MB
+                                    tr
+                                      td Olivia
+                                      td
+                                        span.badge.badge-primary Oliv
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 7
+                                    tr
+                                      td Bruno
+                                      td
+                                        span.badge.badge-primary Brun
+                                      td 37 KB/s
+                                      td 0.15 %
+                                      td 5 MB
+                                    tr
+                                      td Sakura
+                                      td
+                                        span.badge.badge-secondary Saku
+                                      td 50 KB/s
+                                      td 0.50 %
+                                      td 15 MB
+                                    tr
+                                      td Thor
+                                      td
+                                        span.badge.badge-primary Tho
+                                      td 25 KB/s
+                                      td 0.10 %
+                                      td 80 MB
+                                    tr
+                                      td Finn
+                                      td
+                                        span.badge.badge-primary Fin
+                                      td 40 KB/s
+                                      td 0.30 %
+                                      td 7 MB
+                                    tr
+                                      td Serge
+                                      td
+                                        span.badge.badge-primary Ser
+                                      td 60 KB/s
+                                      td 0.10 %
+                                      td 45 MB
+                                    tr
+                                      td Zenaida
+                                      td
+                                        span.badge.badge-primary Zen
+                                      td 37 KB/s
+                                      td 0.50 %
+                                      td 60 MB
+                                    tr
+                                      td Zorita
+                                      td
+                                        span.badge.badge-primary Zor
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 57 MB
+                                    tr
+                                      td Jennifer
+                                      td
+                                        span.badge.badge-primary Jenni
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 180 MB
+                                    tr
+                                      td Cara
+                                      td
+                                        span.badge.badge-secondary Car
+                                      td 50 KB/s
+                                      td 0.30 %
+                                      td 20 MB
+                                    tr
+                                      td Hermione
+                                      td
+                                        span.badge.badge-primary Hermi
+                                      td 37 KB/s
+                                      td 0.20 %
+                                      td 1 MB
+                                    tr
+                                      td Lael
+                                      td
+                                        span.badge.badge-primary Lae
+                                      td 0 KB/s
+                                      td 0.10 %
+                                      td 50 MB
+                                    tr
+                                      td Jonas
+                                      td
+                                        span.badge.badge-primary Jon
+                                      td 12 KB/s
+                                      td 0.05 %
+                                      td 2 MB
+                                    tr
+                                      td Shad
+                                      td
+                                        span.badge.badge-secondary Sha
+                                      td 42 KB/s
+                                      td 020 %
+                                      td 40 MB
+                                    tr
+                                      td Michael
+                                      td
+                                        span.badge.badge-primary Mich
+                                      td 0 KB/s
+                                      td 0 %
+                                      td 25 MB
+                                    tr
+                                      td Donna
+                                      td
+                                        span.badge.badge-primary Donn
+                                      td 37 KB/s
+                                      td 0.10 %
+                                      td 13 MB
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="table-responsive"&gt;
+                                      |   &lt;table id="basic-1" class="display"&gt;
+                                      |     &lt;thead&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;th&gt;Name&lt;/th&gt;
+                                      |         &lt;th&gt;User&lt;/th&gt;
+                                      |         &lt;th&gt;Avg. Io&lt;/th&gt;
+                                      |         &lt;th&gt;Avg. CPU&lt;/th&gt;
+                                      |         &lt;th&gt;Avg. Mem&lt;/th&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/thead&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Tiger&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Tig&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;50 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Garrett&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Great&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0.54 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Ashton&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Root&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;20 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;13 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Cedric&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Ced&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;50 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.40 %&lt;/td&gt;
+                                      |         &lt;td&gt;25 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Airi&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Airi&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0.40 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;13 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Brielle&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Brie&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;25 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.60 %&lt;/td&gt;
+                                      |         &lt;td&gt;25 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Herrod&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Herr&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;57 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Rhona&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Rho&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;24 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Colleen&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Coll&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;14 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Sonya&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Sony&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;13 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Jena&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Jen&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Quinn&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Quin&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;75 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;42 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Charde&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Char&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;30 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;10 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Haley&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Hal&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;56 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;20 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Tatyana&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Taty&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;20 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.80 %&lt;/td&gt;
+                                      |         &lt;td&gt;77 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Michael&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Micha&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.70 %&lt;/td&gt;
+                                      |         &lt;td&gt;30 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Paul&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Paul&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;11 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Gloria&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Glori&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;65 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Bradley&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Bradl&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;40 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;15 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Dai&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Da&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;10 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;15 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Jenette&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Jene&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.30 %&lt;/td&gt;
+                                      |         &lt;td&gt;20 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Yuri&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Yur&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;25 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Caesar&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Caes&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;20 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Doris&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Dori&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;38 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;14 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Angelica&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Angel&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;40 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Gavin&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Gavi&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Jennifer&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Jeni&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;20 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Brenden&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Bren&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;16 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;23 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Fiona&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Fio&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;50 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.30 %&lt;/td&gt;
+                                      |         &lt;td&gt;75 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Shou&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Sho&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;22 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Michelle&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Mich&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;16 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Suki&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Suk&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;42 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Prescott&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Pres&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;56 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.27 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Gavin&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Gavi&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.22 %&lt;/td&gt;
+                                      |         &lt;td&gt;70 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Martena&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Mart&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;20 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Unity&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Unity&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Howard&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Howa&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;65 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Hope&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Hop&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;5 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.04 %&lt;/td&gt;
+                                      |         &lt;td&gt;145 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Vivian&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Vivi&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;80 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;25 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Timothy&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Timo&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;50 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.30 %&lt;/td&gt;
+                                      |         &lt;td&gt;13 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Jackson&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Jack&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;10 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Olivia&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Oliv&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;7&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Bruno&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Brun&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.15 %&lt;/td&gt;
+                                      |         &lt;td&gt;5 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Sakura&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Saku&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;50 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;15 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Thor&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Tho&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;25 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;80 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Finn&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Fin&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;40 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.30 %&lt;/td&gt;
+                                      |         &lt;td&gt;7 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Serge&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Ser&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;60 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;45 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Zenaida&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Zen&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.50 %&lt;/td&gt;
+                                      |         &lt;td&gt;60 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Zorita&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Zor&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;57 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Jennifer&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Jenni&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;180 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Cara&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Car&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;50 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.30 %&lt;/td&gt;
+                                      |         &lt;td&gt;20 MB&lt;/td
+                                      |       &lt;/tr
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Hermione&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Hermi&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.20 %&lt;/td&gt;
+                                      |         &lt;td&gt;1 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Lael&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Lae&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;50 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Jonas&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Jon&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;12 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.05 %&lt;/td&gt;
+                                      |         &lt;td&gt;2 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Shad&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-secondary"&gt;Sha&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;42 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;020 %&lt;/td&gt;
+                                      |         &lt;td&gt;40 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Michael&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Mich&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;0 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0 %&lt;/td&gt;
+                                      |         &lt;td&gt;25 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;Donna&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;span class="badge badge-primary"&gt;Donn&lt;/span&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;37 KB/s&lt;/td&gt;
+                                      |         &lt;td&gt;0.10 %&lt;/td&gt;
+                                      |         &lt;td&gt;13 MB&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-100.set-col-5
+                          .card
+                            .card-header.server-header
+                              h5.d-inline-block I/O Activity
+                              span.badge.badge-primary.m-l-10.d-inline-block.mt-0 Last 10 Activity
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .server-activity
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-down')
+                                  span Brandley
+                                  .media-body.text-right
+                                    span 14 KB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-down')
+                                  span Cara
+                                  .media-body.text-right
+                                    span 5 KB
+                                .media
+                                  i.font-secondary.m-r-10(data-feather='arrow-up')
+                                  span Airi
+                                  .media-body.text-right
+                                    span 15 MB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-up')
+                                  span Cedric
+                                  .media-body.text-right
+                                    span 4 KB
+                                .media
+                                  i.font-secondary.m-r-10(data-feather='arrow-down')
+                                  span Cara
+                                  .media-body.text-right
+                                    span 20 KB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-up')
+                                  span Airi
+                                  .media-body.text-right
+                                    span 25 MB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-down')
+                                  span Brandley
+                                  .media-body.text-right
+                                    span 14 KB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-down')
+                                  span Cara
+                                  .media-body.text-right
+                                    span 5 KB
+                                .media
+                                  i.font-secondary.m-r-10(data-feather='arrow-up')
+                                  span Airi
+                                  .media-body.text-right
+                                    span 15 MB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-up')
+                                  span Cedric
+                                  .media-body.text-right
+                                    span 4 KB
+                                .media
+                                  i.font-secondary.m-r-10(data-feather='arrow-down')
+                                  span Cara
+                                  .media-body.text-right
+                                    span 20 KB
+                                .media
+                                  i.font-primary.m-r-10(data-feather='arrow-up')
+                                  span Airi
+                                  .media-body.text-right
+                                    span 25 MB
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="server-activity"&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-down" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Brandley&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;14 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-down" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Cara&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;5 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-up" class="font-secondary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Airi&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;15 MB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-up" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Cedric&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;4 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-down" class="font-secondary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Cara&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;20 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-up" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Airi&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;25 MB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-down" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Brandley&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;14 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-down" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Cara&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;5 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-up" class="font-secondary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Airi&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;15 MB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-up" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Cedric&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;4 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-down" class="font-secondary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Cara&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;20 KB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="media"&gt;
+                                      |     &lt;i data-feather="arrow-up" class="font-primary m-r-10"&gt;&lt;/i&gt;
+                                      |     &lt;span&gt;Airi&lt;/span&gt;
+                                      |     &lt;div class="media-body text-right"&gt;
+                                      |       &lt;span&gt;25 MB&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

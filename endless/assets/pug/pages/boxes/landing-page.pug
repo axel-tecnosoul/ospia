@@ -1,0 +1,514 @@
+- var landing_sticky        = true;
+- var jarallax_libs         = true;
+- var scrollpy_landing      = true;
+- var animate               = true;
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        // page-wrapper Start
+        .page-wrapper
+            // Page Body Start
+            .page-body-wrapper.landing-main
+                .bg-sky-blue#home.highlight-on-scroll
+                    .svg_img1
+                        img.img-fluid(src='../assets/images/landing/svg_2.png', alt='')
+                    .sticky-header
+                      header
+                        .container-modify
+                         nav#mainNav.navbar.navbar-b.navbar-trans.navbar-expand-xl.fixed-top.nav-padding
+                                a.navbar-brand(href='#')
+                                  img.img-fluid(src='../assets/images/landing/logo.png', alt='')
+                                button.navbar-toggler.navabr_btn-set.custom_nav(type='button', data-toggle='collapse', data-target='#navbarDefault', aria-controls='navbarDefault', aria-expanded='false', aria-label='Toggle navigation')
+                                  span
+                                  span
+                                  span
+                                #navbarDefault.navbar-collapse.justify-content-end.collapse.hidenav(style='')
+                                  ul.navbar-nav.navbar_nav_modify#scroll-spy
+                                    li.nav-item
+                                      a.nav-link.js-scroll.active(href='#home') Home
+                                    li.nav-item
+                                      a.nav-link.js-scroll(href='#layout') Layouts
+                                    li.nav-item
+                                      a.nav-link.js-scroll(href='#dashboards') Dashboards
+                                    li.nav-item
+                                      a.nav-link.js-scroll(href='#Components') Components
+                                    li.nav-item
+                                      a.nav-link.js-scroll(href='#applications') Applications
+                                    li.nav-item
+                                      form.form-inline.support-res(target='_blank', action='https://themeforest.net/user/pixelstrap/portfolio')
+                                        button.nav-link.js-scroll Support
+                                    li.nav-item
+                                       form.form-inline.support-res(target='_blank', action='https://themeforest.net/user/pixelstrap/portfolio')
+                                                                               button.btn.btn-pill.btn-light Buy Now
+                    .container
+                        .landing-center.landing-center-responsive.title-padding
+                            .title
+                                ul.list-inline
+                                    li.list-inline-item
+                                        img.img-fluid(src='../assets/images/landing/1-title.png', alt='')
+                                    li.list-inline-item.vl
+                                        img.img-fluid(src='../assets/images/landing/2-title.png', alt='')
+                                    li.list-inline-item
+                                        img.img-fluid(src='../assets/images/landing/3-title.png', alt='')
+                            .title-content
+                                h1
+                                    | Bootstrap Angular 7 Admin Template
+                                p.m-0
+                                    | When it comes to dashboard or web apps. one of the first impression you consider is the |design. It needs to be high quality enough otherwise you will lose potential users due to |bad design.
+                            .container-fluid
+                                .landing_first_section_img
+                                    .img-set1.mt-30
+                                        img.img-fluid(src='../assets/images/landing/2-first_section.png', alt='')
+                                        img.img-fluid.feature-img1(src='../assets/images/landing/features-1-first_section.png', alt='')
+                                    .img-set2.mt-30
+                                        img.img-fluid.feature-img2(src='../assets/images/landing/features-2-first_section.png', alt='')
+                                        img.img-fluid(src='../assets/images/landing/3-first_section.png', alt='')
+                                    .img-set3
+                                        img.img-fluid(src='../assets/images/landing/main-first_section.png', alt='')
+                            .img-wave1-set
+                            .img-wave2-set
+                    .round-tringle-square-animation
+                        .triangle_set1
+                            .triangle1
+                                .empty1
+                        .triangle_set
+                            .triangle
+                                .empty
+                        .bg_circle1
+                        .bg_circle2
+                        .bg_circle3
+                        .square1
+                        .square2
+                        .bg_circle4
+                        .square
+                        .cross 
+                        .cross1
+                        .cross2
+            section.section-space.creative-demo-section#layout.highlight-on-scroll
+                .container
+                    .row
+                      .col-sm-12
+                        .creative-demo-content.mt50
+                          h1 6+
+                          .couting
+                            h2 Creative Layouts
+                          p  
+                            |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                            |demos & light - dark versions.
+                          .layouts-btn.mt-3
+                            a.btn.btn-secondary(href="index.html" target="_blank") HTML
+                            a.btn.btn-success(href="http://laravel.pixelstrap.com/endless" target='_blank') Laravel
+                            a.btn.btn-warning(href="http://node.pixelstrap.com/endless/" target='_blank') Node.js
+                .container.container-modify
+                    .row
+                      .col-md-6
+                        .img-effect
+                            a(href='../ltr/index.html' target='_blank')
+                                img.img-fluid.creative-img(src='../assets/images/landing/light-Creative-demo.png', alt='')
+                            .cretive_img_content
+                              h4 Light Layout
+                              p 
+                                |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='layout-dark.html' target='_blank')
+                                img.img-fluid.creative-img(src='../assets/images/landing/dark-Creative-demo.png',  alt='')
+                            .cretive_img_content
+                              h4 Dark Layout
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='compact.html' target='_blank')
+                                img.img-fluid.creative-img(src='../assets/images/landing/compact-Creative-demo.png', alt='')
+                            .cretive_img_content
+                              h4 Compact Layout
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='layout-rtl.html' target='_blank')
+                                img.img-fluid.creative-img(src='../assets/images/landing/rtl-Creative-demo.png', alt='')
+                            .cretive_img_content
+                              h4 RTL Layout
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='box-layout.html' target='_blank')
+                                img.img-fluid.creative-img(src='../assets/images/landing/box-Creative-demo.png', alt='')
+                            .cretive_img_content
+                              h4 Box Layout
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='compact-small.html' target='_blank')
+                                img.img-fluid.creative-img(src='../assets/images/landing/icon-navbar-Creative-demo.png', alt='')
+                            .cretive_img_content
+                              h4 Icon Navbar Layout
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+            section.section-space.creative-demo-section.bg-Widget.pb-0
+                .container
+                    .row
+                      .col-sm-12
+                        .creative-demo-content.mt50
+                          .couting  
+                            h2 Widgets
+                          p  
+                            |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                            |demos & light - dark versions.
+                .container-modify
+                    img.img-fluid(src='../assets/images/landing/widget.png', alt='')
+
+            section.section-space.creative-demo-section.app_bg#applications.highlight-on-scroll.pb-0
+                .container
+                    .row
+                      .col-sm-12
+                        .creative-demo-content.mt50.custom_animation
+                          .couting
+                            h2 Useful Application
+                          p  
+                            |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                            |demos & light - dark versions.
+                .container.container-modify
+                    .row
+                      .col-md-4
+                        .img-effect
+                          a(href='../ltr/social-app.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/social-app.png', alt='')
+                            .cretive_img_content
+                              h4 Social App
+                      .col-md-4
+                        .img-effect 
+                          a(href='../ltr/knowledgebase.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/knowlagebase-app.png', alt='')
+                            .cretive_img_content
+                                h4 knowledgebase
+                      .col-md-4
+                        .img-effect 
+                          a(href='../ltr/support-ticket.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/support-ticket-app.png', alt='')
+                            .cretive_img_content
+                                h4 Support Ticket
+                      .col-md-4
+                        .img-effect 
+                          a(href='../ltr/email-application.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/mail-app.png', alt='')
+                            .cretive_img_content
+                                h4 Email Dashboard
+                      .col-md-4
+                        .img-effect
+                          a(href='../ltr/to-do.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/To-Do-app.png', alt='')
+                            .cretive_img_content
+                                h4 To-Do
+                      .col-md-4
+                        .img-effect
+                          a(href='../ltr/job-details.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/job-search-app.png', alt='')
+                            .cretive_img_content
+                                h4 Job Search
+                      .col-md-4
+                        .img-effect
+                          a(href='../ltr/chartist.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/Chat-app.png', alt='')
+                            .cretive_img_content
+                                h4 Chart
+                      .col-md-4
+                        .img-effect
+                          a(href='../ltr/ecommerce-templates.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/ecommerce-app.png', alt='')
+                            .cretive_img_content
+                                h4 Ecommerce
+                      .col-md-4
+                        .img-effect
+                          a(href='../ltr/blog.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/Blog-app.png', alt='')
+                            .cretive_img_content
+                                h4 Blog
+                    .many-more-root
+                      .and-many-more And Many More
+                      .and-more And Many More...
+            section.section-space.creative-demo-section.app_bg#dashboards.highlight-on-scroll
+                .container
+                    .row
+                      .col-sm-12
+                        .creative-demo-content.mt50
+                          h1 6+
+                          .couting 
+                            h2 Dashboard
+                          p  
+                            |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                            |demos & light - dark versions.
+                .container.container-modify
+                    .row
+                      .col-md-6
+                        .img-effect
+                            a(href='index.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/default-dashboard.png', alt='')
+                            .cretive_img_content
+                              h4 Default Dashboard
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='../ltr/dashboard-ecommerce.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/ecommerce-dashboard.png', alt='')
+                            .cretive_img_content
+                              h4 Ecommerce Dashboard
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='../ltr/dashboard-university.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/University-dashboard.png', alt='')
+                            .cretive_img_content
+                              h4 University Dashboard
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='../ltr/dashboard-server.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/server-dashboard.png', alt='')
+                            .cretive_img_content
+                              h4 Server Dashboard
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='../ltr/dashboard-bitcoin.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/bitcoin-dashboard.png', alt='')
+                            .cretive_img_content
+                              h4 Crypto Dashboard
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+                      .col-md-6
+                        .img-effect
+                            a(href='../ltr/dashboard-project.html' target='_blank')
+                            img.img-fluid.creative-img(src='../assets/images/landing/Project-dashboard.png', alt='')
+                            .cretive_img_content
+                              h4 Project Dashboard
+                              p 
+                                  |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec interdum
+            section.section-space.creative-demo-section.bg-gallery
+                .svg_img2
+                    img.img-fluid(src='../assets/images/landing/svg_2.png', alt='')
+                .container
+                    .row
+                      .col-sm-12
+                        .gallery_content.round_circle1_bg_sky.mt50
+                          .couting
+                            h2 Gallery
+                          p  
+                            |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                            |demos & light - dark versions.
+                .container-fluid
+                    .landing_gallery_section_img  
+                        .img-gallery-set1(data-jarallax-element='-100')
+                            img.img-fluid(src='../assets/images/landing/1-gallery.png', alt='')
+                            .gallery-img-blur-div
+                        .img-gallery-set2(data-jarallax-element='-80')
+                            img.img-fluid(src='../assets/images/landing/2-gallery.png', alt='')
+                            .gallery-img-blur-div
+                        .img-gallery-set3(data-jarallax-element='-60')
+                            img.img-fluid(src='../assets/images/landing/main-gallery.png', alt='')
+                            .gallery-img-blur-div
+                        .img-gallery-set4(data-jarallax-element='-80')
+                            img.img-fluid(src='../assets/images/landing/3-gallery.png', alt='')
+                            .gallery-img-blur-div
+                        .img-gallery-set5(data-jarallax-element='-100')
+                            img.img-fluid(src='../assets/images/landing/4-gallery.png', alt='')
+                            .gallery-img-blur-div
+                .round-tringle-square-animation
+                  .triangle_set1
+                      .triangle1
+                          .empty1
+                  .triangle_set
+                      .triangle
+                          .empty
+                  .bg_circle2
+                  .bg_circle3
+                  .square1
+                  .square2
+                  .bg_circle4
+                  .square
+                  .cross 
+                  .cross1
+                  .cross2
+            
+            section.section-space.creative-demo-section.email_bg
+                .container
+                    .row
+                      .col-sm-12
+                        .creative-demo-content.mt50
+                          .couting
+                            h2 Email Templates
+                          p  
+                            |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                            |demos & light - dark versions.
+                img.img-fluid(src='../assets/images/landing/email_section_img.jpg', alt='')
+            section.section-space.creative-demo-section.components-section#Components.highlight-on-scroll
+                .container
+                    .row
+                      .col-sm-12
+                        .creative-demo-content.mt50 
+                            .couting 
+                                h2 Components
+                            p  
+                              |Endless is beautifully crafted, clean & modern designed admin theme with 6 different 
+                              |demos & light - dark versions.
+                .container.container-modify
+                    .row.component_responsive
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='alert-triangle')
+                          h6.m-0 Alert
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='user')
+                          h6.m-0 Avatar
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='list')
+                          h6.m-0 Notification
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='chevrons-right')
+                          h6.m-0 Breadcrumb
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='star')
+                          h6.m-0 Bookmark
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='more-horizontal')
+                          h6.m-0 Slider 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='book')
+                          h6.m-0 Collapse
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='zap')
+                          h6.m-0 Icons
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='type')
+                          h6.m-0 Typography
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='link')
+                          h6.m-0 Buttons 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='chevron-down')
+                          h6.m-0 Dropdowns 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='message-circle')
+                          h6.m-0 Dialogs 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='credit-card')
+                          h6.m-0 Tabs 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='award')
+                          h6.m-0 Chip  
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='refresh-cw')
+                          h6.m-0 Progress 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='check')
+                          h6.m-0 Select 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='database')
+                          h6.m-0 Tables 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='eye')
+                          h6.m-0 Eye 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='check-circle')
+                          h6.m-0 Validation 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='maximize-2')
+                          h6.m-0 Divider 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='edit')
+                          h6.m-0 Editor 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='edit-2')
+                          h6.m-0 Picker 
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='settings')
+                          h6.m-0 Settings  
+                      .col-md-2.col-sm-4.component-col-set.component-set
+                        .component-hover-effect
+                          i(data-feather='move')
+                          h6.m-0 Drag & Drop
+                      .col-md-2.col-sm-4.component-col-set
+                        .component-hover-effect
+                          i(data-feather='upload')
+                          h6.m-0 Upload 
+                      .col-md-2.col-sm-4.component-col-set
+                          i(data-feather='credit-card')
+                          h6.m-0 Tabs 
+                      .col-md-2.col-sm-4.component-col-set
+                        .component-hover-effect
+                          i(data-feather='award')
+                          h6.m-0 Chip  
+                      .col-md-2.col-sm-4.component-col-set
+                        .component-hover-effect
+                          i(data-feather='refresh-cw')
+                          h6.m-0 Progress 
+                      .col-md-2.col-sm-4.component-col-set
+                        .component-hover-effect
+                          i(data-feather='github')
+                          h6.m-0 Github 
+                      .col-md-2.col-sm-4.component-col-set
+                        .component-hover-effect
+                          i(data-feather='database')
+                          h6.m-0 Tables
+            section.footer-bg
+                .square1
+                .square2
+                .bg_circle4
+                .square
+                .cross2
+                .triangle_set
+                  .triangle
+                    .empty
+                .bg_circle1
+                .bg_circle2
+                .bg_circle3
+                .container
+                    .landing-center.ptb50
+                        .title
+                          img.img-fluid(src='../assets/images/landing/footer-logo.png', alt='')
+                          .footer-pattern-root
+                            .footer-line-pattern
+                        .footer-content
+                            h1
+                                | The Endless Bootstrap Admin Theme Trusted By Many Developers World Wide.
+                            p
+                                | If You like Our Theme So Please Rate Us.
+                            a.btn.mrl5.btn-md(target='_blank', href='https://themeforest.net/user/pixelstrap/portfolio') Purches Now
+                            a.btn.mrl5.btn-md.btn-md-res(target='_blank', href='https://themeforest.net/user/pixelstrap/portfolio') Buy Now
+                            //- button.btn.mrl5.btn-md(type='button') Purches Now
+                            //- button.btn.mrl5.btn-md.btn-md-res(type='button') Buy Now
+
+            .tap-top
+              i.fa.fa-angle-double-up
+        include ../../components/footer-files

@@ -1,0 +1,1006 @@
+# Translation of Plugins - Cool Timeline (Horizontal &amp; Vertical Timeline) - Development (trunk) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Cool Timeline (Horizontal &amp; Vertical Timeline) - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2023-12-08 09:45:10+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Cool Timeline (Horizontal &amp; Vertical Timeline) - Development (trunk)\n"
+
+#: admin/codestar-framework/fields/sorter/sorter.php:22
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: admin/codestar-framework/fields/sorter/sorter.php:21
+msgid "Enabled"
+msgstr "Activado"
+
+#: admin/codestar-framework/fields/map/map.php:25
+msgid "Longitude"
+msgstr "Longitud"
+
+#: admin/codestar-framework/fields/map/map.php:24
+msgid "Latitude"
+msgstr "Latitud"
+
+#: admin/codestar-framework/fields/link_color/link_color.php:40
+msgid "Focus"
+msgstr "Enfoque"
+
+#: admin/codestar-framework/fields/link_color/link_color.php:39
+msgid "Visited"
+msgstr "Visitado"
+
+#: admin/codestar-framework/fields/link_color/link_color.php:38
+msgid "Active"
+msgstr "Activo"
+
+#: admin/codestar-framework/fields/link_color/link_color.php:37
+msgid "Hover"
+msgstr "Al pasar el cursor"
+
+#: admin/codestar-framework/fields/dimensions/dimensions.php:23
+msgid "height"
+msgstr "alto"
+
+#: admin/codestar-framework/fields/dimensions/dimensions.php:22
+msgid "width"
+msgstr "anchura"
+
+#: admin/codestar-framework/fields/border/border.php:58
+msgid "ridge"
+msgstr "saliente"
+
+#: admin/codestar-framework/fields/border/border.php:57
+msgid "Groove"
+msgstr "Acanalado"
+
+#: admin/codestar-framework/fields/border/border.php:56
+msgid "Outset"
+msgstr "Elevado"
+
+#: admin/codestar-framework/fields/border/border.php:55
+msgid "Inset"
+msgstr "Hundido"
+
+#: admin/codestar-framework/fields/border/border.php:29
+#: admin/codestar-framework/fields/spacing/spacing.php:29
+msgid "all"
+msgstr "todo"
+
+#: admin/codestar-framework/fields/border/border.php:28
+#: admin/codestar-framework/fields/spacing/spacing.php:28
+msgid "left"
+msgstr "izquierda"
+
+#: admin/codestar-framework/fields/border/border.php:27
+#: admin/codestar-framework/fields/spacing/spacing.php:27
+msgid "bottom"
+msgstr "inferior"
+
+#: admin/codestar-framework/fields/border/border.php:26
+#: admin/codestar-framework/fields/spacing/spacing.php:26
+msgid "right"
+msgstr "derecha"
+
+#: admin/codestar-framework/fields/border/border.php:25
+#: admin/codestar-framework/fields/spacing/spacing.php:25
+msgid "top"
+msgstr "superior"
+
+#: admin/codestar-framework/fields/backup/backup.php:29
+msgid "Export & Download"
+msgstr "Exportar y descargar"
+
+#: admin/codestar-framework/fields/background/background.php:279
+msgid "Luminosity"
+msgstr "Luminosidad"
+
+#: admin/codestar-framework/fields/background/background.php:278
+msgid "Color"
+msgstr "Color"
+
+#: admin/codestar-framework/fields/background/background.php:277
+msgid "Saturation"
+msgstr "Saturación"
+
+#: admin/codestar-framework/fields/background/background.php:276
+msgid "Color Dodge"
+msgstr "Sobreexposición del color"
+
+#: admin/codestar-framework/fields/background/background.php:275
+msgid "Lighten"
+msgstr "Aclarar"
+
+#: admin/codestar-framework/fields/background/background.php:274
+msgid "Darken"
+msgstr "Oscurecer"
+
+#: admin/codestar-framework/fields/background/background.php:273
+msgid "Overlay"
+msgstr "Superponer"
+
+#: admin/codestar-framework/fields/background/background.php:272
+msgid "Screen"
+msgstr "Pantalla"
+
+#: admin/codestar-framework/fields/background/background.php:271
+msgid "Multiply"
+msgstr "Multiplicar"
+
+#: admin/codestar-framework/fields/background/background.php:269
+msgid "Background Blend Mode"
+msgstr "Modo de fusión del fondo"
+
+#: admin/codestar-framework/fields/background/background.php:238
+#: admin/codestar-framework/fields/background/background.php:255
+msgid "Content Box"
+msgstr "Caja de contenido"
+
+#: admin/codestar-framework/fields/background/background.php:237
+#: admin/codestar-framework/fields/background/background.php:253
+msgid "Border Box"
+msgstr "Borde de la caja"
+
+#: admin/codestar-framework/fields/background/background.php:236
+#: admin/codestar-framework/fields/background/background.php:254
+msgid "Padding Box"
+msgstr "Relleno de la caja"
+
+#: admin/codestar-framework/fields/background/background.php:235
+msgid "Background Origin"
+msgstr "Origen del fondo"
+
+#: admin/codestar-framework/fields/background/background.php:221
+msgid "Auto"
+msgstr "Auto"
+
+#: admin/codestar-framework/fields/background/background.php:220
+msgid "Contain"
+msgstr "Contenido"
+
+#: admin/codestar-framework/fields/background/background.php:219
+msgid "Cover"
+msgstr "Cubierta"
+
+#: admin/codestar-framework/fields/background/background.php:218
+msgid "Background Size"
+msgstr "Tamaño del fondo"
+
+#: admin/codestar-framework/fields/background/background.php:204
+msgid "Fixed"
+msgstr "Corregido"
+
+#: admin/codestar-framework/fields/background/background.php:203
+msgid "Scroll"
+msgstr "Scroll"
+
+#: admin/codestar-framework/fields/background/background.php:202
+msgid "Background Attachment"
+msgstr "Adjunto del fondo"
+
+#: admin/codestar-framework/fields/background/background.php:188
+msgid "Repeat Vertically"
+msgstr "Repetir verticalmente"
+
+#: admin/codestar-framework/fields/background/background.php:187
+msgid "Repeat Horizontally"
+msgstr "Repetir horizontalmente"
+
+#: admin/codestar-framework/fields/background/background.php:186
+msgid "No Repeat"
+msgstr "No repetir"
+
+#: admin/codestar-framework/fields/background/background.php:185
+msgid "Repeat"
+msgstr "Repetir"
+
+#: admin/codestar-framework/fields/background/background.php:184
+msgid "Background Repeat"
+msgstr "Repetición del fondo"
+
+#: admin/codestar-framework/fields/background/background.php:170
+msgid "Right Bottom"
+msgstr "Derecha inferior"
+
+#: admin/codestar-framework/fields/background/background.php:169
+msgid "Right Center"
+msgstr "Centro derecha"
+
+#: admin/codestar-framework/fields/background/background.php:168
+msgid "Right Top"
+msgstr "Superior derecha"
+
+#: admin/codestar-framework/fields/background/background.php:167
+msgid "Center Bottom"
+msgstr "Centro inferior"
+
+#: admin/codestar-framework/fields/background/background.php:166
+msgid "Center Center"
+msgstr "Centrado"
+
+#: admin/codestar-framework/fields/background/background.php:165
+msgid "Center Top"
+msgstr "Centro superior"
+
+#: admin/codestar-framework/fields/background/background.php:164
+msgid "Left Bottom"
+msgstr "Izquierda inferior"
+
+#: admin/codestar-framework/fields/background/background.php:163
+msgid "Left Center"
+msgstr "Izquierda centro"
+
+#: admin/codestar-framework/fields/background/background.php:162
+msgid "Left Top"
+msgstr "Izquierda superior"
+
+#: admin/codestar-framework/fields/background/background.php:161
+msgid "Background Position"
+msgstr "Posición del fondo"
+
+#: admin/codestar-framework/fields/background/background.php:118
+msgid "&#8665; corner top to left"
+msgstr "&#8665; esquina de arriba a la izquierda"
+
+#: admin/codestar-framework/fields/background/background.php:117
+msgid "&#8664; corner top to right"
+msgstr "&#8664; esquina de arriba a la derecha"
+
+#: admin/codestar-framework/fields/background/background.php:116
+msgid "&#8658; left to right"
+msgstr "&#8658; de izquierda a derecha"
+
+#: admin/codestar-framework/fields/background/background.php:115
+msgid "&#8659; top to bottom"
+msgstr "&#8659; de arriba a abajo"
+
+#: admin/codestar-framework/fields/background/background.php:114
+msgid "Gradient Direction"
+msgstr "Dirección del degradado"
+
+#: admin/codestar-framework/fields/background/background.php:108
+msgid "Direction"
+msgstr "Dirección"
+
+#: admin/codestar-framework/functions/validate.php:68
+#: admin/codestar-framework/functions/validate.php:146
+msgid "Please enter a valid URL."
+msgstr "Por favor, introduce una URL válida."
+
+#: admin/codestar-framework/functions/validate.php:50
+#: admin/codestar-framework/functions/validate.php:126
+msgid "This field is required."
+msgstr "Este campo es obligatorio."
+
+#: admin/codestar-framework/functions/validate.php:32
+#: admin/codestar-framework/functions/validate.php:106
+msgid "Please enter a valid number."
+msgstr "Por favor, introduce un número válido."
+
+#: admin/codestar-framework/functions/validate.php:14
+#: admin/codestar-framework/functions/validate.php:86
+msgid "Please enter a valid email address."
+msgstr "Por favor, introduce una dirección de correo electrónico válida."
+
+#: admin/codestar-framework/functions/actions.php:180
+msgid "Error: You do not have permission to do that."
+msgstr "Error: No tienes permiso para hacer eso."
+
+#: admin/codestar-framework/functions/actions.php:174
+msgid "Error: Invalid term ID."
+msgstr "Error: ID de término no válido."
+
+#: admin/codestar-framework/functions/actions.php:114
+msgid "Error: The response is not a valid JSON response."
+msgstr "Error: La respuesta no es una respuesta JSON válida."
+
+#: admin/codestar-framework/functions/actions.php:72
+#: admin/codestar-framework/functions/actions.php:110
+msgid "Error: Invalid key."
+msgstr "Error: Clave no válida."
+
+#: admin/codestar-framework/fields/typography/typography.php:388
+msgid "Google Web Fonts"
+msgstr "Fuentes web de Google"
+
+#: admin/codestar-framework/fields/typography/typography.php:368
+msgid "Safe Web Fonts"
+msgstr "Fuentes web seguras"
+
+#: admin/codestar-framework/fields/typography/typography.php:362
+msgid "Custom Web Fonts"
+msgstr "Fuentes web personalizadas"
+
+#: admin/codestar-framework/fields/typography/typography.php:295
+msgid "Custom Style"
+msgstr "Estilo personalizado"
+
+#: admin/codestar-framework/fields/typography/typography.php:284
+msgid "Font Color"
+msgstr "Color de la fuente"
+
+#: admin/codestar-framework/fields/typography/typography.php:269
+msgid "Word Spacing"
+msgstr "Espaciado de palabras"
+
+#: admin/codestar-framework/fields/typography/typography.php:257
+msgid "Letter Spacing"
+msgstr "Espacio entre letras"
+
+#: admin/codestar-framework/fields/typography/typography.php:245
+#: includes/cool-timeline-block/dist/blocks.build.js:1
+msgid "Line Height"
+msgstr "Interlineado"
+
+#: admin/codestar-framework/fields/typography/typography.php:233
+#: includes/cool-timeline-block/dist/blocks.build.js:1
+msgid "Font Size"
+msgstr "Tamaño de la fuente"
+
+#: admin/codestar-framework/fields/typography/typography.php:220
+msgid "Line-through"
+msgstr "Tachado"
+
+#: admin/codestar-framework/fields/typography/typography.php:219
+msgid "Overline"
+msgstr "Sobrerayado"
+
+#: admin/codestar-framework/fields/typography/typography.php:218
+msgid "Wavy"
+msgstr "Ondulado"
+
+#: admin/codestar-framework/fields/border/border.php:52
+#: admin/codestar-framework/fields/typography/typography.php:217
+msgid "Dashed"
+msgstr "Guiones"
+
+#: admin/codestar-framework/fields/border/border.php:53
+#: admin/codestar-framework/fields/typography/typography.php:216
+msgid "Dotted"
+msgstr "Punteado"
+
+#: admin/codestar-framework/fields/border/border.php:54
+#: admin/codestar-framework/fields/typography/typography.php:215
+msgid "Double"
+msgstr "Doble"
+
+#: admin/codestar-framework/fields/border/border.php:51
+#: admin/codestar-framework/fields/typography/typography.php:214
+msgid "Solid"
+msgstr "Continuo"
+
+#: admin/codestar-framework/fields/typography/typography.php:211
+msgid "Text Decoration"
+msgstr "Decoración del texto"
+
+#: admin/codestar-framework/fields/typography/typography.php:202
+msgid "Lowercase"
+msgstr "Mínusculas"
+
+#: admin/codestar-framework/fields/typography/typography.php:201
+msgid "Uppercase"
+msgstr "Mayúsculas"
+
+#: admin/codestar-framework/fields/typography/typography.php:200
+msgid "Capitalize"
+msgstr "Iniciales en mayúscula"
+
+#: admin/codestar-framework/fields/typography/typography.php:197
+msgid "Text Transform"
+msgstr "Transformar texto"
+
+#: admin/codestar-framework/fields/typography/typography.php:188
+msgid "All Small Caps"
+msgstr "Todo en minúscula"
+
+#: admin/codestar-framework/fields/typography/typography.php:187
+msgid "Small Caps"
+msgstr "Minúsculas"
+
+#: admin/codestar-framework/fields/background/background.php:270
+#: admin/codestar-framework/fields/link_color/link_color.php:36
+#: admin/codestar-framework/fields/typography/typography.php:186
+msgid "Normal"
+msgstr "Normal"
+
+#: admin/codestar-framework/fields/typography/typography.php:184
+msgid "Font Variant"
+msgstr "Variante de la fuente"
+
+#: admin/codestar-framework/fields/typography/typography.php:175
+msgid "Initial"
+msgstr "Inicial"
+
+#: admin/codestar-framework/fields/typography/typography.php:174
+msgid "Justify"
+msgstr "Justificado"
+
+#: admin/codestar-framework/fields/typography/typography.php:173
+#: includes/cool-timeline-block/dist/blocks.build.js:3
+msgid "Right"
+msgstr "Derecha"
+
+#: admin/codestar-framework/fields/typography/typography.php:172
+msgid "Center"
+msgstr "Centro"
+
+#: admin/codestar-framework/fields/typography/typography.php:171
+#: includes/cool-timeline-block/dist/blocks.build.js:3
+msgid "Left"
+msgstr "Izquierda"
+
+#: admin/codestar-framework/fields/typography/typography.php:170
+msgid "Inherit"
+msgstr "Heredado"
+
+#: admin/codestar-framework/fields/typography/typography.php:168
+msgid "Text Align"
+msgstr "Alinear texto"
+
+#: admin/codestar-framework/fields/typography/typography.php:158
+msgid "Subset"
+msgstr "Subconjunto"
+
+#: admin/codestar-framework/fields/typography/typography.php:144
+#: admin/codestar-framework/fields/typography/typography.php:145
+msgid "Load Extra Styles"
+msgstr "Cargar estilos adicionales"
+
+#: admin/codestar-framework/fields/typography/typography.php:130
+msgid "Font Style"
+msgstr "Estilo de la fuente"
+
+#: admin/codestar-framework/fields/typography/typography.php:105
+msgid "Backup Font Family"
+msgstr "Copia de seguridad de la familia de la fuente"
+
+#: admin/codestar-framework/fields/typography/typography.php:97
+msgid "Select a font"
+msgstr "Seleccionar una fuente"
+
+#: admin/codestar-framework/fields/typography/typography.php:96
+#: includes/cool-timeline-block/dist/blocks.build.js:1
+msgid "Font Family"
+msgstr "Familia de fuentes"
+
+#: admin/codestar-framework/fields/switcher/switcher.php:21
+msgid "Off"
+msgstr "Desactivado"
+
+#: admin/codestar-framework/fields/switcher/switcher.php:20
+msgid "On"
+msgstr "Activado"
+
+#: admin/codestar-framework/fields/background/background.php:36
+#: admin/codestar-framework/fields/media/media.php:59
+msgid "Not selected"
+msgstr "Sin seleccionar"
+
+#: admin/codestar-framework/fields/media/media.php:25
+#: admin/codestar-framework/fields/upload/upload.php:24
+msgid "Upload"
+msgstr "Subir"
+
+#: admin/codestar-framework/fields/link/link.php:22
+msgid "Remove Link"
+msgstr "Eliminar enlace"
+
+#: admin/codestar-framework/fields/link/link.php:21
+msgid "Edit Link"
+msgstr "Editar enlace"
+
+#: admin/codestar-framework/fields/link/link.php:20
+msgid "Add Link"
+msgstr "Añadir enlace"
+
+#: admin/codestar-framework/fields/icon/icon.php:21
+msgid "Remove Icon"
+msgstr "Eliminar icono"
+
+#: admin/codestar-framework/fields/group/group.php:142
+#: admin/codestar-framework/fields/repeater/repeater.php:90
+msgid "You cannot remove more."
+msgstr "No puedes eliminar más."
+
+#: admin/codestar-framework/fields/group/group.php:141
+#: admin/codestar-framework/fields/repeater/repeater.php:89
+msgid "You cannot add more."
+msgstr "No puedes añadir más."
+
+#: admin/codestar-framework/fields/group/group.php:41
+#: admin/codestar-framework/fields/repeater/repeater.php:27
+msgid "Error: Field ID conflict."
+msgstr "Error: conflicto de ID de campo."
+
+#: admin/codestar-framework/fields/gallery/gallery.php:22
+msgid "Clear"
+msgstr "Vaciar"
+
+#: admin/codestar-framework/fields/gallery/gallery.php:21
+msgid "Edit Gallery"
+msgstr "Editar la galería"
+
+#: admin/codestar-framework/fields/gallery/gallery.php:20
+msgid "Add Gallery"
+msgstr "Añadir galería"
+
+#: admin/codestar-framework/fields/background/background.php:90
+#: admin/codestar-framework/fields/date/date.php:32
+#: admin/codestar-framework/fields/datetime/datetime.php:37
+msgid "To"
+msgstr "Para"
+
+#: admin/codestar-framework/fields/background/background.php:72
+#: admin/codestar-framework/fields/date/date.php:31
+#: admin/codestar-framework/fields/datetime/datetime.php:36
+msgid "From"
+msgstr "Remitente"
+
+#: admin/codestar-framework/classes/shortcode-options.class.php:292
+#: admin/codestar-framework/functions/actions.php:16
+#: admin/codestar-framework/functions/actions.php:68
+#: admin/codestar-framework/functions/actions.php:106
+#: admin/codestar-framework/functions/actions.php:141
+#: admin/codestar-framework/functions/actions.php:170
+msgid "Error: Invalid nonce verification."
+msgstr "Error: Verificación nonce no válida."
+
+#: admin/codestar-framework/classes/setup.class.php:774
+#: admin/codestar-framework/classes/setup.class.php:778
+msgid "Field not found!"
+msgstr "¡Campo no encontrado!"
+
+#: admin/codestar-framework/classes/setup.class.php:706
+msgid "Oops! Not allowed."
+msgstr "¡Vaya! No permitido."
+
+#: admin/codestar-framework/classes/setup.class.php:605
+msgid "No results found."
+msgstr "Sin resultados."
+
+#: admin/codestar-framework/classes/setup.class.php:604
+msgid "Searching..."
+msgstr "Buscando..."
+
+#: admin/codestar-framework/classes/setup.class.php:603
+msgid "Please enter %s or more characters"
+msgstr "Por favor, introduce %s o más caracteres"
+
+#: admin/codestar-framework/classes/setup.class.php:602
+msgid "Are you sure?"
+msgstr "¿Estás seguro?"
+
+#: admin/codestar-framework/classes/comment-options.class.php:217
+#: admin/codestar-framework/classes/metabox-options.class.php:296
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: admin/codestar-framework/classes/comment-options.class.php:217
+#: admin/codestar-framework/classes/metabox-options.class.php:296
+msgid "update post"
+msgstr "actualizar la entrada"
+
+#: admin/codestar-framework/classes/admin-options.class.php:677
+#: admin/codestar-framework/classes/comment-options.class.php:199
+#: admin/codestar-framework/classes/metabox-options.class.php:278
+#: admin/codestar-framework/fields/button_set/button_set.php:56
+#: admin/codestar-framework/fields/checkbox/checkbox.php:76
+#: admin/codestar-framework/fields/radio/radio.php:75
+#: admin/codestar-framework/fields/select/select.php:113
+#: admin/codestar-framework/functions/actions.php:41
+msgid "No data available."
+msgstr "No hay datos disponibles."
+
+#: admin/codestar-framework/classes/admin-options.class.php:579
+#: admin/codestar-framework/classes/admin-options.class.php:702
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr "¿Estás seguro de que quieres restablecer todos los ajustes a los valores por defecto?"
+
+#: admin/codestar-framework/classes/admin-options.class.php:579
+#: admin/codestar-framework/classes/admin-options.class.php:702
+#: admin/codestar-framework/classes/comment-options.class.php:216
+#: admin/codestar-framework/classes/metabox-options.class.php:295
+#: admin/codestar-framework/fields/backup/backup.php:31
+msgid "Reset"
+msgstr "Restablecer"
+
+#: admin/codestar-framework/classes/admin-options.class.php:579
+#: admin/codestar-framework/classes/admin-options.class.php:702
+msgid "Reset All"
+msgstr "Restablecer todo"
+
+#: admin/codestar-framework/classes/admin-options.class.php:578
+#: admin/codestar-framework/classes/admin-options.class.php:701
+msgid "Are you sure to reset this section options?"
+msgstr "¿Estás seguro de restablecer las opciones de esta sección?"
+
+#: admin/codestar-framework/classes/admin-options.class.php:578
+#: admin/codestar-framework/classes/admin-options.class.php:701
+msgid "Reset Section"
+msgstr "Restablecer la sección"
+
+#: admin/codestar-framework/classes/admin-options.class.php:577
+#: admin/codestar-framework/classes/admin-options.class.php:700
+msgid "Saving..."
+msgstr "Guardando..."
+
+#: admin/codestar-framework/classes/admin-options.class.php:577
+#: admin/codestar-framework/classes/admin-options.class.php:700
+msgid "Save"
+msgstr "Guardar"
+
+#: admin/codestar-framework/classes/admin-options.class.php:574
+#: admin/codestar-framework/fields/icon/icon.php:57
+#: admin/codestar-framework/fields/map/map.php:23
+msgid "Search..."
+msgstr "Buscar..."
+
+#: admin/codestar-framework/classes/admin-options.class.php:572
+msgid "show all settings"
+msgstr "mostrar todos los ajustes"
+
+#: admin/codestar-framework/classes/admin-options.class.php:570
+msgid "You have unsaved changes, save your changes!"
+msgstr "Tienes cambios sin guardar, ¡guarda tus cambios!"
+
+#: admin/codestar-framework/classes/admin-options.class.php:302
+#: admin/codestar-framework/classes/admin-options.class.php:318
+msgid "Default settings restored."
+msgstr "Restaurados los ajustes por defecto."
+
+#: admin/codestar-framework/classes/admin-options.class.php:290
+msgid "Settings successfully imported."
+msgstr "Ajustes importados correctamente."
+
+#: admin/codestar-framework/classes/admin-options.class.php:230
+msgid "Error while saving the changes."
+msgstr "Error al guardar los cambios."
+
+#: admin/ctl-admin-settings.php:116
+msgid "Only for Vertical and One sided layout"
+msgstr "Solo para diseño vertical y de una cara"
+
+#: admin/ctl-admin-settings.php:113
+msgid "Hide"
+msgstr "Ocultar"
+
+#: admin/ctl-admin-settings.php:112
+msgid "Show"
+msgstr "Mostrar"
+
+#: admin/ctl-admin-settings.php:111
+msgid "Year Label"
+msgstr "Etiqueta del año"
+
+#: admin/ctl-admin-settings.php:91
+msgid "New Tab"
+msgstr "Nueva pestaña"
+
+#: admin/ctl-admin-settings.php:90
+msgid "Same Tab"
+msgstr "Misma pestaña"
+
+#: admin/ctl-admin-settings.php:81
+msgid "It will also disable link from story title."
+msgstr "También desactivará el enlace del título de la historia."
+
+#: admin/ctl-admin-settings.php:79
+msgid "No"
+msgstr "No"
+
+#: admin/ctl-admin-settings.php:78
+msgid "Yes"
+msgstr "Sí"
+
+#: admin/ctl-admin-settings.php:54
+msgid "Timeline Title"
+msgstr "Título de la cronología"
+
+#: includes/class-cool-vc-addon.php:128
+msgid "Timeline skin"
+msgstr "Estilo de la línea de tiempo"
+
+#: includes/class-cool-vc-addon.php:116
+msgid "Full Text"
+msgstr "Texto completo"
+
+#: includes/class-cool-vc-addon.php:95
+msgid "ASC"
+msgstr "ASC"
+
+#: includes/class-cool-vc-addon.php:94
+msgid "DESC"
+msgstr "DESC"
+
+#: includes/class-cool-vc-addon.php:91
+msgid "Order"
+msgstr "Orden"
+
+#: includes/class-cool-vc-addon.php:69
+msgid "Show number of Stories"
+msgstr "Mostrar el número de historias"
+
+#: admin/class.cool-timeline-posttype.php:116
+msgid "Not Matched"
+msgstr "Sin relación"
+
+#: admin/feedback/users-feedback.php:106
+msgid "I consent to having Cool Plugins store my all submitted information via this form, they can also respond to my inquiry."
+msgstr "Doy mi consentimiento para que Cool Plugins almacene toda la información enviada a través de este formulario, también pueden responder a mi consulta."
+
+#: admin/feedback/users-feedback.php:92
+msgid "If you have a moment, please share why you are deactivating this plugin."
+msgstr "Si tienes un momento, comparte por qué está desactivando este plugin."
+
+#: admin/feedback/users-feedback.php:79
+msgid "Quick Feedback"
+msgstr "Comentario rápido"
+
+#: admin/feedback/users-feedback.php:70 admin/feedback/users-feedback.php:144
+msgid "Please share the reason"
+msgstr "Por favor, comparte el motivo"
+
+#: admin/feedback/users-feedback.php:69 admin/feedback/users-feedback.php:143
+msgid "Other"
+msgstr "Otros"
+
+#: admin/feedback/users-feedback.php:65 admin/feedback/users-feedback.php:139
+msgid "It's a temporary deactivation"
+msgstr "Es una desactivación temporal"
+
+#: admin/feedback/users-feedback.php:61 admin/feedback/users-feedback.php:135
+msgid "The plugin is not working"
+msgstr "El plugin no está funcionado"
+
+#: admin/feedback/users-feedback.php:58 admin/feedback/users-feedback.php:132
+msgid "Please share which plugin"
+msgstr "Por favor, dinos qué plugin"
+
+#: admin/feedback/users-feedback.php:53 admin/feedback/users-feedback.php:127
+msgid "The plugin didn't work as expected"
+msgstr "El plugin no ha funcionado como esperaba"
+
+#: includes/class-cool-vc-addon.php:144
+msgid "Icons"
+msgstr "Iconos"
+
+#: includes/class-cool-vc-addon.php:103
+#: includes/shortcode-blocks/dist/block.js:277
+#: includes/shortcode-blocks/src/block.js:202
+#: includes/shortcode-blocks/dist/block.js:202
+msgid "Date Formats"
+msgstr "Formatos de fecha"
+
+#: admin/codestar-framework/fields/border/border.php:59
+#: admin/codestar-framework/fields/typography/typography.php:199
+#: admin/codestar-framework/fields/typography/typography.php:213
+#: includes/shortcode-blocks/dist/block.js:173
+#: includes/shortcode-blocks/src/block.js:134
+#: includes/shortcode-blocks/dist/block.js:134
+msgid "None"
+msgstr "Ninguno"
+
+#: includes/class-cool-vc-addon.php:60
+#: includes/shortcode-blocks/dist/block.js:169
+#: includes/shortcode-blocks/src/block.js:131
+#: includes/shortcode-blocks/dist/block.js:131
+msgid "Compact Layout"
+msgstr "Diseño compacto"
+
+#: includes/class-cool-vc-addon.php:147
+msgid "YES"
+msgstr "SÍ"
+
+#: includes/class-cool-vc-addon.php:148
+msgid "NO"
+msgstr "NO"
+
+#: admin/ctl-meta-fields.php:39
+msgid "Story Date / Year <span class=\"ctl_required\">*</span>"
+msgstr "Fecha/año de la historia <span class=\"ctl_required\">*</span>"
+
+#: admin/class.cool-timeline-posttype.php:81
+msgctxt "column name"
+msgid "Published Date"
+msgstr "Fecha de publicación"
+
+#: admin/class.cool-timeline-posttype.php:78
+msgid "Story Year"
+msgstr "Año de la historia"
+
+#: admin/notices/admin-notices.php:244
+msgid "Not Interested"
+msgstr "No estoy interesado"
+
+#: admin/class.cool-timeline-posttype.php:99
+msgid "Y"
+msgstr "Y"
+
+#: admin/ctl-meta-fields.php:175
+msgid "Submit Review ★★★★★"
+msgstr "Envía una reseña ★★★★★"
+
+#. Author URI of the plugin
+msgid "https://coolplugins.net/our-cool-plugins-list/"
+msgstr "https://coolplugins.net/our-cool-plugins-list/"
+
+#. Author of the plugin
+msgid "Cool Plugins"
+msgstr "Cool Plugins"
+
+#: admin/ctl-meta-fields.php:141
+msgid "Upgrade to Pro version"
+msgstr "Actualizar a la versión Pro"
+
+#: admin/ctl-meta-fields.php:173
+msgid "If you find our plugin and support helpful.<br>Please rate and review us,It helps us grow <br>and improve our services"
+msgstr "Si te ha gustado nuestro plugin y el soporte ha sido de ayuda.<br>Por favor, haznos una valoración y haz reseña, ya que nos ayudará a crecer <br> y mejorar nuestros servicios"
+
+#: admin/class.cool-timeline-posttype.php:80
+#: includes/cool-timeline-block/dist/blocks.build.js:3
+msgid "Story Icon"
+msgstr "Icono suceso"
+
+#: admin/class.cool-timeline-posttype.php:79
+msgid "Story Date"
+msgstr "Fecha suceso"
+
+#: admin/class.cool-timeline-posttype.php:77
+msgctxt "column name"
+msgid "Story Title"
+msgstr "Título suceso"
+
+#: admin/notices/admin-notices.php:243
+msgid "I already rated it"
+msgstr "Ya lo he puntuado."
+
+#: admin/ctl-admin-settings.php:71
+msgid "Please enter no of words"
+msgstr "Por favor introduce un número de palabras"
+
+#: includes/shortcodes/class-ctl-helpers.php:183
+msgid " Page "
+msgstr " Página "
+
+#: includes/shortcodes/class-ctl-helpers.php:182
+msgid " of "
+msgstr " de "
+
+#: admin/codestar-framework/fields/icon/icon.php:20
+#: admin/codestar-framework/fields/icon/icon.php:53
+msgid "Add Icon"
+msgstr "Añadir Icono"
+
+#. Description of the plugin
+msgid "Cool Timeline is a responsive WordPress timeline plugin that allows you to create beautiful vertical storyline. You simply create posts, set images and date then Cool Timeline will automatically populate these posts in chronological order, based on the year and date"
+msgstr "Cool Timeline es una linea de tiempo adaptable para WordPress que te permite crear una linea preciosa vertical. Tan sólo tendrás que crear entradas, adjuntar imágenes y asignar su fecha, y Cool Timeline ordenará automáticamente las entradas basadas en el año y fecha"
+
+#. Plugin URI of the plugin
+msgid "https://cooltimeline.com"
+msgstr "https://cooltimeline.com"
+
+#: admin/codestar-framework/fields/typography/typography.php:119
+#: admin/codestar-framework/fields/typography/typography.php:132
+#: admin/codestar-framework/fields/typography/typography.php:145
+#: admin/codestar-framework/fields/typography/typography.php:160
+#: admin/codestar-framework/fields/typography/typography.php:176
+#: admin/codestar-framework/fields/typography/typography.php:189
+#: admin/codestar-framework/fields/typography/typography.php:203
+#: admin/codestar-framework/fields/typography/typography.php:221
+#: includes/class-cool-vc-addon.php:131
+#: includes/cool-timeline-block/dist/blocks.build.js:1
+#: includes/shortcode-blocks/dist/block.js:124
+#: includes/shortcode-blocks/src/block.js:110
+#: includes/shortcode-blocks/dist/block.js:110
+msgid "Default"
+msgstr "Por defecto"
+
+#: includes/shortcodes/class-ctl-layout-manager.php:122
+msgid "Sorry,You have not added any story yet"
+msgstr "Lo siento, no has añadido ningún suceso todavía"
+
+#: includes/shortcodes/class-ctl-helpers.php:116
+msgid "Read More"
+msgstr "Leer más"
+
+#: admin/class.cool-timeline-posttype.php:52
+msgid "Timeline Post Type Description"
+msgstr "Descripción del tipo de contenido de la linea de tiempo"
+
+#: admin/class.cool-timeline-posttype.php:51
+msgid "cool_timeline"
+msgstr "linea-tiempo"
+
+#: admin/class.cool-timeline-posttype.php:48
+msgid "Not found in Trash"
+msgstr "No se ha encontrado en la papelera"
+
+#: admin/class.cool-timeline-posttype.php:47
+msgid "Not found"
+msgstr "No encontrado"
+
+#: admin/class.cool-timeline-posttype.php:46
+msgid "Search Story"
+msgstr "Buscar suceso"
+
+#: admin/class.cool-timeline-posttype.php:45
+msgid "View Story"
+msgstr "Ver suceso"
+
+#: admin/class.cool-timeline-posttype.php:44
+msgid "Update Story"
+msgstr "Actualizar Suceso"
+
+#: admin/class.cool-timeline-posttype.php:43
+msgid "Edit Story"
+msgstr "Editar Suceso"
+
+#: admin/class.cool-timeline-posttype.php:42
+msgid "New Story"
+msgstr "Nuevo Suceso"
+
+#: admin/class.cool-timeline-posttype.php:41
+#: admin/codestar-framework/classes/shortcode-options.class.php:255
+#: admin/codestar-framework/fields/group/group.php:23
+msgid "Add New"
+msgstr "Añadir nueva"
+
+#: admin/class.cool-timeline-posttype.php:40
+#: includes/gutenberg-instant-builder/src/vertical-timeline/edit.js:334
+msgid "Add New Story"
+msgstr "Añadir nuevo suceso"
+
+#: admin/class.cool-timeline-posttype.php:38
+msgid "Parent Item:"
+msgstr "Item padre:"
+
+#: admin/class.cool-timeline-posttype.php:36
+#: admin/class.cool-timeline-posttype.php:37
+msgid "Timeline Stories"
+msgstr "Sucesos cronológicos"
+
+#: admin/class.cool-timeline-posttype.php:35
+msgctxt "Post Type Singular Name"
+msgid "Timeline Stories"
+msgstr "Sucesos cronológicos"
+
+#: admin/class.cool-timeline-posttype.php:34
+msgctxt "Post Type General Name"
+msgid "Timeline Stories"
+msgstr "Sucesos cronológicos"
+
+#: admin/codestar-framework/fields/background/background.php:252
+msgid "Background Clip"
+msgstr "Recorte del fondo"
+
+#: admin/ctl-admin-settings.php:76
+msgid "Display read more?"
+msgstr "¿Mostrar «Leer más»?"
+
+#: admin/ctl-admin-settings.php:69
+msgid "Content Length"
+msgstr "Longitud del contenido"
+
+#. Plugin Name of the plugin
+#: includes/class-cool-vc-addon.php:44 includes/class-cool-vc-addon.php:50
+#: includes/cool-timeline-block/dist/blocks.build.js:3
+msgid "Cool Timeline"
+msgstr "Cool Timeline"
+
+#: admin/codestar-framework/fields/backup/backup.php:26
+msgid "Import"
+msgstr "Importar"
+
+#: admin/codestar-framework/fields/media/media.php:26
+#: admin/codestar-framework/fields/upload/upload.php:25
+msgid "Remove"
+msgstr "Quitar"
+
+#: admin/codestar-framework/classes/admin-options.class.php:389
+msgid "Settings saved."
+msgstr "Ajustes guardados."

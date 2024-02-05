@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.box-layout
+          .auth-bg
+            .authentication-box
+              .text-center
+                img(src='../assets/images/endless-logo.png', alt='')
+              .card.mt-4.p-4
+                h4.text-center NEW USER
+                h6.text-center Enter your Username and Password For Signup
+                form.theme-form
+                  .form-row
+                    .col-md-6
+                      .form-group
+                        label.col-form-label First Name
+                        input.form-control(type='text', placeholder='John')
+                    .col-md-6
+                      .form-group
+                        label.col-form-label Last Name
+                        input.form-control(type='text', placeholder='Deo')
+                  .form-group
+                    label.col-form-label User Name
+                    input.form-control(type='text', placeholder='John Deo')
+                  .form-group
+                    label.col-form-label Password
+                    input.form-control(type='password', placeholder='**********')
+                  .form-group
+                    label.col-form-label BOD
+                    .form-row
+                      .col-sm-4
+                        select.form-control.mb-1
+                          option DD
+                          option 01
+                          option 02
+                          option 03
+                          option 04
+                      .col-sm-4
+                        select.form-control.mb-1
+                          option MM
+                          option 01
+                          option 02
+                          option 03
+                          option 04
+                      .col-sm-4
+                        select.form-control.mb-1
+                          option YYYY
+                          option 1990
+                          option 1991
+                          option 1992
+                          option 1993
+                  .form-row
+                    .col-sm-4
+                      button.btn.btn-primary(type='submit') Sign Up
+                    .col-sm-8
+                      .text-left.mt-2.m-l-20
+                        | Are you already user?  
+                        a.btn-link.text-capitalize(href='login.html') Login
+                  .form-divider
+                  .social.mt-3
+                    .form-group.btn-showcase.d-flex
+                      button.btn.social-btn.btn-fb.d-inline-block 
+                        i.fa.fa-facebook
+                      button.btn.social-btn.btn-twitter.d-inline-block
+                        i.fa.fa-google
+                      button.btn.social-btn.btn-google.d-inline-block
+                        i.fa.fa-twitter
+                      button.btn.social-btn.btn-github.d-inline-block
+                        i.fa.fa-github
+        // page-wrapper Ends
+        include ../../components/footer-files

@@ -1,0 +1,807 @@
+- var googlechart           = true;
+- var morrischart           = true;
+- var chartjs               = true;
+- var chartist              = true;
+- var select2               = true;
+- var page_select2          = true;
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var counter               = true;
+- var flotchart             = true;
+- var peitychart            = true;
+- var dashboard_project     = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                          .row
+                            .col
+                              .page-header-left
+                                h3 Project
+                                ol.breadcrumb
+                                  li.breadcrumb-item
+                                    a(href='index.html')
+                                      i(data-feather='home')
+                                  li.breadcrumb-item Dashboard
+                                  li.breadcrumb-item.active Project
+                            include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12.theme-tab
+                          ul.tabs.tab-title
+                            li.current
+                              a(href='tab-1')
+                                i(data-feather='home')
+                                | Home
+                            li
+                              a(href='tab-2')
+                                i(data-feather='activity')
+                                | Budget Summary
+                            li
+                              a(href='tab-3')
+                                i(data-feather='users')
+                                | Team Members
+                          .tab-content-cls
+                            #tab-1.tab-content.active.default
+                              .row
+                                .col-xl-3.col-sm-6
+                                  .card
+                                    .card-body
+                                      .media
+                                        .select2-drpdwn-project.select-options
+                                          select.form-control.form-control-primary.btn-square(name='select')
+                                            option(value='opt1') Today
+                                            option(value='opt2') Yesterday
+                                            option(value='opt3') Tomorrow
+                                            option(value='opt4') Monthly
+                                            option(value='opt5') Weekly
+                                      .project-widgets.text-center
+                                        h1.font-primary.counter 45
+                                        h6.mb-0 Due Tasks
+                                    .card-footer.project-footer
+                                      h6.mb-0
+                                        | Completed: 
+                                        span.counter 14
+                                .col-xl-3.col-sm-6
+                                  .card
+                                    .card-body
+                                      .media
+                                        h5.mb-0 Features
+                                      .project-widgets.text-center
+                                        h1.font-primary.counter 80
+                                        h6.mb-0 Proposals
+                                    .card-footer.project-footer
+                                      h6.mb-0
+                                        | Implemented: 
+                                        span.counter 14
+                                .col-xl-3.col-sm-6
+                                  .card
+                                    .card-body
+                                      .media
+                                        h5.mb-0 Issues
+                                      .project-widgets.text-center
+                                        h1.font-primary.counter 34
+                                        h6.mb-0 Open
+                                    .card-footer.project-footer
+                                      h6.mb-0
+                                        | Closed today: 
+                                        span.counter 10
+                                .col-xl-3.col-sm-6
+                                  .card
+                                    .card-body
+                                      .media
+                                        h5.mb-0 Overdue
+                                      .project-widgets.text-center
+                                        h1.font-primary.counter 7
+                                        h6.mb-0 Tasks
+                                    .card-footer.project-footer
+                                      h6.mb-0
+                                        | Task Solved: 
+                                        span.counter 4
+                                .col-xl-6
+                                  .card
+                                    .card-header.project-header
+                                      .row
+                                        .col-sm-8
+                                          h5 Task Distribution
+                                        .col-sm-4
+                                          .select2-drpdwn-project.select-options
+                                            select.form-control.form-control-primary.btn-square(name='select')
+                                              option(value='opt1') Today
+                                              option(value='opt2') Yesterday
+                                              option(value='opt3') Tomorrow
+                                              option(value='opt4') Monthly
+                                              option(value='opt5') Weekly
+                                    .card-body.chart-block.chart-vertical-center.project-charts
+                                      canvas#myDoughnutGraph
+                                .col-xl-6
+                                  .card
+                                    .card-header.project-header
+                                      .row
+                                        .col-sm-8
+                                          h5 Schedule
+                                        .col-sm-4
+                                          .select2-drpdwn-project.select-options
+                                            select.form-control.form-control-primary.btn-square(name='select')
+                                              option(value='opt1') Today
+                                              option(value='opt2') Yesterday
+                                              option(value='opt3') Tomorrow
+                                              option(value='opt4') Monthly
+                                              option(value='opt5') Weekly
+                                    .card-body
+                                      .schedule
+                                        .media
+                                          .media-body
+                                            h6 Group Meeting
+                                            p 30 minutes
+                                          .dropdown.schedule-dropdown
+                                            button#dropdownMenuButton.btn.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                                              i(data-feather='more-horizontal')
+                                            .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                                              a.dropdown-item(href='#') Project
+                                              a.dropdown-item(href='#') Requirements
+                                              a.dropdown-item(href='#') Discussion
+                                              a.dropdown-item(href='#') Planning
+                                        .media
+                                          .media-body
+                                            h6 Public Beta Release
+                                            p 10:00 PM
+                                          i(data-feather='more-horizontal')
+                                        .media
+                                          .media-body
+                                            h6 Lunch
+                                            p 12:30 PM
+                                          i(data-feather='more-horizontal')
+                                        .media
+                                          .media-body
+                                            h6 Clients Timing
+                                            p 2:00 PM to 6:00 PM
+                                          i(data-feather='more-horizontal')
+                                .col-sm-12
+                                  .card
+                                    .card-header
+                                      h5 Github Isuues
+                                      .card-header-right
+                                        ul.list-unstyled.card-option
+                                          li
+                                            i.icofont.icofont-simple-left
+                                          li
+                                            i.view-html.fa.fa-code
+                                          li
+                                            i.icofont.icofont-maximize.full-card
+                                          li
+                                            i.icofont.icofont-minus.minimize-card
+                                          li
+                                            i.icofont.icofont-refresh.reload-card
+                                          li
+                                            i.icofont.icofont-error.close-card
+                                    .card-body
+                                      .row
+                                        .col-xl-6.xl-100
+                                          .row.more-projects
+                                            .col-sm-6.xl-4
+                                              .projects-main
+                                                .project-content
+                                                  h6 Created
+                                                  h5.counter.mb-0 27
+                                                .project-small-chart-1.project-small
+                                            .col-sm-6.xl-4
+                                              .projects-main
+                                                .project-content
+                                                  h6 Fixed
+                                                  h5.counter.mb-0 8
+                                                .project-small-chart-2.project-small
+                                            .col-sm-6.xl-4
+                                              .projects-main
+                                                .project-content
+                                                  h6 Re-opened
+                                                  h5.counter.mb-0 2
+                                                .project-small-chart-3.project-small
+                                            .col-sm-6.xl-4
+                                              .projects-main
+                                                .project-content
+                                                  h6 Closed
+                                                  h5.counter.mb-0 10
+                                                .project-small-chart-4.project-small
+                                            .col-sm-6.xl-4
+                                              .projects-main
+                                                .project-content
+                                                  h6 Wont'fix
+                                                  h5.counter.mb-0 25
+                                                .project-small-chart-5.project-small
+                                            .col-sm-6.xl-4
+                                              .projects-main
+                                                .project-content
+                                                  h6 Need's test
+                                                  h5.counter.mb-0 5
+                                                .project-small-chart-6.project-small
+                                        .col-xl-6.xl-100.github-lg
+                                          .show-value-top.d-flex
+                                            .value-left.d-inline-block
+                                              .square.bg-primary.d-inline-block
+                                              span Closed Issues
+                                            .value-right.d-inline-block
+                                              .square.d-inline-block.bg-smooth-chart
+                                              span Issues
+                                          .github-chart
+                                            #github-issues.flot-chart-placeholder
+                                      .code-box-copy
+                                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                          i.icofont.icofont-copy-alt
+                                        pre
+                                          code.language-html#example-head
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            | &lt;div class="row"&gt;
+                                            |   &lt;div class="col-lg-6"&gt;
+                                            |     &lt;div class="row more-projects"&gt;
+                                            |       &lt;div class="col-sm-6"&gt;
+                                            |         &lt;div class="projects-main"&gt;
+                                            |           &lt;div class="project-content"&gt;
+                                            |             &lt;h6&gt;Created&lt;/h6&gt;
+                                            |             &lt;h5 class="counter mb-0"&gt;27&lt;/h5&gt;
+                                            |           &lt;/div&gt;
+                                            |           &lt;div class="project-small-chart-1 project-small"&gt;&lt;/div&gt;
+                                            |         &lt;/div&gt;
+                                            |       &lt;/div&gt;
+                                            |       &lt;div class="col-sm-6"&gt;
+                                            |         &lt;div class="projects-main"&gt;
+                                            |           &lt;div class="project-content"&gt;
+                                            |             &lt;h6&gt;Fixed&lt;/h6&gt;
+                                            |             &lt;h5 class="counter mb-0"&gt;8&lt;/h5&gt;
+                                            |           &lt;/div&gt;
+                                            |           &lt;div class="project-small-chart-2 project-small"&gt;&lt;/div&gt;
+                                            |         &lt;/div&gt;
+                                            |       &lt;/div&gt;
+                                            |       &lt;div class="col-sm-6"&gt;
+                                            |         &lt;div class="projects-main"&gt;
+                                            |           &lt;div class="project-content"&gt;
+                                            |             &lt;h6&gt;Re-opened&lt;/h6&gt;
+                                            |             &lt;h5 class="counter mb-0"&gt;2&lt;/h5&gt;
+                                            |           &lt;/div&gt;
+                                            |           &lt;div class="project-small-chart-3 project-small"&gt;&lt;/div&gt;
+                                            |         &lt;/div&gt;
+                                            |       &lt;/div&gt;
+                                            |       &lt;div class="col-sm-6"&gt;
+                                            |         &lt;div class="projects-main"&gt;
+                                            |           &lt;div class="project-content"&gt;
+                                            |             &lt;h6&gt;Closed&lt;/h6&gt;
+                                            |             &lt;h5 class="counter mb-0"&gt;10&lt;/h5&gt;
+                                            |           &lt;/div&gt;
+                                            |           &lt;div class="project-small-chart-4 project-small"&gt;&lt;/div&gt;
+                                            |         &lt;/div&gt;
+                                            |       &lt;/div&gt;
+                                            |       &lt;div class="col-sm-6"&gt;
+                                            |         &lt;div class="projects-main"&gt;
+                                            |           &lt;div class="project-content"&gt;
+                                            |             &lt;h6&gt;Wont'fix&lt;/h6&gt;
+                                            |             &lt;h5 class="counter mb-0"&gt;25&lt;/h5&gt;
+                                            |           &lt;/div&gt;
+                                            |           &lt;div class="project-small-chart-5 project-small"&gt;&lt;/div&gt;
+                                            |         &lt;/div&gt;
+                                            |       &lt;/div&gt;
+                                            |       &lt;div class="col-sm-6"&gt;
+                                            |         &lt;div class="projects-main"&gt;
+                                            |           &lt;div class="project-content"&gt;
+                                            |             &lt;h6&gt;Need's test&lt;/h6&gt;
+                                            |             &lt;h5 class="counter mb-0"&gt;5&lt;/h5&gt;
+                                            |           &lt;/div&gt;
+                                            |           &lt;div class="project-small-chart-6 project-small"&gt;&lt;/div&gt;
+                                            |         &lt;/div&gt;
+                                            |       &lt;/div&gt;
+                                            |     &lt;/div&gt;
+                                            |   &lt;/div&gt;
+                                            |   &lt;div class="col-lg-6"&gt;
+                                            |     &lt;div class="show-value-top d-flex"&gt;
+                                            |       &lt;div class="value-left d-inline-block"&gt;
+                                            |         &lt;div class="square bg-primary d-inline-block"&gt;&lt;/div&gt;
+                                            |         &lt;span&gt;Closed Issues&lt;/span&gt;
+                                            |       &lt;/div&gt;
+                                            |       &lt;div class="value-right d-inline-block"&gt;
+                                            |         &lt;div class="square d-inline-block bg-smooth-chart"&gt;&lt;/div&gt;
+                                            |         &lt;span&gt;Issues&lt;/span&gt;
+                                            |       &lt;/div&gt;
+                                            |     &lt;/div&gt;
+                                            |     &lt;div class="github-chart"&gt;
+                                            |       &lt;div id="github-issues" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                            |     &lt;/div&gt;
+                                            |   &lt;/div&gt;
+                                            | &lt;/div&gt;
+                                            | &lt;!-- Cod Box Copy end --&gt;
+                            #tab-2.tab-content
+                              .row
+                                .col-sm-12
+                                  .card
+                                    .card-header
+                                      h5 Current Progress
+                                      .card-header-right
+                                        ul.list-unstyled.card-option
+                                          li
+                                            i.icofont.icofont-simple-left
+                                          li
+                                            i.view-html.fa.fa-code
+                                          li
+                                            i.icofont.icofont-maximize.full-card
+                                          li
+                                            i.icofont.icofont-minus.minimize-card
+                                          li
+                                            i.icofont.icofont-refresh.reload-card
+                                          li
+                                            i.icofont.icofont-error.close-card
+                                    .card-body
+                                      .table-responsive.current-progress
+                                        table.table.table-bordernone
+                                          tbody
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/1.jpg', alt='')
+                                                  .d-inline-block
+                                                    h6 Web application
+                                                    p Design & development
+                                              td
+                                                .d-inline-block.align-middle
+                                                  span Latest Updated Today at 1:30 PM
+                                                  span.ml-current
+                                                    i.fa.fa-clock-o
+                                                    | 10:32
+                                                  span.ml-current
+                                                    i.fa.fa-comment
+                                                    | 540
+                                              td
+                                                .progress.sm-progress-bar
+                                                  .progress-bar.bg-primary(role='progressbar', style='width: 60%', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100')
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/4.jpg', alt='')
+                                                  .d-inline-block
+                                                    h6 Login module
+                                                    p Development
+                                              td
+                                                .d-inline-block.align-middle
+                                                  span Latest Updated Today at 4:00 PM
+                                                  span.ml-current
+                                                    i.fa.fa-clock-o
+                                                    | 1:32
+                                                  span.ml-current
+                                                    i.fa.fa-comment
+                                                    | 700
+                                              td
+                                                .progress.sm-progress-bar
+                                                  .progress-bar.bg-primary(role='progressbar', style='width: 50%', aria-valuenow='50', aria-valuemin='0', aria-valuemax='100')
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/7.jpg', alt='')
+                                                  .d-inline-block
+                                                    h6 Module testing
+                                                    p Testing
+                                              td
+                                                .d-inline-block.align-middle
+                                                  span Latest Updated Today at 5:45 PM
+                                                  span.ml-current
+                                                    i.fa.fa-clock-o
+                                                    | 11:40
+                                                  span.ml-current
+                                                    i.fa.fa-comment
+                                                    | 425
+                                              td
+                                                .progress.sm-progress-bar
+                                                  .progress-bar.bg-primary(role='progressbar', style='width: 90%', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100')
+                                      .code-box-copy
+                                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                          i.icofont.icofont-copy-alt
+                                        pre
+                                          code.language-html#example-head1
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            | &lt;div class="table-responsive current-progress"&gt;
+                                            |   &lt;table class="table table-bordernone"&gt;
+                                            |     &lt;tbody&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/1.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;h6&gt;Web application&lt;/h6&gt;
+                                            |               &lt;p&gt;Design &amp; development&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;span&gt;Latest Updated Today at 1:30 PM&lt;/span&gt;
+                                            |             &lt;span class="ml-current"&gt;&lt;i class="fa fa-clock-o"&gt;&lt;/i&gt;10:32&lt;/span&gt;
+                                            |             &lt;span class="ml-current"&gt;&lt;i class="fa fa-comment"&gt;&lt;/i&gt;540&lt;/span&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="progress sm-progress-bar"&gt;
+                                            |             &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/4.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;h6&gt;Login module&lt;/h6&gt;
+                                            |               &lt;p&gt;Development&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;span&gt;Latest Updated Today at 4:00 PM&lt;/span&gt;
+                                            |             &lt;span class="ml-current"&gt;&lt;i class="fa fa-clock-o"&gt;&lt;/i&gt;1:32&lt;/span&gt;
+                                            |             &lt;span class="ml-current"&gt;&lt;i class="fa fa-comment"&gt;&lt;/i&gt;700&lt;/span&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="progress sm-progress-bar"&gt;
+                                            |             &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/7.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;h6&gt;Module testing&lt;/h6&gt;
+                                            |               &lt;p&gt;Testing&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;span&gt;Latest Updated Today at 5:45 PM&lt;/span&gt;
+                                            |             &lt;span class="ml-current"&gt;&lt;i class="fa fa-clock-o"&gt;&lt;/i&gt;11:40&lt;/span&gt;
+                                            |             &lt;span class="ml-current"&gt;&lt;i class="fa fa-comment"&gt;&lt;/i&gt;425&lt;/span&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="progress sm-progress-bar"&gt;
+                                            |             &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/tbody&gt;
+                                            |   &lt;/table&gt;
+                                            | &lt;/div&gt;
+                                            | &lt;!-- Cod Box Copy end --&gt;
+                                .col-xl-6.xl-100
+                                  .card
+                                    .card-header
+                                      h5 Budget Distribution
+                                      .card-header-right
+                                        ul.list-unstyled.card-option
+                                          li
+                                            i.icofont.icofont-simple-left
+                                          li
+                                            i.view-html.fa.fa-code
+                                          li
+                                            i.icofont.icofont-maximize.full-card
+                                          li
+                                            i.icofont.icofont-minus.minimize-card
+                                          li
+                                            i.icofont.icofont-refresh.reload-card
+                                          li
+                                            i.icofont.icofont-error.close-card
+                                    .card-body.chart-block
+                                      .flot-chart-container.budget-chart
+                                        #default-pie-flot-chart.flot-chart-placeholder
+                                      .code-box-copy
+                                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                          i.icofont.icofont-copy-alt
+                                        pre
+                                          code.language-html#example-head3
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            |   &lt;div class="card-body chart-block"&gt;
+                                            |     &lt;div class="flot-chart-container budget-chart"&gt;
+                                            |       &lt;div id="default-pie-flot-chart" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                            |     &lt;/div&gt;
+                                            |   &lt;/div&gt;
+                                            | &lt;!-- Cod Box Copy end --&gt;
+                                .col-xl-6.xl-100
+                                  .card
+                                    .card-header.project-header
+                                      .row
+                                        .col-sm-8
+                                          h5 Spent
+                                        .col-sm-4
+                                          .select2-drpdwn-project.select-options
+                                            select.form-control.form-control-primary.btn-square(name='select')
+                                              option(value='opt1') Today
+                                              option(value='opt2') Yesterday
+                                              option(value='opt3') Tomorrow
+                                              option(value='opt4') Monthly
+                                              option(value='opt5') Weekly
+                                    .card-body.spent
+                                      .spent-graph
+                                        .d-flex
+                                          .project-budget
+                                            h6 Weekly spent
+                                            h2.mb-0
+                                              span
+                                                i(data-feather='dollar-sign')
+                                                | 12,5000
+                                          .projects-main.mb-0
+                                            .xm-mb-peity
+                                              span.bar-colours-1 5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2
+                                    .card-body.spent
+                                      .spent-graph
+                                        .d-flex
+                                          .project-budget
+                                            h6 Total spent
+                                            h2.mb-0
+                                              span
+                                                i(data-feather='dollar-sign')
+                                                | 15,7452
+                                          .projects-main.mb-0
+                                            .xm-mb-peity
+                                              span.bar-colours-2 5,7,3,5,2,3,9,6,5,9,5,3,5,2,5,3,3,9,6,5,9,7,9,6,5,9,7,3,5,2
+                                    .card-body.spent
+                                      .spent-graph
+                                        .d-flex
+                                          .project-budget
+                                            h6 Remaining
+                                            h2.mb-0
+                                              span
+                                                i(data-feather='dollar-sign')
+                                                | 18,5438
+                                          .projects-main.mb-0
+                                            .xm-mb-peity
+                                              span.bar-colours-3 9,7,3,5,2,5,3,5,3,9,6,5,9,3,5,2,5,3,6,5,9,7,9,2,5,3,7,9,5,6
+                                    .card-footer.spent
+                                        .spent-graph
+                                          .d-flex
+                                            .project-budget.m-0
+                                              h6 Total Budget
+                                              h2.mb-0
+                                                span
+                                                  i(data-feather='dollar-sign')
+                                                  | 34,5812
+                            #tab-3.tab-content
+                              .row
+                                .col-sm-12
+                                  .card
+                                    .card-header
+                                      h5 Team Members
+                                      .card-header-right
+                                        ul.list-unstyled.card-option
+                                          li
+                                            i.icofont.icofont-simple-left
+                                          li
+                                            i.view-html.fa.fa-code
+                                          li
+                                            i.icofont.icofont-maximize.full-card
+                                          li
+                                            i.icofont.icofont-minus.minimize-card
+                                          li
+                                            i.icofont.icofont-refresh.reload-card
+                                          li
+                                            i.icofont.icofont-error.close-card
+                                    .card-body
+                                      .table-responsive.sellers.team-members
+                                        table.table.table-bordernone
+                                          thead
+                                            tr
+                                              th(scope='col') Name
+                                              th(scope='col') Position
+                                              th(scope='col') Office
+                                              th(scope='col') E-Mail
+                                              th(scope='col') Phone
+                                          tbody
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/6.jpg', alt='')
+                                                  .d-inline-block
+                                                    p Jerry Patterson
+                                              td
+                                                p Design Manager
+                                              td
+                                                p Integer
+                                              td
+                                                p jerry13@gmail.com
+                                              td
+                                                p +91 264 570 4611
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/2.png', alt='')
+                                                  .d-inline-block
+                                                    p Rosa Matthews
+                                              td
+                                                p Director of Sales
+                                              td
+                                                p Ipsum
+                                              td
+                                                p ros456@gmail.com
+                                              td
+                                                p +01 967 487 1873
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                                  .d-inline-block
+                                                    p Alvaro Aguirre
+                                              td
+                                                p Office Assistant
+                                              td
+                                                p Praesent
+                                              td
+                                                p alvar76@gmail.com
+                                              td
+                                                p +48 724 585 0012
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/15.png', alt='')
+                                                  .d-inline-block
+                                                    p Jerry Patterson
+                                              td
+                                                p Programmer Analyst
+                                              td
+                                                p Ipsum
+                                              td
+                                                p jerry13@gmail.com
+                                              td
+                                                p +91 264 570 4611
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/4.jpg', alt='')
+                                                  .d-inline-block
+                                                    p Anne Snyder
+                                              td
+                                                p Social Worker
+                                              td
+                                                p Donec
+                                              td
+                                                p annsny@gmail.com
+                                              td
+                                                p +61 480 087 1175
+                                            tr
+                                              td
+                                                .d-inline-block.align-middle
+                                                  img.img-radius.img-50.align-top.m-r-15.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                                  .d-inline-block
+                                                    p Alana Slacker
+                                              td
+                                                p Systems Engineer
+                                              td
+                                                p Etiam
+                                              td
+                                                p alana82@gmail.com
+                                              td
+                                                p +75 483 761 4680
+                                      .code-box-copy
+                                        button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                          i.icofont.icofont-copy-alt
+                                        pre
+                                          code.language-html#example-head2
+                                            | &lt;!-- Cod Box Copy begin --&gt;
+                                            | &lt;div class="table-responsive sellers team-members"&gt;
+                                            |   &lt;table class="table table-bordernone"&gt;
+                                            |     &lt;thead&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;th scope="col"&gt;Name&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Position&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Office&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;E-Mail&lt;/th&gt;
+                                            |         &lt;th scope="col"&gt;Phone&lt;/th&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/thead&gt;
+                                            |     &lt;tbody&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/6.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;p&gt;Jerry Patterson&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Design Manager&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Integer&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;jerry13@gmail.com&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;+91 264 570 4611&lt;/p&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/2.png" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;p&gt;Rosa Matthews&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Director of Sales&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Ipsum&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;ros456@gmail.com&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;+01 967 487 1873&lt;/p&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/3.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;p&gt;Alvaro Aguirre&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Office Assistant&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Praesent&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;alvar76@gmail.com&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;+48 724 585 0012&lt;/p&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/15.png" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;p&gt;Jerry Patterson&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Programmer Analyst&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Ipsum&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;jerry13@gmail.com&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;+91 264 570 4611&lt;/p&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/4.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;p&gt;Anne Snyder&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Social Worker&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Donec&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;annsny@gmail.com&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;+61 480 087 1175&lt;/p&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |       &lt;tr&gt;
+                                            |         &lt;td&gt;
+                                            |           &lt;div class="d-inline-block align-middle"&gt;
+                                            |             &lt;img src="../assets/images/user/5.jpg" class="img-radius img-50 align-top m-r-15 rounded-circle" alt=""&gt;
+                                            |             &lt;div class="d-inline-block"&gt;
+                                            |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                            |             &lt;/div&gt;
+                                            |           &lt;/div&gt;
+                                            |         &lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Systems Engineer&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;Etiam&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;alana82@gmail.com&lt;/p&gt;&lt;/td&gt;
+                                            |         &lt;td&gt;&lt;p&gt;+75 483 761 4680&lt;/p&gt;&lt;/td&gt;
+                                            |       &lt;/tr&gt;
+                                            |     &lt;/tbody&gt;
+                                            |   &lt;/table&gt;
+                                            | &lt;/div&gt;
+                                            | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

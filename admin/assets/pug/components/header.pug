@@ -1,0 +1,136 @@
+// Page Header Start
+
+- var status = (sidebar_open ? 'open' : (megamenu ? 'mega-menu-header' : ''));
+- var header_status = (vertical_menu ? 'd-none' : 'd-block');
+
+.page-main-header(class=status)
+                .main-header-right.row
+                    .main-header-left.d-lg-none
+                        .logo-wrapper
+                            a(href='index.html')
+                                img(src='../assets/images/endless-logo.png', alt='')
+                    .mobile-sidebar(class=header_status)
+                        .media-body.text-right.switch-sm
+                            label.switch
+                                a(href='#')
+                                    i#sidebar-toggle(data-feather='align-left')
+                    
+                    .nav-right.col.p-0
+                        if megamenu
+                            include megamenu
+                        ul.nav-menus
+                            li
+                                form(action='#', method='get').form-inline.search-form
+                                    .form-group
+                                        .Typeahead.Typeahead--twitterUsers
+                                          .u-posRelative
+                                            input#demo-input.Typeahead-input.form-control-plaintext(type='text', name='q', placeholder='Search...')
+                                            .spinner-border.Typeahead-spinner(role='status')
+                                                span.sr-only Loading...
+                                            span.d-sm-none.mobile-search
+                                                i(data-feather='search')
+                                          .Typeahead-menu
+                            li
+                                a.text-dark(href='#!', onclick='javascript:toggleFullScreen()')
+                                    i(data-feather='maximize')
+                            li.onhover-dropdown
+                                a.txt-dark(href='#')
+                                    h6 EN
+                                ul.language-dropdown.onhover-show-div.p-20
+                                    li
+                                        a(href='#', data-lng='en')
+                                            i.flag-icon.flag-icon-is
+                                            |  English
+                                    li
+                                        a(href='#', data-lng='es')
+                                            i.flag-icon.flag-icon-um
+                                            |  Spanish
+                                    li
+                                        a(href='#', data-lng='pt')
+                                            i.flag-icon.flag-icon-uy
+                                            |  Portuguese
+                                    li
+                                        a(href='#', data-lng='fr')
+                                            i.flag-icon.flag-icon-nz
+                                            |  French
+                            li.onhover-dropdown
+                                i(data-feather='bell')
+                                span.dot
+                                ul.notification-dropdown.onhover-show-div
+                                    li
+                                        | Notification 
+                                        span.badge.badge-pill.badge-primary.pull-right 3
+                                    li
+                                        .media
+                                            .media-body
+                                                h6.mt-0
+                                                    span
+                                                        i.shopping-color(data-feather='shopping-bag')
+                                                    | Your order ready for Ship..!
+                                                    small.pull-right 9:00 AM
+                                                p.mb-0 Lorem ipsum dolor sit amet, consectetuer.
+                                    li
+                                        .media
+                                            .media-body
+                                                h6.mt-0.txt-success
+                                                    span
+                                                        i.download-color(data-feather='download').font-success
+                                                    | Download Complete
+                                                    small.pull-right 2:30 PM
+                                                p.mb-0 Lorem ipsum dolor sit amet, consectetuer.
+                                    li
+                                        .media
+                                            .media-body
+                                                h6.mt-0.txt-danger
+                                                    span
+                                                        i.alert-color(data-feather='alert-circle').font-danger
+                                                    | 250 MB trash files
+                                                    small.pull-right 5:00 PM
+                                                p.mb-0 Lorem ipsum dolor sit amet, consectetuer.
+                                    li.bg-light.txt-dark
+                                        a(href='#') All
+                                        |  notification
+                            li
+                                a(href='#')
+                                    i.right_side_toggle(data-feather='message-circle')
+                                    span.dot
+                            li.onhover-dropdown
+                                .media.align-items-center
+                                    img.align-self-center.pull-right.img-50.rounded-circle(src='../assets/images/dashboard/user.png', alt='header-user')
+                                    .dotted-animation
+                                        span.animate-circle
+                                        span.main-circle
+                                ul.profile-dropdown.onhover-show-div.p-20
+                                    li
+                                        a(href='#')
+                                            i(data-feather='user')
+                                            |                                     Edit Profile
+                                    li
+                                        a(href='#')
+                                            i(data-feather='mail')
+                                            |                                     Inbox
+                                    li
+                                        a(href='#')
+                                            i(data-feather='lock')
+                                            |                                     Lock Screen
+                                    li
+                                        a(href='#')
+                                            i(data-feather='settings')
+                                            |                                     Settings
+                                    li
+                                        a(href='#')
+                                            i(data-feather='log-out')
+                                            |                                     Logout
+                        .d-lg-none.mobile-toggle.pull-right
+                            i(data-feather='more-horizontal')
+                    script#result-template(type='text/x-handlebars-template').
+                        <div class="ProfileCard u-cf">                        
+                        <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+                        <div class="ProfileCard-details">
+                        <div class="ProfileCard-realName">{{name}}</div>
+                        </div>
+                        </div>
+                    script#empty-template(type='text/x-handlebars-template').
+                        <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
+
+// Page Header Ends                              

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "390805846959",
+    "project_id": "app-ospia",
+    "storage_bucket": "app-ospia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390805846959:android:3898287b3042868bfe0d5a",
+        "android_client_info": {
+          "package_name": "com.dm.ospiapba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1zrFNuMuLVJ7omojeLoxYpiA0WIvCqN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

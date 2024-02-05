@@ -1,0 +1,106 @@
+[01-Aug-2023 16:03:45 UTC] Error de evento de reprogramación de cron para el gancho: litespeed_task_imgoptm_pull. Código de error: invalid_schedule. Mensaje de error: El evento programado no existe.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[01-Aug-2023 16:03:45 UTC] Error de evento de reprogramación de cron para el gancho: litespeed_task_lqip. Código de error: invalid_schedule. Mensaje de error: El evento programado no existe.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[01-Aug-2023 16:03:47 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home5/rxhvjzic/public_html/web/wp-includes/pomo/mo.php on line 328
+[01-Aug-2023 16:03:47 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home5/rxhvjzic/public_html/web/wp-includes/class-wp-fatal-error-handler.php on line 74
+[01-Aug-2023 16:03:48 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home5/rxhvjzic/public_html/web/wp-includes/pomo/mo.php on line 328
+[01-Aug-2023 16:03:48 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home5/rxhvjzic/public_html/web/wp-includes/class-wp-fatal-error-handler.php on line 74
+[01-Aug-2023 16:03:48 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home5/rxhvjzic/public_html/web/wp-includes/pomo/mo.php on line 328
+[01-Aug-2023 16:03:48 UTC] PHP Fatal error:  Allowed memory size of 41943040 bytes exhausted (tried to allocate 20480 bytes) in /home5/rxhvjzic/public_html/web/wp-includes/class-wp-fatal-error-handler.php on line 74
+[20-Sep-2023 16:19:51 UTC] PHP Warning:  exif_imagetype(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home5/rxhvjzic/public_html/web/wp-includes/functions.php on line 3286
+[20-Sep-2023 16:19:51 UTC] PHP Warning:  exif_imagetype(https://scontent-eze1-1.xx.fbcdn.net/v/t51.2885-15/325677108_101777312796864_8091253431695800882_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=86c713&amp;_nc_eui2=AeEjER8m-9M17yQ1RKRrxENkZZs4Ag7VG3RlmzgCDtUbdA90hb4o7lxkyXzkCyiBZESE69k7NPchkxZgsl1kjVfw&amp;_nc_ohc=XlXp4PcZFx8AX9KNrJG&amp;_nc_ht=scontent-eze1-1.xx&amp;edm=AL-3X8kEAAAA&amp;oh=00_AfAw7_IqDbOQJS2uGMjENFmu01GAR5baRlEl8iWcnHKGXA&amp;oe=65103038): failed to open stream: php_network_getaddresses: getaddrinfo failed: Name or service not known in /home5/rxhvjzic/public_html/web/wp-includes/functions.php on line 3286
+[22-Sep-2023 15:33:44 UTC] PHP Warning:  Ha ocurrido un error inesperado. Puede que algo vaya mal con WordPress.org o la configuración de este servidor. Si sigues teniendo problemas, por favor, prueba en los <a href="https://es.wordpress.org/support/">foros de soporte</a>. (WordPress no ha podido establecer una conexión segura con WordPress.org. Por favor, contacta con el administrador de tu servidor). in /home5/rxhvjzic/public_html/web/wp-includes/update.php on line 730
+[10-Oct-2023 15:20:16 UTC] Error de evento de reprogramación de cron para el gancho: litespeed_task_imgoptm_pull. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[10-Oct-2023 15:20:16 UTC] Error de evento de anulación de programación de cron para el gancho: litespeed_task_imgoptm_pull. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[10-Oct-2023 15:20:22 UTC] Error de evento de reprogramación de cron para el gancho: litespeed_task_imgoptm_pull. Código de error: could_not_set. Mensaje de error: No se ha podido guardar la lista de eventos del cron.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[20-Dec-2023 02:08:15 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:12:57 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:38:47 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:41:10 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:41:20 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:52:44 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:52:58 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:52:58 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Post_Type_TBItem' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php:120
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(83): ET_Builder_Code_Snippets_Library->_register_cpt_and_taxonomies()
+#1 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(130): ET_Builder_Code_Snippets_Library->__construct()
+#2 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php(138): ET_Builder_Code_Snippets_Library::instance()
+#3 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/code-snippets.php(38): require_once('/home5/rxhvjzic...')
+#4 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(324): et_init_code_snippets_library('')
+#5 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#6 /home5/rxhvjzic/ in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/core/code-snippets/CodeSnippetsLibrary.php on line 120
+[20-Dec-2023 02:55:13 UTC] Error de evento de reprogramación de cron para el gancho: litespeed_task_imgoptm_pull. Código de error: invalid_schedule. Mensaje de error: El evento programado no existe.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[20-Dec-2023 02:55:13 UTC] Error de evento de reprogramación de cron para el gancho: litespeed_task_lqip. Código de error: invalid_schedule. Mensaje de error: El evento programado no existe.. Datos: {"schedule":"litespeed_filter","args":[],"interval":60}
+[20-Dec-2023 15:24:12 UTC] PHP Fatal error:  Uncaught Error: Class 'ET_Builder_Module_Social_Media_Follow_Item' not found in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/class-et-builder-module-shortcode-manager.php:706
+Stack trace:
+#0 /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/class-et-builder-module-shortcode-manager.php(656): ET_Builder_Module_Shortcode_Manager->maybe_load_module_from_slug('et_pb_social_me...')
+#1 /home5/rxhvjzic/public_html/web/wp-includes/class-wp-hook.php(326): ET_Builder_Module_Shortcode_Manager->load_modules(false, 'et_pb_social_me...')
+#2 /home5/rxhvjzic/public_html/web/wp-includes/plugin.php(205): WP_Hook->apply_filters(false, Array)
+#3 /home5/rxhvjzic/public_html/web/wp-includes/shortcodes.php(426): apply_filters('pre_do_shortcod...', false, 'et_pb_social_me...', Array, Array)
+#4 [internal function]: do_shortcode_tag(Array)
+#5 /home5/rxhvjzic/public_html/web/wp-includes/shortcodes.php(273): preg_replace_callback('/\\[(\\[?)(et_pb_...', 'do_shortcode_ta...', '[et_pb_socia in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/class-et-builder-module-shortcode-manager.php on line 706
+[20-Dec-2023 15:24:12 UTC] PHP Warning:  require_once(migration/BackgroundUI.php): failed to open stream: No such file or directory in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/module/settings/Migration.php on line 197
+[20-Dec-2023 15:24:12 UTC] PHP Fatal error:  require_once(): Failed opening required 'migration/BackgroundUI.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/module/settings/Migration.php on line 197
+[20-Dec-2023 15:24:12 UTC] PHP Warning:  include(/home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/frontend-builder/theme-builder/frontend-body-template.php): failed to open stream: No such file or directory in /home5/rxhvjzic/public_html/web/wp-includes/template-loader.php on line 106
+[20-Dec-2023 15:24:12 UTC] PHP Warning:  include(): Failed opening '/home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/frontend-builder/theme-builder/frontend-body-template.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home5/rxhvjzic/public_html/web/wp-includes/template-loader.php on line 106
+[20-Dec-2023 15:24:12 UTC] PHP Warning:  include(/home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/frontend-builder/theme-builder/frontend-body-template.php): failed to open stream: No such file or directory in /home5/rxhvjzic/public_html/web/wp-includes/template-loader.php on line 106
+[20-Dec-2023 15:24:12 UTC] PHP Warning:  include(): Failed opening '/home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/frontend-builder/theme-builder/frontend-body-template.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home5/rxhvjzic/public_html/web/wp-includes/template-loader.php on line 106
+[20-Dec-2023 15:24:12 UTC] PHP Warning:  require_once(/home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/frontend-builder/init.php): failed to open stream: No such file or directory in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/framework.php on line 1096
+[20-Dec-2023 15:24:12 UTC] PHP Fatal error:  require_once(): Failed opening required '/home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/frontend-builder/init.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home5/rxhvjzic/public_html/web/wp-content/themes/Divi/includes/builder/framework.php on line 1096
+[25-Dec-2023 03:54:40 UTC] Error de evento de reprogramación de cron para el gancho: sb_instagram_feed_issue_email. Código de error: invalid_schedule. Mensaje de error: El evento programado no existe.. Datos: {"schedule":"sbiweekly","args":[],"interval":604800}
+[25-Dec-2023 03:54:40 UTC] Error de evento de reprogramación de cron para el gancho: sbi_notification_update. Código de error: invalid_schedule. Mensaje de error: El evento programado no existe.. Datos: {"schedule":"sbiweekly","args":[],"interval":604800}

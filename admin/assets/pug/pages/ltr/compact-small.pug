@@ -1,0 +1,79 @@
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var compact_small_button  = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.compact-page
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper.sidebar-hover
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Compact Icon Sidebar
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Sidebar
+                                        li.breadcrumb-item.active Compact Icon Sidebar
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-sm-12
+                          .alert.alert-primary(role='alert')
+                            h4.alert-heading Tip!
+                            p
+                              | Add the sidebar-hover class to the page-body-wrapper to get this layout. You should combine this option with a fixed layout if you have a long sidebar. Doing that will prevent your page content from getting stretched vertically.
+                        .col-sm-12
+                          .card
+                            .card-header
+                              h5 Title
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              span Start Here
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head
+                                    | &lt;!-- Cod Box Copy begin --&gt;
+                                    | &lt;div class=&quot;card-body&quot;&gt;
+                                    | &lt;span&gt;Start Here&lt;/span&gt;
+                                    | &lt;/div&gt;
+                                    | &lt;!-- Cod Box Copy end --&gt;
+                            .card-footer
+                              h6.mb-0 Card Footer                        
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

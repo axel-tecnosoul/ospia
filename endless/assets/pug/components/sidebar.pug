@@ -1,0 +1,1142 @@
+// Page Sidebar Start
+- var status = (sidebar_open ? 'open' : (sidebar_image ? 'native-image-bg' : ''));
+
+.page-sidebar(class=status)
+
+                    .main-header-left.d-none.d-lg-block
+                        .logo-wrapper
+                            a(href='index.html')
+                                img(src='../assets/images/endless-logo.png', alt='')
+                    div.sidebar.custom-scrollbar
+                        .sidebar-user.text-center
+                            div
+                                img.img-60.rounded-circle(src='../assets/images/user/1.jpg', alt='#')
+                                .profile-edit
+                                    a(href='edit-profile.html', target='_blank')
+                                        i(data-feather='edit')
+                            h6.mt-3.f-14 ELANA
+                            p general manager.
+                        ul.sidebar-menu
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='home')
+                                    span Dashboard
+                                    span.badge.badge-pill.badge-primary 6
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='index.html')
+                                            i.fa.fa-circle
+                                            span Default
+                                    li
+                                        a(href='dashboard-ecommerce.html')
+                                            i.fa.fa-circle
+                                            span E-commerce
+                                    li
+                                        a(href='dashboard-university.html')
+                                            i.fa.fa-circle
+                                            span University
+                                    li
+                                        a(href='dashboard-bitcoin.html')
+                                            i.fa.fa-circle
+                                            span Crypto
+                                    li
+                                        a(href='dashboard-server.html')
+                                            i.fa.fa-circle
+                                            span Server
+                                    li
+                                        a(href='dashboard-project.html')
+                                            i.fa.fa-circle
+                                            span Project
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='airplay')
+                                    span Widgets
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='general-widget.html')
+                                            i.fa.fa-circle
+                                            | General
+                                    li
+                                        a(href='chart-widget.html')
+                                            i.fa.fa-circle
+                                            | Chart
+                            li
+                                a.sidebar-header(href='../starter-kit/layout-light.html')
+                                    i(data-feather='anchor')
+                                    span  Starter kit
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='disc')
+                                    span Color Version
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='layout-light.html')
+                                            i.fa.fa-circle
+                                            | Layout Light
+                                    li
+                                        a(href='layout-dark.html')
+                                            i.fa.fa-circle
+                                            | Layout Dark
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='sidebar')
+                                    span Sidebar
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='compact.html')
+                                            i.fa.fa-circle
+                                            | Compact Sidebar
+                                    li
+                                        a(href='compact-small.html')
+                                            i.fa.fa-circle
+                                            | Compact Icon Sidebar
+                                    li
+                                        a(href='sidebar-hidden.html')
+                                            i.fa.fa-circle
+                                            | Sidebar Hidden
+                                    li
+                                        a(href='sidebar-fixed.html')
+                                            i.fa.fa-circle
+                                            | Sidebar Fixed
+                                    li
+                                        a.disabled(href='', onclick='return false;')
+                                            i.fa.fa-circle
+                                            | Disable
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='layout')
+                                    span Page layout
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='box-layout.html')
+                                            i.fa.fa-circle
+                                            | Boxed
+                                    li
+                                        a(href='layout-rtl.html')
+                                            i.fa.fa-circle
+                                            | RTL
+                                    li
+                                        a(href='1-column.html')
+                                            i.fa.fa-circle
+                                            | 1 Column
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='align-justify')
+                                    span Menu Options
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='hide-on-scroll.html')
+                                            i.fa.fa-circle
+                                            | Hide menu on Scroll
+                                    li
+                                        a(href='vertical.html')
+                                            i.fa.fa-circle
+                                            | Vertical Menu
+                                    li
+                                        a(href='mega-menu.html')
+                                            i.fa.fa-circle
+                                            | Mega Menu
+                                    li
+                                        a(href='fix-header.html')
+                                            i.fa.fa-circle
+                                            | Fix header
+                                    li
+                                        a(href='fix-header-sidebar.html')
+                                            i.fa.fa-circle
+                                            | Fix Header & sidebar
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='cloud-lightning')
+                                    span Footers
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='footer-light.html')
+                                            i.fa.fa-circle
+                                            | Footer Light
+                                    li
+                                        a(href='footer-dark.html')
+                                            i.fa.fa-circle
+                                            | Footer Dark
+                                    li
+                                        a(href='footer-fixed.html')
+                                            i.fa.fa-circle
+                                            | Footer Fixed
+                            li
+                                a.sidebar-header(href='pagebuild.html')
+                                    i(data-feather='clipboard')
+                                    span Page Builder
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='edit-3')
+                                    span Form Builders
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='form-builder-1.html')
+                                            i.fa.fa-circle
+                                            | Form Builder 1
+                                    li
+                                        a(href='form-builder-2.html')
+                                            i.fa.fa-circle
+                                            | Form Builder 2
+                            li
+                                a.sidebar-header(href='button-builder.html')
+                                    i(data-feather='bookmark')
+                                    span Button Builder
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='box')
+                                    span  Base
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='state-color.html')
+                                            i.fa.fa-circle
+                                            | State color
+                                    li
+                                        a(href='typography.html')
+                                            i.fa.fa-circle
+                                            | Typography
+                                    li
+                                        a(href='avatars.html')
+                                            i.fa.fa-circle
+                                            | Avatars
+                                    li
+                                        a(href='helper-classes.html')
+                                            i.fa.fa-circle
+                                            | helper classes
+                                    li
+                                        a(href='grid.html')
+                                            i.fa.fa-circle
+                                            | Grid
+                                    li
+                                        a(href='tag-pills.html')
+                                            i.fa.fa-circle
+                                            | Tag & pills
+                                    li
+                                        a(href='progress-bar.html')
+                                            i.fa.fa-circle
+                                            | Progress
+                                    li
+                                        a(href='modal.html')
+                                            i.fa.fa-circle
+                                            | Modal
+                                    li
+                                        a(href='alert.html')
+                                            i.fa.fa-circle
+                                            | Alert
+                                    li
+                                        a(href='popover.html')
+                                            i.fa.fa-circle
+                                            | Popover
+                                    li
+                                        a(href='tooltip.html')
+                                            i.fa.fa-circle
+                                            | Tooltip
+                                    li
+                                        a(href='loader.html')
+                                            i.fa.fa-circle
+                                            | Spinners
+                                    li
+                                        a(href='dropdown.html')
+                                            i.fa.fa-circle
+                                            | Dropdown
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Tabs
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='tab-bootstrap.html')
+                                                    i.fa.fa-circle
+                                                    | Bootstrap Tabs
+                                            li
+                                                a(href='tab-material.html')
+                                                    i.fa.fa-circle
+                                                    | Line Tabs
+                                    li
+                                        a(href='according.html')
+                                            i.fa.fa-circle
+                                            | Accordion
+                                    li
+                                        a(href='navs.html')
+                                            i.fa.fa-circle
+                                            | Navs
+                                    li
+                                        a(href='box-shadow.html')
+                                            i.fa.fa-circle
+                                            | Shadow
+                                    li
+                                        a(href='list.html')
+                                            i.fa.fa-circle
+                                            | Lists
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='folder-plus')
+                                    span  Advance
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='scrollable.html')
+                                            i.fa.fa-circle
+                                            | Scrollable
+                                    li
+                                        a(href='tree.html')
+                                            i.fa.fa-circle
+                                            | Tree view
+                                    li
+                                        a(href='bootstrap-notify.html')
+                                            i.fa.fa-circle
+                                            | Bootstrap Notify
+                                    li
+                                        a(href='rating.html')
+                                            i.fa.fa-circle
+                                            | Rating
+                                    li
+                                        a(href='dropzone.html')
+                                            i.fa.fa-circle
+                                            | dropzone
+                                    li
+                                        a(href='tour.html')
+                                            i.fa.fa-circle
+                                            | Tour
+                                    li
+                                        a(href='sweet-alert2.html')
+                                            i.fa.fa-circle
+                                            | SweetAlert2
+                                    li
+                                        a(href='modal-animated.html')
+                                            i.fa.fa-circle
+                                            | Animated Modal
+                                    li
+                                        a(href='owl-carousel.html')
+                                            i.fa.fa-circle
+                                            | Owl Carousel
+                                    li
+                                        a(href='ribbons.html')
+                                            i.fa.fa-circle
+                                            | Ribbons
+                                    li
+                                        a(href='pagination.html')
+                                            i.fa.fa-circle
+                                            | Pagination
+                                    li
+                                        a(href='steps.html')
+                                            i.fa.fa-circle
+                                            | Steps
+                                    li
+                                        a(href='breadcrumb.html')
+                                            i.fa.fa-circle
+                                            | Breadcrumb
+                                    li
+                                        a(href='range-slider.html')
+                                            i.fa.fa-circle
+                                            | Range Slider
+                                    li
+                                        a(href='image-cropper.html')
+                                            i.fa.fa-circle
+                                            | Image cropper
+                                    li
+                                        a(href='sticky.html')
+                                            i.fa.fa-circle
+                                            | Sticky
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='cloud-drizzle')
+                                    span
+                                        | Animation
+                                        span.badge.badge-danger.ml-3 Hot
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='animate.html')
+                                            i.fa.fa-circle
+                                            | Animate
+                                    li
+                                        a(href='scroll-reval.html')
+                                            i.fa.fa-circle
+                                            | Scroll Reveal
+                                    li
+                                        a(href='AOS.html')
+                                            i.fa.fa-circle
+                                            | AOS animation
+                                    li
+                                        a(href='tilt.html')
+                                            i.fa.fa-circle
+                                            | Tilt Animation
+                                    li
+                                        a(href='wow.html')
+                                            i.fa.fa-circle
+                                            | Wow Animation
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='command')
+                                    span Icons
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='flag-icon.html')
+                                            i.fa.fa-circle
+                                            | Flag icon
+                                    li
+                                        a(href='font-awesome.html')
+                                            i.fa.fa-circle
+                                            | Fontawesome Icon
+                                    li
+                                        a(href='ico-icon.html')
+                                            i.fa.fa-circle
+                                            | Ico Icon
+                                    li
+                                        a(href='themify-icon.html')
+                                            i.fa.fa-circle
+                                            | Thimify Icon
+                                    li
+                                        a(href='feather-icon.html')
+                                            i.fa.fa-circle
+                                            | Feather icon
+                                    li
+                                        a(href='whether-icon.html')
+                                            i.fa.fa-circle
+                                            | Whether Icon
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='cloud')
+                                    span Buttons
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='buttons.html')
+                                            i.fa.fa-circle
+                                            | Default Style
+                                    li
+                                        a(href='buttons-flat.html')
+                                            i.fa.fa-circle
+                                            | Flat Style
+                                    li
+                                        a(href='buttons-edge.html')
+                                            i.fa.fa-circle
+                                            | Edge Style
+                                    li
+                                        a(href='raised-button.html')
+                                            i.fa.fa-circle
+                                            | Raised Style
+                                    li
+                                        a(href='button-group.html')
+                                            i.fa.fa-circle
+                                            | Button Group
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='file-text')
+                                    span Forms
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Form Controls
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='form-validation.html')
+                                                    i.fa.fa-circle
+                                                    | Form Validation
+                                            li
+                                                a(href='base-input.html')
+                                                    i.fa.fa-circle
+                                                    | Base Inputs
+                                            li
+                                                a(href='radio-checkbox-control.html')
+                                                    i.fa.fa-circle
+                                                    | Checkbox & Radio
+                                            li
+                                                a(href='input-group.html')
+                                                    i.fa.fa-circle
+                                                    | Input Groups
+                                            li
+                                                a(href='megaoptions.html')
+                                                    i.fa.fa-circle
+                                                    | Mega Options
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Form Widgets
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='datepicker.html')
+                                                    i.fa.fa-circle
+                                                    | Datepicker
+                                            li
+                                                a(href='time-picker.html')
+                                                    i.fa.fa-circle
+                                                    | Timepicker
+                                            li
+                                                a(href='datetimepicker.html')
+                                                    i.fa.fa-circle
+                                                    | Datetimepicker
+                                            li
+                                                a(href='daterangepicker.html')
+                                                    i.fa.fa-circle
+                                                    | Daterangepicker
+                                            li
+                                                a(href='touchspin.html')
+                                                    i.fa.fa-circle
+                                                    | Touchspin
+                                            li
+                                                a(href='select2.html')
+                                                    i.fa.fa-circle
+                                                    | Select2
+                                            li
+                                                a(href='switch.html')
+                                                    i.fa.fa-circle
+                                                    | Switch
+                                            li
+                                                a(href='typeahead.html')
+                                                    i.fa.fa-circle
+                                                    | Typeahead
+                                            li
+                                                a(href='clipboard.html')
+                                                    i.fa.fa-circle
+                                                    | Clipboard
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Form Layout
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='default-form.html')
+                                                    i.fa.fa-circle
+                                                    | Default Forms
+                                            li
+                                                a(href='form-wizard.html')
+                                                    i.fa.fa-circle
+                                                    | Form Wizard 1
+                                            li
+                                                a(href='form-wizard-two.html')
+                                                    i.fa.fa-circle
+                                                    | Form Wizard 2
+                                            li
+                                                a(href='form-wizard-three.html')
+                                                    i.fa.fa-circle
+                                                    | Form Wizard 3
+                                            li
+                                                a(href='form-wizard-four.html')
+                                                    i.fa.fa-circle
+                                                    | Form Wizard 4
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='server')
+                                    span Tables
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Bootstrap Tables
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='bootstrap-basic-table.html')
+                                                    i.fa.fa-circle
+                                                    | Basic Tables
+                                            li
+                                                a(href='bootstrap-sizing-table.html')
+                                                    i.fa.fa-circle
+                                                    | Sizing Tables
+                                            li
+                                                a(href='bootstrap-border-table.html')
+                                                    i.fa.fa-circle
+                                                    | Border Tables
+                                            li
+                                                a(href='bootstrap-styling-table.html')
+                                                    i.fa.fa-circle
+                                                    | Styling Tables
+                                            li
+                                                a(href='table-components.html')
+                                                    i.fa.fa-circle
+                                                    | Table components
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Data Tables
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='datatable-basic-init.html')
+                                                    i.fa.fa-circle
+                                                    | Basic Init
+                                            li
+                                                a(href='datatable-advance.html')
+                                                    i.fa.fa-circle
+                                                    | Advance Init
+                                            li
+                                                a(href='datatable-styling.html')
+                                                    i.fa.fa-circle
+                                                    | Styling
+                                            li
+                                                a(href='datatable-AJAX.html')
+                                                    i.fa.fa-circle
+                                                    | AJAX
+                                            li
+                                                a(href='datatable-server-side.html')
+                                                    i.fa.fa-circle
+                                                    | Server Side
+                                            li
+                                                a(href='datatable-plugin.html')
+                                                    i.fa.fa-circle
+                                                    | Plug-in
+                                            li
+                                                a(href='datatable-API.html')
+                                                    i.fa.fa-circle
+                                                    | API
+                                            li
+                                                a(href='datatable-data-source.html')
+                                                    i.fa.fa-circle
+                                                    | Data Sources
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Extension Data Tables
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='datatable-ext-autofill.html')
+                                                    i.fa.fa-circle
+                                                    | Auto Fill
+                                            li
+                                                a(href='datatable-ext-basic-button.html')
+                                                    i.fa.fa-circle
+                                                    | Basic Button
+                                            li
+                                                a(href='datatable-ext-col-reorder.html')
+                                                    i.fa.fa-circle
+                                                    | Column Reorder
+                                            li
+                                                a(href='datatable-ext-fixed-header.html')
+                                                    i.fa.fa-circle
+                                                    | Fixed Header
+                                            li
+                                                a(href='datatable-ext-html-5-data-export.html')
+                                                    i.fa.fa-circle
+                                                    | HTML 5 Export
+                                            li
+                                                a(href='datatable-ext-key-table.html')
+                                                    i.fa.fa-circle
+                                                    | Key Table
+                                            li
+                                                a(href='datatable-ext-responsive.html')
+                                                    i.fa.fa-circle
+                                                    | Responsive
+                                            li
+                                                a(href='datatable-ext-row-reorder.html')
+                                                    i.fa.fa-circle
+                                                    | Row Reorder
+                                            li
+                                                a(href='datatable-ext-scroller.html')
+                                                    i.fa.fa-circle
+                                                    | Scroller
+                                    li
+                                        a(href='jsgrid-table.html')
+                                            i.fa.fa-circle
+                                            | Js Grid Table
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='book')
+                                    span Cards
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='basic-card.html')
+                                            i.fa.fa-circle
+                                            | Basic Card
+                                    li
+                                        a(href='creative-card.html')
+                                            i.fa.fa-circle
+                                            | Creative Card
+                                    li
+                                        a(href='tabbed-card.html')
+                                            i.fa.fa-circle
+                                            | Tabbed Card
+                                    li
+                                        a(href='dragable-card.html')
+                                            i.fa.fa-circle
+                                            | Draggable Card
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='sliders')
+                                    span Timeline
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='timeline-v-1.html')
+                                            i.fa.fa-circle
+                                            | Timeline 1
+                                    li
+                                        a(href='timeline-v-2.html')
+                                            i.fa.fa-circle
+                                            | Timeline 2
+                                    li
+                                        a(href='timeline-small.html')
+                                            i.fa.fa-circle
+                                            | Timeline 3
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='bar-chart')
+                                    span Charts
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='chart-google.html')
+                                            i.fa.fa-circle
+                                            | Google Chart
+                                    li
+                                        a(href='chart-sparkline.html')
+                                            i.fa.fa-circle
+                                            | sparkline chart
+                                    li
+                                        a(href='chart-flot.html')
+                                            i.fa.fa-circle
+                                            | Flot Chart
+                                    li
+                                        a(href='chart-knob.html')
+                                            i.fa.fa-circle
+                                            | Knob Chart
+                                    li
+                                        a(href='chart-morris.html')
+                                            i.fa.fa-circle
+                                            | Morris Chart
+                                    li
+                                        a(href='chartjs.html')
+                                            i.fa.fa-circle
+                                            | chatjs Chart
+                                    li
+                                        a(href='chartist.html')
+                                            i.fa.fa-circle
+                                            | chartist Chart
+                                    li
+                                        a(href='chart-peity.html')
+                                            i.fa.fa-circle
+                                            | Peity Chart
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='map')
+                                    span Maps
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='map-js.html')
+                                            i.fa.fa-circle
+                                            | Maps JS
+                                    li
+                                        a(href='vector-map.html')
+                                            i.fa.fa-circle
+                                            | Vector Maps
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='printer')
+                                    span Email Templates
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Basic
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='basic-template.html', target='_blank')
+                                                    i.fa.fa-circle
+                                                    | Basic Email
+                                            li
+                                                a(href='email-header.html', target='_blank')
+                                                    i.fa.fa-circle
+                                                    | Basic With Header
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='#')
+                                            i.fa.fa-circle
+                                            | Ecommerce
+                                            i.fa.fa-angle-down.pull-right
+                                        ul.sidebar-submenu
+                                            li
+                                                a(href='template-email.html', target='_blank')
+                                                    i.fa.fa-circle
+                                                    | Email Template
+                                            li
+                                                a(href='template-email-2.html', target='_blank')
+                                                    i.fa.fa-circle
+                                                    | Email Template 2
+                                            li
+                                                a(href='ecommerce-templates.html', target='_blank')
+                                                    i.fa.fa-circle
+                                                    | Ecommerce Email
+                                            li
+                                                a(href='email-order-success.html', target='_blank')
+                                                    i.fa.fa-circle
+                                                    | Order Success 
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='git-pull-request')
+                                    span Editors
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='summernote.html')
+                                            i.fa.fa-circle
+                                            | Summer Note
+                                    li
+                                        a(href='ckeditor.html')
+                                            i.fa.fa-circle
+                                            | CK editor
+                                    li
+                                        a(href='simple-MDE.html')
+                                            i.fa.fa-circle
+                                            | MDE editor
+                                    li
+                                        a(href='ace-code-editor.html')
+                                            i.fa.fa-circle
+                                            | ACE code editor
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='users')
+                                    span Users
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='user-profile.html')
+                                            i.fa.fa-circle
+                                            | Users Profile
+                                    li
+                                        a(href='edit-profile.html')
+                                            i.fa.fa-circle
+                                            | Users Edit
+                                    li
+                                        a(href='user-cards.html')
+                                            i.fa.fa-circle
+                                            | Users Cards
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='calendar')
+                                    span Calender
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='calendar.html')
+                                            i.fa.fa-circle
+                                            | Full Calender Basic
+                                    li
+                                        a(href='calendar-event.html')
+                                            i.fa.fa-circle
+                                            | Full Calender Events
+                                    li
+                                        a(href='calendar-advanced.html')
+                                            i.fa.fa-circle
+                                            | Full Calender Advance
+                            li
+                                a.sidebar-header(href='internationalization.html')
+                                    i(data-feather='aperture')
+                                    span Internationalization
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='image')
+                                    span Gallery
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='gallery.html')
+                                            i.fa.fa-circle
+                                            | Gallery Grid
+                                    li
+                                        a(href='gallery-with-description.html')
+                                            i.fa.fa-circle
+                                            | Gallery Grid with Desc
+                                    li
+                                        a(href='gallery-masonry.html')
+                                            i.fa.fa-circle
+                                            | Masonry Gallery
+                                    li
+                                        a(href='masonry-gallery-with-disc.html')
+                                            i.fa.fa-circle
+                                            | Masonry Gallery Desc
+                                    li
+                                        a(href='gallery-hover.html')
+                                            i.fa.fa-circle
+                                            | Hover Effects
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='mail')
+                                    span Email
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='email-application.html')
+                                            i.fa.fa-circle
+                                            | Email App
+                                    li
+                                        a(href='email-compose.html')
+                                            i.fa.fa-circle
+                                            | Email Compose
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='edit')
+                                    span  Blog
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='blog.html')
+                                            i.fa.fa-circle
+                                            | Blog Details
+                                    li
+                                        a(href='blog-single.html')
+                                            i.fa.fa-circle
+                                            | Blog Single
+                                    li
+                                        a(href='add-post.html')
+                                            i.fa.fa-circle
+                                            | Add Post
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='message-square')
+                                    span Chat
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='chat.html')
+                                            i.fa.fa-circle
+                                            | Chat App
+                                    li
+                                        a(href='chat-video.html')
+                                            i.fa.fa-circle
+                                            | Video chat
+                            li
+                                a.sidebar-header(href='social-app.html')
+                                    i(data-feather='chrome')
+                                    span Social App
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='user-check')
+                                    span Job Search
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='job-cards-view.html')
+                                            i.fa.fa-circle
+                                            | Cards view
+                                    li
+                                        a(href='job-list-view.html')
+                                            i.fa.fa-circle
+                                            | List View
+                                    li
+                                        a(href='job-details.html')
+                                            i.fa.fa-circle
+                                            | Job Details
+                                    li
+                                        a(href='job-apply.html')
+                                            i.fa.fa-circle
+                                            | Apply
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='layers')
+                                    span Learning
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='learning-list-view.html')
+                                            i.fa.fa-circle
+                                            | Learning List
+                                    li
+                                        a(href='learning-detailed.html')
+                                            i.fa.fa-circle
+                                            | Detailed Course 
+                            li
+                                a.sidebar-header(href='faq.html')
+                                    i(data-feather='help-circle')
+                                    span FAQ
+                            li
+                                a.sidebar-header(href='knowledgebase.html')
+                                    i(data-feather='database')
+                                    span Knowledgebase
+                            li
+                                a.sidebar-header(href='support-ticket.html')
+                                    i(data-feather='headphones')
+                                    span Support Ticket
+                            li
+                                a.sidebar-header(href='to-do.html')
+                                    i(data-feather='mic')
+                                    span To-Do
+                            li
+                                a.sidebar-header(href='landing-page.html', target='_blank')
+                                    i(data-feather='navigation-2')
+                                    span Landing page
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='shopping-bag')
+                                    span Ecommerce
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='product.html')
+                                            i.fa.fa-circle
+                                            | Product
+                                    li
+                                        a(href='product-page.html')
+                                            i.fa.fa-circle
+                                            | Product page
+                                    li
+                                        a(href='list-products.html')
+                                            i.fa.fa-circle
+                                            | Product list
+                                    li
+                                        a(href='payment-details.html')
+                                            i.fa.fa-circle
+                                            | Payment Details
+                                    li
+                                        a(href='order-history.html')
+                                            i.fa.fa-circle
+                                            | Order History
+                                    li
+                                        a(href='invoice-template.html')
+                                            i.fa.fa-circle
+                                            | Invoice
+                                    li
+                                        a(href='cart.html')
+                                            i.fa.fa-circle
+                                            | Cart
+                                    li
+                                        a(href='list-wish.html')
+                                            i.fa.fa-circle
+                                            | Wishlist
+                                    li
+                                        a(href='checkout.html')
+                                            i.fa.fa-circle
+                                            | Checkout
+                            li
+                                a.sidebar-header(href='pricing.html')
+                                    i(data-feather='dollar-sign')
+                                    span  Pricing
+                            li
+                                a.sidebar-header(href='sample-page.html')
+                                    i(data-feather='file')
+                                    span  Sample page
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='search')
+                                    span Search Pages
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='search.html')
+                                            i.fa.fa-circle
+                                            | Search Website
+                                    li
+                                        a(href='search-images.html')
+                                            i.fa.fa-circle
+                                            | Search Images
+                                    li
+                                        a(href='search-video.html')
+                                            i.fa.fa-circle
+                                            | Search Video
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='alert-octagon')
+                                    span  Error Page
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='error-400.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Error 400
+                                    li
+                                        a(href='error-401.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Error 401
+                                    li
+                                        a(href='error-403.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Error 403
+                                    li
+                                        a(href='error-404.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Error 404
+                                    li
+                                        a(href='error-500.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Error 500
+                                    li
+                                        a(href='error-503.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Error 503
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='unlock')
+                                    span  Authentication
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='login.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Login Simple
+                                    li
+                                        a(href='login-image.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Login with Bg Image
+                                    li
+                                        a(href='login-video.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Login with Bg video
+                                    li
+                                        a(href='signup.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Register Simple
+                                    li
+                                        a(href='signup-image.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Register with Bg Image
+                                    li
+                                        a(href='signup-video.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Register with Bg video
+                                    li
+                                        a(href='unlock.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Unlock User
+                                    li
+                                        a(href='forget-password.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Forget Password
+                                    li
+                                        a(href='reset-password.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Reset Password
+                            li
+                                a.sidebar-header(href='#')
+                                    i(data-feather='briefcase')
+                                    span Coming Soon
+                                    i.fa.fa-angle-right.pull-right
+                                ul.sidebar-submenu
+                                    li
+                                        a(href='comingsoon.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Coming Simple
+                                    li
+                                        a(href='comingsoon-bg-video.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Coming with Bg video
+                                    li
+                                        a(href='comingsoon-bg-img.html', target='_blank')
+                                            i.fa.fa-circle
+                                            | Coming with Bg Image
+                            li
+                                a.sidebar-header(href='maintenance.html', target='_blank')
+                                    i(data-feather='settings')
+                                    span  Maintenance
+// Page Sidebar Ends

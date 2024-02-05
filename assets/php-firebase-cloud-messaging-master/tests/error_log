@@ -1,0 +1,8 @@
+[28-Dec-2023 02:14:07 UTC] PHP Fatal error:  Uncaught Error: Class 'sngrl\PhpFirebaseCloudMessaging\Tests\PhpFirebaseCloudMessagingTestCase' not found in /home5/rxhvjzic/public_html/assets/php-firebase-cloud-messaging-master/tests/NotificationTest.php:6
+Stack trace:
+#0 {main}
+  thrown in /home5/rxhvjzic/public_html/assets/php-firebase-cloud-messaging-master/tests/NotificationTest.php on line 6
+[28-Dec-2023 02:14:48 UTC] PHP Fatal error:  Uncaught Error: Class 'sngrl\PhpFirebaseCloudMessaging\Tests\PhpFirebaseCloudMessagingTestCase' not found in /home5/rxhvjzic/public_html/assets/php-firebase-cloud-messaging-master/tests/MessageTest.php:10
+Stack trace:
+#0 {main}
+  thrown in /home5/rxhvjzic/public_html/assets/php-firebase-cloud-messaging-master/tests/MessageTest.php on line 10

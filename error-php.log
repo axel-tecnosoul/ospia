@@ -1,0 +1,125 @@
+[29-Nov-2023 20:32:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Required parameter $destinatarios follows optional parameter $cuenta_envio in /home/c2191641/public_html/admin/funciones.php on line 16
+[29-Nov-2023 20:32:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Required parameter $asunto follows optional parameter $cuenta_envio in /home/c2191641/public_html/admin/funciones.php on line 16
+[29-Nov-2023 20:32:56 America/Argentina/Buenos_Aires] PHP Deprecated:  Required parameter $cuerpo follows optional parameter $cuenta_envio in /home/c2191641/public_html/admin/funciones.php on line 16
+[29-Nov-2023 20:32:56 America/Argentina/Buenos_Aires] PHP Fatal error:  __autoload() is no longer supported, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:12 America/Argentina/Buenos_Aires] PHP Warning:  Undefined array key "Autorizacion" in /home/c2191641/public_html/reintegros.php on line 133
+[29-Nov-2023 20:33:17 America/Argentina/Buenos_Aires] PHP Fatal error:  __autoload() is no longer supported, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 20:33:21 America/Argentina/Buenos_Aires] PHP Fatal error:  __autoload() is no longer supported, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 20:33:22 America/Argentina/Buenos_Aires] PHP Fatal error:  __autoload() is no longer supported, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 20:56:47 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 20:57:00 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 20:57:43 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[29-Nov-2023 21:10:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[29-Nov-2023 21:10:46 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[29-Nov-2023 21:25:53 America/Argentina/Buenos_Aires] PHP Warning:  getimagesize(): Filename cannot be empty in /home/c2191641/public_html/camtest/prueba.php on line 21
+[29-Nov-2023 22:21:16 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[30-Nov-2023 01:31:04 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 01:31:16 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 01:31:21 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[30-Nov-2023 01:31:47 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 01:32:03 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 01:40:52 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[30-Nov-2023 02:05:33 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 03:43:27 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 03:43:32 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 03:43:37 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[30-Nov-2023 03:45:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[30-Nov-2023 03:49:20 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[30-Nov-2023 05:42:24 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[01-Dec-2023 03:27:33 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[01-Dec-2023 03:27:35 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[01-Dec-2023 13:45:43 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[01-Dec-2023 13:45:45 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[04-Dec-2023 20:45:33 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[05-Dec-2023 10:17:34 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[08-Dec-2023 03:27:57 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[08-Dec-2023 03:27:59 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[12-Dec-2023 10:30:36 America/Argentina/Buenos_Aires] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home/c2191641/public_html/index.php:104
+Stack trace:
+#0 /home/c2191641/public_html/index.php(104): PDOStatement->execute()
+#1 {main}
+  thrown in /home/c2191641/public_html/index.php on line 104
+[12-Dec-2023 12:48:01 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[12-Dec-2023 12:50:18 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45
+[18-Dec-2023 16:05:48 America/Argentina/Buenos_Aires] PHP Deprecated:  __autoload() is deprecated, use spl_autoload_register() instead in /home/c2191641/public_html/admin/PHPMailer/PHPMailerAutoload.php on line 45

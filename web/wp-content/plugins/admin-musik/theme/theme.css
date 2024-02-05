@@ -1,0 +1,135 @@
+:root{
+	--theme-default: #40d050;
+	--theme-dark: #121e21;
+	--theme-orange: #ff5722;
+	--theme-pink: #e91e63;
+	--theme-purple: #673ab7;
+	--theme-teal: #009688;
+	--menu-fold-width: 72px;
+	--menu-h-fold-height: 48px;
+}
+
+/* icon & name */
+@media screen and (min-width: 783px) {
+	.folded.admin-menu-h #adminmenu .menu-top > a{
+		width: 52px;
+	}
+
+	.folded #adminmenu .menu-top > a{
+		height: var(--menu-fold-height);
+		overflow: hidden;
+		justify-content: flex-start;
+	}
+	.folded #adminmenu .wp-menu-name{
+		font-size: 11px;
+		font-weight: normal;
+		padding: 0 4px 0 4px !important;
+		position: static;
+		text-align: center;
+		height: var(--menu-fold-height);
+		display: flex;
+		align-items: center;
+	}
+	.folded #adminmenu div.wp-menu-image{
+		padding: 0 0 0 0;
+		height: var(--menu-fold-height);
+		display: flex;
+		align-items: center;
+		transition: margin-top 0.2s;
+	}
+	.folded #adminmenu .menu-top:hover > a div.wp-menu-image{
+		margin-top: calc( var(--menu-fold-height) * -1 );
+	}
+}
+
+@media (min-width: 783px) and (max-width: 960px) {
+	.auto-fold.admin-menu-h #adminmenu .menu-top > a{
+		width: 52px;
+	}
+	.auto-fold #adminmenu .menu-top > a{
+		height: var(--menu-fold-height);
+		overflow: hidden;
+		justify-content: flex-start;
+	}
+	.auto-fold #adminmenu .wp-menu-name{
+		font-size: 11px;
+		font-weight: normal;
+		padding: 0 4px 0 4px !important;
+		position: static;
+		text-align: center;
+		height: var(--menu-fold-height);
+		display: flex;
+		align-items: center;
+	}
+	.auto-fold #adminmenu div.wp-menu-image{
+		padding: 0 0 0 0;
+		height: var(--menu-fold-height);
+		display: flex;
+		align-items: center;
+		transition: margin-top 0.2s;
+	}
+	.auto-fold #adminmenu .menu-top:hover > a div.wp-menu-image{
+		margin-top: calc( var(--menu-fold-height) * -1 );
+	}
+}
+
+/* bar logo */
+@media screen and (min-width: 783px) {
+	body:not(.admin-menu-h) #wp-admin-bar-site-name > a,
+	body:not(.admin-menu-h) #wp-admin-bar-site-name > a:hover{
+		width: calc( var(--menu-width) - 20px );
+		background-color: var(--menu-background) !important;
+	}
+	body:not(.admin-menu-h) #wp-admin-bar-site-name span{
+		color: var(--menu-text);
+	}
+	body:not(.admin-menu-h).folded #wp-admin-bar-site-name > a{
+		width: calc( var(--menu-fold-width) - 20px );
+		justify-content: center;
+	}
+	body:not(.admin-menu-h).folded #wp-admin-bar-site-name > a img + span{
+		display: none;
+	}
+}
+
+@media (min-width: 783px) and (max-width: 960px) {
+	body:not(.admin-menu-h).auto-fold #wp-admin-bar-site-name > a{
+		width: calc( var(--menu-fold-width) - 20px );
+		justify-content: center;
+	}
+	body:not(.admin-menu-h).auto-fold #wp-admin-bar-site-name > a img + span{
+		display: none;
+	}
+}
+
+/* login */
+@media (min-width: 783px){
+	body.login {
+	    max-width: 760px;
+	    margin: 70px auto;
+	    height: auto;
+	    border-radius: 5px;
+	    display: flex;
+	    align-content: stretch;
+	    min-height: auto;
+	}
+}
+
+#login,
+#login-form{
+	flex: 1;
+	padding: 40px 32px;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgb(0 0 0 / 3%);
+	margin: 0;
+}
+.login form .wp-pwd, 
+.login form .input{
+	border-radius: 0;
+	box-shadow: none;
+	border-bottom: 1px solid #eee;
+}
+#login-form .button-primary{
+	border-color: var(--theme-dark);
+	background-color: var(--theme-dark);
+}

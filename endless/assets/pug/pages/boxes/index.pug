@@ -1,0 +1,588 @@
+- var prism                 = true;
+- var chartist              = true;
+- var height_equal          = true;
+- var knobchart             = true;
+- var page_knobchart        = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var dashboard_default     = true;
+- var counter               = true;
+- var notify                = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.box-layout
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Default
+                                    ol.breadcrumb
+                                      li.breadcrumb-item
+                                        a(href='index.html')
+                                          i(data-feather='home')
+                                      li.breadcrumb-item Dashboard
+                                      li.breadcrumb-item.active Default
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-8.xl-100.set-col-12
+                          .row
+                            .col-md-4
+                              .card
+                                .card-body
+                                  .chart-widget-dashboard
+                                    .media
+                                      .media-body
+                                        h5.mt-0.mb-0.f-w-600
+                                          i(data-feather='dollar-sign')
+                                          span.counter 5789
+                                        p Total Visits
+                                      i(data-feather='tag')
+                                    .dashboard-chart-container
+                                      .small-chart-gradient-1
+                            .col-md-4
+                              .card
+                                .card-body
+                                  .chart-widget-dashboard
+                                    .media
+                                      .media-body
+                                        h5.mt-0.mb-0.f-w-600
+                                          i(data-feather='dollar-sign')
+                                          span.counter 4986
+                                        p Total Sale
+                                      i(data-feather='shopping-cart')
+                                    .dashboard-chart-container
+                                      .small-chart-gradient-2
+                            .col-md-4
+                              .card
+                                .card-body
+                                  .chart-widget-dashboard
+                                    .media
+                                      .media-body
+                                        h5.mt-0.mb-0.f-w-600
+                                          i(data-feather='dollar-sign')
+                                          span.counter 8568
+                                        p Total Value
+                                      i(data-feather='sun')
+                                    .dashboard-chart-container
+                                      .small-chart-gradient-3
+                            .col-lg-12
+                              .card
+                                .card-header
+                                  h5 Production Valuation
+                                  .card-header-right
+                                    ul.list-unstyled.card-option
+                                      li
+                                        i.icofont.icofont-simple-left
+                                      li
+                                        i.view-html.fa.fa-code
+                                      li
+                                        i.icofont.icofont-maximize.full-card
+                                      li
+                                        i.icofont.icofont-minus.minimize-card
+                                      li
+                                        i.icofont.icofont-refresh.reload-card
+                                      li
+                                        i.icofont.icofont-error.close-card
+                                .card-body
+                                  .show-value-top.d-flex
+                                    .value-left.d-inline-block
+                                      .square.bg-primary.d-inline-block
+                                      span Total Earning
+                                    .value-right.d-inline-block
+                                      .square.d-inline-block.bg-secondary
+                                      span Total Tax
+                                  .smooth-chart.flot-chart-container
+                                  .code-box-copy
+                                    button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                      i.icofont.icofont-copy-alt
+                                    pre
+                                      code.language-html#example-head
+                                          | &lt;!-- Cod Box Copy begin --&gt;
+                                          |   &lt;div class="show-value-top d-flex"&gt;
+                                          |     &lt;div class="value-left d-inline-block"&gt;
+                                          |       &lt;div class="square bg-primary d-inline-block"&gt;&lt;/div&gt;
+                                          |       &lt;span&gt;Total Earning&lt;/span&gt;
+                                          |     &lt;/div&gt;
+                                          |     &lt;div class="value-right d-inline-block"&gt;
+                                          |       &lt;div class="square d-inline-block bg-secondary"&gt;&lt;/div&gt;
+                                          |       &lt;span&gt;Total Tax&lt;/span&gt;
+                                          |     &lt;/div&gt;
+                                          | &lt;/div&gt;
+                                          | &lt;div class="smooth-chart flot-chart-container"&gt;&lt;/div&gt;
+                                          | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-100.set-col-12
+                          .card
+                            .card-header
+                              h5 Activity
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.activity-scroll
+                              .activity
+                                .media
+                                  .gradient-round.m-r-30.gradient-line-1
+                                    i(data-feather='shopping-bag')
+                                  .media-body
+                                    h6
+                                      | New Sale 
+                                      span.pull-right.f-14 New
+                                    p
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.
+                                .media
+                                  .gradient-round.m-r-30.gradient-line-1
+                                    i(data-feather='message-circle')
+                                  .media-body
+                                    h6
+                                      | New Message 
+                                      span.pull-right.f-14 14m Ago
+                                    p
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.
+                                .media
+                                  .gradient-round.m-r-30.small-line
+                                    i(data-feather='minus-circle')
+                                  .media-body
+                                    h6
+                                      | New Report 
+                                      span.pull-right.f-14 14m Ago
+                                    p Lorem Ipsum is simply dummy text.
+                                .media
+                                  .gradient-round.m-r-30.gradient-line-1
+                                    i(data-feather='shopping-bag')
+                                  .media-body
+                                    h6
+                                      | New Sale 
+                                      span.pull-right.f-14 14m Ago
+                                    p
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.
+                                .media
+                                  .gradient-round.m-r-30.medium-line
+                                    i(data-feather='tag')
+                                  .media-body
+                                    h6
+                                      | New Visits 
+                                      span.pull-right.f-14 14m Ago
+                                    p
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="activity"&gt;
+                                        |   &lt;div class="media"&gt;
+                                        |     &lt;div class="gradient-round m-r-30 gradient-line-1"&gt;
+                                        |       &lt;i data-feather="shopping-bag"&gt;&lt;/i&gt;
+                                        |     &lt;/div&gt;
+                                        |     &lt;div class="media-body"&gt;
+                                        |       &lt;h6&gt;New Sale &lt;span class="pull-right f-14"&gt;New&lt;/span&gt;&lt;/h6&gt;
+                                        |       &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.&lt;/p&gt;
+                                        |     &lt;/div&gt;
+                                        |   &lt;/div&gt;
+                                        |   &lt;div class="media"&gt;
+                                        |     &lt;div class="gradient-round m-r-30 gradient-line-1"&gt;
+                                        |       &lt;i data-feather="message-circle"&gt;&lt;/i&gt;
+                                        |     &lt;/div&gt;
+                                        |     &lt;div class="media-body"&gt;
+                                        |       &lt;h6&gt;New Message &lt;span class="pull-right f-14"&gt;14m Ago&lt;/span&gt;&lt;/h6&gt;
+                                        |       &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.&lt;/p&gt;
+                                        |     &lt;/div&gt;
+                                        |   &lt;/div&gt;
+                                        |   &lt;div class="media"&gt;
+                                        |     &lt;div class="gradient-round m-r-30 small-line"&gt;
+                                        |       &lt;i data-feather="minus-circle"&gt;&lt;/i&gt;
+                                        |     &lt;/div&gt;
+                                        |     &lt;div class="media-body"&gt;
+                                        |       &lt;h6&gt;New Report &lt;span class="pull-right f-14"&gt;14m Ago&lt;/span&gt;&lt;/h6&gt;
+                                        |       &lt;p&gt;Lorem Ipsum is simply dummy text.&lt;/p&gt;
+                                        |     &lt;/div&gt;
+                                        |   &lt;/div&gt;
+                                        |   &lt;div class="media"&gt;
+                                        |     &lt;div class="gradient-round m-r-30 gradient-line-1"&gt;
+                                        |       &lt;i data-feather="shopping-bag"&gt;&lt;/i&gt;
+                                        |     &lt;/div&gt;
+                                        |     &lt;div class="media-body"&gt;
+                                        |       &lt;h6&gt;New Sale &lt;span class="pull-right f-14"&gt;14m Ago&lt;/span&gt;&lt;/h6&gt;
+                                        |       &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.&lt;/p&gt;
+                                        |     &lt;/div&gt;
+                                        |   &lt;/div&gt;
+                                        |   &lt;div class="media"&gt;
+                                        |     &lt;div class="gradient-round m-r-30 medium-line"&gt;
+                                        |       &lt;i data-feather="tag"&gt;&lt;/i&gt;
+                                        |     &lt;/div&gt;
+                                        |     &lt;div class="media-body"&gt;
+                                        |       &lt;h6&gt;New Visits &lt;span class="pull-right f-14"&gt;14m Ago&lt;/span&gt;&lt;/h6&gt;
+                                        |       &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.&lt;/p&gt;
+                                        |     &lt;/div&gt;
+                                        |   &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-100.set-col-12
+                          .card
+                            .card-header
+                              h5 Total Profit
+                              span.d-block.fonts-dashboard All Custom Income
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .knob-block.text-center
+                                input.knob(data-width='280', data-height='280', data-thickness='.2', data-angleoffset='90', data-fgcolor='#4466f2', data-bgcolor='#f6f7fb', data-linecap='round', value='35')
+                              .show-value.d-flex
+                                .value-left
+                                  .square.bg-primary.d-inline-block
+                                  span Total Profit
+                                .value-right
+                                  .square.bg-light.d-inline-block
+                                  span Total Investment
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="knob-block text-center"&gt;
+                                        |   &lt;input class="knob" data-width="280" data-height="280" data-thickness=".2" data-angleOffset=90 data-fgColor="#4466f2" data-bgColor="#f6f7fb" data-linecap=round value="35"&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;div class="show-value d-flex"&gt;
+                                        |   &lt;div class="value-left"&gt;
+                                        |     &lt;div class="square bg-primary d-inline-block"&gt;&lt;/div&gt;
+                                        |     &lt;span&gt;Total Profit&lt;/span&gt;
+                                        |   &lt;/div&gt;
+                                        |   &lt;div class="value-right"&gt;
+                                        |     &lt;div class="square bg-light d-inline-block"&gt;&lt;/div&gt;
+                                        |     &lt;span&gt;Total Investment&lt;/span&gt;
+                                        |   &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.col-md-6.set-col-6
+                          .row
+                            .col-md-12
+                              .card
+                                .card-body.progress-media
+                                  .media
+                                    .media-body
+                                      h5 Total Review
+                                      span.mb-0.d-block Customer Review
+                                    i(data-feather='thumbs-up')
+                                  .progress-bar-showcase
+                                    .progress.sm-progress-bar
+                                      .progress-bar.bg-primary(role='progressbar', style='width: 90%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                                  .progress-change
+                                    span Change
+                                    span.pull-right 95%
+                            .col-md-12
+                              .card
+                                .card-body.progress-media
+                                  .media
+                                    .media-body
+                                      h5 Total Feedback
+                                      span.mb-0.d-block Feedback
+                                    i(data-feather='message-circle')
+                                  .progress-bar-showcase
+                                    .progress.sm-progress-bar
+                                      .progress-bar.bg-primary(role='progressbar', style='width: 85%', aria-valuenow='25', aria-valuemin='0', aria-valuemax='100')
+                                  .progress-change
+                                    span Change
+                                    span.pull-right 85%
+                        .col-xl-4.xl-50.col-md-6.set-col-6
+                          .card.user-card
+                            .card-body
+                              .online-user
+                                h5.font-primary.f-18.mb-0 Online
+                              .user-card-image
+                                img.img-fluid.rounded-circle.image-radius(src='../assets/images/dashboard/designer.jpg', alt='')
+                              .user-deatils.text-center
+                                h5 Marshi Kisteen
+                                h6.mb-0 marshikisteen@gmail.com
+                              .user-badge.text-center
+                                a.badge.badge-pill.badge-light(href='#') Dashboard
+                                a.badge.badge-pill.badge-light(href='#') Ui
+                                a.badge.badge-pill.badge-light(href='#') Xi
+                                a(href='#')
+                                  span.badge.badge-pill.badge-light.active 2+
+                              .card-footer.row.pb-0.text-center
+                                .col-6
+                                  .d-flex.user-footer
+                                    i.m-r-10(data-feather='message-square')
+                                    h6.f-18.mb-0 Message
+                                .col-6
+                                  .d-flex.user-footer
+                                    i.m-r-10(data-feather='briefcase')
+                                    h6.f-18.mb-0 Portfolio
+                        .col-xl-6
+                          .card.height-equal
+                            .card-header.card-header-border
+                              .row
+                                .col-sm-6
+                                  h5 New User
+                                .col-sm-6
+                                  .pull-right.right-header
+                                    span Month
+                                    span
+                                      button.btn.btn-primary.btn-pill Today
+                            .card-body
+                              .new-users
+                                .media
+                                  img.rounded-circle.image-radius.m-r-15(src='../assets/images/user/2.png', alt='')
+                                  .media-body
+                                    h6.mb-0.f-w-700 Nick Stone
+                                    p Visual Designer, Github Inc
+                                  span.pull-right
+                                    button.btn.btn-pill.btn-outline-light Follow
+                                .media
+                                  img.rounded-circle.image-radius.m-r-15(src='../assets/images/user/5.jpg', alt='')
+                                  .media-body
+                                    h6.mb-0.f-w-700 Milano Esco
+                                    p Visual Designer, Github Inc
+                                  span.pull-right
+                                    button.btn.btn-pill.btn-outline-light Follow
+                                .media
+                                  img.rounded-circle.image-radius.m-r-15(src='../assets/images/user/3.jpg', alt='')
+                                  .media-body
+                                    h6.mb-0.f-w-700 Wiltor Noice
+                                    p Visual Designer, Github Inc
+                                  span.pull-right
+                                    button.btn.btn-pill.btn-outline-light Follow
+                                .media
+                                  img.rounded-circle.image-radius.m-r-15(src='../assets/images/user/4.jpg', alt='')
+                                  .media-body
+                                    h6.mb-0.f-w-700 Anna Strong
+                                    p Visual Designer, Github Inc
+                                  span.pull-right
+                                    button.btn.btn-pill.btn-outline-light Follow
+                        .col-xl-6
+                          .card.height-equal
+                            .card-header.card-header-border
+                              .row
+                                .col-sm-7
+                                  h5 Recent Notification
+                                .col-sm-5
+                                  .pull-right.right-header
+                                    .onhover-dropdown
+                                      button.btn.btn-primary.btn-pill(type='button')
+                                        | All 
+                                        span.pr-0
+                                          i.fa.fa-angle-down
+                                      .onhover-show-div.right-header-dropdown
+                                        a.d-block(href='#') Order
+                                        a.d-block(href='#') Download
+                                        a.d-block(href='#') Trash
+                            .card-body.recent-notification
+                              .media
+                                h6 09:00
+                                .media-body
+                                  span Lorem ipsum dolor sit amit,consectetur eiusmdd.
+                                  p.f-12 By Kan
+                              .media
+                                h6 10:50
+                                .media-body
+                                  span Lorem ipsum.
+                                  p.f-12 By Tailer
+                              .media
+                                h6 01:00
+                                .media-body
+                                  span Lorem ipsum dolor sit amit,consectetur eiusmdd.
+                                  p.f-12 By Kaint
+                              .media
+                                h6 05:00
+                                .media-body
+                                  span Lorem ipsum dolor sit amit.
+                                  p.f-12 By call
+                              .media
+                                h6 12:00
+                                .media-body
+                                  span Lorem ipsum dolor sit.
+                                  p.f-12 By Waiter
+                              .media
+                                h6 08:20
+                                .media-body
+                                  span Lorem ipsum dolor sit amit,consectetur eiusmdd dolor sit amit.
+                                  p.f-12 By Comman
+                        .col-sm-12
+                          .card
+                            .card-header
+                              h5 Calculation
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .show-value-top.d-flex
+                                .value-left.d-inline-block
+                                  .square.bg-primary.d-inline-block
+                                  span Total Income
+                                .value-right.d-inline-block
+                                  .square.d-inline-block.bg-smooth-chart
+                                  span Total Loss
+                              .ct-svg.flot-chart-container
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="show-value-top d-flex"&gt;
+                                        |   &lt;div class="value-left d-inline-block"&gt;
+                                        |     &lt;div class="square bg-primary d-inline-block"&gt;&lt;/div&gt;
+                                        |     &lt;span&gt;Total Income&lt;/span&gt;
+                                        |   &lt;/div&gt;
+                                        |   &lt;div class="value-right d-inline-block"&gt;
+                                        |     &lt;div class="square d-inline-block bg-smooth-chart"&gt;&lt;/div&gt;
+                                        |     &lt;span&gt;Total Loss&lt;/span&gt;
+                                        |   &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;div class="ct-svg flot-chart-container"&gt;&lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-7.xl-100.set-col-12
+                          .card
+                            .card-header.card-header-border
+                              .row
+                                .col-sm-6
+                                  h5 Conversations
+                                .col-sm-6
+                                  .right-header.pull-right.m-t-5
+                                    .onhover-dropdown
+                                      i(data-feather='more-horizontal')
+                                      .onhover-show-div.right-header-dropdown.more-dropdown
+                                        a.d-block(href='#') View
+                                        a.d-block(href='#') Media
+                                        a.d-block(href='#') Search
+                            .card-body.chat-box.dashboard-chat
+                              .chat
+                                .media.left-side-chat
+                                  img.rounded-circle.chat-user-img.img-60.m-r-20(src='../assets/images/user/4.jpg', alt='')
+                                  .media-body
+                                    .message-main
+                                      p.mb-0 Lorem Ipsum is simply dummy text of the 
+                                .media.right-side-chat
+                                  .media-body.text-right
+                                    .message-main
+                                      p.pull-right
+                                        | Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been the industry's
+                                      .clearfix
+                                    .sub-message.message-main
+                                      p.pull-right.mb-0 Lorem Ipsum is simply dummy text of the 
+                                      .clearfix
+                                  img.rounded-circle.chat-user-img.img-60.m-l-20(src='../assets/images/user/5.jpg', alt='')
+                                .media.left-side-chat
+                                  img.rounded-circle.chat-user-img.img-60.m-r-20(src='../assets/images/user/4.jpg', alt='')
+                                  .media-body
+                                    .message-main
+                                      p Lorem Ipsum is simply dummy text of the printing
+                                    .sub-message.message-main.smiley-bg
+                                      img(src='../assets/images/dashboard/smily.png', alt='')
+                            .media.chat-footer.bg-primary
+                              i.icon-face-smile
+                              .media-body
+                                input.form-control(type='text', placeholder='Type your message', required='')
+                              i(data-feather='send')
+                        .col-xl-5.xl-100.set-col-12
+                          .card
+                            .card-header.card-header-border
+                              .row
+                                .col-sm-6
+                                  h5.align-abjust Selling Update
+                                .col-sm-6
+                                  .pull-right.right-header
+                                    .onhover-dropdown
+                                      button.btn.btn-primary.btn-pill(type='button')
+                                        | All 
+                                        span.pr-0
+                                          i.fa.fa-angle-down
+                                      .onhover-show-div.right-header-dropdown
+                                          a.d-block(href='#') Shipping
+                                          a.d-block(href='#') Purchase
+                                          a.d-block(href='#') Total Sell
+                            .card-body
+                              .row
+                                .col-sm-4
+                                  .selling-update.text-center
+                                    i(data-feather='activity')
+                                    h5.mb-0.f-18 +500
+                                .col-sm-4
+                                  .selling-update.text-center
+                                    i(data-feather='anchor')
+                                    h5.mb-0.f-18 +120
+                                .col-sm-4
+                                  .selling-update.text-center
+                                    i(data-feather='box')
+                                    h5.mb-0.f-18 -410
+                                .col-sm-4
+                                  .selling-update.text-center
+                                    i(data-feather='book')
+                                    h5.mb-0.f-18 -155
+                                .col-sm-4
+                                  .selling-update.text-center
+                                    i(data-feather='compass')
+                                    h5.mb-0.f-18 +920
+                                .col-sm-4
+                                  .selling-update.text-center
+                                    i(data-feather='cpu')
+                                    h5.mb-0.f-18 +500
+                                .col-sm-4
+                                  .selling-update.text-center.mb-0.xs-mb-selling
+                                    i(data-feather='dollar-sign')
+                                    h5.mb-0.f-18 +500
+                                .col-sm-4
+                                  .selling-update.text-center.mb-0.xs-mb-selling
+                                    i(data-feather='slack')
+                                    h5.mb-0.f-18 +120
+                                .col-sm-4
+                                  .selling-update.text-center.mb-0
+                                    i(data-feather='umbrella')
+                                    h5.mb-0.f-18 -410
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

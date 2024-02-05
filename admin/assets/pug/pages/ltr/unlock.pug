@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+          .container-fluid
+            // Unlock page start
+            .authentication-main
+              .row
+                .col-md-12.p-0
+                  .auth-innerright
+                    .authentication-box
+                      .text-center
+                        img(src='../assets/images/endless-logo.png', alt='')
+                      .card.mt-4.p-4.mb-0
+                        form.theme-form
+                          .form-group
+                            label.col-form-label Enter your Password
+                            input.form-control(type='password', placeholder='*******')
+                          .form-group.form-row.mb-2
+                            .col-md-3
+                              button.btn.btn-primary(type='submit') Unlock
+            // Unlock page end
+        // page-wrapper Ends
+        include ../../components/footer-files

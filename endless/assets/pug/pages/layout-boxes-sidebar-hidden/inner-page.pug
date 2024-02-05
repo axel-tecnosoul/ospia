@@ -1,0 +1,45 @@
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var sidebar_open          = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.box-layout
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/layout-sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                    .page-header-left
+                                        h3 Inner Page
+                                        ol.breadcrumb
+                                            li.breadcrumb-item
+                                              a(href='index.html')
+                                                i(data-feather='home')
+                                            li.breadcrumb-item Sidebar Hidden
+                                            li.breadcrumb-item.active Inner Page
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-12
+                          .card
+                            .card-header
+                              h5 card header
+                            .card-body
+                              h6.mb-0 Inner content goes here
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

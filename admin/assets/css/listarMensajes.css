@@ -1,0 +1,61 @@
+/*
+.todos > a.nav-link{
+	transition: none !important;
+}
+
+.todos > a.nav-link > .media-body{
+	transition: none !important;
+	display: inline-block !important;
+}
+
+.todos > a.nav-link > .media-body > h6{
+	transition: none !important;
+}
+
+.todos > a.nav-link > .media-size-email{
+	transition: none !important;
+	display: inline-block !important;
+}
+
+*/
+#listaContactos .league-name {
+	margin: 0 20px 5px 20px;
+	padding: 3px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+#listaContactos .empty-message {
+	padding: 5px 10px;
+	text-align: center;
+}
+
+#listaMensajes > .nav-link{
+	padding: inherit !important;
+}
+
+.destinatario{
+
+	height: 50px;
+    /* border: initial !important; */
+    /*border-bottom: solid 4px transparent;
+    border-left: solid 8px #0B6138 !important;
+    border-top: solid 4px transparent;*/
+
+    border: solid 4px transparent !important;
+    border-left: solid 8px #0B6138 !important;
+    padding: 0 1.5rem 0 1.5rem !important;
+}
+
+.list-inline > li{
+	border-style: dashed;
+    border-width: thin;
+    padding: 1px 1px 1px 5px !important;
+}
+
+.list-inline > li > a > img{
+	margin-bottom: 0px !important;
+}
+
+.page-wrapper .page-body-wrapper .sidebar {
+	height: calc(100vh - 250px);
+}

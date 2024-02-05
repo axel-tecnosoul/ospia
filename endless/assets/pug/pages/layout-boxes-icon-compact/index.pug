@@ -1,0 +1,780 @@
+- var date_picker           = true;
+- var prism                 = true;
+- var chartjs               = true;
+- var chartist              = true;
+- var height_equal          = true;
+- var knobchart             = true;
+- var page_knobchart        = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var dashboard_university  = true;
+- var counter               = true;
+- var tour                  = true;
+- var compact_small_button  = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.compact-page.box-layout
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper.sidebar-hover
+                include ../../components/layout-sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Compact Icon Sidebar
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item.active Compact Icon Sidebar
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-6.xl-100.set-col-12
+                          .card(data-intro='This is University Earning Chart')
+                            .card-header.university-header
+                              .row
+                                .col-sm-6
+                                  h5 University Earning
+                                .col-sm-6
+                                  .pull-right.d-flex.buttons-right
+                                    .right-header
+                                      .onhover-dropdown
+                                        button.btn.btn-primary(type='button')
+                                          | Monthly 
+                                          span.pr-0
+                                            i.fa.fa-angle-down
+                                        .onhover-show-div.right-header-dropdown
+                                          a.d-block(href='#') Link 1
+                                          a.d-block(href='#') Link 2
+                                          a.d-block(href='#') Link 3
+                                    .right-header
+                                      .onhover-dropdown
+                                        button.btn.btn-light(type='button')
+                                          | yearly 
+                                          span.pr-0
+                                            i.fa.fa-angle-down
+                                        .onhover-show-div.right-header-dropdown
+                                          a.d-block(href='#') Link 1
+                                          a.d-block(href='#') Link 2
+                                          a.d-block(href='#') Link 3
+                            .card-body.height-curves
+                              .curves-2
+                                .animate-curve.ct-golden-section
+                        .col-xl-6.xl-100.set-col-12
+                          .row
+                            .col-md-6
+                              .card
+                                .card-body
+                                  .media.feather-main
+                                    .feather-icon-block
+                                      i(data-feather='command')
+                                    .media-body.align-self-center
+                                      h6 Total Admission
+                                      p 5678
+                            .col-md-6
+                              .card
+                                .card-body
+                                  .media.feather-main
+                                    .feather-icon-block
+                                      i(data-feather='navigation')
+                                    .media-body.align-self-center
+                                      h6 Total University Visit
+                                      p 8569
+                            .col-sm-6
+                              .card
+                                .card-body
+                                  .media.chart-university
+                                    .media-body
+                                      h3.mb-0
+                                        i(data-feather='dollar-sign')
+                                        span.counter 5683
+                                      p Html Course
+                                    .small-bar
+                                      .ct-small-left.flot-chart-container
+                            .col-sm-6
+                              .card
+                                .card-body
+                                  .media.chart-university
+                                    .media-body
+                                      h3.mb-0
+                                        i(data-feather='dollar-sign')
+                                        span.counter 7243
+                                      p PHP Course
+                                    .small-bar
+                                      .ct-small-right.flot-chart-container
+                            .col-md-6
+                              .card
+                                .card-header
+                                  h5 Math Professors
+                                .card-body
+                                  .table-responsive.professor-table
+                                    table.table.table-bordernone
+                                      tbody
+                                        tr
+                                          td
+                                            img.img-radius.img-35.align-top.m-r-15.rounded-circle(src='../assets/images/university/math-1.jpg', alt='')
+                                            .professor-block.d-inline-block
+                                              | luson keter
+                                              p Math Professors
+                                          td
+                                            label.pull-right.mb-0(for='edo-ani')
+                                              input#edo-ani.radio_animated(type='radio', name='rdo-ani')
+                                        tr
+                                          td
+                                            img.img-radius.img-25.align-top.m-r-15.rounded-circle(src='../assets/images/university/math-2.jpg', alt='')
+                                            .professor-block.d-inline-block
+                                              | Elan hormas
+                                              p Bio Professors
+                                          td
+                                            label.pull-right.mb-0(for='edo-ani1')
+                                              input#edo-ani1.radio_animated(type='radio', name='rdo-ani', checked='')
+                            .col-md-6
+                              .card
+                                .card-header
+                                  h5 Bio Professors
+                                .card-body
+                                  .table-responsive.professor-table
+                                    table.table.table-bordernone
+                                      tbody
+                                        tr
+                                          td
+                                            img.img-radius.img-25.align-top.m-r-15.rounded-circle(src='../assets/images/university/bio-1.jpg', alt='')
+                                            .professor-block.d-inline-block
+                                              | Erana siddy
+                                              p Director
+                                          td
+                                            label.pull-right.mb-0(for='edo-ani2')
+                                              input#edo-ani2.radio_animated(type='radio', name='rdo-ani', checked='')
+                                        tr
+                                          td
+                                            img.img-radius.img-35.align-top.m-r-15.rounded-circle(src='../assets/images/university/bio-2.jpg', alt='')
+                                            .professor-block.d-inline-block
+                                              | Tom kerrly
+                                              p Director
+                                          td
+                                            label.pull-right.mb-0(for='edo-ani3')
+                                              input#edo-ani3.radio_animated(type='radio', name='rdo-ani')
+                        .col-xl-4.xl-50.set-col-6
+                          .card.height-equal
+                            .card-header
+                              h5 Upcoming Event
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .upcoming-event
+                                .upcoming-innner.media
+                                  .bg-primary.left.m-r-20
+                                    i(data-feather='help-circle')
+                                  .media-body
+                                    p.mb-0
+                                      | Demo Content 
+                                      span.pull-right Mar 18
+                                    h6.f-w-600 Quiz Compition
+                                    p.mb-0
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum
+                                .upcoming-innner.media
+                                  .bg-primary.left.m-r-20
+                                    i(data-feather='mic')
+                                  .media-body
+                                    p.mb-0
+                                      | Demo Content 
+                                      span.pull-right Sep 18
+                                    h6.f-w-600 Singing Compition
+                                    p.mb-0
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum
+                                .upcoming-innner.media
+                                  .bg-primary.left.m-r-20
+                                    i(data-feather='zap')
+                                  .media-body
+                                    p.mb-0
+                                      | Demo Content 
+                                      span.pull-right Dec 18
+                                    h6.f-w-600 Diwali Celebration
+                                    p.mb-0
+                                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="upcoming-event"&gt;
+                                      | &lt;div class="upcoming-innner media"&gt;
+                                      | &lt;div class="bg-primary left m-r-20"&gt;&lt;i data-feather="help-circle"&gt;&lt;/i&gt;&lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;p class="mb-0"&gt;Demo Content &lt;span class="pull-right"&gt;Mar 18&lt;/span&gt;&lt;/p&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Quiz Compition&lt;/h6&gt;
+                                      | &lt;p class="mb-0"&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="upcoming-innner media"&gt;
+                                      | &lt;div class="bg-primary left m-r-20"&gt;&lt;i data-feather="mic"&gt;&lt;/i&gt;&lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;p class="mb-0"&gt;Demo Content &lt;span class="pull-right"&gt;Sep 18&lt;/span&gt;&lt;/p&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Singing Compition&lt;/h6&gt;
+                                      | &lt;p class="mb-0"&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="upcoming-innner media"&gt;
+                                      | &lt;div class="bg-primary left m-r-20"&gt;&lt;i data-feather="zap"&gt;&lt;/i&gt;&lt;/div&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;p class="mb-0"&gt;Demo Content &lt;span class="pull-right"&gt;Dec 18&lt;/span&gt;&lt;/p&gt;
+                                      | &lt;h6 class="f-w-600"&gt;Diwali Celebration&lt;/h6&gt;
+                                      | &lt;p class="mb-0"&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.set-col-6
+                          .card.height-equal(data-intro='This is Ranker Ratio')
+                            .card-header
+                              h5 Ranker Ratio
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .knob-block.text-center.knob-sm
+                                input.knob(data-width='295', data-height='295', data-angleoffset='-125', data-anglearc='250', data-fgcolor='#4466f2', data-thickness='.2', data-linecap='round', data-rotation='anticlockwise', value='35')
+                              .ranker.text-center
+                                h6 Student
+                                h5.mb-0 New Ranker 2018
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="knob-block text-center knob-sm"&gt;
+                                      | &lt;input class="knob" data-width="295" data-height="295" data-angleOffset=-125 data-angleArc=250 data-fgColor="#4466f2" data-thickness=".2" data-linecap="round" data-rotation="anticlockwise" value="35"&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="ranker text-center"&gt;
+                                      | &lt;h6&gt;Student&lt;/h6&gt;
+                                      | &lt;h5 class="mb-0"&gt;New Ranker 2018&lt;/h5&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-100.set-col-12
+                          .card.height-equal
+                            .card-header
+                              h5 Notification
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.pb-0
+                              .notifiaction-media
+                                .media
+                                  .media-body
+                                    .circle-left
+                                    h6
+                                      | You are confirmation visit..
+                                      span.pull-right.f-12 1 Day Ago
+                                .media
+                                  .media-body
+                                    .circle-left
+                                    h6
+                                      | Lorem Ipsum has been the..
+                                      span.pull-right.f-12 5 Day Ago
+                                .media
+                                  .media-body
+                                    .circle-left
+                                    h6
+                                      | Standard dummy text ever..
+                                      span.pull-right.f-12 7 Day Ago
+                                .media
+                                  .media-body
+                                    .circle-left
+                                    h6
+                                      | When an unknown printer..
+                                      span.pull-right.f-12 9 Day Ago
+                                .media
+                                  .media-body
+                                    .circle-left
+                                    h6
+                                      | Took a gallery of type..
+                                      span.pull-right.f-12 6 Day Ago
+                                .media
+                                  .media-body
+                                    .circle-left
+                                    h6
+                                      | Scrambled it to make a type..
+                                      span.pull-right.f-12 2 Day Ago
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body"&gt;
+                                      | &lt;div class="notifiaction-media"&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;div class="circle-left"&gt;&lt;/div&gt;&lt;h6&gt;You are confirmation visit..&lt;span class="pull-right f-12"&gt;1 Day Ago&lt;/span&gt;&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;div class="circle-left"&gt;&lt;/div&gt;&lt;h6&gt;Lorem Ipsum has been the..&lt;span class="pull-right f-12"&gt;5 Day Ago&lt;/span&gt;&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;div class="circle-left"&gt;&lt;/div&gt;&lt;h6&gt;Standard dummy text ever..&lt;span class="pull-right f-12"&gt;7 Day Ago&lt;/span&gt;&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;div class="circle-left"&gt;&lt;/div&gt;&lt;h6&gt;When an unknown printer..&lt;span class="pull-right f-12"&gt;9 Day Ago&lt;/span&gt;&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media"&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;div class="circle-left"&gt;&lt;/div&gt;&lt;h6&gt;Took a gallery of type..&lt;span class="pull-right f-12"&gt;6 Day Ago&lt;/span&gt;&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media mb-0"&gt;
+                                      | &lt;div class="media-body"&gt;
+                                      | &lt;div class="circle-left"&gt;&lt;/div&gt;&lt;h6&gt;Scrambled it to make a type..&lt;span class="pull-right f-12"&gt;2 Day Ago&lt;/span&gt;&lt;/h6&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="card-footer btn-more text-center"&gt;
+                                      | &lt;a href="#"&gt;MORE...&lt;/a&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                            .card-footer.btn-more.text-center
+                              a(href='#') MORE...
+                        .col-xl-6
+                          .card
+                            .card-header
+                              .row
+                                .col-sm-6
+                                  h5 Statistics
+                                  button.btn.btn-primary.btn-sm.header-btn.btn-pill 2017
+                                .col-sm-6
+                                  .pull-right.statistics
+                                    h5.counter 85
+                                    p.f-12.mb-0 Statistics 2017
+                                    .font-primary.font-weight-bold.d-flex.f-11.pull-right
+                                      i.fa.fa-sort-up.mr-2
+                                      span.number
+                                        span.counter 100
+                                        | %
+                            .card-body
+                              .curves-2
+                                .animate-curve2.ct-golden-section
+                        .col-xl-6
+                          .card
+                            .card-header
+                              .row
+                                .col-sm-6
+                                  h5 Last 5 Year Board
+                                  p.f-12.header-small.mb-0 18 september, 2018
+                                .col-sm-6
+                                  .pull-right.statistics
+                                    h5.counter 50
+                                    p.f-12.mb-0 Board 2018
+                                    .font-primary.font-weight-bold.d-flex.f-11.pull-right
+                                      i.fa.fa-sort-up.mr-2
+                                      span.number
+                                        span.counter 78
+                                        | %
+                            .card-body
+                              .board-chart.ct-golden-section
+                        .col-xl-8.xl-50.set-col-12
+                          .card(data-intro='This is Our Topper List')
+                            .card-header
+                              h5 Our Topper List
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .table-responsive.topper-lists
+                                table.table.table-bordernone
+                                  tbody
+                                    tr
+                                      td
+                                        .d-inline-block.align-self-center
+                                          .form-group.d-inline-block
+                                            .checkbox
+                                              input#checkbox1(type='checkbox')
+                                              label(for='checkbox1')
+                                          img.img-radius.img-40.align-top.m-r-15.rounded-circle(src='../assets/images/user/4.jpg', alt='')
+                                          .d-inline-block
+                                            span.f-w-600 Ossim Keter
+                                            p
+                                              | 1
+                                              sup st
+                                              |  year
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 +48 605 562 215
+                                          p Phone Number
+                                      td
+                                        img.align-top(src='../assets/images/university/chart-1.png', alt='')
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 1
+                                          p Rank
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 590/600
+                                          p Total marks
+                                    tr
+                                      td
+                                        .d-inline-block.align-self-center
+                                          .form-group.d-inline-block
+                                            .checkbox
+                                              input#checkbox2(type='checkbox', checked='')
+                                              label(for='checkbox2')
+                                          img.img-radius.img-40.align-top.m-r-15.rounded-circle(src='../assets/images/university/math-1.jpg', alt='')
+                                          .check-dot.d-inline-block
+                                          .d-inline-block
+                                            span.f-w-600 Venter Loren
+                                            p
+                                              | 1
+                                              sup st
+                                              |  year
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 +25 598 559 368
+                                          p Phone Number
+                                      td
+                                        img.align-top(src='../assets/images/university/chart-2.png', alt='')
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 2
+                                          p Rank
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 570/600
+                                          p Total marks
+                                    tr
+                                      td
+                                        .d-inline-block.align-self-center
+                                          .form-group.d-inline-block
+                                            .checkbox
+                                              input#checkbox3(type='checkbox')
+                                              label(for='checkbox3')
+                                          img.img-radius.img-40.align-top.m-r-15.rounded-circle(src='../assets/images/user/2.png', alt='')
+                                          .d-inline-block
+                                            span.f-w-600 Fran Loain
+                                            p
+                                              | 1
+                                              sup st
+                                              |  year
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 +65 659 145 235
+                                          p Phone Number
+                                      td
+                                        img.align-top(src='../assets/images/university/chart-3.png', alt='')
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 3
+                                          p Rank
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 565/600
+                                          p Total marks
+                                    tr
+                                      td
+                                        .d-inline-block.align-self-center
+                                          .form-group.d-inline-block
+                                            .checkbox
+                                              input#checkbox4(type='checkbox')
+                                              label(for='checkbox4')
+                                          img.img-radius.img-40.align-top.m-r-15.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                          .d-inline-block
+                                            span.f-w-600 Loften Horen
+                                            p
+                                              | 1
+                                              sup st
+                                              |  year
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 +37 595 367 368
+                                          p Phone Number
+                                      td
+                                        img.align-top(src='../assets/images/university/chart-4.png', alt='')
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 4
+                                          p Rank
+                                      td
+                                        .d-inline-block.text-center
+                                          span.f-w-600 540/600
+                                          p Total marks
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="table-responsive topper-lists"&gt;
+                                      | &lt;table class="table table-bordernone"&gt;
+                                      | &lt;tbody&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-self-center"&gt;
+                                      | &lt;div class="form-group d-inline-block"&gt;
+                                      | &lt;div class="checkbox"&gt;
+                                      | &lt;input id="checkbox1" type="checkbox"&gt;
+                                      | &lt;label for="checkbox1"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;img src="../assets/images/user/4.jpg" class="img-radius img-40 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;span class="f-w-600"&gt;Ossim Keter&lt;/span&gt;
+                                      | &lt;p&gt;1&lt;sup&gt;st&lt;/sup&gt; year&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;+48 605 562 215&lt;/span&gt;
+                                      | &lt;p&gt;Phone Number&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;img src="../assets/images/university/topper-chart/chart-1.png" class="align-top" alt=""&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;1&lt;/span&gt;
+                                      | &lt;p&gt;Rank&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;590/600&lt;/span&gt;
+                                      | &lt;p&gt;Total marks&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-self-center"&gt;
+                                      | &lt;div class="form-group d-inline-block"&gt;
+                                      | &lt;div class="checkbox"&gt;
+                                      | &lt;input id="checkbox2" type="checkbox" checked&gt;
+                                      | &lt;label for="checkbox2"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;img src="../assets/images/university/math-1.jpg" class="img-radius img-40 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      | &lt;div class="check-dot d-inline-block"&gt;&lt;/div&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;span class="f-w-600"&gt;Venter Loren&lt;/span&gt;
+                                      | &lt;p&gt;1&lt;sup&gt;st&lt;/sup&gt; year&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;+25 598 559 368&lt;/span&gt;
+                                      | &lt;p&gt;Phone Number&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;img src="../assets/images/university/topper-chart/chart-2.png" class="align-top" alt=""&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;2&lt;/span&gt;
+                                      | &lt;p&gt;Rank&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;570/600&lt;/span&gt;
+                                      | &lt;p&gt;Total marks&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-self-center"&gt;
+                                      | &lt;div class="form-group d-inline-block"&gt;
+                                      | &lt;div class="checkbox"&gt;
+                                      | &lt;input id="checkbox3" type="checkbox"&gt;
+                                      | &lt;label for="checkbox3"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;img src="../assets/images/user/2.png" class="img-radius img-40 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;span class="f-w-600"&gt;Fran Loain&lt;/span&gt;
+                                      | &lt;p&gt;1&lt;sup&gt;st&lt;/sup&gt; year&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;+65 659 145 235&lt;/span&gt;
+                                      | &lt;p&gt;Phone Number&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;img src="../assets/images/university/topper-chart/chart-3.png" class="align-top" alt=""&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;3&lt;/span&gt;
+                                      | &lt;p&gt;Rank&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;565/600&lt;/span&gt;
+                                      | &lt;p&gt;Total marks&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;tr&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block align-self-center"&gt;
+                                      | &lt;div class="form-group d-inline-block"&gt;
+                                      | &lt;div class="checkbox"&gt;
+                                      | &lt;input id="checkbox4" type="checkbox"&gt;
+                                      | &lt;label for="checkbox4"&gt;&lt;/label&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;img src="../assets/images/user/5.jpg" class="img-radius img-40 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      | &lt;div class="d-inline-block"&gt;
+                                      | &lt;span class="f-w-600"&gt;Loften Horen&lt;/span&gt;
+                                      | &lt;p&gt;1&lt;sup&gt;st&lt;/sup&gt; year&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;+37 595 367 368&lt;/span&gt;
+                                      | &lt;p&gt;Phone Number&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;img src="../assets/images/university/topper-chart/chart-4.png" class="align-top" alt=""&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;4&lt;/span&gt;
+                                      | &lt;p&gt;Rank&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;td&gt;
+                                      | &lt;div class="d-inline-block text-center"&gt;
+                                      | &lt;span class="f-w-600"&gt;540/600&lt;/span&gt;
+                                      | &lt;p&gt;Total marks&lt;/p&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;/td&gt;
+                                      | &lt;/tr&gt;
+                                      | &lt;/tbody&gt;
+                                      | &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.set-col-12
+                          .card.card-gradient
+                            .card-body.text-center
+                              .knob-header
+                                h5 Total Student
+                                .d-inline-block.pull-right.f-16
+                                  | 120 / 
+                                  span 130
+                              .knob-block.text-center.knob-center
+                                input.knob(data-width='180', data-height='180', data-thickness='.1', data-angleoffset='90', data-fgcolor='#fff', data-bgcolor='#256dd4', data-linecap='round', value='85')
+                              img.round-image(src='../assets/images/university/round.png', alt='')
+                        .col-xl-4.xl-50.set-col-6
+                          .card(data-intro='This is Date picker')
+                            .datepicker-here.date-picker-university(data-language='en')
+                        .col-xl-8.xl-50.set-col-6
+                          .card
+                            .card-header
+                              h5 Admission Ratio
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block.admission-chart
+                              canvas#myLineCharts
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head4
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chart-block admission-chart"&gt;
+                                      | &lt;canvas id="myLineCharts"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

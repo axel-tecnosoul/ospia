@@ -1,0 +1,1651 @@
+- var prism                 = true;
+- var chartist              = true;
+- var knobchart             = true;
+- var page_knobchart        = true;
+- var morrischart           = true;
+- var chartjs               = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var dashboard_bitcoin     = true;
+- var counter               = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Crypto
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Dashboard
+                                        li.breadcrumb-item.active Crypto
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-4
+                          .card
+                            .card-body
+                              .media.bitcoin-graph
+                                svg#Capa_1(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewBox='0 0 511.4 511.4', style='enable-background:new 0 0 511.4 511.4;', xml:space='preserve')
+                                  g
+                                    g
+                                      g
+                                        path(d='M418.967,102.891l23.376-21.856c-7.78-8.307-16.096-16.094-24.896-23.312l-20.288,24.752\
+                                        C404.873,88.79,412.158,95.611,418.967,102.891z')
+                                        path(d='M453.527,151.371l28.288-14.944c-5.305-10.06-11.282-19.751-17.888-29.008l-26.064,18.56\
+                                        C443.643,134.086,448.876,142.569,453.527,151.371z')
+                                        path(d='M495.703,167.547v0.016l-30.032,11.04c42.684,116.115-16.843,244.847-132.958,287.531S87.867,449.292,45.182,333.177\
+                                        S62.025,88.33,178.14,45.646c64.467-23.698,136.244-16.51,194.731,19.502l16.816-27.2\
+                                        C269.426-36.042,111.955,1.469,37.965,121.73S1.486,399.463,121.748,473.452s277.733,36.479,351.722-83.783\
+                                        C514.521,322.946,522.715,241.084,495.703,167.547z')
+                                        path(d='M303.367,431.899v-48.816c39.225-4.087,67.711-39.198,63.624-78.423c-2.003-19.228-11.716-36.821-26.92-48.761\
+                                        c17.166-13.524,27.218-34.146,27.296-56c-0.115-36.555-27.663-67.195-64-71.184V79.899h-32v48h-32v-48h-32v48h-64v256h64v48h32\
+                                        v-48h32v48H303.367z M175.367,159.899h120c22.091,0,40,17.909,40,40s-17.909,40-40,40h-120V159.899z M175.367,351.899v-80h120\
+                                        c22.091,0,40,17.909,40,40c0,22.091-17.909,40-40,40H175.367z')
+
+                                .top-bitcoin
+                                  h5 BTC
+                                  span Bitcoin
+                                .media-body
+                                  .bitcoin-content.text-right
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 1h
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-down')
+                                        |  0.12
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 24h
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-up')
+                                        |  +0.30
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 7d
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-down')
+                                        |  -0.20
+                            .dashboard-chart-container
+                              .bitcoinchart-1
+                        .col-xl-4
+                          .card
+                            .card-body
+                              .media.bitcoin-graph
+                                svg#Capa_2(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewBox='0 0 510.8 510.8', style='enable-background:new 0 0 510.8 510.8;', xml:space='preserve')
+                                  g
+                                    g
+                                      g
+                                        path(d='M465.099,178.447l30.032-11.024c-3.93-10.682-8.569-21.089-13.888-31.152l-28.304,14.944\
+                                        C457.591,160.013,461.653,169.11,465.099,178.447z')
+                                        path(d='M463.339,107.263c-6.613-9.254-13.829-18.063-21.6-26.368l-23.36,21.856c6.806,7.276,13.124,14.995,18.912,23.104\
+                                        L463.339,107.263z')
+                                        path(d='M504.731,200.079v0.08l-31.248,6.928c26.89,120.808-49.245,240.542-170.053,267.432S62.888,425.274,35.998,304.465\
+                                        C9.107,183.657,85.243,63.924,206.051,37.033c67.091-14.934,137.325,1.747,190.536,45.253l20.272-24.768\
+                                        C307.572-31.651,146.691-15.343,57.522,93.944S-15.34,364.111,93.946,453.281s270.168,72.862,359.337-36.425\
+                                        C502.709,356.281,521.666,276.404,504.731,200.079z')
+                                        path(d='M143.195,266.687l111.6,161.2l111.6-161.2l-111.6-186.016L143.195,266.687z M254.795,371.663l-46.96-67.888l46.96,20.944\
+                                        l46.96-20.944L254.795,371.663z M254.795,289.695l-69.552-30.912l69.552-115.904l69.552,115.904L254.795,289.695z')
+                                .top-bitcoin
+                                  h5 DASH
+                                  span Tranding
+                                .media-body
+                                  .bitcoin-content.text-right
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 1h
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-down')
+                                        |  0.12
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 24h
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-up')
+                                        |  +0.30
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 7d
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-down')
+                                        |  -0.20
+                            .dashboard-chart-container
+                              .bitcoinchart-2
+                        .col-xl-4
+                          .card
+                            .card-body
+                              .media.bitcoin-graph
+                                svg#Capa_3(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewBox='0 0 511.496 511.496', style='enable-background:new 0 0 511.496 511.496;', xml:space='preserve')
+                                  g
+                                    g
+                                      g
+                                        path(d='M495.791,167.563l-30.032,11.04c42.696,116.111-16.819,244.849-132.93,287.544\
+                                        c-116.111,42.696-244.849-16.819-287.544-132.93S62.104,88.369,178.214,45.674c64.469-23.706,136.251-16.523,194.744,19.49\
+                                        l16.816-27.2C269.496-36.048,111.992,1.46,37.981,121.739S1.477,399.521,121.756,473.533\
+                                        c120.279,74.011,277.783,36.504,351.794-83.775C514.62,323.013,522.816,241.123,495.791,167.563z')
+                                        path(d='M453.615,151.355l28.288-14.96c-5.317-10.048-11.293-19.733-17.888-28.992l-26.064,18.576\
+                                        C443.731,134.08,448.964,142.557,453.615,151.355z')
+                                        path(d='M419.055,102.891l23.36-21.872c-7.775-8.306-16.092-16.089-24.896-23.296l-20.256,24.768\
+                                        C404.971,88.8,412.252,95.615,419.055,102.891z')
+                                        path(d='M352.863,309.339l27.696-95.04l0.528-2.464c0.155-1.306,0.235-2.62,0.24-3.936c0-17.673-14.327-32-32-32H191.455v32\
+                                        h157.664l-27.2,93.52l-0.592,2.48H159.455v32h161.872C336.902,335.9,350.215,324.687,352.863,309.339z')
+                                        rect(x='127.455', y='239.899', width='96', height='32')
+                                .top-bitcoin
+                                  h5 ETH
+                                  span Ethereum
+                                .media-body
+                                  .bitcoin-content.text-right
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 1h
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-down')
+                                        |  0.12
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 24h
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-up')
+                                        |  +0.30
+                                    .bitcoin-numbers.d-inline-block
+                                      h6.mb-0 % 7d
+                                      h6.mb-0.font-primary
+                                        span
+                                          i.font-primary(data-feather='arrow-down')
+                                        |  -0.20
+                            .dashboard-chart-container
+                              .bitcoinchart-3
+                        .col-xl-4.xl-100
+                          .card
+                            .card-header.b-l-primary
+                              h5 Market Value
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .market-chart
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="market-chart"&gt;&lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50
+                          .card
+                            .card-header.b-l-primary
+                              .row
+                                .col-sm-5
+                                  h5.bitcoin-header Buy
+                                .col-sm-7
+                                  .text-right.right-header-color
+                                    p.mb-0 USD Balance: $ 5000.00
+                            .card-body
+                              .bitcoin-form
+                                .form-row
+                                  .col-xl-4.mb-3.col-sm-3
+                                    label.f-w-600 Parchase
+                                    .bitcoin-form-dropdown
+                                      .onhover-dropdown
+                                        button.btn.f-12(type='button')
+                                          | Amount 
+                                          span.pr-0
+                                            i.fa.fa-angle-down
+                                        .onhover-show-div
+                                          a.d-block(href='#') Link 1
+                                          a.d-block(href='#') Link 2
+                                          a.d-block(href='#') Link 3
+                                  .col-xl-8.mb-3.col-sm-9
+                                    label.f-w-600(for='validationCustomUsername') Units
+                                    .input-group
+                                      .input-group-prepend
+                                        span#inputGroupPrepend.input-group-text
+                                          i.fa.fa-btc.font-primary
+                                      input#validationCustomUsername.form-control(type='text', aria-describedby='inputGroupPrepend', required='')
+                                      .invalid-feedback
+                                        | Please choose a username.
+                                  .col-xl-4.mb-3.col-sm-3
+                                    label.f-w-600 Bid
+                                    .bitcoin-form-dropdown
+                                      .onhover-dropdown
+                                        button.btn.f-12(type='button')
+                                          | Limit 
+                                          span.pr-0
+                                            i.fa.fa-angle-down
+                                        .onhover-show-div
+                                          a.d-block(href='#') Link 1
+                                          a.d-block(href='#') Link 2
+                                          a.d-block(href='#') Link 3
+                                  .col-xl-8.mb-3.col-sm-9
+                                    label.f-w-600(for='validationCustomUsername') Bid
+                                    .input-group
+                                      .input-group-prepend
+                                        span#inputGroupPrepend1.input-group-text
+                                          i.fa.fa-btc.font-primary
+                                      input#validationCustomUsername1.form-control(type='text', aria-describedby='inputGroupPrepend', required='')
+                                      .invalid-feedback
+                                        | Please choose a username.
+                                  .col-md-12.mb-3
+                                    label.f-w-600(for='validationCustomUsername') Total
+                                    .input-group
+                                      .input-group-prepend
+                                        span#inputGroupPrepend2.input-group-text
+                                          i.fa.fa-btc.font-primary
+                                      input#validationCustomUsername2.form-control(type='text', aria-describedby='inputGroupPrepend', required='')
+                                      .invalid-feedback
+                                        | Please choose a username.
+                                  .col-md-12
+                                    .btn-bottom
+                                      button.btn.btn-primary(type='button') Buy Now!
+                        .col-xl-4.xl-50
+                          .card
+                            .card-header.b-l-primary
+                              .row
+                                .col-sm-5
+                                  h5.bitcoin-header Sell
+                                .col-sm-7
+                                  .text-right.right-header-color
+                                    p.mb-0 BTC Balance: $ 5000.00
+                            .card-body
+                              .bitcoin-form
+                                .form-row
+                                  .col-xl-4.mb-3.col-sm-3
+                                    label.f-w-600 Sell
+                                    .bitcoin-form-dropdown
+                                      .onhover-dropdown
+                                        button.btn.f-12(type='button')
+                                          | Amount  
+                                          span.pr-0
+                                            i.fa.fa-angle-down
+                                        .onhover-show-div
+                                          a.d-block(href='#') Link 1
+                                          a.d-block(href='#') Link 2
+                                          a.d-block(href='#') Link 3
+                                  .col-xl-8.mb-3.col-sm-9
+                                    label.f-w-600(for='validationCustomUsername') Units
+                                    .input-group
+                                      .input-group-prepend
+                                        span#inputGroupPrepend3.input-group-text
+                                          i.fa.fa-btc.font-primary
+                                      input#validationCustomUsername3.form-control(type='text', aria-describedby='inputGroupPrepend', required='')
+                                      .invalid-feedback
+                                        | Please choose a username.
+                                  .col-xl-4.mb-3.col-sm-3
+                                    label.f-w-600 Bid
+                                    .bitcoin-form-dropdown
+                                      .onhover-dropdown
+                                        button.btn.f-12(type='button')
+                                          | Limit 
+                                          span.pr-0
+                                            i.fa.fa-angle-down
+                                        .onhover-show-div
+                                          a.d-block(href='#') Link 1
+                                          a.d-block(href='#') Link 2
+                                          a.d-block(href='#') Link 3
+                                  .col-xl-8.mb-3.col-sm-9
+                                    label.f-w-600(for='validationCustomUsername') Bid
+                                    .input-group
+                                      .input-group-prepend
+                                        span#inputGroupPrepend5.input-group-text
+                                          i.fa.fa-btc.font-primary
+                                      input#validationCustomUsername5.form-control(type='text', aria-describedby='inputGroupPrepend', required='')
+                                      .invalid-feedback
+                                        | Please choose a username.
+                                  .col-md-12.mb-3
+                                    label.f-w-600(for='validationCustomUsername') Total
+                                    .input-group
+                                      .input-group-prepend
+                                        span#inputGroupPrepend6.input-group-text
+                                          i.fa.fa-btc.font-primary
+                                      input#validationCustomUsername6.form-control(type='text', aria-describedby='inputGroupPrepend', required='')
+                                      .invalid-feedback
+                                        | Please choose a username.
+                                  .col-md-12
+                                    .btn-bottom
+                                      button.btn.btn-primary(type='button') Sell Now!
+                        .col-xl-8.xl-50
+                          .card
+                            .card-header.b-l-primary
+                              h5 Active Order
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .table-responsive.active-order-table
+                                table.table.table-bordernone
+                                  thead
+                                    tr
+                                      th(scope='col') Data
+                                      th(scope='col') Type
+                                      th(scope='col') Customer
+                                      th(scope='col') Price
+                                      th(scope='col') USD
+                                      th(scope='col') Fee(%)
+                                      th(scope='col') Status
+                                  tbody
+                                    tr
+                                      td
+                                        p 2018-01-31
+                                        p.mb-0 6:51:51
+                                      td
+                                        button.btn.btn-primary.btn-pill(type='button') Buy
+                                      td
+                                        .customers
+                                          ul
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/1.jpg', alt='')
+                                            li.d-inline-block
+                                              p.f-12 +10 More
+                                      td
+                                        p 11900.12
+                                      td
+                                        p $ 6979.78
+                                      td
+                                        p 0.2
+                                      td
+                                        button.btn.btn-primary.btn-pill(type='button') Status
+                                    tr
+                                      td
+                                        p 2018-01-31
+                                        p.mb-0 06:50:50
+                                      td
+                                        button.btn.btn-secondary.btn-pill(type='button') Sell
+                                      td
+                                        .customers
+                                          ul
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/1.jpg', alt='')
+                                            li.d-inline-block
+                                              p.f-12 +10 More
+                                      td
+                                        p 11900.12
+                                      td
+                                        p $ 6979.78
+                                      td
+                                        p 0.2
+                                      td
+                                        button.btn.btn-primary.btn-pill(type='button') Status
+                                    tr
+                                      td
+                                        p 2018-01-31
+                                        p.mb-0 06:49:51
+                                      td
+                                        button.btn.btn-primary.btn-pill(type='button') Buy
+                                      td
+                                        .customers
+                                          ul
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/1.jpg', alt='')
+                                            li.d-inline-block
+                                              p.f-12 +10 More
+                                      td
+                                        p 11900.12
+                                      td
+                                        p $ 6979.78
+                                      td
+                                        p 0.2
+                                      td
+                                        button.btn.btn-primary.btn-pill(type='button') Status
+                                    tr
+                                      td
+                                        p 2018-01-31
+                                        p.mb-0 06:50:50
+                                      td
+                                        button.btn.btn-secondary.btn-pill(type='button') Sell
+                                      td
+                                        .customers
+                                          ul
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                            li.d-inline-block
+                                              img.img-40.rounded-circle(src='../assets/images/user/1.jpg', alt='')
+                                            li.d-inline-block
+                                              p.f-12 +10 More
+                                      td
+                                        p 11900.12
+                                      td
+                                        p $ 6979.78
+                                      td
+                                        p 0.2
+                                      td
+                                        button.btn.btn-primary.btn-pill(type='button') Status
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="table-responsive active-order-table"&gt;
+                                      |   &lt;table class="table table-bordernone"&gt;
+                                      |     &lt;thead&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;th scope="col"&gt;Data&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Type&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Customer&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;USD&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Fee(%)&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Status&lt;/th&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/thead&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;p&gt;2018-01-31&lt;/p&gt;
+                                      |           &lt;p class="mb-0"&gt;6:51:51&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Buy&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="customers"&gt;
+                                      |             &lt;ul&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;p&gt;2018-01-31&lt;/p&gt;
+                                      |           &lt;p class="mb-0"&gt;06:50:50&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-secondary btn-pill"&gt;Sell&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="customers"&gt;
+                                      |             &lt;ul&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;p&gt;2018-01-31&lt;/p&gt;
+                                      |           &lt;p class="mb-0"&gt;06:49:51&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Buy&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="customers"&gt;
+                                      |             &lt;ul&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;p&gt;2018-01-31&lt;/p&gt;
+                                      |           &lt;p class="mb-0"&gt;06:50:50&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-secondary btn-pill"&gt;Sell&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="customers"&gt;
+                                      |             &lt;ul&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/3.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/5.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;img src="../assets/images/user/1.jpg" class="img-40 rounded-circle" alt=""&gt;&lt;/li&gt;
+                                      |               &lt;li class="d-inline-block"&gt;&lt;p class="f-12"&gt;+10 More&lt;/p&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;11900.12&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;$ 6979.78&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;0.2&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button type="button" class="btn btn-primary btn-pill"&gt;Status&lt;/button&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50
+                          .card
+                            .card-header.b-l-primary
+                              h5 Market News
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .media.markets
+                                img(src='../assets/images/bitcoin/market-1.jpg', alt='')
+                                .media-body
+                                  h5.font-primary 03 Jan
+                                  p
+                                    | Lorem Ipsum is simply dummy text of the printing
+                                    | and typesetting industry. Lorem Ipsum
+                              .media.markets
+                                img(src='../assets/images/bitcoin/market-2.jpg', alt='')
+                                .media-body
+                                  h5.font-primary 03 Jan
+                                  p
+                                    | Lorem Ipsum is simply dummy text of the printing
+                                    | and typesetting industry. Lorem Ipsum
+                              .media.markets
+                                img(src='../assets/images/bitcoin/market-3.jpg', alt='')
+                                .media-body
+                                  h5.font-primary 03 Jan
+                                  p
+                                    | Lorem Ipsum is simply dummy text of the printing
+                                    | and typesetting industry. Lorem Ipsum
+                              .media.markets.mb-0
+                                img(src='../assets/images/bitcoin/market-4.jpg', alt='')
+                                .media-body
+                                  h5.font-primary 03 Jan
+                                  p
+                                    | Lorem Ipsum is simply dummy text of the printing
+                                    | and typesetting industry. Lorem Ipsum
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="media markets"&gt;
+                                      |   &lt;img src="../assets/images/bitcoin/market-news/1.jpg" alt=""&gt;
+                                      |   &lt;div class="media-body"&gt;
+                                      |     &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+                                      |     &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media markets"&gt;
+                                      |   &lt;img src="../assets/images/bitcoin/market-news/2.jpg" alt=""&gt;
+                                      |   &lt;div class="media-body"&gt;
+                                      |     &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+                                      |     &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media markets"&gt;
+                                      |   &lt;img src="../assets/images/bitcoin/market-news/3.jpg" alt=""&gt;
+                                      |   &lt;div class="media-body"&gt;
+                                      |     &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+                                      |     &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="media markets mb-0"&gt;
+                                      |   &lt;img src="../assets/images/bitcoin/market-news/4.jpg" alt=""&gt;
+                                      |   &lt;div class="media-body"&gt;
+                                      |     &lt;h5 class="font-primary"&gt;03 Jan&lt;/h5&gt;
+                                      |     &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum&lt;/p&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-6
+                          .card
+                            .card-header.b-l-primary
+                              h5 Sales Statistics
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .show-value-top.d-flex.pull-right
+                                .value-left.d-inline-block
+                                  .circle-graph.bg-primary.d-inline-block.m-r-5
+                                  span Total Earning
+                                .value-right.d-inline-block
+                                  .circle-graph.d-inline-block.bg-secondary.m-r-5
+                                  span Total Tax
+                              .chart-block
+                                canvas#linecharts-bitcoin
+                              .row.chart-bottom
+                                .col.text-center
+                                  .d-inline-block
+                                    h5.font-primary.counter 75,000
+                                    h6.mb-0 Total Sale
+                                .col.text-center
+                                  .d-inline-block
+                                    h5.font-primary.counter 40,000
+                                    h6.mb-0 Bitcoin Sale
+                                .col.text-center
+                                  .d-inline-block
+                                    h5.font-primary.counter 35,000
+                                    h6.mb-0 Ethereum Sale
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="show-value-top d-flex pull-right"&gt;
+                                      |   &lt;div class="value-left d-inline-block"&gt;
+                                      |     &lt;div class="circle-graph bg-primary d-inline-block"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;Total Earning&lt;/span&gt;
+                                      | &lt;/div&gt;
+                                      |   &lt;div class="value-right d-inline-block"&gt;
+                                      |     &lt;div class="circle-graph d-inline-block bg-secondary"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;Total Tax&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="chart-block"&gt;
+                                      |   &lt;canvas id="linecharts-bitcoin"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="row chart-bottom"&gt;
+                                      |   &lt;div class="col text-center"&gt;
+                                      |     &lt;div class="d-inline-block"&gt;
+                                      |       &lt;h5 class="font-primary counter"&gt;75,000&lt;/h5&gt;
+                                      |       &lt;h6 class="mb-0"&gt;Total Sale&lt;/h6&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="col text-center"&gt;
+                                      |     &lt;div class="d-inline-block"&gt;
+                                      |       &lt;h5 class="font-primary counter"&gt;40,000&lt;/h5&gt;
+                                      |       &lt;h6 class="mb-0"&gt;Bitcoin Sale&lt;/h6&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="col text-center"&gt;
+                                      |     &lt;div class="d-inline-block"&gt;
+                                      |       &lt;h5 class="font-primary counter"&gt;35,000&lt;/h5&gt;
+                                      |       &lt;h6 class="mb-0"&gt;Ethereum Sale&lt;/h6&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-6
+                          .card
+                            .card-header.b-l-primary
+                              h5 Datatables Market
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.tab-content
+                              #htc.market-table.table-responsive.tab-pane.active
+                                table.table
+                                  thead
+                                    tr
+                                      th(scope='col') Market
+                                      th(scope='col') Price
+                                      th(scope='col') Change
+                                  tbody
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 02157
+                                      td
+                                        p 0.025486854
+                                      td
+                                        p -05.15%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p -18.23%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                              #eth.market-table.table-responsive.tab-pane.fade
+                                table.table
+                                  thead
+                                    tr
+                                      th(scope='col') Market
+                                      th(scope='col') Price
+                                      th(scope='col') Change
+                                  tbody
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 02157
+                                      td
+                                        p 0.025486854
+                                      td
+                                        p -05.15%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p -18.23%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                              #dash.market-table.table-responsive.tab-pane.fade
+                                table.table
+                                  thead
+                                    tr
+                                      th(scope='col') Market
+                                      th(scope='col') Price
+                                      th(scope='col') Change
+                                  tbody
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 02157
+                                      td
+                                        p 0.025486854
+                                      td
+                                        p -05.15%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p -18.23%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                              #ltc.market-table.table-responsive.tab-pane.fade
+                                table.table
+                                  thead
+                                    tr
+                                      th(scope='col') Market
+                                      th(scope='col') Price
+                                      th(scope='col') Change
+                                  tbody
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 02157
+                                      td
+                                        p 0.025486854
+                                      td
+                                        p -05.15%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p -18.23%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                              #xrp.market-table.table-responsive.tab-pane.fade
+                                table.table
+                                  thead
+                                    tr
+                                      th(scope='col') Market
+                                      th(scope='col') Price
+                                      th(scope='col') Change
+                                  tbody
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 02157
+                                      td
+                                        p 0.025486854
+                                      td
+                                        p -05.15%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p +16.23%
+                                        .text-center
+                                          i.font-primary(data-feather='arrow-up')
+                                    tr
+                                      td
+                                        p.font-primary BTC - 12458
+                                      td
+                                        p 0.002548548
+                                      td
+                                        p -18.23%
+                                        .text-center
+                                          i.font-secondary(data-feather='arrow-down')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head4
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body tab-content"&gt;
+                                      |   &lt;div class="market-table table-responsive tab-pane active" id="htc"&gt;
+                                      |     &lt;table class="table"&gt;
+                                      |       &lt;thead&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;th scope="col"&gt;Market&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Change&lt;/th&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/thead&gt;
+                                      |       &lt;tbody&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/tbody&gt;
+                                      |     &lt;/table&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="market-table table-responsive tab-pane fade" id="eth"&gt;
+                                      |     &lt;table class="table"&gt;
+                                      |       &lt;thead&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;th scope="col"&gt;Market&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Change&lt;/th&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/thead&gt;
+                                      |       &lt;tbody&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/tbody&gt;
+                                      |     &lt;/table&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="market-table table-responsive tab-pane fade" id="dash"&gt;
+                                      |     &lt;table class="table"&gt;
+                                      |       &lt;thead&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;th scope="col"&gt;Market&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Change&lt;/th&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/thead&gt;
+                                      |       &lt;tbody&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/tbody&gt;
+                                      |     &lt;/table&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="market-table table-responsive tab-pane fade" id="dash"&gt;
+                                      |     &lt;table class="table"&gt;
+                                      |       &lt;thead&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;th scope="col"&gt;Market&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Change&lt;/th&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/thead&gt;
+                                      |       &lt;tbody&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/tbody&gt;
+                                      |     &lt;/table&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="market-table table-responsive tab-pane fade" id="ltc"&gt;
+                                      |     &lt;table class="table"&gt;
+                                      |       &lt;thead&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;th scope="col"&gt;Market&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Change&lt;/th&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/thead&gt;
+                                      |       &lt;tbody&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/tbody&gt;
+                                      |     &lt;/table&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="market-table table-responsive tab-pane fade" id="xrp"&gt;
+                                      |     &lt;table class="table"&gt;
+                                      |       &lt;thead&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;th scope="col"&gt;Market&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Price&lt;/th&gt;
+                                      |           &lt;th scope="col"&gt;Change&lt;/th&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/thead&gt;
+                                      |       &lt;tbody&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 02157&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.025486854&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-05.15%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;+16.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-up" class="font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |         &lt;tr&gt;
+                                      |           &lt;td&gt;&lt;p class="font-primary"&gt;BTC - 12458&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;0.002548548&lt;/p&gt;&lt;/td&gt;
+                                      |           &lt;td&gt;&lt;p&gt;-18.23%&lt;/p&gt;
+                                      |             &lt;div class="text-center"&gt;
+                                      |               &lt;i data-feather="arrow-down" class="font-secondary"&gt;&lt;/i&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/td&gt;
+                                      |         &lt;/tr&gt;
+                                      |       &lt;/tbody&gt;
+                                      |     &lt;/table&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="card-footer b-t-primary market-tabs p-0"&gt;
+                                      |   &lt;ul class="nav nav-pills" role="tablist"&gt;
+                                      |     &lt;li class="nav-item"&gt;
+                                      |       &lt;a class="nav-link active" data-toggle="pill" href="#htc"&gt;Users&lt;/a&gt;
+                                      |     &lt;/li&gt;
+                                      |     &lt;li class="nav-item"&gt;
+                                      |       &lt;a class="nav-link" data-toggle="pill" href="#eth"&gt;Email&lt;/a&gt;
+                                      |     &lt;/li&gt;
+                                      |     &lt;li class="nav-item"&gt;
+                                      |       &lt;a class="nav-link" data-toggle="pill" href="#dash"&gt;Blog&lt;/a&gt;
+                                      |     &lt;/li&gt;
+                                      |     &lt;li class="nav-item"&gt;
+                                      |       &lt;a class="nav-link" data-toggle="pill" href="#ltc"&gt;Chat&lt;/a&gt;
+                                      |     &lt;/li&gt;
+                                      |     &lt;li class="nav-item"&gt;
+                                      |       &lt;a class="nav-link" data-toggle="pill" href="#xrp"&gt;Ecommerce&lt;/a&gt;
+                                      |     &lt;/li&gt;
+                                      |   &lt;/ul&gt;
+                                      |&lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                            .card-footer.b-t-primary.market-tabs.p-0
+                              ul.nav.nav-pills(role='tablist')
+                                li.nav-item
+                                  a.nav-link.active(data-toggle='pill', href='#htc') Users
+                                li.nav-item
+                                  a.nav-link(data-toggle='pill', href='#eth') Email
+                                li.nav-item
+                                  a.nav-link(data-toggle='pill', href='#dash') Blog
+                                li.nav-item
+                                  a.nav-link(data-toggle='pill', href='#ltc') Chat
+                                li.nav-item
+                                  a.nav-link(data-toggle='pill', href='#xrp') Ecommerce
+                        .col-md-12.xl-100
+                          .row
+                            .col-sm-4
+                              .card
+                                .card-body.bg-primary
+                                  .icons-section.text-center
+                                    img(src='../assets/images/bitcoin/1.png', alt='')
+                                    h6 Bitcoin
+                                    h5
+                                      span
+                                        i(data-feather='dollar-sign')
+                                      | 760.03 
+                                      span
+                                        i(data-feather='arrow-down')
+                            .col-sm-4
+                              .card
+                                .card-body.bg-secondary
+                                  .icons-section.text-center
+                                    img(src='../assets/images/bitcoin/2.png', alt='')
+                                    h6 Ethereum
+                                    h5
+                                      span
+                                        i(data-feather='dollar-sign')
+                                      | 750.03 
+                                      span
+                                        i(data-feather='arrow-up')
+                            .col-sm-4
+                              .card
+                                .card-body.bg-primary
+                                  .icons-section.text-center
+                                    img(src='../assets/images/bitcoin/3.png', alt='')
+                                    h6 Balance
+                                    h5
+                                      span
+                                        i(data-feather='dollar-sign')
+                                      | 9,980 
+                                      span
+                                        i(data-feather='arrow-down')
+                        .col-xl-4.xl-50
+                          .card
+                            .card-header.b-l-primary
+                              h5 Chat
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chat-box
+                              .chat-right-aside.bitcoin-chat
+                                .chat
+                                  .chat-history.chat-msg-box.custom-scrollbar
+                                    ul
+                                      li
+                                        .message.my-message
+                                          img.rounded-circle.float-left.chat-user-img(src='../assets/images/bitcoin/chat-1.jpg', alt='')
+                                          .message-data.text-right
+                                            span.message-data-time 1:00 pm
+                                          |                                                         Project has been already finished and
+                                          |                                                         I have results to show you.
+                                      li.clearfix
+                                        .message.other-message.pull-right
+                                          img.rounded-circle.float-right.chat-user-img(src='../assets/images/bitcoin/chat-2.jpg', alt='')
+                                          .message-data
+                                            span.message-data-time 1:08 pm
+                                          |                                                         Well I am not sure. The rest of the
+                                          |                                                         team is not here yet.
+                                      li
+                                        .message.my-message.mb-0
+                                          img.rounded-circle.float-left.chat-user-img(src='../assets/images/bitcoin/chat-1.jpg', alt='')
+                                          .message-data.text-right
+                                            span.message-data-time 1:12 pm
+                                          |                                                         Actually everything was fine. I'm very
+                                          |                                                         excited to show this to our team.
+                                  .bitcoin-message.clearfix
+                                    .row
+                                      .col-xl-12.d-flex
+                                        .smiley-box.bg-primary
+                                          .picker
+                                            img(src='../assets/images/smiley.png', alt='')
+                                        .input-group.text-box
+                                          input#message-to-send.form-control.input-txt-bx(type='text', name='message-to-send', placeholder='Type a message......')
+                                          .input-group-append
+                                            button.btn.btn-primary(type='button') SEND
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head5', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head5
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chat-box"&gt;
+                                      |   &lt;div class="chat-right-aside bitcoin-chat"&gt;
+                                      |     &lt;div class="chat"&gt;
+                                      |       &lt;div class="chat-history chat-msg-box custom-scrollbar"&gt;
+                                      |         &lt;ul&gt;
+                                      |           &lt;li&gt;
+                                      |             &lt;div class="message my-message"&gt;
+                                      |               &lt;img src="../assets/images/bitcoin/chat/2.jpg" class="rounded-circle float-left chat-user-img" alt=""&gt;
+                                      |               &lt;div class="message-data text-right"&gt;
+                                      |                 &lt;span class="message-data-time"&gt;1:00 pm&lt;/span&gt;
+                                      |               &lt;/div&gt;
+                                      | Project has been already finished and I have results to show you.
+                                      |             &lt;/div&gt;
+                                      |           &lt;/li&gt;
+                                      |           &lt;li class="clearfix"&gt;
+                                      |             &lt;div class="message other-message pull-right"&gt;
+                                      |               &lt;img src="../assets/images/bitcoin/chat/1.jpg" class="rounded-circle float-right chat-user-img" alt=""&gt;
+                                      |               &lt;div class="message-data"&gt;
+                                      |                 &lt;span class="message-data-time"&gt;1:08 pm&lt;/span&gt;
+                                      |               &lt;/div&gt;
+                                      | Well I am not sure. The rest of the team is not here yet.
+                                      |             &lt;/div&gt;
+                                      |           &lt;/li&gt;
+                                      |           &lt;li&gt;
+                                      |             &lt;div class="message my-message mb-0"&gt;
+                                      |               &lt;img src="../assets/images/bitcoin/chat/2.jpg" class="rounded-circle float-left chat-user-img" alt=""&gt;
+                                      |               &lt;div class="message-data text-right"&gt;
+                                      |                 &lt;span class="message-data-time"&gt;1:12 pm&lt;/span&gt;
+                                      |               &lt;/div&gt;
+                                      | Actually everything was fine. I'm very excited to show this to our team.
+                                      |             &lt;/div&gt;
+                                      |           &lt;/li&gt;
+                                      |         &lt;/ul&gt;
+                                      |       &lt;/div&gt;
+                                      |       &lt;div class="bitcoin-message clearfix"&gt;
+                                      |         &lt;div class="row"&gt;
+                                      |           &lt;div class="col-xl-12 d-flex"&gt;
+                                      |             &lt;div class="smiley-box bg-primary"&gt;
+                                      |               &lt;div class="picker"&gt;&lt;img src="../assets/images/smiley.png" class="" alt=""&gt;&lt;/div&gt;
+                                      |             &lt;/div&gt;
+                                      |             &lt;div class="input-group text-box"&gt;
+                                      |               &lt;input type="text" class="form-control input-txt-bx" name="message-to-send" id="message-to-send" placeholder="Type a message......"&gt;
+                                      |               &lt;div class="input-group-append"&gt;
+                                      |                 &lt;button class="btn btn-primary" type="button"&gt;SEND&lt;/button&gt;
+                                      |               &lt;/div&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/div&gt;
+                                      |       &lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50
+                          .card
+                            #accordionoc.default-according.style-1.bitcoin-accordion
+                              .card
+                                .card-header.bg-primary
+                                  h5.mb-0
+                                    button.btn.btn-link.txt-white(data-toggle='collapse', data-target='#collapseicon', aria-expanded='true', aria-controls='collapseicon')
+                                      | BTC
+                                #collapseicon.collapse.show(aria-labelledby='collapseicon', data-parent='#accordionoc')
+                                  .media-accordion
+                                    .media
+                                      div
+                                        h6 BTC/USD
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 11916.9
+                                        p.font-primary 283.1 USD (+2.33%)
+                                        p.font-secondary 1029.1906 BTC
+                                    .media
+                                      div
+                                        h6 BTC/EUR
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 9213.9
+                                        p.font-primary 200.1 EUR (+2.33%)
+                                        p.font-secondary 1599.1906 BTC
+                                    .media
+                                      div
+                                        h6 BTC/GBP
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 1459.9
+                                        p.font-primary -283.1 USD (-2.33%)
+                                        p.font-secondary 350.1906 BTC
+                              .card
+                                .card-header.bg-primary
+                                  h5.mb-0
+                                    button.btn.btn-link.collapsed.txt-white(data-toggle='collapse', data-target='#collapseicon1', aria-expanded='false')
+                                      | ETH
+                                #collapseicon1.collapse(aria-labelledby='collapseicon1', data-parent='#accordionoc')
+                                  .media-accordion
+                                    .media
+                                      div
+                                        h6 BTC/USD
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 11916.9
+                                        p.font-primary 283.1 USD (+2.33%)
+                                        p.font-secondary 1029.1906 BTC
+                                    .media
+                                      div
+                                        h6 BTC/EUR
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 9213.9
+                                        p.font-primary 200.1 EUR (+2.33%)
+                                        p.font-secondary 1599.1906 BTC
+                                    .media
+                                      div
+                                        h6 BTC/GBP
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 1459.9
+                                        p.font-primary -283.1 USD (-2.33%)
+                                        p.font-secondary 350.1906 BTC
+                              .card
+                                .card-header.bg-primary
+                                  h5.mb-0
+                                    button.btn.btn-link.collapsed.txt-white(data-toggle='collapse', data-target='#collapseicon2', aria-expanded='false', aria-controls='collapseicon2')
+                                      | DASH
+                                #collapseicon2.collapse(data-parent='#accordionoc')
+                                  .media-accordion
+                                    .media
+                                      div
+                                        h6 BTC/USD
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 11916.9
+                                        p.font-primary 283.1 USD (+2.33%)
+                                        p.font-secondary 1029.1906 BTC
+                                    .media
+                                      div
+                                        h6 BTC/EUR
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 9213.9
+                                        p.font-primary 200.1 EUR (+2.33%)
+                                        p.font-secondary 1599.1906 BTC
+                                    .media
+                                      div
+                                        h6 BTC/GBP
+                                        p 24h Change
+                                        p 24h Volume
+                                      .media-body.text-right
+                                        p 1459.9
+                                        p.font-primary -283.1 USD (-2.33%)
+                                        p.font-secondary 350.1906 BTC
+                        .col-xl-4.xl-100
+                          .card
+                            .card-header.b-l-primary
+                              h5 Invest
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block
+                              .pull-right.right-header.invest-dropdown
+                                .onhover-dropdown
+                                  button.btn(type='button')
+                                    | Today 
+                                    span.pr-0
+                                      i.fa.fa-angle-down
+                                  .onhover-show-div.right-header-dropdown
+                                    a.d-block(href='#') Link 1
+                                    a.d-block(href='#') Link 2
+                                    a.d-block(href='#') Link 3
+                              .flot-chart-container
+                                #bitcoin-morris.flot-chart-placeholder
+                              .show-value-top.d-flex.mb-0.bottom-morris-chart
+                                .value-left.d-inline-block
+                                  .circle-graph.bg-primary.d-inline-block.m-r-5
+                                  span Bitcoin
+                                .value-right.d-inline-block
+                                  .circle-graph.d-inline-block.bg-secondary.m-r-5
+                                  span Ripple
+                                .value-third.d-inline-block
+                                  .circle-graph.d-inline-block.bg-light.m-r-5
+                                  span Invest
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head6', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head6
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chart-block"&gt;
+                                      |   &lt;div class="pull-right right-header invest-dropdown"&gt;
+                                      |     &lt;div class="onhover-dropdown"&gt;
+                                      |       &lt;button type="button" class="btn"&gt;
+                                      | Today &lt;span class="pr-0"&gt;&lt;i class="fa fa-angle-down"&gt;&lt;/i&gt;&lt;/span&gt;
+                                      |       &lt;/button&gt;
+                                      |       &lt;div class="onhover-show-div right-header-dropdown"&gt;
+                                      |         &lt;a class="d-block" href="#"&gt;Link 1&lt;/a&gt;
+                                      |         &lt;a class="d-block" href="#"&gt;Link 2&lt;/a&gt;
+                                      |         &lt;a class="d-block" href="#"&gt;Link 3&lt;/a&gt;
+                                      |       &lt;/div&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="flot-chart-container"&gt;
+                                      |     &lt;div id="bitcoin-morris" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="show-value-top d-flex mb-0 bottom-morris-chart"&gt;
+                                      |     &lt;div class="value-left d-inline-block"&gt;
+                                      |       &lt;div class="circle-graph bg-primary d-inline-block"&gt;&lt;/div&gt;
+                                      |       &lt;span&gt;Bitcoin&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |     &lt;div class="value-right d-inline-block"&gt;
+                                      |       &lt;div class="circle-graph d-inline-block bg-secondary"&gt;&lt;/div&gt;
+                                      |       &lt;span&gt;Ripple&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |     &lt;div class="value-third d-inline-block"&gt;
+                                      |       &lt;div class="circle-graph d-inline-block bg-light"&gt;&lt;/div&gt;
+                                      |       &lt;span&gt;Invest&lt;/span&gt;
+                                      |     &lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

@@ -1,0 +1,479 @@
+- var prism                 = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var chartist              = true;
+- var counter               = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var sparkline             = true;
+- var sparkline             = true;
+- var morrischart           = true;
+- var chart_widget          = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.box-layout
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 Chart Widget
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Widgets
+                                        li.breadcrumb-item.active Chart Widget
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      // Chart widget top Start
+                      .row
+                        .col-xl-4.col-md-12
+                          .card
+                            .chart-widget-top
+                              .row.card-body
+                                .col-5
+                                  h5.font-primary SALE
+                                  span.num
+                                    span.counter 90
+                                    | %
+                                    i.icon-angle-up.f-12.ml-1
+                                .col-7.text-right
+                                  h4.num.total-value
+                                    | $ 
+                                    span.counter 3654
+                                    | .00
+                              div
+                                #chart-widget-top-first.flot-chart-placeholder
+                        .col-xl-4.col-md-12
+                          .card
+                            .chart-widget-top
+                              .row.card-body
+                                .col-7
+                                  h5.font-primary PROJECTS
+                                  span.num
+                                    span.counter 30
+                                    | %
+                                    i.icon-angle-up.f-12.ml-1
+                                .col-5.text-right
+                                  h4.num.total-value.counter 12569
+                              div
+                                #chart-widget-top-second.flot-chart-placeholder
+                        .col-xl-4.col-md-12
+                          .card
+                            .chart-widget-top
+                              .row.card-body
+                                .col-8
+                                  h5.font-primary PRODUCTS
+                                  span.num
+                                    span.counter 68
+                                    | %
+                                    i.icon-angle-up.f-12.ml-1
+                                .col-4.text-right
+                                  h4.num.total-value
+                                    span.counter 93
+                                    | M
+                              div
+                                #chart-widget-top-third.flot-chart-placeholder
+                      // Chart widget top Ends
+                      // Chart widget with bar chart Start
+                      .row
+                        .col-xl-6.col-md-12.set-col-12
+                          .card.o-hidden
+                            .bar-chart-widget
+                              .top-content.bg-primary
+                                .row
+                                  .col-7
+                                    #chart-bar-widget-first.bar-chart.card-body.pb-0
+                                  .col-5
+                                    .earning-details
+                                      .text-left
+                                        span Marketing Expenses
+                                        h4.mt-1.num.mb-0
+                                          | $ 
+                                          span.counter 3654
+                                      i.icon-announcement
+                              .bottom-content.card-body
+                                .row
+                                  .col-4.b-r-light
+                                    div
+                                      span.num.font-primary
+                                        | 12%
+                                        i.icon-angle-up.f-12.ml-1
+                                      span.text-muted.mt-2.mb-2.block-bottom Marketing
+                                      h4.num.m-0
+                                        | $
+                                        span.counter.color-bottom 9313
+                                  .col-4.b-r-light
+                                    div
+                                      span.num.font-primary
+                                        | 15%
+                                        i.icon-angle-up.f-12.ml-1
+                                      span.text-muted.mt-2.mb-2.block-bottom Affiliate
+                                      h4.num.m-0
+                                        | $
+                                        span.counter.color-bottom 2314
+                                  .col-4
+                                    div
+                                      span.num.font-primary
+                                        | 34%
+                                        i.icon-angle-up.f-12.ml-1
+                                      span.text-muted.mt-2.mb-2.block-bottom Advertise
+                                      h4.num.m-0
+                                        | $
+                                        span.counter.color-bottom  4219
+                        .col-xl-6.col-md-12.set-col-12
+                          .card.o-hidden
+                            .bar-chart-widget
+                              .top-content.bg-primary
+                                .row
+                                  .col-7
+                                    #chart-bar-widget-second.bar-chart.card-body.pb-0
+                                  .col-5
+                                    .earning-details
+                                      .text-left
+                                        span Total Earning
+                                        h4.mt-1.num.mb-0
+                                          span.counter 3653
+                                          |  M
+                                      i.icofont.icofont-coins
+                              .bottom-content.card-body
+                                .row
+                                  .col-4.b-r-light
+                                    div
+                                      span.num.font-primary
+                                        | 12%
+                                        i.icon-angle-up.f-12.ml-1
+                                      span.text-muted.mt-2.mb-2.block-bottom Year
+                                      h4.num.m-0
+                                        span.counter.color-bottom 3659
+                                        | M
+                                  .col-4.b-r-light
+                                    div
+                                      span.num.font-primary
+                                        | 15%
+                                        i.icon-angle-up.f-12.ml-1
+                                      span.text-muted.mt-2.mb-2.block-bottom Month
+                                      h4.num.m-0
+                                        span.counter.color-bottom 698
+                                        | M
+                                  .col-4
+                                    div
+                                      span.num.font-primary
+                                        | 34%
+                                        i.icon-angle-up.f-12.ml-1
+                                      span.text-muted.mt-2.mb-2.block-bottom Today
+                                      h4.num.m-0
+                                        span.counter.color-bottom 9361
+                                        | M
+                      // Chart widget with bar chart Ends
+                      // small widgets Start
+                      .row
+                        // Live Product chart widget Start
+                        .xl-50.col-md-6
+                          .small-chart-widget.chart-widgets-small
+                            .card
+                              .card-header
+                                h5 Live Products
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-simple-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body.bg-primary
+                                .chart-container
+                                  .live-products
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="card-body bg-primary"&gt;
+                                        | &lt;div class="chart-container"&gt;
+                                        | &lt;div class="live-products"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        // Live Product chart widget Ends
+                        // Turnover chart widget Start
+                        .xl-50.col-md-6
+                          .small-chart-widget.chart-widgets-small
+                            .card
+                              .card-header
+                                h5 Turnover
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-simple-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body.bg-secondary
+                                .chart-container
+                                  .turnover
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head1
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="card-body bg-secondary"&gt;
+                                        | &lt;div class="chart-container"&gt;
+                                        | &lt;div class="turnover"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        // Turnover chart widget Ends
+                        // Monthly Sale chart widget Start
+                        .xl-50.col-md-6
+                          .small-chart-widget.chart-widgets-small
+                            .card
+                              .card-header
+                                h5 Monthly Sales
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-simple-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body.bg-secondary
+                                .chart-container
+                                  .monthly
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head2
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="card-body bg-secondary"&gt;
+                                        | &lt;div class="chart-container"&gt;
+                                        | &lt;div class="monthly"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        // Monthly Sale chart widget Ends
+                        // Uses chart widget Start
+                        .xl-50.col-md-6
+                          .small-chart-widget.chart-widgets-small
+                            .card
+                              .card-header
+                                h5 Uses
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-simple-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body.bg-primary
+                                .chart-container
+                                  .uses
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head3
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="card-body bg-primary"&gt;
+                                        | &lt;div class="chart-container"&gt;
+                                        | &lt;div class="uses"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        // Uses chart widget Ends
+                      // small widgets Ends
+                      // status widget Start
+                      .row
+                        .col-xl-4.col-lg-12
+                          .status-widget
+                            .card
+                              .card-header
+                                .row
+                                  .col-9
+                                    h5 Finance 
+                                  .col-3.text-sm-right
+                                    i.text-muted(data-feather='navigation')
+                              .card-body
+                                .status-details
+                                  .row
+                                    .col-6.text-center
+                                      span Investor
+                                      h4.counter.mb-0 3659
+                                    .col-6.text-center
+                                      span Earning
+                                      h4.mb-0
+                                        span.counter 86
+                                        | %
+                              .status-chart.bg-primary
+                                .chart-container
+                                  #finance-graph.flot-chart-placeholder
+                        .col-xl-4.col-lg-12
+                          .status-widget
+                            .card
+                              .card-header
+                                .row
+                                  .col-9
+                                    h5 Order Status
+                                  .col-3.text-sm-right
+                                    i.text-muted(data-feather='shopping-bag')
+                              .card-body
+                                .status-details
+                                  .row
+                                    .col-6.text-center
+                                      span Complete
+                                      h4.mb-0
+                                        span.counter 62
+                                        | %
+                                    .col-6.text-center
+                                      span Cancle
+                                      h4.mb-0
+                                        span.counter 20
+                                        | %
+                              .status-chart.bg-secondary
+                                  .chart-container
+                                    #order-graph.flot-chart-placeholder
+                        .col-xl-4.col-lg-12
+                          .status-widget
+                            .card
+                              .card-header
+                                .row
+                                  .col-9
+                                    h5 Skill Status
+                                  .col-3.text-sm-right
+                                    i.text-muted(data-feather='trending-up')
+                              .card-body
+                                .status-details
+                                  .row
+                                    .col-6.text-center
+                                      span Design
+                                      h4.mb-0
+                                        span.counter 25
+                                        | %
+                                    .col-6.text-center
+                                      span Market
+                                      h4.mb-0
+                                        span.counter 40
+                                        | %
+                              .status-chart.bg-primary
+                                .chart-container
+                                  #skill-graph.flot-chart-placeholder
+                      // status widget Ends
+                      // Browser uses and website visiter widget Start
+                      .row
+                        // browser uses widget chart Start
+                        .col-sm-6
+                          .donut-chart-widget
+                            .card
+                              .card-header
+                                h5 Browser Uses
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-simple-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body
+                                .chart-container
+                                  #browser-uses-chart.flot-chart-placeholder
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head4
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="chart-container"&gt;
+                                        | &lt;div id="#browser-uses-chart" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                        // browser uses widget chart Ends
+                        // Website visiter widget Start
+                        .col-sm-6
+                          .donut-chart-widget
+                            .card
+                              .card-header
+                                h5 Website Visiter
+                                .card-header-right
+                                  ul.list-unstyled.card-option
+                                    li
+                                      i.icofont.icofont-simple-left
+                                    li
+                                      i.view-html.fa.fa-code
+                                    li
+                                      i.icofont.icofont-maximize.full-card
+                                    li
+                                      i.icofont.icofont-minus.minimize-card
+                                    li
+                                      i.icofont.icofont-refresh.reload-card
+                                    li
+                                      i.icofont.icofont-error.close-card
+                              .card-body
+                                .chart-container
+                                  #website-visiter-chart.flot-chart-placeholder
+                                .code-box-copy
+                                  button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head5', title='Copy')
+                                    i.icofont.icofont-copy-alt
+                                  pre
+                                    code.language-html#example-head5
+                                        | &lt;!-- Cod Box Copy begin --&gt;
+                                        | &lt;div class="chart-container"&gt;
+                                        | &lt;div id="#website-visiter-chart" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                        | &lt;/div&gt;
+                                        | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

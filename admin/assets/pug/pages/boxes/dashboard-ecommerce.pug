@@ -1,0 +1,1249 @@
+- var counter               = true;
+- var height_equal          = true;
+- var morrischart           = true;
+- var chartjs               = true;
+- var knobchart             = true;
+- var page_knobchart        = true;
+- var owlcarousel           = true;
+- var prism                 = true;
+- var clipboard             = true;
+- var customcard            = true;
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+- var dashboard_ecommerce   = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper.box-layout
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 E-commerce
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Dashboard
+                                        li.breadcrumb-item.active E-commerce
+                                include ../../components/bookmark
+                    // Container-fluid starts
+                    .container-fluid
+                      .row
+                        .col-xl-7.xl-100.set-col-12
+                          .row
+                            #owl-carousel-14.owl-carousel.owl-theme
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='dollar-sign')
+                                    div
+                                      span Total Earning
+                                    h4.font-primary.mb-0.counter 72
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='map-pin')
+                                    div
+                                      span Total Web Visitor
+                                    h4.font-primary.mb-0.counter 65
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='shopping-cart')
+                                    div
+                                      span Total Sale Product
+                                    h4.font-primary.mb-0.counter 96
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='trending-down')
+                                    div
+                                      span Company Loss
+                                    h4.font-primary.mb-0.counter 89
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='dollar-sign')
+                                    div
+                                      span Total Earning
+                                    h4.font-primary.mb-0.counter 72
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='map-pin')
+                                    div
+                                      span Total Web Visitor
+                                    h4.font-primary.mb-0.counter 65
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='shopping-cart')
+                                    div
+                                      span Total Sale Product
+                                    h4.font-primary.mb-0.counter 96
+                              .item
+                                .card
+                                  .card-body.ecommerce-icons.text-center
+                                    i(data-feather='trending-down')
+                                    div
+                                      span Company Loss
+                                    h4.font-primary.mb-0.counter 89
+                            .col-md-12
+                              .card
+                                .card-header
+                                  h5 Total Sale
+                                  .card-header-right
+                                    ul.list-unstyled.card-option
+                                      li
+                                        i.icofont.icofont-simple-left
+                                      li
+                                        i.view-html.fa.fa-code
+                                      li
+                                        i.icofont.icofont-maximize.full-card
+                                      li
+                                        i.icofont.icofont-minus.minimize-card
+                                      li
+                                        i.icofont.icofont-refresh.reload-card
+                                      li
+                                        i.icofont.icofont-error.close-card
+                                .card-body.charts-box
+                                  .flot-chart-container
+                                    #graph123.flot-chart-placeholder
+                                  .code-box-copy
+                                    button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head', title='Copy')
+                                      i.icofont.icofont-copy-alt
+                                    pre
+                                      code.language-html#example-head
+                                          | &lt;!-- Cod Box Copy begin --&gt;
+                                          |   &lt;div class="card-body charts-box"&gt;
+                                          |     &lt;div class="flot-chart-container"&gt;
+                                          |       &lt;div id="graph123" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                          |     &lt;/div&gt;
+                                          |   &lt;/div&gt;
+                                          | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-5.xl-100.set-col-12
+                          .card
+                            .card-header
+                              h5 Best Sellers
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .table-responsive.sellers
+                                table.table.table-bordernone
+                                  thead
+                                    tr
+                                      th(scope='col') Name
+                                      th(scope='col') Sale
+                                      th(scope='col') Stock
+                                      th(scope='col') Categories
+                                  tbody
+                                    tr
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.align-top.m-r-15.rounded-circle(src='../assets/images/user/6.jpg', alt='')
+                                          .d-inline-block
+                                            p Alana Slacker
+                                      td
+                                        p 8956
+                                      td
+                                        p 54
+                                      td
+                                        p Product No: 1
+                                    tr
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.align-top.m-r-15.rounded-circle(src='../assets/images/user/2.png', alt='')
+                                          .d-inline-block
+                                            p Alana Slacker
+                                      td
+                                        p 8956
+                                      td
+                                        p 54
+                                      td
+                                        p Product No: 1
+                                    tr
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.align-top.m-r-15.rounded-circle(src='../assets/images/user/3.jpg', alt='')
+                                          .d-inline-block
+                                            p Alana Slacker
+                                      td
+                                        p 8956
+                                      td
+                                        p 54
+                                      td
+                                        p Product No: 1
+                                    tr
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.align-top.m-r-15.rounded-circle(src='../assets/images/user/4.jpg', alt='')
+                                          .d-inline-block
+                                            p Alana Slacker
+                                      td
+                                        p 8956
+                                      td
+                                        p 54
+                                      td
+                                        p Product No: 1
+                                    tr
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.align-top.m-r-15.rounded-circle(src='../assets/images/user/5.jpg', alt='')
+                                          .d-inline-block
+                                            p Alana Slacker
+                                      td
+                                        p 8956
+                                      td
+                                        p 54
+                                      td
+                                        p Product No: 1
+                                    tr
+                                      td
+                                        .d-inline-block.align-middle
+                                          img.img-radius.img-30.align-top.m-r-15.rounded-circle(src='../assets/images/user/15.png', alt='')
+                                          .d-inline-block
+                                            p Alana Slacker
+                                      td
+                                        p 8956
+                                      td
+                                        p 54
+                                      td
+                                        p Product No: 1
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head1', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head1
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="table-responsive sellers"&gt;
+                                      |   &lt;table class="table table-bordernone"&gt;
+                                      |     &lt;thead&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;th scope="col"&gt;Name&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Sale&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Stock&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Categories&lt;/th&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/thead&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="d-inline-block align-middle"&gt;
+                                      |             &lt;img src="../assets/images/user/6.jpg" class="img-radius img-30 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      |             &lt;div class="d-inline-block"&gt;
+                                      |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;8956&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;54&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;Product No: 1&lt;/p&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="d-inline-block align-middle"&gt;
+                                      |             &lt;img src="../assets/images/user/2.png" class="img-radius img-30 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      |             &lt;div class="d-inline-block"&gt;
+                                      |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;8956&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;54&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;Product No: 1&lt;/p&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="d-inline-block align-middle"&gt;
+                                      |             &lt;img src="../assets/images/user/3.jpg" class="img-radius img-30 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      |             &lt;div class="d-inline-block"&gt;
+                                      |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;8956&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;54&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;Product No: 1&lt;/p&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="d-inline-block align-middle"&gt;
+                                      |             &lt;img src="../assets/images/user/4.jpg" class="img-radius img-30 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      |             &lt;div class="d-inline-block"&gt;
+                                      |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;8956&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;54&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;Product No: 1&lt;/p&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="d-inline-block align-middle"&gt;
+                                      |             &lt;img src="../assets/images/user/5.jpg" class="img-radius img-30 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      |             &lt;div class="d-inline-block"&gt;
+                                      |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;8956&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;54&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;Product No: 1&lt;/p&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="d-inline-block align-middle"&gt;
+                                      |             &lt;img src="../assets/images/user/15.png" class="img-radius img-30 align-top m-r-15 rounded-circle" alt=""&gt;
+                                      |             &lt;div class="d-inline-block"&gt;
+                                      |               &lt;p&gt;Alana Slacker&lt;/p&gt;
+                                      |             &lt;/div&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;8956&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;54&lt;/p&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;p&gt;Product No: 1&lt;/p&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card
+                            .card-body
+                              .number-widgets
+                                .media
+                                  .media-body.align-self-center
+                                    h6.mb-0 Payment Status
+                                  .radial-bar.radial-bar-95.radial-bar-primary(data-label='95%')
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card
+                            .card-body
+                              .number-widgets
+                                .media
+                                  .media-body.align-self-center
+                                    h6.mb-0 Work Process
+                                  .radial-bar.radial-bar-75.radial-bar-primary(data-label='75%')
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card
+                            .card-body
+                              .number-widgets
+                                .media
+                                  .media-body.align-self-center
+                                    h6.mb-0 Sale Completed
+                                  .radial-bar.radial-bar-90.radial-bar-primary(data-label='90%')
+                        .col-xl-3.xl-50.col-sm-6.set-col-6
+                          .card
+                            .card-body
+                              .number-widgets
+                                .media
+                                  .media-body.align-self-center
+                                    h6.mb-0 Payment Done
+                                  .radial-bar.radial-bar-80.radial-bar-primary(data-label='80%')
+                        .col-md-6
+                          .card
+                            .card-header
+                              h5 Total Income
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block
+                              canvas#myLineCharts
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head2', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head2
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chart-block"&gt;
+                                      |   &lt;canvas id="myLineCharts"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-md-6
+                          .card
+                            .card-header
+                              h5 Total Profit
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.chart-block
+                              canvas#profitchart
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head3', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head3
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body chart-block"&gt;
+                                      |   &lt;canvas id="profitchart"&gt;&lt;/canvas&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.col-md-6.set-col-6
+                          .card
+                            .card-header
+                              h5 Profile Status
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.height-equal
+                              .progress-block
+                                .progress-title
+                                  span Basic Information
+                                  span.pull-right 15/18
+                                .progress(style='height: 3px;')
+                                  .progress-bar.bg-primary(role='progressbar', style='width: 90%', aria-valuenow='90', aria-valuemin='0', aria-valuemax='100')
+                              .progress-block
+                                .progress-title
+                                  span Portfolio
+                                  span.pull-right 5/6
+                                .progress(style='height: 3px;')
+                                  .progress-bar.bg-primary(role='progressbar', style='width: 85%', aria-valuenow='85', aria-valuemin='0', aria-valuemax='100')
+                              .progress-block
+                                .progress-title
+                                  span Legal Document
+                                  span.pull-right 12/20
+                                .progress(style='height: 3px;')
+                                  .progress-bar.bg-primary(role='progressbar', style='width: 80%', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100')
+                              .progress-block
+                                .progress-title
+                                  span Interest
+                                  span.pull-right 5/10
+                                .progress(style='height: 3px;')
+                                  .progress-bar.bg-primary(role='progressbar', style='width: 95%', aria-valuenow='95', aria-valuemin='0', aria-valuemax='100')
+                              .progress-block
+                                .progress-title
+                                  span Product Info
+                                  span.pull-right 15/17
+                                .progress(style='height: 3px;')
+                                  .progress-bar.bg-primary(role='progressbar', style='width: 75%', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100')
+                              .progress-block.mb-0
+                                .progress-title
+                                  span Billing Details
+                                  span.pull-right 2/5
+                                .progress(style='height: 3px;')
+                                  .progress-bar.bg-primary(role='progressbar', style='width: 95%', aria-valuenow='95', aria-valuemin='0', aria-valuemax='100')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head4', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head4
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="progress-block"&gt;
+                                      |   &lt;div class="progress-title"&gt;
+                                      |     &lt;span&gt;Basic Information&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;15/18&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="progress" style="height: 3px;"&gt;
+                                      |     &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="progress-block"&gt;
+                                      |   &lt;div class="progress-title"&gt;
+                                      |     &lt;span&gt;Portfolio&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;5/6&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="progress" style="height: 3px;"&gt;
+                                      |     &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="progress-block"&gt;
+                                      |   &lt;div class="progress-title"&gt;
+                                      |     &lt;span&gt;Legal Document&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;12/20&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="progress" style="height: 3px;"&gt;
+                                      |     &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="progress-block"&gt;
+                                      |   &lt;div class="progress-title"&gt;
+                                      |     &lt;span&gt;Interest&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;5/10&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="progress" style="height: 3px;"&gt;
+                                      |     &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="progress-block"&gt;
+                                      |   &lt;div class="progress-title"&gt;
+                                      |     &lt;span&gt;Product Info&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;15/17&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="progress" style="height: 3px;"&gt;
+                                      |     &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;div class="progress-block mb-0"&gt;
+                                      |   &lt;div class="progress-title"&gt;
+                                      |     &lt;span&gt;Billing Details&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;2/5&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="progress" style="height: 3px;"&gt;
+                                      |     &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-50.col-md-6.set-col-6
+                          .card
+                            .card-header
+                              h5 Logs
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.height-equal.log-content
+                              .logs-element
+                                .circle-double-odd
+                                span New User Registration
+                                span.pull-right 14:12
+                              .logs-element
+                                .circle-double-even
+                                span New sale: souffle.
+                                span.pull-right 19:00
+                              .logs-element
+                                .circle-double-odd
+                                span 14 products added.
+                                span.pull-right 05:22
+                              .logs-element
+                                .circle-double-even
+                                span New sale: Napole.
+                                span.pull-right 08:45
+                              .logs-element
+                                .circle-double-odd
+                                span New User Registration
+                                span.pull-right 06:51
+                              .logs-element
+                                .circle-double-even
+                                span New User Registration
+                                span.pull-right 09:42
+                              .logs-element
+                                .circle-double-odd
+                                span New User Registration
+                                span.pull-right 10:45
+                              .logs-element
+                                .circle-double-even
+                                span New User Registration
+                                span.pull-right 02:05
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head5', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head5
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body height-equal log-content"&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-odd"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;New User Registration&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;14:12&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-even"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;New sale: souffle.&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;19:00&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-odd"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;14 products added.&lt;/span&gt;4
+                                      |     &lt;span class="pull-right"&gt;05:22&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-even"&gt;&lt;/div&gt;
+                                      |       &lt;span&gt;New sale: Napole.&lt;/span&gt;
+                                      |       &lt;span class="pull-right"&gt;08:45&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-odd"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;New User Registration&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;06:51&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-even"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;New User Registration&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;09:42&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-odd"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;New User Registration&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;10:45&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="logs-element"&gt;
+                                      |     &lt;div class="circle-double-even"&gt;&lt;/div&gt;
+                                      |     &lt;span&gt;New User Registration&lt;/span&gt;
+                                      |     &lt;span class="pull-right"&gt;02:05&lt;/span&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-100.set-col-12
+                          .card
+                            .card-header
+                              h5 statics
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body.updating-chart.height-equal
+                              .upadates.text-center
+                                h2.font-primary
+                                  i(data-feather='dollar-sign')
+                                  span.counter  89.68 
+                                  i(data-feather='arrow-up')
+                                p
+                                  | Week2 +
+                                  span.counter 15.44
+                              .flot-chart-container
+                                #updating-data-morris-chart.flot-chart-placeholder
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head6', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head6
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="card-body updating-chart height-equal"&gt;
+                                      |   &lt;div class="upadates text-center"&gt;
+                                      |     &lt;h2 class="font-primary"&gt;&lt;i data-feather="dollar-sign"&gt;&lt;/i&gt;&lt;span class="counter"&gt; 89.68 &lt;/span&gt;&lt;i data-feather="arrow-up"&gt;&lt;/i&gt;&lt;/h2&gt;
+                                      |     &lt;p&gt;Week2 +&lt;span class="counter"&gt;15.44&lt;/span&gt;&lt;/p&gt;
+                                      |   &lt;/div&gt;
+                                      |   &lt;div class="flot-chart-container"&gt;
+                                      |     &lt;div id="updating-data-morris-chart" class="flot-chart-placeholder"&gt;&lt;/div&gt;
+                                      |   &lt;/div&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-8.xl-100.set-col-12
+                          .card
+                            .card-header
+                              h5 Shopping Cart
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .table-responsive.shopping-table.text-center
+                                table.table.table-bordernone
+                                  thead
+                                    tr
+                                      th(scope='col') No
+                                      th(scope='col') Product
+                                      th(scope='col') Quantity
+                                      th(scope='col') Status
+                                      th(scope='col') Amount
+                                      th(scope='col') Delete
+                                  tbody
+                                    tr
+                                      td 1
+                                      td Computer
+                                      td 5
+                                      td
+                                        button.btn.btn-primary.btn-pill Active
+                                      td 15000
+                                      td
+                                        i(data-feather='x')
+                                    tr
+                                      td 2
+                                      td Headphone
+                                      td 8
+                                      td
+                                        button.btn.btn-primary.btn-pill Disable
+                                      td 8000
+                                      td
+                                        i(data-feather='x')
+                                    tr
+                                      td 3
+                                      td Furniture
+                                      td 3
+                                      td
+                                        button.btn.btn-primary.btn-pill Paused
+                                      td 12000
+                                      td
+                                        i(data-feather='x')
+                                    tr
+                                      td 4
+                                      td shoes
+                                      td 9
+                                      td
+                                        button.btn.btn-primary.btn-pill On Way
+                                      td 5500
+                                      td
+                                        i(data-feather='x')
+                                    tr
+                                      td 5
+                                      td Mobile
+                                      td 2
+                                      td
+                                        button.btn.btn-primary.btn-pill Active
+                                      td 15000
+                                      td
+                                        i(data-feather='x')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head7', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head7
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="table-responsive shopping-table text-center"&gt;
+                                      |   &lt;table class="table table-bordernone"&gt;
+                                      |     &lt;thead&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;th scope="col"&gt;No&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Product&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Quantity&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Status&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Amount&lt;/th&gt;
+                                      |         &lt;th scope="col"&gt;Delete&lt;/th&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/thead&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;1&lt;/td&gt;
+                                      |         &lt;td&gt;Computer&lt;/td&gt;
+                                      |         &lt;td&gt;5&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button class="btn btn-primary btn-pill"&gt;Active&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;15000&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;i data-feather="x"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;2&lt;/td&gt;
+                                      |         &lt;td&gt;Headphone&lt;/td&gt;
+                                      |         &lt;td&gt;8&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button class="btn btn-primary btn-pill"&gt;Disable&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;8000&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;i data-feather="x"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;3&lt;/td&gt;
+                                      |         &lt;td&gt;Furniture&lt;/td&gt;
+                                      |         &lt;td&gt;3&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button class="btn btn-primary btn-pill"&gt;Paused&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;12000&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;i data-feather="x"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;4&lt;/td&gt;
+                                      |         &lt;td&gt;shoes&lt;/td&gt;
+                                      |         &lt;td&gt;9&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;button class="btn btn-primary btn-pill"&gt;On Way&lt;/button&gt;&lt;/td&gt;
+                                      |         &lt;td&gt;5500&lt;/td&gt;
+                                      |         &lt;td&gt;&lt;i data-feather="x"&gt;&lt;/i&gt;&lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-4.xl-100.set-col-12
+                          .card
+                            .card-header
+                              h5 Review
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .text-center.ecommerce-knob
+                                input.knob(data-width='294', data-height='294', data-angleoffset='180', data-fgcolor='#4466f2', data-skin='tron', data-thickness='.1', value='35')
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head8', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head8
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="text-center ecommerce-knob"&gt;
+                                      |   &lt;input class="knob" data-width="294" data-height="294" data-angleOffset="180" data-fgColor="#4466f2" data-skin="tron" data-thickness=".1" value="35"&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                        .col-xl-12
+                          .card
+                            .card-header.position-header-todo
+                              h5 Customer Support
+                              .card-header-right
+                                ul.list-unstyled.card-option
+                                  li
+                                    i.icofont.icofont-simple-left
+                                  li
+                                    i.view-html.fa.fa-code
+                                  li
+                                    i.icofont.icofont-maximize.full-card
+                                  li
+                                    i.icofont.icofont-minus.minimize-card
+                                  li
+                                    i.icofont.icofont-refresh.reload-card
+                                  li
+                                    i.icofont.icofont-error.close-card
+                            .card-body
+                              .support-table.table-responsive.custom-scrollbar
+                                table.table.table-bordernone
+                                  tbody
+                                    tr
+                                      td
+                                        .circle-rounded
+                                          h6 A
+                                      td
+                                        h6.f-w-600
+                                          | Edverd Jonshan
+                                          small 15 Sep 2018
+                                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                      td
+                                        .onhover-dropdown
+                                          i.fa.fa-square.font-primary
+                                          h6.f-w-600.mb-0.d-inline-block Priority
+                                          ul.status-dropdown.onhover-show-div
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-success
+                                                | Low
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-secondary
+                                                | Medium
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-warning
+                                                | High
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-danger
+                                                | Urgent
+                                      td
+                                        .onhover-dropdown
+                                          i(data-feather='user')
+                                          h6.f-w-600.mb-0.d-inline-block Assigned To
+                                          ul.assign-dropdown.onhover-show-div
+                                              li
+                                                .form
+                                                  .form-group.mb-0
+                                                    input.form-control(type='text', placeholder='serach..')
+                                                    i.fa.fa-search
+                                              li
+                                                a(href='#')
+                                                  | Alana Slacker
+                                              li
+                                                a(href='#')
+                                                  | Nick Stone
+                                              li
+                                                a(href='#')
+                                                  | Anna Strong
+                                      td
+                                        .onhover-dropdown
+                                          i(data-feather='activity')
+                                          h6.f-w-600.mb-0.d-inline-block Status
+                                          ul.status-dropdown.onhover-show-div
+                                            li
+                                              a(href='#')
+                                                | Open
+                                            li
+                                              a(href='#')
+                                                | Pending
+                                            li
+                                              a(href='#')
+                                                | Resolved
+                                            li
+                                              a(href='#')
+                                                | Close
+                                    tr
+                                      td
+                                        .circle-rounded
+                                          h6 A
+                                      td
+                                        h6.f-w-600
+                                          | Edverd Jonshan
+                                          small 15 Sep 2018
+                                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                      td
+                                        .onhover-dropdown
+                                          i.fa.fa-square.font-primary
+                                          h6.f-w-600.mb-0.d-inline-block Priority
+                                          ul.status-dropdown.onhover-show-div
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-success
+                                                | Low
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-secondary
+                                                | Medium
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-warning
+                                                | High
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-danger
+                                                | Urgent
+                                      td
+                                        .onhover-dropdown
+                                          i(data-feather='user')
+                                          h6.f-w-600.mb-0.d-inline-block Assigned To
+                                          ul.assign-dropdown.onhover-show-div
+                                              li
+                                                .form
+                                                  .form-group.mb-0
+                                                    input.form-control(type='text', placeholder='serach..')
+                                                    i.fa.fa-search
+                                              li
+                                                a(href='#')
+                                                  | Alana Slacker
+                                              li
+                                                a(href='#')
+                                                  | Nick Stone
+                                              li
+                                                a(href='#')
+                                                  | Anna Strong  
+                                      td
+                                        .onhover-dropdown
+                                          i(data-feather='activity')
+                                          h6.f-w-600.mb-0.d-inline-block Status
+                                          ul.status-dropdown.onhover-show-div
+                                            li
+                                              a(href='#')
+                                                | Open
+                                            li
+                                              a(href='#')
+                                                | Pending
+                                            li
+                                              a(href='#')
+                                                | Resolved
+                                            li
+                                              a(href='#')
+                                                | Close
+                                    tr
+                                      td
+                                        .circle-rounded
+                                          h6 A
+                                      td
+                                        h6.f-w-600
+                                          | Edverd Jonshan
+                                          small 15 Sep 2018
+                                        p Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                      td
+                                        .onhover-dropdown
+                                          i.fa.fa-square.font-primary
+                                          h6.f-w-600.mb-0.d-inline-block Priority
+                                          ul.status-dropdown.onhover-show-div
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-success
+                                                | Low
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-secondary
+                                                | Medium
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-warning
+                                                | High
+                                            li
+                                              a(href='#')
+                                                i.fa.fa-square.mr-2.font-danger
+                                                | Urgent
+                                      td
+                                        .onhover-dropdown
+                                          i(data-feather='user')
+                                          h6.f-w-600.mb-0.d-inline-block Assigned To
+                                          ul.assign-dropdown.onhover-show-div
+                                              li
+                                                .form
+                                                  .form-group.mb-0
+                                                    input.form-control(type='text', placeholder='serach..')
+                                                    i.fa.fa-search
+                                              li
+                                                a(href='#')
+                                                  | Alana Slacker
+                                              li
+                                                a(href='#')
+                                                  | Nick Stone
+                                              li
+                                                a(href='#')
+                                                  | Anna Strong
+                                      td
+                                        .onhover-dropdown
+                                          i(data-feather='activity')
+                                          h6.f-w-600.mb-0.d-inline-block Status
+                                          ul.status-dropdown.onhover-show-div
+                                            li
+                                              a(href='#')
+                                                | Open
+                                            li
+                                              a(href='#')
+                                                | Pending
+                                            li
+                                              a(href='#')
+                                                | Resolved
+                                            li
+                                              a(href='#')
+                                                | Close
+                              .code-box-copy
+                                button.code-box-copy__btn.btn-clipboard(data-clipboard-target='#example-head9', title='Copy')
+                                  i.icofont.icofont-copy-alt
+                                pre
+                                  code.language-html#example-head9
+                                      | &lt;!-- Cod Box Copy begin --&gt;
+                                      | &lt;div class="support-table table-responsive custom-scrollbar"&gt;
+                                      |   &lt;table class="table table-bordernone"&gt;
+                                      |     &lt;tbody&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="circle-rounded"&gt;
+                                      |             &lt;h6&gt;A&lt;/h6&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;h6 class="f-w-600"&gt;Edverd Jonshan&lt;small&gt;15 Sep 2018&lt;/small&gt;&lt;/h6&gt;
+                                      |           &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i class="fa fa-square font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Priority&lt;/h6&gt;
+                                      |             &lt;ul class="status-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-success"&gt;&lt;/i&gt;Low&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-secondary"&gt;&lt;/i&gt;Medium&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-warning"&gt;&lt;/i&gt;High&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-danger"&gt;&lt;/i&gt;Urgent&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i data-feather="user"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Assigned To&lt;/h6&gt;
+                                      |             &lt;ul class="assign-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;
+                                      |                 &lt;div class="form"&gt;
+                                      |                   &lt;div class="form-group mb-0"&gt;
+                                      |                     &lt;input class="form-control" type="text" placeholder="serach.."&gt;
+                                      |                     &lt;i class="fa fa-search"&gt;&lt;/i&gt;
+                                      |                   &lt;/div&gt;
+                                      |                 &lt;/div&gt;
+                                      |               &lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Alana Slacker&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Nick Stone&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Anna Strong&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i data-feather="activity"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Status&lt;/h6&gt;
+                                      |             &lt;ul class="status-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Open&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Pending&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Resolved&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Close&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="circle-rounded"&gt;
+                                      |             &lt;h6&gt;A&lt;/h6&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;h6 class="f-w-600"&gt;Edverd Jonshan&lt;small&gt;15 Sep 2018&lt;/small&gt;&lt;/h6&gt;
+                                      |           &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i class="fa fa-square font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Priority&lt;/h6&gt;
+                                      |             &lt;ul class="status-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-success"&gt;&lt;/i&gt;Low&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-secondary"&gt;&lt;/i&gt;Medium&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-warning"&gt;&lt;/i&gt;High&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-danger"&gt;&lt;/i&gt;Urgent&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i data-feather="user"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Assigned To&lt;/h6&gt;
+                                      |             &lt;ul class="assign-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;
+                                      |                 &lt;div class="form"&gt;
+                                      |                   &lt;div class="form-group mb-0"&gt;
+                                      |                     &lt;input class="form-control" type="text" placeholder="serach.."&gt;
+                                      |                     &lt;i class="fa fa-search"&gt;&lt;/i&gt;
+                                      |                   &lt;/div&gt;
+                                      |                 &lt;/div&gt;
+                                      |               &lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Alana Slacker&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Nick Stone&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Anna Strong  &lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i data-feather="activity"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Status&lt;/h6&gt;
+                                      |             &lt;ul class="status-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Open&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Pending&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Resolved&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Close&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |       &lt;tr&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="circle-rounded"&gt;
+                                      |             &lt;h6&gt;A&lt;/h6&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;h6 class="f-w-600"&gt;Edverd Jonshan&lt;small&gt;15 Sep 2018&lt;/small&gt;&lt;/h6&gt;
+                                      |           &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry.&lt;/p&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i class="fa fa-square font-primary"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Priority&lt;/h6&gt;
+                                      |             &lt;ul class="status-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-success"&gt;&lt;/i&gt;Low&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-secondary"&gt;&lt;/i&gt;Medium&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-warning"&gt;&lt;/i&gt;High&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;&lt;i class="fa fa-square mr-2 font-danger"&gt;&lt;/i&gt;Urgent&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i data-feather="user"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Assigned To&lt;/h6&gt;
+                                      |             &lt;ul class="assign-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;
+                                      |                 &lt;div class="form"&gt;
+                                      |                   &lt;div class="form-group mb-0"&gt;
+                                      |                     &lt;input class="form-control" type="text" placeholder="serach.."&gt;
+                                      |                     &lt;i class="fa fa-search"&gt;&lt;/i&gt;
+                                      |                   &lt;/div&gt;
+                                      |                 &lt;/div&gt;
+                                      |               &lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Alana Slacker&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Nick Stone&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Anna Strong&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |         &lt;td&gt;
+                                      |           &lt;div class="onhover-dropdown"&gt;
+                                      |             &lt;i data-feather="activity"&gt;&lt;/i&gt;
+                                      |             &lt;h6 class="f-w-600 mb-0 d-inline-block"&gt;Status&lt;/h6&gt;
+                                      |             &lt;ul class="status-dropdown onhover-show-div"&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Open&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Pending&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Resolved&lt;/a&gt;&lt;/li&gt;
+                                      |               &lt;li&gt;&lt;a href="#"&gt;Close&lt;/a&gt;&lt;/li&gt;
+                                      |             &lt;/ul&gt;
+                                      |           &lt;/div&gt;
+                                      |         &lt;/td&gt;
+                                      |       &lt;/tr&gt;
+                                      |     &lt;/tbody&gt;
+                                      |   &lt;/table&gt;
+                                      | &lt;/div&gt;
+                                      | &lt;!-- Cod Box Copy end --&gt;
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files

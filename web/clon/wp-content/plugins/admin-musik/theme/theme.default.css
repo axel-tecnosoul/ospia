@@ -1,0 +1,17 @@
+:root{
+	--text-color: #fff;
+	--base-color: #121e21;
+	--highlight-color: #40d050;
+	--notification-color: var(--highlight-color);
+	--button-color: var(--highlight-color);
+
+	--menu-text: rgba(160, 170, 200, 0.85);
+	--menu-icon:  var(--menu-text);
+
+	--menu-highlight-color: #fff;
+	--menu-highlight-background: var(--highlight-color);
+	--menu-submenu-focus-text: #fff;
+	--menu-submenu-background: #0c1614;
+
+	--menu-bubble-text: #fff;
+}

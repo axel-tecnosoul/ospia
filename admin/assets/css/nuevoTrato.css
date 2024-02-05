@@ -1,0 +1,52 @@
+
+.br-widget{
+    display: inline-block;
+}
+
+.br-widget a{
+    background-color: #dcdddd !important;
+}
+
+a.br-active, a.br-selected {
+    background-color: #0B3B0B !important;
+}
+
+.br-current-rating{
+    /*width: calc( 100% - 6px) !important;*/
+    width:100% !important;
+    margin-left: -6px !important;
+}
+
+.personalizable{
+	flex-basis: 0 ;
+	height: 24px !important;
+    width: 46px !important;
+    align-items: center ;
+    justify-content: center ;
+    margin-left: -6px !important;
+    /*background-color: #08a742 ;*/
+    /*background-color: #dcdddd !important;*/
+    cursor: pointer ;
+    font-size: 13px ;
+    text-align: center ;
+    font-style: normal ;
+    font-stretch: normal ;
+    line-height: 1.5 ;
+    letter-spacing: normal ;
+    color: #fff ;
+    -webkit-clip-path: polygon(calc(100% - 6px) 0,100% 50%,calc(100% - 6px) 100%,2px 100%,8px 50%,2px 0) ;
+    clip-path: polygon(calc(100% - 6px) 0,100% 50%,calc(100% - 6px) 100%,2px 100%,8px 50%,2px 0) ;
+}
+
+.personalizable:first-of-type{
+	margin-left: 0;
+    border-radius: 2px 0 0 2px;
+    -webkit-clip-path: polygon(0 0,calc(100% - 6px) 0,100% 50%,calc(100% - 6px) 100%,0 100%);
+    clip-path: polygon(0 0,calc(100% - 6px) 0,100% 50%,calc(100% - 6px) 100%,0 100%);
+}
+
+.personalizable:last-of-type{
+	border-radius: 0 2px 2px 0;
+    -webkit-clip-path: polygon(100% 0,100% 100%,2px 100%,8px 50%,2px 0);
+    clip-path: polygon(100% 0,100% 100%,2px 100%,8px 50%,2px 0);
+}

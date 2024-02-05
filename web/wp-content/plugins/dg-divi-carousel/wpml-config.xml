@@ -1,0 +1,25 @@
+<wpml-config>
+    <shortcode-list>dica_divi_carousel, dica_divi_carouselitem</shortcode-list>
+    <shortcodes>
+        <shortcode>
+            <tag>dica_divi_carousel</tag>
+            <attributes>
+                <attribute type="media-url">background_image</attribute>
+            </attributes>
+        </shortcode>
+        <shortcode>
+            <tag>dica_divi_carouselitem</tag>
+            <attributes>
+                <attribute>title</attribute>
+                <attribute>sub_title</attribute>
+                <attribute>button_text</attribute>
+                <attribute>image_alt</attribute>
+                <attribute type="link">url</attribute>
+                <attribute type="link">link_option_url</attribute>
+                <attribute type="link">button_url</attribute>
+                <attribute type="media-url">image</attribute>
+                <attribute type="media-url">background_image</attribute>
+            </attributes>
+        </shortcode>
+    </shortcodes>
+</wpml-config>

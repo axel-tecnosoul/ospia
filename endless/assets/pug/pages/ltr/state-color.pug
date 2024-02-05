@@ -1,0 +1,298 @@
+- var chat_menu             = true;
+- var theme_customizer      = true;
+- var typeahead             = true;
+- var typeahead_search      = true;
+- var tooltip               = true;
+
+doctype html
+html(lang='en')
+    include ../../components/header-files
+    body
+        include ../../components/loader
+        // page-wrapper Start
+        .page-wrapper
+            include ../../components/header
+            // Page Body Start
+            .page-body-wrapper
+                include ../../components/sidebar
+                include ../../components/chat-sidebar
+                .page-body
+                    .container-fluid
+                        .page-header
+                            .row
+                                .col
+                                  .page-header-left
+                                    h3 State Color
+                                    ol.breadcrumb
+                                        li.breadcrumb-item
+                                          a(href='index.html')
+                                            i(data-feather='home')
+                                        li.breadcrumb-item Base
+                                        li.breadcrumb-item.active State Color
+                                include ../../components/bookmark
+                    // Container-fluid starts                    
+                    .container-fluid
+                      .row
+                        .col-sm-12
+                          .card
+                            .card-header
+                              h5 Default Color
+                            .card-body
+                              .color-box
+                                button.btn.btn-primary.btn-square.digits #ab8ce4
+                                button.btn.btn-square.digits.btn-secondary #26c6da
+                                button.btn.btn-square.digits.btn-success #00c292
+                                button.btn.btn-square.digits.btn-info #03a9f3
+                                button.btn.btn-square.digits.btn-warning #fec107
+                                button.btn.btn-square.digits.btn-danger #fb9678
+                                button.btn.btn-square.digits.btn-light #eeeeee
+                                button.btn.btn-square.digits.btn-dark #263238
+                          .card
+                            .card-header
+                              h5 Color
+                            .card-body
+                              .row
+                                .col-lg-3.col-sm-6
+                                  h6.sub-title.text-uppercase Primary
+                                  .primary-color
+                                    ul.m-b-30
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6
+                                  h6.sub-title.text-uppercase secondary
+                                  .secondary-color
+                                    ul.m-b-30
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6
+                                  h6.sub-title.text-uppercase Success
+                                  .success-color
+                                    ul.m-b-30
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6
+                                  h6.sub-title.text-uppercase Info
+                                  .info-color
+                                    ul.m-b-30
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6
+                                  h6.sub-title.text-uppercase Warning
+                                  .yellow-color
+                                    ul
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6.xs-mt
+                                  h6.sub-title.text-uppercase Danger
+                                  .red-color
+                                    ul
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6.nav-md-mt
+                                  h6.sub-title.text-uppercase Pink
+                                  .pink-color
+                                    ul
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                .col-lg-3.col-sm-6.nav-md-mt
+                                  h6.sub-title.text-uppercase Grey
+                                  .gray-color
+                                    ul
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+                                      li
+                                        span
+
+                    // Container-fluid Ends
+                include ../../components/footer
+        include ../../components/footer-files   
