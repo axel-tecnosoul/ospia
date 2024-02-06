@@ -144,7 +144,6 @@ if(isset($_GET["fcmToken"])){
 if(isset($_POST["fcmToken"])){
   $token=$_POST["fcmToken"];
 }?>
-
 <body class="bg1">
   <!-- loader -->
   <!--<div id="loader">
@@ -161,13 +160,13 @@ if(isset($_POST["fcmToken"])){
         <h1>Acceso</h1>
       </div>
       <div class="section mt-1 mb-5 animate__animated animate__fadeInRight">
-        <form action="page-login.php" method="post">
+        <form action="page-login.php" method="post" id="myForm">
 
           <input type="hidden" name="token" value="<?=$token?>">
 
           <div class="form-group boxed">
             <div class="input-wrapper">
-              <input type="email" class="form-control" name="user" id="email1" placeholder="Email">
+              <input type="email" class="form-control" name="user" id="email1" placeholder="Email" value="<?=$email?>">
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
@@ -176,7 +175,7 @@ if(isset($_POST["fcmToken"])){
 
           <div class="form-group boxed">
             <div class="input-wrapper">
-              <input type="password" class="form-control" name="pass" id="password1" placeholder="Clave" autocomplete="off">
+              <input type="password" class="form-control" name="pass" id="password1" placeholder="Clave" autocomplete="off" value="<?=$clave?>">
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
@@ -206,6 +205,17 @@ if(isset($_POST["fcmToken"])){
 
   </div>
   <!-- * App Capsule -->
+
+  <?php
+  //var_dump($email);
+  //var_dump($clave);
+  if($email!="" and $clave!=""){?>
+    <script>
+      //console.log(document.getElementById("myForm"));
+      document.getElementById("myForm").submit();
+    </script><?php
+  }
+  ?>
 
   <!-- Modal Temporal -->
   <div class="modal fade modalbox animate__animated animate__fadeInRight" id="ModalAvisoTemporal" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">

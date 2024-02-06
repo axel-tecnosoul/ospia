@@ -72,6 +72,16 @@ $token=$_GET["token"]?>
             <div class="input-wrapper">
               <!-- <input type="date" required class="form-control" id="fecha_nacimiento" placeholder="Fecha nacimiento" value="<?=$fecha_nacimiento?>"> -->
               <input type="text" required class="form-control" id="fecha_nacimiento" placeholder="Fecha de nacimiento" value="<?=$fecha_nacimiento?>">
+              
+                <!-- Pikaday Library -->
+                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+                <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+
+                <!-- Datepicker Input -->
+                <!-- <label for="datepicker">Date</label>
+                <input type="text" id="datepicker"> -->
+
+
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
@@ -518,14 +528,37 @@ $token=$_GET["token"]?>
 
   <script>
     $(document).ready(function () {
-      $("#fecha_nacimiento").on("focus",function(){
+
+      var today = new Date();
+      var lastMonth = new Date().getMonth() - 1;
+
+      var picker = new Pikaday({
+        field: document.getElementById('fecha_nacimiento'),
+        maxDate: today,  // maximum/latest date set to today
+        // demo only
+        position: 'top left',
+        reposition: false,
+        //format: 'D/M/YYYY',
+        minDate: '1920-01-01',
+        yearRange: 100,
+        toString(date, format) {
+          // you should do formatting based on the passed format,
+          // but we will just return 'D/M/YYYY' for simplicity
+          const day = date.getDate();
+          const month = date.getMonth()+1;
+          const year = date.getFullYear();
+          return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+        },
+      });
+
+      /*$("#fecha_nacimiento").on("focus",function(){
         this.type='date'
         this.showPicker()
         this.showPicker()
       })
       $("#fecha_nacimiento").on("blur",function(){
         this.type='text'
-      })
+      })*/
 
       $("#form-register").submit(function(e){
         e.preventDefault();
