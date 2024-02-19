@@ -61,7 +61,7 @@ function enviarMail($cuenta_envio="bbdd", $destinatarios, $asunto, $cuerpo, $adj
   //var_dump($smtpClave);
   
   $mail = new PHPMailer();
-  $mail->SMTPDebug = 3;//Habilitamos solo para debugguear
+  //$mail->SMTPDebug = 3;//Habilitamos solo para debugguear
   $mail->IsSMTP();
   $mail->SMTPAuth = true;
   $mail->Port = 465;

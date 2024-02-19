@@ -86,202 +86,205 @@ if(!isset($_SESSION["user"]["ficha"])){
     </div>
     <div class="pageTitle"></div>
         
-    </div>
-    <br>
-    <br>
-    <div id="appCapsule" class="pt-0">
-      <ul class="listview image-listview text animate__animated animate__fadeInRight">
-        <li>
-          <div class="in item">
-            <div><strong>Personas Habilitadas</strong></div>
-          </div>
-        </li>
-      </ul>
-      <br><?php
-      
-      $id=$_SESSION["user"]["id"];
-      $ficha=$_SESSION["user"]["ficha"];
-      ?>
-	  <span class="float btn-primary" data-bs-toggle="modal" data-bs-target="#ModalNuevaPersona">
-		<ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
-	  </span>
-      <div class="section full mt-2 mb-2 animate__animated animate__fadeInRight">
-        <div class="sectiontitle2">
-          <ion-icon class="iconedbox iconedbox-lg" name="people-circle"></ion-icon>PERSONAS HABILITADAS de <?=$_SESSION['user']['nombre_apellido']?>
+  </div>
+  <br>
+  <br>
+  <div id="appCapsule" class="pt-0">
+    <ul class="listview image-listview text animate__animated animate__fadeInRight">
+      <li>
+        <div class="in item">
+          <div><strong>Personas Habilitadas</strong></div>
         </div>
-      </div><?php
+      </li>
+    </ul>
+    <br><?php
+    
+    $id=$_SESSION["user"]["id"];
+    $ficha=$_SESSION["user"]["ficha"];?>
 
-		include 'admin/database.php';
-		$pdo = Database::connect();
-        $sql = " SELECT `id`, `nombre_completo`, `dni`, `email`, `celular`, `clave` FROM `personas_habilitadas` WHERE `id_usuario` = ".$_SESSION['user']['id'];
+    <span class="float btn-primary" data-bs-toggle="modal" data-bs-target="#ModalNuevaPersona">
+      <ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
+    </span>
+    
+    <div class="section full mt-2 mb-2 animate__animated animate__fadeInRight">
+      <div class="sectiontitle2">
+        <ion-icon class="iconedbox iconedbox-lg" name="people-circle"></ion-icon>PERSONAS HABILITADAS de <?=$_SESSION['user']['nombre_apellido']?>
+      </div>
+    </div><?php
+
+    include 'admin/database.php';
+    $pdo = Database::connect();
+    $sql = " SELECT `id`, `nombre_completo`, `dni`, `email`, `celular`, `clave` FROM `personas_habilitadas` WHERE `id_usuario` = ".$_SESSION['user']['id'];
                             
-		foreach ($pdo->query($sql) as $row) {?>
-        <div class="listview link-listview search-result animate__animated animate__fadeInRight">
-          <div class="wide-block1 pt-2 pb-2" style="text-align: center;">
-            <button type="button" class="btn btn-secondary persona" data-id="<?=$row["id"]?>" data-bs-toggle="modal" data-bs-target="#ModalVerPersona_<?=$row["id"]?>"><?=$row["nombre_completo"]?></button>
+    foreach ($pdo->query($sql) as $row) {?>
+      <div class="listview link-listview search-result animate__animated animate__fadeInRight">
+        <div class="wide-block1 pt-2 pb-2" style="text-align: center;">
+          <button type="button" class="btn btn-secondary persona" data-id="<?=$row["id"]?>" data-bs-toggle="modal" data-bs-target="#ModalVerPersona_<?=$row["id"]?>"><?=$row["nombre_completo"]?></button>
+        </div>
+      </div>
+  
+      <div class="modal fade modalbox animate__animated animate__fadeInRight" id="ModalVerPersona_<?=$row["id"]?>" data-bs-backdrop="static" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Datos de Persona Habilitada</h3>
+            </div>
+            <div class="modal-body">
+              <div class="login-form">
+                <div class="section mt-2">
+
+                </div>
+                <div class="section mt-4 mb-5">
+                  <form name="formVer" method="post">
+                    <div class="form-group basic">
+                      <label class="form-label d-block">Nombre Completo</label>
+                      <input type="text" class="form-control" name="nombre_completo_ver" readonly="readonly" value="<?=$row["nombre_completo"]?>" />
+                    </div>
+                    <div class="form-group basic">
+                      <label class="form-label d-block">DNI</label>
+                      <input type="text" class="form-control" name="dni_ver" readonly="readonly" value="<?=$row["dni"]?>" />
+                    </div>
+                    <div class="form-group basic">
+                      <label class="form-label d-block">E-Mail</label>
+                      <input type="email" class="form-control" name="email_ver" readonly="readonly" value="<?=$row["email"]?>" />
+                    </div>
+                    <div class="form-group basic">
+                      <label class="form-label d-block">Celular</label>
+                      <input type="text" class="form-control" name="celular_ver" readonly="readonly" value="<?=$row["celular"]?>" />
+                    </div>
+                    <div class="form-group basic">
+                      <label class="form-label d-block">Clave</label>
+                      <input type="text" class="form-control" name="clave_ver" readonly="readonly" value="<?=$row["clave"]?>" />
+                    </div>
+                    <div class="mt-2">
+                      <button type="button" onclick="eliminar_persona_habilitada(<?=$row["id"]?>)" id="eliminar_<?=$row["id"]?>" class="btn btn-danger btn-block btn-lg">Eliminar</button>
+                      <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                    <input type="hidden" name="id_ver" value="<?=$row["id"]?>">
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-		
-		<div class="modal fade modalbox animate__animated animate__fadeInRight" id="ModalVerPersona_<?=$row["id"]?>" data-bs-backdrop="static" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h3 class="modal-title">Datos de Persona Habilitada</h3>
-			</div>
-			<div class="modal-body">
-			  <div class="login-form">
-				<div class="section mt-2">
-				  
-				</div>
-				<div class="section mt-4 mb-5">
-				  <form name="formVer" method="post">
-					<div class="form-group basic">
-					  <label class="form-label d-block">Nombre Completo</label>
-					  <input type="text" class="form-control" name="nombre_completo_ver" readonly="readonly" value="<?=$row["nombre_completo"]?>" />
-					</div>
-					<div class="form-group basic">
-					  <label class="form-label d-block">DNI</label>
-					  <input type="text" class="form-control" name="dni_ver" readonly="readonly" value="<?=$row["dni"]?>" />
-					</div>
-					<div class="form-group basic">
-					  <label class="form-label d-block">E-Mail</label>
-					  <input type="email" class="form-control" name="email_ver" readonly="readonly" value="<?=$row["email"]?>" />
-					</div>
-					<div class="form-group basic">
-					  <label class="form-label d-block">Celular</label>
-					  <input type="text" class="form-control" name="celular_ver" readonly="readonly" value="<?=$row["celular"]?>" />
-					</div>
-					<div class="form-group basic">
-					  <label class="form-label d-block">Clave</label>
-					  <input type="text" class="form-control" name="clave_ver" readonly="readonly" value="<?=$row["clave"]?>" />
-					</div>
-					<div class="mt-2">
-					  <button type="button" onclick="eliminar_persona_habilitada(<?=$row["id"]?>)" id="eliminar_<?=$row["id"]?>" class="btn btn-danger btn-block btn-lg">Eliminar</button>
-					  <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">Cerrar</button>
-					</div>
-					<input type="hidden" name="id_ver" value="<?=$row["id"]?>">
-				  </form>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	  <?php }?>
+      </div><?php 
+    }?>
+
     <div class="modal fade modalbox animate__animated animate__fadeInRight" id="ModalNuevaPersona" data-bs-backdrop="static" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title">Nueva Persona Habilitada</h3>
-        </div>
-        <div class="modal-body">
-          <div class="login-form">
-            <div class="section mt-2">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Nueva Persona Habilitada</h3>
+          </div>
+          <div class="modal-body">
+            <div class="login-form">
+              <div class="section mt-2">
               
-            </div>
-            <div class="section mt-4 mb-5">
-              <form name="form" method="post">
-                <div class="form-group basic">
-                  <label class="form-label d-block">Nombre Completo</label>
-                  <input type="text" class="form-control" name="nombre_completo" id="nombre_completo" required="required" />
-                </div>
-				<div class="form-group basic">
-                  <label class="form-label d-block">DNI</label>
-                  <input type="text" class="form-control" name="dni" id="dni" required="required" />
-                </div>
-				<div class="form-group basic">
-                  <label class="form-label d-block">E-Mail</label>
-                  <input type="email" class="form-control" name="email" id="email" required="required" />
-                </div>
-				<div class="form-group basic">
-                  <label class="form-label d-block">Celular</label>
-                  <input type="text" class="form-control" name="celular" id="celular" required="required" />
-                </div>
-                <div class="mt-2">
-                  <button type="submit" class="btn btn-primary btn-block btn-lg">Crear</button>
-                  <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-				<input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $_SESSION['user']['id']; ?>">
-              </form>
+              </div>
+              <div class="section mt-4 mb-5">
+                <form name="form" method="post">
+                  <div class="form-group basic">
+                    <label class="form-label d-block">Nombre Completo</label>
+                    <input type="text" class="form-control" name="nombre_completo" id="nombre_completo" required="required" />
+                  </div>
+                  <div class="form-group basic">
+                    <label class="form-label d-block">DNI</label>
+                    <input type="text" class="form-control" name="dni" id="dni" required="required" />
+                  </div>
+                  <div class="form-group basic">
+                    <label class="form-label d-block">E-Mail</label>
+                    <input type="email" class="form-control" name="email" id="email" required="required" />
+                  </div>
+                  <div class="form-group basic">
+                    <label class="form-label d-block">Celular</label>
+                    <input type="text" class="form-control" name="celular" id="celular" required="required" />
+                  </div>
+                  <div class="mt-2">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Crear</button>
+                    <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">Cerrar</button>
+                  </div>
+                  <input type="hidden" name="id_usuario" id="id_usuario" value="<?php echo $_SESSION['user']['id']; ?>">
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="modal fade modalbox " id="ModalConfirmNuevaPersona" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
-    <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
-      <div class="modal-content" style="padding-top: 0;height: min-content;">
-        <!-- <div class="modal-header">
-          
-        </div> -->
-        <div class="modal-body" style="height: min-content;">
-          <h3 class="modal-title" style="color:black">La persona fue habilitada correctamente</h3>
+
+    <div class="modal fade modalbox " id="ModalConfirmNuevaPersona" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
+      <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
+        <div class="modal-content" style="padding-top: 0;height: min-content;">
+          <!-- <div class="modal-header">
+            
+          </div> -->
+          <div class="modal-body" style="height: min-content;">
+            <h3 class="modal-title" style="color:black">La persona fue habilitada correctamente</h3>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary btn-block btn-lg">OK</button> -->
+            <a href="personas-habilitadas.php" type="button" class="btn btn-primary btn-block btn-lg">OK</a>
+          </div>
         </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-primary btn-block btn-lg">OK</button> -->
-          <a href="personas-habilitadas.php" type="button" class="btn btn-primary btn-block btn-lg">OK</a>
+      </div>
+    </div>
+
+    <div class="modal fade modalbox " id="ModalConfirmEliminarPersona" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
+      <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
+        <div class="modal-content" style="padding-top: 0;height: min-content;">
+          <!-- <div class="modal-header">
+            
+          </div> -->
+          <div class="modal-body" style="height: min-content;">
+            <h3 class="modal-title" style="color:black">La persona habilitada fue eliminada correctamente</h3>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary btn-block btn-lg">OK</button> -->
+            <a href="personas-habilitadas.php" type="button" class="btn btn-primary btn-block btn-lg">OK</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal fade modalbox " id="ModalConfirmEliminarPersona" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
-    <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
-      <div class="modal-content" style="padding-top: 0;height: min-content;">
-        <!-- <div class="modal-header">
-          
-        </div> -->
-        <div class="modal-body" style="height: min-content;">
-          <h3 class="modal-title" style="color:black">La persona habilitada fue eliminada correctamente</h3>
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-primary btn-block btn-lg">OK</button> -->
-          <a href="personas-habilitadas.php" type="button" class="btn btn-primary btn-block btn-lg">OK</a>
-        </div>
-      </div>
-    </div>
-  </div>
-    <?php include_once("footer.php")?>
-       
-    <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/lib/bootstrap.min.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="assets/js/plugins/splide/splide.min.js"></script>
-    <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
-    <script>
-      'use strict';
 
-      function logText(message, isError) {
-        if (isError)
-          console.error(message);
-        else
-          console.log(message);
+  <?php include_once("footer.php")?>
+      
+  <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/lib/bootstrap.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="assets/js/plugins/splide/splide.min.js"></script>
+  <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
+  <script>
+    'use strict';
 
-        const p = document.createElement('p');
-        if (isError)
-          p.setAttribute('class', 'error');
-        p.appendChild(document.createTextNode(message));
-      }
+    function logText(message, isError) {
+      if (isError)
+        console.error(message);
+      else
+        console.log(message);
 
-      function logError(message) {
-        logText(message, true);
-      }
+      const p = document.createElement('p');
+      if (isError)
+        p.setAttribute('class', 'error');
+      p.appendChild(document.createTextNode(message));
+    }
+
+    function logError(message) {
+      logText(message, true);
+    }
 	  
 	  function eliminar_persona_habilitada(id) {
 		  $.post("eliminar_persona_habilitada.php",{id:id},function(data){
-			console.log(data);
-			data=JSON.parse(data);
-			console.log(data);
-			$("#ModalConfirmEliminarPersona").modal("show")
+        console.log(data);
+        data=JSON.parse(data);
+        console.log(data);
+        $("#ModalConfirmEliminarPersona").modal("show")
 		  });
 	  }
 	  
-		  
-	  
-	  
 	  $("form").on("submit",function(e){
       e.preventDefault();
-	  let id_usuario=$("#id_usuario").val();
+	    let id_usuario=$("#id_usuario").val();
       let nombre_completo=$("#nombre_completo").val();
       let dni=$("#dni").val();
       let email=$("#email").val();
@@ -293,9 +296,6 @@ if(!isset($_SESSION["user"]["ficha"])){
         $("#ModalConfirmNuevaPersona").modal("show")
       });
     });
-	
-    </script>
-
+  </script>
 </body>
-
 </html>

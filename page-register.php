@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="manifest" href="__manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <!-- Pikaday Library -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
 </head><?php
 
 $token=$_GET["token"]?>
@@ -51,10 +53,10 @@ $token=$_GET["token"]?>
           $dni="";
           $fecha_nacimiento="";
           $email="";
-
-          /*$dni="26274432";
-          $fecha_nacimiento="1977-12-22";
-          $email="jbiedula@gmail.com";*/?>
+          
+          /*$dni="44933437";
+          $fecha_nacimiento="2003-08-11";
+          $email="axeltecnosoul@gmail.com";*/?>
 
           <input type="hidden" id="token" name="token" value="<?=$token?>">
 
@@ -72,16 +74,6 @@ $token=$_GET["token"]?>
             <div class="input-wrapper">
               <!-- <input type="date" required class="form-control" id="fecha_nacimiento" placeholder="Fecha nacimiento" value="<?=$fecha_nacimiento?>"> -->
               <input type="text" required class="form-control" id="fecha_nacimiento" placeholder="Fecha de nacimiento" value="<?=$fecha_nacimiento?>">
-              
-                <!-- Pikaday Library -->
-                <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-                <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
-
-                <!-- Datepicker Input -->
-                <!-- <label for="datepicker">Date</label>
-                <input type="text" id="datepicker"> -->
-
-
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>
@@ -436,7 +428,7 @@ $token=$_GET["token"]?>
           </div>
 
           <div class="button1">
-            <button type="submit" class="btn btn-primary btn-block btn-lg button1">CREAR CUENTA</button>
+            <button type="submit" class="btn btn-primary btn-block btn-lg button1" id="btnCrearCuenta">CREAR CUENTA</button>
           </div>
 
         </form>
@@ -525,6 +517,11 @@ $token=$_GET["token"]?>
   <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
   <!-- Base Js File -->
   <script src="assets/js/base.js"></script>
+  <!-- Pikaday Library -->
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <!-- MomentJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
 
   <script>
     $(document).ready(function () {
@@ -538,30 +535,28 @@ $token=$_GET["token"]?>
         // demo only
         position: 'top left',
         reposition: false,
-        //format: 'D/M/YYYY',
+        format: 'YYYY/MM/DD',
         minDate: '1920-01-01',
         yearRange: 100,
         toString(date, format) {
           // you should do formatting based on the passed format,
           // but we will just return 'D/M/YYYY' for simplicity
-          const day = date.getDate();
-          const month = date.getMonth()+1;
-          const year = date.getFullYear();
-          return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+          console.log(date);
+          //const parsedDate = new Date(date);
+          const parsedDate = moment(date);
+          console.log(parsedDate);
+          console.log(format);
+          /*const day = parsedDate.getUTCDate();
+          const month = parsedDate.getUTCMonth()+1;
+          const year = parsedDate.getUTCFullYear();*/
+          //return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+          return parsedDate.format('YYYY-MM-DD');
         },
       });
 
-      /*$("#fecha_nacimiento").on("focus",function(){
-        this.type='date'
-        this.showPicker()
-        this.showPicker()
-      })
-      $("#fecha_nacimiento").on("blur",function(){
-        this.type='text'
-      })*/
-
       $("#form-register").submit(function(e){
         e.preventDefault();
+        $("#btnCrearCuenta").addClass("disabled")
         console.log("hola");
         let token=document.getElementById("token").value;
         let dni=document.getElementById("dni").value;
@@ -580,6 +575,9 @@ $token=$_GET["token"]?>
             $("#DialogEmailNOEncontrado").modal("show")
           }else{//error
             $("#DialogError").modal("show")
+          }
+          if(data>1){
+            $("#btnCrearCuenta").removeClass("disabled")
           }
         });
       })

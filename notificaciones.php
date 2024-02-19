@@ -30,8 +30,8 @@ if(!isset($_SESSION["user"])){
   }
 </style>
 <body class="bg1">
-    <!-- App Header -->
-    <div class="appHeader no-border transparent position-absolute">
+  <!-- App Header -->
+  <div class="appHeader no-border transparent position-absolute">
     <div class="left animate__animated animate__fadeInRight">
       <a href="index.php" class="headerButton goBack">
         <ion-icon name="chevron-back-outline"></ion-icon>VOLVER

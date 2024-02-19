@@ -143,7 +143,9 @@ if(isset($_GET["fcmToken"])){
 }
 if(isset($_POST["fcmToken"])){
   $token=$_POST["fcmToken"];
-}?>
+}
+if(!isset($email)) $email="";
+if(!isset($clave)) $clave="";?>
 <body class="bg1">
   <!-- loader -->
   <!--<div id="loader">
