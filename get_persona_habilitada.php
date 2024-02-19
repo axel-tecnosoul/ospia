@@ -10,18 +10,36 @@ include_once("admin/funciones.php");
 $pdo = Database::connect();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+$ok=1;
 //$claveRDM = random_int(100000, 999999);
 $claveRDM=generarPasswordRandom();
 
-$sql = "INSERT INTO personas_habilitadas (id_usuario, nombre_completo, dni, email, celular, clave) VALUES (?,?,?,?,?,?)";
+$email=$_POST['email'];
+
+$sql = "SELECT id FROM usuarios WHERE email=?";
 $q = $pdo->prepare($sql);
-$q->execute(array($_POST["id_usuario"],$_POST["nombre_completo"],$_POST["dni"],$_POST["email"],$_POST["celular"],$claveRDM));
+$q->execute([$email]);
+$count = $q->rowCount();
+if($count==0){
 
-Database::disconnect();
+  $sql2 = "SELECT id FROM personas_habilitadas WHERE email=?";
+  $q2 = $pdo->prepare($sql2);
+  $q2->execute([$email]);
+  $count2 = $q2->rowCount();
+  if($count2==0){
 
-$asunto="OSPIA PBA - Nueva Persona Habilitada";
-$cuerpo="Ha sido habilitado/a para ingresar a la APP de OSPIA Provincia. Por favor accedé con la siguiente contraseña: ".$claveRDM;
-$destinatarios=[$_POST['email']];
-$envio=enviarMail($cuenta_envio="bbdd", $destinatarios, $asunto, $cuerpo);
+    $sql = "INSERT INTO personas_habilitadas (id_usuario, nombre_completo, dni, email, celular, clave) VALUES (?,?,?,?,?,?)";
+    $q = $pdo->prepare($sql);
+    $q->execute(array($_POST["id_usuario"],$_POST["nombre_completo"],$_POST["dni"],$email,$_POST["celular"],$claveRDM));
 
-echo 0;
+    Database::disconnect();
+
+    $asunto="OSPIA PBA - Nueva Persona Habilitada";
+    $cuerpo="Ha sido habilitado/a para ingresar a la APP de OSPIA Provincia. Por favor accedé con la siguiente contraseña: ".$claveRDM;
+    $destinatarios=[$email];
+    $envio=enviarMail($cuenta_envio="bbdd", $destinatarios, $asunto, $cuerpo);
+
+    $ok=0;
+  }
+}
+echo $ok;

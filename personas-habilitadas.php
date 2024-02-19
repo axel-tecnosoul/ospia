@@ -229,6 +229,24 @@ if(!isset($_SESSION["user"]["ficha"])){
       </div>
     </div>
 
+    <div class="modal fade modalbox " id="ModalEmailEncontrado" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
+      <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
+        <div class="modal-content" style="padding-top: 0;height: min-content;">
+          <!-- <div class="modal-header">
+            
+          </div> -->
+          <div class="modal-body" style="height: min-content;">
+            <h3 class="modal-title" style="color:black">El email ingresado ya existe en la base de datos</h3>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary btn-block btn-lg">OK</button> -->
+            <!-- <a href="personas-habilitadas.php" type="button" class="btn btn-primary btn-block btn-lg">OK</a> -->
+            <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="modal fade modalbox " id="ModalConfirmEliminarPersona" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
       <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
         <div class="modal-content" style="padding-top: 0;height: min-content;">
@@ -293,7 +311,11 @@ if(!isset($_SESSION["user"]["ficha"])){
         console.log(data);
         data=JSON.parse(data);
         console.log(data);
-        $("#ModalConfirmNuevaPersona").modal("show")
+        if(data==0){
+          $("#ModalConfirmNuevaPersona").modal("show")
+        }else if(data==1){
+          $("#ModalEmailEncontrado").modal("show")
+        }
       });
     });
   </script>
