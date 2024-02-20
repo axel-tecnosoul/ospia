@@ -106,8 +106,7 @@ if(!isset($_SESSION["user"]["ficha"])){
                 <div class="col-12"><?php
                   if ($autorizacion["SolicitaAutorizacion"]!=0) {?>
                     <h3 class="mb-05 titulo1 text-center"><?=$autorizacion["Fecha"]?></h3>
-					<h3 class="mt-05 titulo1"><strong>Estado: <?=$autorizacion["Estado"]?></strong>
-					<?php
+					          <h3 class="mt-05 titulo1"><strong>Estado: <?=$autorizacion["Estado"]?></strong><?php
                     if ($autorizacion["Respuesta"]==12 && $autorizacion["Ejecutada"]=="") {?>
                        <strong class="text-success"> - Cod.Aut. <?=$autorizacion["Autorizacion"]?></strong></h3><?php
                     }
@@ -118,19 +117,15 @@ if(!isset($_SESSION["user"]["ficha"])){
                   <div class="text-muted">
                     <span onclick="">
                       <?=$autorizacion["Prestador"]."<br>".$autorizacion["CodPractica"]." - ".$autorizacion["Practica"]?>
-                    </span>
-                    <?php
+                    </span><?php
                     if ($autorizacion["Respuesta"]==12 && $autorizacion["Ejecutada"]=="") {?>
                        <h3 class="mb-05 mt-1 text-center text-danger">Concurrir al prestador <br />con el c&oacute;digo enviado.</h3><?php
-                    }?>
-					<?php
+                    }
                     if ($autorizacion["SolicitaAutorizacion"]==0) {?>
                       <div class="mt-05" style="text-align: center;">
                         <span class='btn btn-sm btn-primary border mb-05 btnSolicitarAutorizacion' data-autorizacion='<?=$autorizacion["Autorizacion"]?>'>Solicitar Autorizacion</span>
                       </div><?php
-                    }?>
-                    
-                    <?php
+                    }
                     /*
                     $pdo = Database::connect();
                     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);			
@@ -141,7 +136,7 @@ if(!isset($_SESSION["user"]["ficha"])){
                     if($count==0){
                     */
                     if ($autorizacion["Respuesta"]==12 && $autorizacion["Ejecutada"]!="" && isset($autorizacion["Encuesta"]) and $autorizacion["Encuesta"]=="Falso") {?>
-						<!--<div class="mt-05"><a href="calificar-autorizacion.php?codAut=<?php echo $autorizacion["Autorizacion"]; ?>">Calificar Atenci&oacute;n Recibida</a></div>--><?php
+						          <!--<div class="mt-05"><a href="calificar-autorizacion.php?codAut=<?php echo $autorizacion["Autorizacion"]; ?>">Calificar Atenci&oacute;n Recibida</a></div>--><?php
                     }?>
                     <!--<div class="mt-05"><a target="_blank" href="https://www.ospiapba.org.ar/AU_SugerenciasReclamos.asp?codAut=<?php echo $autorizacion["Autorizacion"]; ?>">Reclamos o Sugerencias</a></div>-->
                   </div>
@@ -347,7 +342,7 @@ if(!isset($_SESSION["user"]["ficha"])){
         inputFile.name="files[]"
         inputFile.style="display:none";
         inputFile.capture="";
-        //inputFile.accept="image/*";
+        inputFile.accept="image/*, application/pdf";
         inputFile.addEventListener("change",function(e){
           readFile(e.srcElement)
         },false)
@@ -395,6 +390,7 @@ if(!isset($_SESSION["user"]["ficha"])){
 
         const fila = document.createElement("div")
         fila.classList="row border mt-1"
+        fila.style="align-items: center";
         
         const celda1=document.createElement("div")
         celda1.classList="col-9"
@@ -419,31 +415,38 @@ if(!isset($_SESSION["user"]["ficha"])){
         tabla.appendChild(fila)
 
         //var fileInput = document.getElementById('file-input');
+        var file = input.files[0];
+        console.log(file);
+        var fileName = file.name;
+        var fileNameLabel = document.createElement('label');
+        fileNameLabel.innerHTML=fileName
+        console.log(fileName);
 
-        var reader = new FileReader();
-        reader.onload = function (e) {
+        if(file.type!="application/pdf"){
+          var reader = new FileReader();
+          reader.onload = function (e) {
 
-          var file = input.files[0];
-          var fileName = file.name;
-          var fileNameLabel = document.createElement('label');
-          fileNameLabel.innerHTML=fileName
-          console.log(fileName);
+            var filePreview = document.createElement('img');
+            filePreview.id = 'file-preview';
+            filePreview.width = 150;
+            //e.target.result contiene los datos base64 de la imagen cargada
+            filePreview.src = e.target.result;
+            filePreview.alt = file;
+            celda1.appendChild(filePreview)
+            celda1.appendChild(fileNameLabel)
 
-          var filePreview = document.createElement('img');
-          filePreview.id = 'file-preview';
-          filePreview.width = 150;
-          //e.target.result contiene los datos base64 de la imagen cargada
-          filePreview.src = e.target.result;
-          filePreview.alt = file;
-          celda1.appendChild(filePreview)
+            //e.target.result contents the base64 data from the image uploaded
+            /*filePreview.src = e.target.result;
+            celda1.appendChild(filePreview)*/
+          }
+
+          reader.readAsDataURL(input.files[0]);
+          
+        }else{
+          div.style.marginBottom="15px"
           celda1.appendChild(fileNameLabel)
-
-          //e.target.result contents the base64 data from the image uploaded
-          /*filePreview.src = e.target.result;
-          celda1.appendChild(filePreview)*/
         }
 
-        reader.readAsDataURL(input.files[0]);
       }
     }
 

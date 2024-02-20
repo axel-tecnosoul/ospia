@@ -227,7 +227,7 @@ if (!empty($_POST)) {
                           echo "+";
                         }?>
                       </label>
-                      <input type="file" name="imagen" id="add-single-foto" capture/>
+                      <input type="file" name="imagen" id="add-single-foto" capture accept="image/*"/>
                     </div>
                     <div align="center"><!--  style="margin:10px" -->
                       <input type="hidden" name="clear_foto" id="clear_foto_yes_no">

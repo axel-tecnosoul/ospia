@@ -308,21 +308,21 @@ if(!isset($_SESSION["user"]["ficha"])){
 
       });
 
-      $(document).on("click",".fileinput-button",function(){
+      $(document).on("click", ".fileinput-button", function() {
+        let files_container = $(this).next(".files_container");
+        let inputFile = $(files_container).find("input[name='files[]']")[0];
+        let files_preview = $(files_container).find(".files_preview")[0];
 
-        let files_container=$(this).next(".files_container")
-        let inputFile=$(files_container).find("input[name='files[]']")
-        inputFile=inputFile[0]
-        //console.log(inputFile);
-        inputFile.click()
-        let files_preview=$(files_container).find(".files_preview")
-        files_preview=files_preview[0]
+        inputFile.click(); // Abre el diálogo de selección de archivos
 
-        inputFile.addEventListener("change",function(e){
-          readFile(e.srcElement,files_preview)
-        },false)
-
-      })
+        // Verificar si ya existe un listener para el cambio de archivos
+        if (!inputFile.getAttribute("listenerAdded")) {
+          inputFile.addEventListener("change", function(e) {
+            readFile(e.srcElement, files_preview);
+          }, false);
+          inputFile.setAttribute("listenerAdded", "true"); // Marcamos que se ha agregado el listener
+        }
+      });
 
       $(document).on("click",".clear_file",function(){
         this.parentElement.parentElement.remove()
@@ -360,7 +360,7 @@ if(!isset($_SESSION["user"]["ficha"])){
                 <span>Agregar</span>
               </span>
               <span class="files_container col-9">
-                <input type='file' name='files[]' style='width: 1px;height: 1px;' capture required>
+                <input type='file' name='files[]' style='width: 1px;height: 1px;' capture required accept='image/*, application/pdf'>
                 <span class="files_preview"></span>
               </span>
             </div>`;// accept='.pdf, image/*'
@@ -374,32 +374,52 @@ if(!isset($_SESSION["user"]["ficha"])){
     function readFile(input, files_preview) {
       //$("#clear_file").css("d-none");
       //$("#clear_file").css("display","block");
+      debugger
+      console.log(files_preview);
+      files_preview.innerHTML="";
+      console.log(files_preview);
       if (input.files && input.files[0]) {
 
         const celda1=document.createElement("span")
 
-        var reader = new FileReader();
-        reader.onload = function (e) {
+        //var fileInput = document.getElementById('file-input');
+        var file = input.files[0];
+        //console.log(file);
+        var fileName = file.name;
+        var fileNameLabel = document.createElement('label');
+        fileNameLabel.innerHTML=fileName
+        //console.log(fileName);
 
-          var file = input.files[0];
-          var fileName = file.name;
-          var fileNameLabel = document.createElement('label');
-          fileNameLabel.innerHTML=fileName
+        if(file.type!="application/pdf"){
 
-          var filePreview = document.createElement('img');
-          filePreview.id = 'file-preview';
-          filePreview.width = 150;
-          //e.target.result contiene los datos base64 de la imagen cargada
-          filePreview.src = e.target.result;
-          filePreview.alt = fileName;
-          celda1.appendChild(filePreview)
-          //celda1.appendChild(fileNameLabel)
-          files_preview.innerHTML=""
-          files_preview.appendChild(celda1);
+          var reader = new FileReader();
+          reader.onload = function (e) {
 
+            /*var file = input.files[0];
+            var fileName = file.name;
+            var fileNameLabel = document.createElement('label');
+            fileNameLabel.innerHTML=fileName*/
+
+            var filePreview = document.createElement('img');
+            filePreview.id = 'file-preview';
+            filePreview.width = 150;
+            //e.target.result contiene los datos base64 de la imagen cargada
+            filePreview.src = e.target.result;
+            filePreview.alt = fileName;
+            celda1.appendChild(filePreview)
+            //celda1.appendChild(fileNameLabel)
+            files_preview.appendChild(celda1);
+
+          }
+
+          reader.readAsDataURL(input.files[0]);
+        }else{
+          //div.style.marginBottom="15px"
+          /*console.log(celda1);
+          console.log(fileNameLabel);*/
+          files_preview.appendChild(fileNameLabel)
         }
-
-        reader.readAsDataURL(input.files[0]);
+        console.log(files_preview);
       }
     }
 
