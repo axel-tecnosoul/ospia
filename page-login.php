@@ -34,7 +34,7 @@ if(!empty($_POST)){
   } catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
   
   $login_ok = false; 
-  $row = $stmt->fetch(); 
+  $row = $stmt->fetch();
   if($row){
     
     $check_pass = trim($_POST['pass']); 
