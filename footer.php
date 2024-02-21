@@ -19,5 +19,15 @@
         <ion-icon name="person" style="pointer-events: none;"></ion-icon>
       </button>
     </div>
-  </a>
+  </a><?php
+  
+  if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
+    <a href="logout.php" class="item animate__animated animate__bounceIn">
+      <div class="col">
+        <button type="button" class="btn btn-icon btn-primary me-1 mb-1">
+          <ion-icon name="log-out-outline" style="pointer-events: none;transform: rotate(180deg);"></ion-icon>
+        </button>
+      </div>
+    </a><?php
+  }?>
 </div>
