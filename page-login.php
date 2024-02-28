@@ -40,6 +40,15 @@ if(!empty($_POST)){
     $check_pass = trim($_POST['pass']); 
     if($check_pass === $row['clave']){
       $login_ok = true;
+
+      /*$pdo = Database::connect();
+      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      $sql = "UPDATE usuarios set persona_id = ? where id = ?";
+      $q = $pdo->prepare($sql);
+      $q->execute([$jsonData["Persona_Id"],$row['id']]);
+      
+      Database::disconnect();*/
     }
 
     if(!$row['persona_id']){

@@ -16,7 +16,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <!-- Pikaday Library -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
-</head><?php
+</head>
+
+<style>
+  .calendario{
+    width: 30%;
+    display: inline-block;
+  }
+  .lblRegister{
+    color: white;
+    font-size: large;
+  }
+</style><?php
 
 $token=$_GET["token"]?>
 
@@ -61,8 +72,9 @@ $token=$_GET["token"]?>
           <input type="hidden" id="token" name="token" value="<?=$token?>">
 
           <br>
-          <div class="form-group boxed">
+          <div class="form-group boxed text-start">
             <div class="input-wrapper">
+              <label class="lblRegister">DNI:</label><br>
               <input type="text" required class="form-control" id="dni" placeholder="DNI" value="<?=$dni?>">
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
@@ -70,18 +82,66 @@ $token=$_GET["token"]?>
             </div>
           </div>
 
-          <div class="form-group boxed">
+          <div class="form-group boxed d-none">
             <div class="input-wrapper">
               <!-- <input type="date" required class="form-control" id="fecha_nacimiento" placeholder="Fecha nacimiento" value="<?=$fecha_nacimiento?>"> -->
-              <input type="text" required class="form-control" id="fecha_nacimiento" placeholder="Fecha de nacimiento" value="<?=$fecha_nacimiento?>">
+              <!-- <input type="text" required class="form-control" id="fecha_nacimiento" placeholder="Fecha de nacimiento" value="<?=$fecha_nacimiento?>">
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
-              </i>
+              </i> -->
+
             </div>
           </div>
 
-          <div class="form-group boxed">
+          <div class="form-group boxed text-start">
+            <label class="lblRegister">Fecha de nacimiento:</label><br>
+            <div class="input-wrapper text-center">
+              <select class="form-control calendario" id="daySelect">
+                <option value="">- Dia -</option><?php
+                //Opciones para seleccionar día
+                // Generar opciones para seleccionar el día
+                for ($i = 1; $i <= 31; $i++) {
+                  echo "<option value='$i'>$i</option>";
+                }
+                ?>
+              </select>
+              <select class="form-control calendario" id="monthSelect">
+                <!-- Opciones para seleccionar el mes -->
+                <option value="">- Mes -</option>
+                <option value="01">Enero</option>
+                <option value="02">Febrero</option>
+                <option value="03">Marzo</option>
+                <option value="04">Abril</option>
+                <option value="05">Mayo</option>
+                <option value="06">Junio</option>
+                <option value="07">Julio</option>
+                <option value="08">Agosto</option>
+                <option value="09">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+                <!-- Agrega más meses según necesites -->
+              </select>
+              <select class="form-control calendario" id="yearSelect">
+                <option value="">- Año -</option><?php
+                //Opciones para seleccionar el año
+                // Obtener el año actual
+                $currentYear = date("Y");
+                // Definir el rango de años, por ejemplo, 10 años antes y 10 años después del año actual
+                $startYear = $currentYear - 80;
+                $endYear = $currentYear;
+                // Generar opciones para seleccionar el año dentro del rango
+                for ($year = $endYear; $year >= $startYear; $year--) {
+                  echo "<option value='$year'>$year</option>";
+                }?>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group boxed text-start">
             <div class="input-wrapper">
+              <label class="lblRegister">Email:</label><br>
               <input type="email" required class="form-control" id="email" placeholder="Email address" value="<?=$email?>">
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
@@ -461,6 +521,19 @@ $token=$_GET["token"]?>
         </div>
       </div>
 
+      <div class="modal" tabindex="-1" role="dialog" id="DialogEmailNOEnviado">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h3 style="color: initial;margin-top: 10px;">Ha fallado el envío del email, por favor intente mas tarde.</h3>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="btn btn-text-secondary" data-bs-dismiss="modal">CERRAR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="modal" tabindex="-1" role="dialog" id="DialogError">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -526,7 +599,7 @@ $token=$_GET["token"]?>
   <script>
     $(document).ready(function () {
 
-      var today = new Date();
+      /*var today = new Date();
       var lastMonth = new Date().getMonth() - 1;
 
       var picker = new Pikaday({
@@ -541,18 +614,18 @@ $token=$_GET["token"]?>
         toString(date, format) {
           // you should do formatting based on the passed format,
           // but we will just return 'D/M/YYYY' for simplicity
-          console.log(date);
+          //console.log(date);
           //const parsedDate = new Date(date);
           const parsedDate = moment(date);
-          console.log(parsedDate);
-          console.log(format);
-          /*const day = parsedDate.getUTCDate();
-          const month = parsedDate.getUTCMonth()+1;
-          const year = parsedDate.getUTCFullYear();*/
+          //console.log(parsedDate);
+          //console.log(format);
+          //const day = parsedDate.getUTCDate();
+          //const month = parsedDate.getUTCMonth()+1;
+          //const year = parsedDate.getUTCFullYear();
           //return `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
           return parsedDate.format('YYYY-MM-DD');
         },
-      });
+      });*/
 
       $("#form-register").submit(function(e){
         e.preventDefault();
@@ -560,23 +633,32 @@ $token=$_GET["token"]?>
         console.log("hola");
         let token=document.getElementById("token").value;
         let dni=document.getElementById("dni").value;
-        let fecha_nacimiento=document.getElementById("fecha_nacimiento").value;
+        //let fecha_nacimiento=document.getElementById("fecha_nacimiento").value;
+        let daySelect=document.getElementById("daySelect").value;
+        let monthSelect=document.getElementById("monthSelect").value;
+        let yearSelect=document.getElementById("yearSelect").value;
+
         let email=document.getElementById("email").value;
-        $.post("registrar_usuario.php",{dni:dni,fecha_nacimiento:fecha_nacimiento,email:email,token:token}, function(data){
+        $.post("registrar_usuario.php",{dni:dni,daySelect:daySelect,monthSelect:monthSelect,yearSelect:yearSelect,email:email,token:token}, function(data){
+          //console.log(data);
+          data=JSON.parse(data);
           console.log(data);
-          if(data==1){
+          console.log(data.status);
+          if(data.status==1){
             //e.target.submit();
             $("#DialogRegisterOk").modal("show")
-          }else if(data==2){//email encontrado
+          }else if(data.status==2){//email encontrado
             $("#DialogEmailEncontrado").modal("show")
-          }else if(data==3){//usuario no encontrado
+          }else if(data.status==3){//usuario no encontrado
             $("#DialogUserNotFound").modal("show")
-          }else if(data==4){//email NO encontrado
+          }else if(data.status==4){//email NO encontrado
             $("#DialogEmailNOEncontrado").modal("show")
+          }else if(data.status==5){//falló el envío del email
+            $("#DialogEmailNOEnviado").modal("show")
           }else{//error
             $("#DialogError").modal("show")
           }
-          if(data>1){
+          if(data.status>1){
             $("#btnCrearCuenta").removeClass("disabled")
           }
         });

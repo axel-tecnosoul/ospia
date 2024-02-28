@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //var_dump($datos);
   
   // Verificar si se recibieron todos los datos necesarios
-  if(isset($_POST['asunto'], $_POST['mensaje'], $_POST['fecha_hora'], $_POST['personas_id'])) {
+  if(isset($_POST['asunto'], $_POST['mensaje'], $_POST['fecha_hora'], $_POST['personas_id'], $_POST['mostrar_en_app'])) {
 
     require("admin/config.php");
     require 'admin/database.php';
@@ -31,14 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mensaje = $_POST['mensaje'];
     $fecha_hora = $_POST['fecha_hora'];
     $personas_id = $_POST['personas_id'];
+    $mostrar_en_app = $_POST['mostrar_en_app'];
     
     // insert data
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, ejecutada) VALUES (?,?,?,0)";
+    $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, mostrar_en_app, ejecutada) VALUES (?,?,?,?,0)";
     $q = $pdo->prepare($sql);
-    $q->execute(array($asunto,$mensaje,$fecha_hora));
+    $q->execute(array($asunto,$mensaje,$fecha_hora,$mostrar_en_app));
     $id_notificacion = $pdo->lastInsertId();
 
     $query = " SELECT id FROM usuarios WHERE persona_id IN ($personas_id)";

@@ -4,7 +4,14 @@ include_once("admin/database.php");
 include_once("admin/funciones.php");
 
 $dni=trim($_POST["dni"]);
-$fecha_nacimiento=trim($_POST["fecha_nacimiento"]);
+
+$daySelect=trim($_POST["daySelect"]);
+$monthSelect=trim($_POST["monthSelect"]);
+$yearSelect=trim($_POST["yearSelect"]);
+
+$fecha_nacimiento=$yearSelect."-".$monthSelect."-".$daySelect;
+//$fecha_nacimiento=trim($_POST["fecha_nacimiento"]);
+
 $fecha_nacimiento_ws=date("d/m/Y",strtotime($fecha_nacimiento));
 $email=trim($_POST["email"]);
 $token=trim($_POST["token"]);
@@ -16,6 +23,8 @@ $sql = "SELECT id FROM usuarios WHERE email=?";
 $q = $pdo->prepare($sql);
 $q->execute([$email]);
 $count = $q->rowCount();
+$url="";
+$envio="";
 if($count==0){
   $sql = "SELECT id,email FROM usuarios WHERE fecha_nacimiento=? AND dni=?";
   $q = $pdo->prepare($sql);
@@ -63,6 +72,7 @@ if($count==0){
           $ok=1;
           $pdo->commit();
         }else{
+          $ok=5;//falló el envío del email
           $pdo->rollBack();
         }
       }
@@ -89,4 +99,9 @@ if($count==0){
 
 Database::disconnect();
 
-echo $ok;
+$resp=[
+  "status" =>$ok,
+  "url_ws" =>$url,
+  "envio_email"=> $envio,
+];
+echo json_encode($resp);

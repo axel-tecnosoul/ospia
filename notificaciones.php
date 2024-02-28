@@ -57,7 +57,7 @@ if(!isset($_SESSION["user"])){
       //var_dump($_SESSION);
     
       $pdo = Database::connect();
-      $sql = " SELECT l.id, l.id_notificacion, date_format(l.fecha_hora,'%d/%m/%Y %H:%i') AS fecha_hora, l.leida,n.asunto,n.mensaje FROM notificaciones_lecturas l inner join notificaciones n on n.id = l.id_notificacion WHERE enviada = 1 AND l.id_usuario = ".$_SESSION['user']['id']." order by l.id desc";
+      $sql = " SELECT l.id, l.id_notificacion, date_format(l.fecha_hora,'%d/%m/%Y %H:%i') AS fecha_hora, l.leida,n.asunto,n.mensaje FROM notificaciones_lecturas l inner join notificaciones n on n.id = l.id_notificacion WHERE enviada = 1 AND mostrar_en_app = 1 AND l.id_usuario = ".$_SESSION['user']['id']." order by l.id desc";
       foreach ($pdo->query($sql) as $row) {
         $color="success";
         $link="#";
