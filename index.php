@@ -41,7 +41,8 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
 
  
     <!-- App Capsule -->
-    <div id="appCapsule" class="pt-0">
+    <div id="appCapsule" class="pt-0"><?php
+    //var_dump($_SESSION["titular"])?>
 
         <div class="login-form mt-1">
             <div class="section animate__animated animate__zoomIn">
@@ -70,39 +71,36 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
 					<ion-icon name="search-circle-outline"></ion-icon>
 					CARTILLA MEDICA
 				</button>
-			</a>
-            <?php
-                if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){
-                    ?>
-                    
-					<a class="a1boton" href="autorizaciones.php">
-						<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-							  <ion-icon name="newspaper-outline"></ion-icon>
-							  AUTORIZACIONES
-						</button>
-                    </a>
-					
-					<a class="a1boton" href="#">
-						<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-							<ion-icon name="disc-outline"></ion-icon>
-						   PROGRAMAS MEDICOS
-						</button>
-					</a>
-					<a class="a1boton" href="#">
-						<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-							<ion-icon name="people-circle-outline"></ion-icon>
-							NUESTROS PROFESIONALES
-						</button>
-					</a>
-					<a class="a1boton" href="#">
-						<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-							<ion-icon name="people-outline"></ion-icon>
-							MIS APORTES
-						</button>
-					</a>
-                    <?php
-                }
-             ?>
+			</a><?php
+      if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
+        <a class="a1boton" href="autorizaciones.php">
+          <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+              <ion-icon name="newspaper-outline"></ion-icon>
+              AUTORIZACIONES
+          </button>
+                  </a>
+        
+        <a class="a1boton" href="#">
+          <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+            <ion-icon name="disc-outline"></ion-icon>
+              PROGRAMAS MEDICOS
+          </button>
+        </a>
+        <a class="a1boton" href="#">
+          <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+            <ion-icon name="people-circle-outline"></ion-icon>
+            NUESTROS PROFESIONALES
+          </button>
+        </a><?php
+        if($_SESSION["titular"]==1){?>
+          <a class="a1boton" href="#">
+            <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+              <ion-icon name="people-outline"></ion-icon>
+              MIS APORTES
+            </button>
+          </a><?php
+        }
+      }?>
             <!-- 
 			<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
                   <ion-icon name="newspaper-outline"></ion-icon>
@@ -114,13 +112,15 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
 					  <ion-icon name="cash-outline"></ion-icon>
 					  REINTEGROS
 				</button>
-			</a>
-			<a class="a1boton" href="personas-habilitadas.php">
-				<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-					<ion-icon name="person-outline"></ion-icon>
-					PERSONAS HABILITADAS
-				</button>
-			</a>
+			</a><?php
+      if($_SESSION["titular"]==1){?>
+        <a class="a1boton" href="personas-habilitadas.php">
+          <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+            <ion-icon name="person-outline"></ion-icon>
+            PERSONAS HABILITADAS
+          </button>
+        </a><?php
+      }?>
 			  <!-- 
               <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
                   <ion-icon name="disc-outline"></ion-icon>

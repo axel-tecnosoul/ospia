@@ -265,7 +265,7 @@ if (!empty($_POST)) {
                   <div class="form-group basic">
                     <div class="input-wrapper">
                       <label class="form-label" for="celular">Celular</label>
-                      <input type="text" class="form-control" id="celular" name="celular" required value="<?php echo $row['celular']; ?>" placeholder="Número de Celular">
+                      <input type="number" class="form-control" id="celular" name="celular" required value="<?php echo $row['celular']; ?>" placeholder="Número de Celular">
                       <i class="clear-input">
                         <ion-icon name="close-circle"></ion-icon>
                       </i>
