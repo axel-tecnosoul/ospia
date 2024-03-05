@@ -13,11 +13,17 @@ use sngrl\PhpFirebaseCloudMessaging\Notification;
 
 //$server_key = 'dato a configurar';
 //$server_key = 'AAAAWv3X-68:APA91bHYHwsOQrKKs4fIIAx2K5e1hVCQJCa-IaQDnUa0TUz_MIkC_uesPqdoY0Yxt6CNPvpwf-dkLJ7NZhRin_H4qImiJI_Zs-ddD7ALdeWDaYhNSIo0LZR2LWvoOfroqpwBMBMJtKfR';
-$server_key = 'AAAAPCs4egE:APA91bHgPHlkhjUTg-iD6AzE98bC0TChxwNP6c_MkWJb-ofO8BBaqA90JZlotsUX_bOI5u54tCK3jZfevnLqG-s8XpXB3TCa9rMDy8Ciu4xCGJC5gc34PXxrbBvYpqPjI-TIrnX4aJtM';//cuenta firebase Tecno
-
+//cuenta firebase Tecno
+//$server_key = 'AAAAPCs4egE:APA91bHgPHlkhjUTg-iD6AzE98bC0TChxwNP6c_MkWJb-ofO8BBaqA90JZlotsUX_bOI5u54tCK3jZfevnLqG-s8XpXB3TCa9rMDy8Ciu4xCGJC5gc34PXxrbBvYpqPjI-TIrnX4aJtM';
+//firebase ospia
+$server_key = 'AAAAwX7IHbg:APA91bGGqGNPBel8rfonJYgx7Cu6wvFu_Y-0aaVzOjL_0mUAhI8Jxomfm0yuVmhdBHS03O7R9WMhAq0QTE2J_OdJYOyUGxq3KcDf8mVpMJQZgsgS4ow47917vebcvLjgm50lZQzktLhf';
 //axel
-$token="d4wH8vKITHWExx2hWzFAYW:APA91bGblfY0kBDKy2DsfM5Af9IE19kBardVHaKpxXdsbHqYYXGh6KJ-KpXJjQVyWLUncEK8dsNjbDkCoTLFahvjs1rVlGk8mubCC9Z7bws9AgV_69fNRgNbMQPrYEqSf788foSwSsaT";
-$email = "axelbritzius@gmail.com";
+//$token="d4wH8vKITHWExx2hWzFAYW:APA91bGblfY0kBDKy2DsfM5Af9IE19kBardVHaKpxXdsbHqYYXGh6KJ-KpXJjQVyWLUncEK8dsNjbDkCoTLFahvjs1rVlGk8mubCC9Z7bws9AgV_69fNRgNbMQPrYEqSf788foSwSsaT";
+//$email = "axelbritzius@gmail.com";
+
+//mat
+$token="f_lPt4QdTqOQvEBtGifI_O:APA91bFMAQrcxFzNZ8NSsvLW4uy53IJFGiBQawash3vpa0FZziB72CGdyBl3AVogvZ3A_fYUQtGofU0komJpVTAczrhaMB0wJkUNt6iUA1AqR2GicMqZO_qA8NB6A8xxmJPXX4LqM_Se";
+$email = "matias@tecnosoul.com.ar";
 
 //Mara
 //$token="dJHZZQ83ThecTQCFsufLGt:APA91bFCtl2ZO39I3J5k5LsZag1FgjLQik32EKh1u2gqiQOB2zStgymS17L33NcAurkq9Qo_n2x57N0WfXj1bVbq0HuFYDajK2ml25f5XjkJqIGL_3MtFw-WE4M-JimyOG4qJfk6Vhpj";
