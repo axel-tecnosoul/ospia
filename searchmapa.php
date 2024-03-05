@@ -394,6 +394,7 @@ if(!isset($_SESSION["user"])){
   <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOBL3F0N318HbvolmOffxX8hqnxy4YotY&callback=gmapController.initialize"
     type="text/javascript"></script> -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOBL3F0N318HbvolmOffxX8hqnxy4YotY&callback=gmapController.initialize"></script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOBL3F0N318HbvolmOffxX8hqnxy4YotY&callback=gmapController.initialize"></script> -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSddmB9MMTbkGJCCcfaTf7tC5miSAcQy8&callback=gmapController.initialize"></script>
 </body>
 </html>
