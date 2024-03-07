@@ -4,16 +4,23 @@ class Database
 {
 
   //LOCALHOST
-  private static $dbHost = 'localhost' ;
+  /*private static $dbHost = 'localhost' ;
   private static $dbName = 'ospia_app' ;
   private static $dbUsername = 'root';
-  private static $dbUserPassword = '';
+  private static $dbUserPassword = '';*/
 
   //PRODUCCION
   /*private static $dbHost = "localhost";
   private static $dbName = "c2191641_db";
   private static $dbUsername = "c2191641_db";
   private static $dbUserPassword = "ne51KAwoza";*/
+  //ba58goLOde
+
+  //TESTING
+  private static $dbHost = "localhost";
+  private static $dbName = "ospia";
+  private static $dbUsername = "ospia";
+  private static $dbUserPassword = "jksfjksdhfjkh123df";
   //ba58goLOde
 
   private static $cont  = null;
