@@ -1398,7 +1398,7 @@ h2 {
 
 h3 {
   font-size: 17px;
-  font-weight: 700;
+  /* font-weight: 700; */
 }
 
 h4 {
@@ -3494,7 +3494,7 @@ a.badge-dark {
   border: 0;
   margin: auto;
   overflow: hidden;
-  padding-top: 56px;
+  /* padding-top: 56px; */
   position: absolute;
   left: 0;
   right: 0;

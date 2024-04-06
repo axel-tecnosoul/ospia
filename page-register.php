@@ -41,13 +41,13 @@ $token=$_GET["token"]?>
   <!-- App Header -->
   <div class="appHeader no-border transparent position-absolute">
     <div class="left animate__animated animate__fadeInRight">
-      <a href="main-login.php?token=<?=$token?>" class="headerButton goBack">
+      <a href="main-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="headerButton goBack">
         <ion-icon name="chevron-back-outline"></ion-icon>VOLVER
       </a>
     </div>
     <div class="pageTitle"></div>
     <div class="right animate__animated animate__fadeInRight">
-      <a href="page-login.php" class="headerButton">Login</a>
+      <a href="page-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="headerButton">Login</a>
     </div>
   </div>
   <!-- * App Header -->
@@ -502,7 +502,7 @@ $token=$_GET["token"]?>
             </div>
             <div class="modal-footer">
               <a href="#" class="btn btn-text-secondary" data-bs-dismiss="modal">CERRAR</a>
-              <a href="page-login.php?token=<?=$token?>" class="btn btn-text-secondary">LOGIN</a>
+              <a href="page-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="btn btn-text-secondary">LOGIN</a>
             </div>
           </div>
         </div>
@@ -567,7 +567,7 @@ $token=$_GET["token"]?>
               <h3 style="color: initial;margin-top: 10px;">Se ha enviado un mail a su casilla de correo.</h3>
             </div>
             <div class="modal-footer">
-              <a href="page-login.php?token=<?=$token?>" class="btn btn-text-secondary">CERRAR</a>
+              <a href="page-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="btn btn-text-secondary">CERRAR</a>
             </div>
           </div>
         </div>

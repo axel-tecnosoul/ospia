@@ -195,9 +195,9 @@ if(!isset($clave)) $clave="";?>
 
           <div class="form-links mt-2">
             <div>
-              <a href="page-register.php?token=<?=$token?>">Registrate ahora</a>
+              <a href="page-register.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>">Registrate ahora</a>
             </div>
-            <div><a href="page-forgot-password.php?token=<?=$token?>" class="text-muted">Olvidaste tu E-mail y/o contraseña?</a></div>
+            <div><a href="page-forgot-password.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="text-muted">Olvidaste tu E-mail y/o contraseña?</a></div>
           </div>
 
           <div class="button">

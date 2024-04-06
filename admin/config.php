@@ -13,6 +13,12 @@ $password = "ne51KAwoza";
 //$password = "ba58goLOde";
 $dbname = "c2191641_db";*/
 
+//TESTING
+/*$host = "localhost";
+$username = "ospia";
+$password = "jksfjksdhfjkh123df";
+$dbname = "ospia";*/
+
 $debug=1;
 
 $url_ws="http://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp";

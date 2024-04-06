@@ -29,18 +29,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Aquí puedes acceder a los datos recibidos
     $asunto = $_POST['asunto'];
     $mensaje = $_POST['mensaje'];
-    $fecha_hora = $_POST['fecha_hora'];
+    $fecha_hora = "'".$_POST['fecha_hora']."'";
     $personas_id = $_POST['personas_id'];
     $mostrar_en_app = $_POST['mostrar_en_app'];
+    
+    if($fecha_hora=="''"){
+      $fecha_hora="NOW()";
+    }
+
+    //var_dump($_POST);
     
     // insert data
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-    $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, mostrar_en_app, ejecutada) VALUES (?,?,?,?,0)";
+    $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, mostrar_en_app, ejecutada) VALUES (?,?,$fecha_hora,?,0)";
     $q = $pdo->prepare($sql);
-    $q->execute(array($asunto,$mensaje,$fecha_hora,$mostrar_en_app));
-    $id_notificacion = $pdo->lastInsertId();
+    //$q->execute(array($asunto, $mensaje, $fecha_hora, $mostrar_en_app));
+    if ($q->execute(array($asunto, $mensaje, $mostrar_en_app))) {
+      $id_notificacion = $pdo->lastInsertId();
+      // La consulta se ejecutó correctamente
+    } else {
+      $errorInfo = $q->errorInfo();
+      // Error al ejecutar la consulta
+      // Aquí puedes manejar el error de acuerdo a tus necesidades
+      // Por ejemplo, puedes imprimir el mensaje de error para depuración:
+      echo "Error en la consulta: " . $errorInfo[2];
+      die();
+    }
+    //$id_notificacion = $pdo->lastInsertId();
 
     $query = " SELECT id FROM usuarios WHERE persona_id IN ($personas_id)";
     //$query_params = array(':personas_id' => trim($personas_id));
@@ -56,10 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $c=$c2=0;
     while($row = $stmt->fetch()){
       $c++;
-      $sql = "INSERT INTO notificaciones_lecturas (id_notificacion, id_usuario, fecha_hora, enviada, leida) VALUES (?,?,?,0,0)";
+      $sql = "INSERT INTO notificaciones_lecturas (id_notificacion, id_usuario, fecha_hora, enviada, leida) VALUES (?,?,$fecha_hora,0,0)";
       $q = $pdo->prepare($sql);
       // Los valores a insertar en la consulta
-      $valores = [$id_notificacion, $row['id'], $fecha_hora];
+      $valores = [$id_notificacion, $row['id']];
       //$q->execute(array($id_notificacion,$row['id'],$fecha_hora));
 
       // Ejecutar la consulta y verificar si se ejecutó correctamente

@@ -57,9 +57,35 @@ if(isset($_GET['fcmToken']) and strlen($_GET['fcmToken'])>0){
   
 }else{
   echo 0;
+}
+
+if(!isset($_GET['nueva_app']) or $_GET['nueva_app']!=1){
+  //echo 1;?>
+  <!-- Modal Temporal -->
+  <div class="modal fade modalbox animate__animated animate__fadeInRight" id="ModalAvisoAppNueva" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
+    <div class="modal-dialog" role="document" style="top: 15%;left: 10%;width: 80%;min-width: 0;height: 70%;">
+      <div class="modal-content" style="padding-top: 0">
+        <!-- <div class="modal-header">
+          Te tenemos buenas noticias!
+        </div> -->
+        <div class="modal-body text-center" style="height: auto;">
+          <!-- <h3 class="modal-title" style="color:black"></h3> -->
+          A partir de ahora, contamos<br>con una <strong>nueva versión</strong><br>de nuesta app <strong>ospiapba</strong>.<br>Innovamos en más tecnología<br>para el cuidado de tu salud y<br>mejor seguridad para tus datos.<br>Para tener la nueva versión:<br><a href="https://play.google.com/store/apps/details?id=org.ospiaprovincia.ospiapba" target="_blank">hacé click acá</a>
+          <!-- <br>OSPIA PROVINCIA<br>Siempre pensando en vos -->
+          <img src="assets/img/logo.png" alt="image" width="75%" style="margin-top: 10px;">
+        </div>
+        <div class="modal-footer mt-2">
+          <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Modal Temporal --><?php
 }?>
+
 <script>
   window.onload=function(){
     //Push.Permission.request();
+    $("#ModalAvisoAppNueva").modal("show")
   }
 </script>
