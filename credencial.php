@@ -45,11 +45,15 @@ if(!isset($_SESSION["user"]["ficha"])){
       /*font-variant: all-petite-caps;*/
       text-transform: uppercase; /* Convierte el texto a mayúsculas */
     }
+    .custom__image-container1 img{
+      height: 30%;
+      width: inherit;
+    }
     #foto{
       /*width: 115px;
       height: 115px;*/
       /*width: 50%;*/
-      height: 35%;
+      height: 100%;
       /*top: 10px;
       left: 30px;*/
       top: 25%; /* Posiciona el texto en el contenedor */
@@ -231,7 +235,9 @@ if(!isset($_SESSION["user"]["ficha"])){
               <!-- <img id="credencial" src="assets/img/credencial_modelo.png" alt="image" class="img-fluid" style="width:100%;"> -->
               <!-- <img id="credencial" src="assets/img/fondo_credencial.svg" alt="image" class="img-fluid" style="width:100%;"> -->
               <!-- style="width: 500px;height: 322px;" -->
-              <img class="datos_credencial" id="foto"></img>
+              <div class="datos_credencial custom__image-container1" id="foto">
+                <img></img>
+              </div>
               <span class="datos_credencial" id="apellido"></span>
               <span class="datos_credencial" id="nombre"></span>
               <span class="datos_credencial" id="dni"></span>
@@ -509,20 +515,21 @@ if(!isset($_SESSION["user"]["ficha"])){
             console.log(data);
             data=JSON.parse(data);
             console.log(data);
+            let resp=data.resp
             if(data.json_ok==1){
               $("#modalCredencial").modal("show");
-              //$("#credencial").attr("src",data.resp)
-              $("#foto").attr("src",data.resp.foto_perfil)
-              $("#apellido").html(data.resp.apellido)
-              $("#nombre").html(data.resp.nombre)
-              $("#caracter").html(data.resp.caracter)
-              $("#plan").html("Plan "+data.resp.plan)
-              $("#dni").html(data.resp.dni)
-              $("#coseguro").html(data.resp.coseguro)
-              $("#token").html("Token "+data.resp.token)
+              //$("#credencial").attr("src",resp)
+              $("#foto img").attr("src",resp.foto_perfil)
+              $("#apellido").html(resp.apellido)
+              $("#nombre").html(resp.nombre)
+              $("#caracter").html(resp.caracter)
+              $("#plan").html("Plan "+resp.plan)
+              $("#dni").html(resp.dni)
+              $("#coseguro").html(resp.coseguro)
+              $("#token").html("Token "+resp.token)
             }else if(data.json_ok==0){
               $("#DialogError").modal("show")
-              $("#error_text").html(data.resp)
+              $("#error_text").html(resp)
             }
             loader.css("display","none");
 
