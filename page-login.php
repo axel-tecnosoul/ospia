@@ -163,6 +163,7 @@ if(!isset($clave)) $clave="";?>
 
   <!-- App Capsule -->
   <div id="appCapsule" class="pt-0">
+    <h2>test</h2>
     <div class="login-form mt-1">
       <div class="section animate__animated animate__zoomIn">
         <img src="assets/img/logo.png" alt="image" width="95%" id="logo">

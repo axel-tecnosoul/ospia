@@ -16,7 +16,7 @@ if(!isset($_GET['fcmToken'])){
 if(isset($_GET['fcmToken']) and strlen($_GET['fcmToken'])>0){
 
   $token=$_GET['fcmToken'];
-  //echo $token;
+  echo $token;
 
   include_once("admin/config.php");
   include_once("admin/database.php");
