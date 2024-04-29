@@ -34,10 +34,10 @@ if(isset($_GET["token"])){
       </div>
       <div class="login-form2 mt-1">
         <div class="button">
-          <a href="page-register.php?token=<?=$token?>"><button type="submit" class="btn btn-primary btn-block btn-lg">CREAR CUENTA</button></a>
+          <a href="page-register.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>"><button type="submit" class="btn btn-primary btn-block btn-lg">CREAR CUENTA</button></a>
         </div>
         <div class="login-form3">
-          <a class="page-login.php" href="page-login.php?token=<?=$token?>">YA TENGO CUENTA</a>
+          <a class="page-login.php" href="page-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>">YA TENGO CUENTA</a>
         </div>
       </div>
     </div>

@@ -93,13 +93,13 @@ if(isset($_GET["token"])){
   <!-- App Header -->
   <div class="appHeader no-border transparent position-absolute">
       <div class="left animate__animated animate__fadeInRight">
-          <a href="page-login.php?token=<?=$token?>" class="headerButton goBack">
+          <a href="page-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="headerButton goBack">
             <ion-icon name="chevron-back-outline"></ion-icon>VOLVER
           </a>
       </div>
       <div class="pageTitle"></div>
       <div class="right animate__animated animate__fadeInRight">
-          <a href="page-login.php?token=<?=$token?>" class="headerButton">Ingreso</a>
+          <a href="page-login.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" class="headerButton">Ingreso</a>
       </div>
   </div>
   <!-- * App Header -->
@@ -113,7 +113,7 @@ if(isset($_GET["token"])){
               <h4>Colocá tu E-mail para recuperar tu cuenta</h4>
           </div>
           <div class="section mt-2 mb-5">
-              <form action="page-forgot-password.php?token=<?=$token?>" method="post">
+              <form action="page-forgot-password.php?token=<?=$token?>&nueva_app=<?=$_GET['nueva_app']?>" method="post">
                   <div class="form-group boxed">
                       <div class="input-wrapper">
                           <input type="email" class="form-control" name="email" placeholder="Email">

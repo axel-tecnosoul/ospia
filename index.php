@@ -6,7 +6,12 @@ require 'admin/database.php';
 
 if(!isset($_SESSION['user']["token_app"])){// or $_SESSION['user']["token_app"]==""
   //header("Location: page-login.php");
-  header("Location: check_token_app.php");
+  if(isset($_SESSION['nueva_app']) and in_array($_SESSION['nueva_app'],[0,1])){
+    $nueva_app=$_SESSION['nueva_app'];
+  }else{
+    $nueva_app=1;
+  }
+  header("Location: check_token_app.php?nueva_app=".$nueva_app);
   //die("Morimos aca");
 }
 //die("O morimos aca");
