@@ -12,15 +12,16 @@ use sngrl\PhpFirebaseCloudMessaging\Recipient\Device;
 use sngrl\PhpFirebaseCloudMessaging\Notification;
 
 //$server_key = 'AAAAWv3X-68:APA91bHYHwsOQrKKs4fIIAx2K5e1hVCQJCa-IaQDnUa0TUz_MIkC_uesPqdoY0Yxt6CNPvpwf-dkLJ7NZhRin_H4qImiJI_Zs-ddD7ALdeWDaYhNSIo0LZR2LWvoOfroqpwBMBMJtKfR';
-$server_key = 'AAAAPCs4egE:APA91bHgPHlkhjUTg-iD6AzE98bC0TChxwNP6c_MkWJb-ofO8BBaqA90JZlotsUX_bOI5u54tCK3jZfevnLqG-s8XpXB3TCa9rMDy8Ciu4xCGJC5gc34PXxrbBvYpqPjI-TIrnX4aJtM';//cuenta firebase Tecno
+//$server_key = 'AAAAPCs4egE:APA91bHgPHlkhjUTg-iD6AzE98bC0TChxwNP6c_MkWJb-ofO8BBaqA90JZlotsUX_bOI5u54tCK3jZfevnLqG-s8XpXB3TCa9rMDy8Ciu4xCGJC5gc34PXxrbBvYpqPjI-TIrnX4aJtM';//cuenta firebase Tecno
+$server_key = 'AAAAwX7IHbg:APA91bGGqGNPBel8rfonJYgx7Cu6wvFu_Y-0aaVzOjL_0mUAhI8Jxomfm0yuVmhdBHS03O7R9WMhAq0QTE2J_OdJYOyUGxq3KcDf8mVpMJQZgsgS4ow47917vebcvLjgm50lZQzktLhf'; //cuenta firebase ospia
 
 $pdo = Database::connect();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT u.email,n.asunto,n.mensaje,u.token_app,nl.id FROM notificaciones n INNER JOIN notificaciones_lecturas nl ON nl.id_notificacion=n.id INNER JOIN usuarios u ON nl.id_usuario=u.id WHERE notif_push=1 AND enviada=0 AND nl.fecha_hora<=NOW() AND token_app IS NOT NULL AND token_app!='1234'";
+$sql = "SELECT u.email,n.asunto,n.mensaje,u.token_app,nl.id FROM notificaciones n INNER JOIN notificaciones_lecturas nl ON nl.id_notificacion=n.id INNER JOIN usuarios u ON nl.id_usuario=u.id WHERE notif_push=1 AND enviada=0 AND nl.fecha_hora<=NOW() AND token_app IS NOT NULL AND token_app NOT IN ('1234','BLACKLISTED')";
 foreach ($pdo->query($sql) as $row) {
 
-  //var_dump($row);
+  var_dump($row);
   
   $titulo=$row["asunto"];
   $cuerpo=$row["mensaje"];
@@ -34,8 +35,7 @@ foreach ($pdo->query($sql) as $row) {
   $message->addRecipient(new Device($row["token_app"]));
   $message
     ->setNotification(new Notification($titulo, $cuerpo))
-    ->setData(['title' => $titulo,'body' => $cuerpo, 'notification_foreground' => 'true'])
-  ;
+    ->setData(['title' => $titulo,'body' => $cuerpo, 'notification_foreground' => 'true']);
 
   $response = $client->send($message);
   var_dump($response);

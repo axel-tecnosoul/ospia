@@ -86,7 +86,8 @@ if(!isset($_SESSION["user"]["ficha"])){
     <h2 class="text-center">Autorizaciones</h2>
     <div class="row" style="height: calc( 100% - 16px - 9px);overflow: scroll;">
       <div class="col-12">
-        <ul id="cartilla" class="listview link-listview search-result animate__animated animate__fadeInRight" style="border-radius: 10px;"><?php
+        <ul id="cartilla" class="listview link-listview search-result animate__animated animate__fadeInRight" style="border-radius: 10px;">
+		<?php
           $id=$_SESSION["user"]["id"];
           $ficha=$_SESSION["user"]["ficha"];
           $persona=$_SESSION["user"]["persona_id"];
@@ -101,14 +102,18 @@ if(!isset($_SESSION["user"]["ficha"])){
             //var_dump($autorizaciones[0]);
             foreach ($autorizaciones as $autorizacion) {
               //var_dump($autorizacion);
+              $ejecutada="";
+              if(isset($autorizacion["Ejecutada"])){
+                $ejecutada=$autorizacion["Ejecutada"];
+              }
               ?>
               <div class="row border border-2 <?=$autorizacion["cClassEstado"]?> rounded m-2 p-1">
                 <div class="col-12"><?php
-                  if ($autorizacion["SolicitaAutorizacion"]!=0) {?>
+                  if ($autorizacion["SolicitaAutorizacion"]!=0 && $ejecutada=="") {?>
                     <h3 class="mb-05 titulo1 text-center"><?=$autorizacion["Fecha"]?></h3>
-					          <h3 class="mt-05 titulo1"><strong>Estado: <?=$autorizacion["Estado"]?></strong><?php
-                    if ($autorizacion["Respuesta"]==12 && $autorizacion["Ejecutada"]=="") {?>
-                       <strong class="text-success"> - Cod.Aut. <?=$autorizacion["Autorizacion"]?></strong></h3><?php
+                    <h3 class="mt-05 titulo1"><strong>Estado: <?=$autorizacion["Estado"]?></strong><?php
+                    if ($autorizacion["Respuesta"]==12 && $ejecutada=="") {?>
+                      <strong class="text-success"> - Cod.Aut. <?=$autorizacion["Autorizacion"]?></strong></h3><?php
                     }
                   }else{?>
                     <h3 class="mb-05 titulo1 text-center"><?=$autorizacion["Fecha"]?></h3>
@@ -118,10 +123,10 @@ if(!isset($_SESSION["user"]["ficha"])){
                     <span onclick="">
                       <?=$autorizacion["Prestador"]."<br>".$autorizacion["CodPractica"]." - ".$autorizacion["Practica"]?>
                     </span><?php
-                    if ($autorizacion["Respuesta"]==12 && $autorizacion["Ejecutada"]=="") {?>
+                    if ($autorizacion["SolicitaAutorizacion"]!=0 && $autorizacion["Respuesta"]==12 && $ejecutada=="") {?>
                        <h3 class="mb-05 mt-1 text-center text-danger">Concurrir al prestador <br />con el c&oacute;digo enviado.</h3><?php
                     }
-                    if ($autorizacion["SolicitaAutorizacion"]==0) {?>
+                    if ($autorizacion["SolicitaAutorizacion"]==0 && $ejecutada=="" && $ejecutada=="" && $autorizacion["Respuesta"]=="") {?>
                       <div class="mt-05" style="text-align: center;">
                         <span class='btn btn-sm btn-primary border mb-05 btnSolicitarAutorizacion' data-autorizacion='<?=$autorizacion["Autorizacion"]?>'>Solicitar Autorizacion</span>
                       </div><?php
@@ -135,7 +140,7 @@ if(!isset($_SESSION["user"]["ficha"])){
                     $count = $q->rowCount();
                     if($count==0){
                     */
-                    if ($autorizacion["Respuesta"]==12 && $autorizacion["Ejecutada"]!="" && isset($autorizacion["Encuesta"]) and $autorizacion["Encuesta"]=="Falso") {?>
+                    if ($autorizacion["Respuesta"]==12 && $ejecutada!="" && isset($autorizacion["Encuesta"]) and $autorizacion["Encuesta"]=="Falso") {?>
 						          <!--<div class="mt-05"><a href="calificar-autorizacion.php?codAut=<?php echo $autorizacion["Autorizacion"]; ?>">Calificar Atenci&oacute;n Recibida</a></div>--><?php
                     }?>
                     <!--<div class="mt-05"><a target="_blank" href="https://www.ospiapba.org.ar/AU_SugerenciasReclamos.asp?codAut=<?php echo $autorizacion["Autorizacion"]; ?>">Reclamos o Sugerencias</a></div>-->
@@ -171,63 +176,79 @@ if(!isset($_SESSION["user"]["ficha"])){
             <div class="section mt-2">
                   
             </div>
-              <div class="section mt-4 mb-3">
-                <form name="form" id="fileupload" method="post" enctype="multipart/form-data">
-                  <div class="form-group basic">
-                    <label class="form-label" for="id_afiliado">Afiliado</label>
-                    <select name="id_afiliado" id="id_afiliado" class="form-control col-sm-12" required="required">
-                      <option value="">Seleccione...</option><?php
-                      $url=$url_ws."?Modo=6&Usuario=$usuario_ws&Ficha=$ficha";
-                      //echo $url;
-                      $jsonData = json_decode(file_get_contents($url),true);
-                      $grupo_fliar=$jsonData[0]["Data"];
-                      foreach ($grupo_fliar as $persona) {?>
-                        <option value='<?=$persona['Id']?>'><?=$persona['Apellido']." ".$persona['Nombre']?></option><?php
-                      }?>
-                    </select>
+            <div class="section mt-4 mb-3">
+              <form name="form" id="fileupload" method="post" enctype="multipart/form-data">
+                <div class="form-group basic">
+                  <label class="form-label" for="id_afiliado">Afiliado</label>
+                  <select name="id_afiliado" id="id_afiliado" class="form-control col-sm-12" required="required">
+                    <option value="">Seleccione...</option><?php
+                    $url=$url_ws."?Modo=6&Usuario=$usuario_ws&Ficha=$ficha";
+                    //echo $url;
+                    $jsonData = json_decode(file_get_contents($url),true);
+                    $grupo_fliar=$jsonData[0]["Data"];
+                    foreach ($grupo_fliar as $persona) {?>
+                      <option value='<?=$persona['Id']?>'><?=$persona['Apellido']." ".$persona['Nombre']?></option><?php
+                    }?>
+                  </select>
+                </div>
+                <div class="form-group basic">
+                  <label class="form-label" for="id_delegacion">Delegacion</label>
+                  <select name="id_delegacion" id="id_delegacion" class="form-control col-sm-12" required="required">
+                    <option value="">Seleccione...</option><?php
+                    $url=$url_ws."?Modo=23&Usuario=$usuario_ws";
+                    //echo $url;
+                    $jsonData = json_decode(file_get_contents($url),true);
+                    $delegaciones=$jsonData["Data"];
+                    foreach ($delegaciones as $delegacion) {?>
+                      <option value='<?=$delegacion['Id']?>' data-mail='<?=$delegacion['Mail']?>'><?=$delegacion['Policlinico']?></option><?php
+                    }?>
+                  </select>
+                </div>
+                <div class="form-group basic">
+                  <label class="form-label" for="">Fotos de la orden</label>
+                  <br>
+                  <!-- <input type="file" name="imagen" multiple/> -->
+                  <div style="text-align: center;">
+                    <span class="btn bg-primary" id="fileinput-button">
+                      <ion-icon name="add-outline"></ion-icon>
+                      <span>Agregar</span>
+                    </span>
                   </div>
-                  <div class="form-group basic">
-                    <label class="form-label" for="id_delegacion">Delegacion</label>
-                    <select name="id_delegacion" id="id_delegacion" class="form-control col-sm-12" required="required">
-                      <option value="">Seleccione...</option><?php
-                      $url=$url_ws."?Modo=23&Usuario=$usuario_ws";
-                      //echo $url;
-                      $jsonData = json_decode(file_get_contents($url),true);
-                      $delegaciones=$jsonData["Data"];
-                      foreach ($delegaciones as $delegacion) {?>
-                        <option value='<?=$delegacion['Id']?>' data-mail='<?=$delegacion['Mail']?>'><?=$delegacion['Policlinico']?></option><?php
-                      }?>
-                    </select>
-                  </div>
-                  <div class="form-group basic">
-                    <label class="form-label" for="">Fotos de la orden</label>
-                    <br>
-                    <!-- <input type="file" name="imagen" multiple/> -->
-                    <div style="text-align: center;">
-                      <span class="btn bg-primary" id="fileinput-button">
-                        <ion-icon name="add-outline"></ion-icon>
-                        <span>Agregar</span>
-                      </span>
-                    </div>
-                    <div id="container" class="container"></div>
-                    <!-- <table role="presentation" class="table table-striped" id="fileTable">
-                      <tbody class="files"></tbody>
-                    </table> -->
-                  </div>
-                  <div class="mt-2">
-                    <button type="submit" class="btn btn-primary btn-block btn">Enviar</button>
-                    <button type="button" class="btn btn-danger btn-block btn" data-bs-dismiss="modal">Cerrar</button>
-                  </div>
-                </form>
-              </div>
+                  <div id="container" class="container"></div>
+                  <!-- <table role="presentation" class="table table-striped" id="fileTable">
+                    <tbody class="files"></tbody>
+                  </table> -->
+                </div>
+                <div class="mt-2">
+                  <button type="submit" class="btn btn-primary btn-block btn">Enviar</button>
+                  <button type="button" class="btn btn-danger btn-block btn" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- * Modal Form -->
+  </div>
+  <!-- * Modal Form -->
 
-    <!-- Modal Confirmar nueva autorizacion -->
+  <!-- Modal para avisar que falta cargar los archivos -->
+  <div class="modal fade modalbox " id="DialogFaltaFoto" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
+    <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
+      <div class="modal-content" style="padding-top: 0;height: min-content;">
+        <div class="modal-body" style="height: min-content;">
+          <h3 class="modal-title" style="color:black">Debe subir la foto de la orden.</h3>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-primary btn-block btn-lg">OK</button> -->
+          <a href="#" class="btn btn-primary" data-bs-dismiss="modal">OK</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal para avisar que falta cargar los archivos -->
+
+  <!-- Modal Confirmar nueva autorizacion -->
   <div class="modal fade modalbox " id="ModalConfirmNuevaAutorizacion" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
     <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
       <div class="modal-content" style="padding-top: 0;height: min-content;">
@@ -307,6 +328,12 @@ if(!isset($_SESSION["user"]["ficha"])){
           datosEnviar.append('file'+i, file);
           i++;
         });
+
+        if(i==0){
+          //console.log("agregar archivo");
+          $("#DialogFaltaFoto").modal("show")
+          return false;
+        }
         
         $.ajax({
           data: datosEnviar,
@@ -343,6 +370,7 @@ if(!isset($_SESSION["user"]["ficha"])){
         inputFile.style="display:none";
         inputFile.capture="";
         inputFile.accept="image/*, application/pdf";
+        inputFile.required=true;
         inputFile.addEventListener("change",function(e){
           readFile(e.srcElement)
         },false)

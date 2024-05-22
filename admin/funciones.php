@@ -50,7 +50,7 @@ function enviarMail($cuenta_envio="bbdd", $destinatarios, $asunto, $cuerpo, $adj
 
   if($cuenta_envio=="autorizaciones"){
     //$smtpHost = "mail.ospiapba.org.ar";  //agregar servidor
-    $smtpHost = "mail.ospiaprovincia.org";  //agregar servidor
+    $smtpHost = "mon05.servidoraweb.net";  //agregar servidor
     $smtpUsuario = "autorizaciones.app@ospiaprovincia.org";  //agregar usuario
     $smtpClave = "DpYhp4Zjx(RB";  //agregar contraseña
     $remitente = $smtpUsuario;

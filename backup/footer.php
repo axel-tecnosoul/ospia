@@ -21,7 +21,7 @@
     </div>
   </a><?php
   
-  //if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
+  if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
     <a href="logout.php" class="item animate__animated animate__bounceIn">
       <div class="col">
         <button type="button" class="btn btn-icon btn-primary me-1 mb-1">
@@ -29,5 +29,5 @@
         </button>
       </div>
     </a><?php
-  //}?>
+  }?>
 </div>

@@ -6,7 +6,12 @@ require 'admin/database.php';
 
 if(!isset($_SESSION['user']["token_app"])){// or $_SESSION['user']["token_app"]==""
   //header("Location: page-login.php");
-  header("Location: check_token_app.php");
+  if(isset($_SESSION['nueva_app']) and in_array($_SESSION['nueva_app'],[0,1])){
+    $nueva_app=$_SESSION['nueva_app'];
+  }else{
+    $nueva_app=1;
+  }
+  header("Location: check_token_app.php?nueva_app=".$nueva_app);
   //die("Morimos aca");
 }
 //die("O morimos aca");
@@ -71,14 +76,19 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
 					<ion-icon name="search-circle-outline"></ion-icon>
 					CARTILLA MEDICA
 				</button>
-			</a><?php
+			</a>
+			
+			 <a class="a1boton" href="autorizaciones.php">
+				  <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+					  <ion-icon name="newspaper-outline"></ion-icon>
+					  AUTORIZACIONES
+				  </button>
+			 </a>
+			
+			
+			<?php
       if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
-        <a class="a1boton" href="autorizaciones.php">
-          <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-              <ion-icon name="newspaper-outline"></ion-icon>
-              AUTORIZACIONES
-          </button>
-                  </a>
+       
         
         <a class="a1boton" href="#">
           <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">

@@ -4,9 +4,6 @@ require_once 'admin/database.php';
 if(isset($_GET["fcmToken"])){
   $token=$_GET["fcmToken"];
 }
-if(isset($_POST["fcmToken"])){
-  $token=$_POST["fcmToken"];
-}
 if(isset($_GET["token"])){
   $token=$_GET["token"];
 }
@@ -15,34 +12,31 @@ if(isset($_POST["token"])){
 }
 
 if(!isset($token)){
-  //var_dump($token);
-  header("Location: check_token_app.php?nueva_app=".$_GET['nueva_app']);
+  header("Location: check_token_app.php");
   exit();
 }
-//echo $token;
+
 $error = 0;
 $submitted_username = ''; 
+
 if(!empty($_POST)){ 
-  // Primero, intentamos buscar al usuario en la tabla "usuarios" utilizando una consulta preparada para proteger contra inyección SQL
+  // Primero, intentamos buscar al usuario en la tabla "usuarios"
   $query = "SELECT id, nombre_apellido, fecha_nacimiento, dni, imagen, domicilio, id_provincia, email, celular, clave, cuit, alias, cbu, notif_push, notif_whatsapp, notif_email, ficha, persona_id, token_app, requiere_cambio_clave FROM usuarios WHERE email = :user";
-  $query_params = array(':user' => trim($_POST['user']));
-  $titular=1;
+  $query_params = array(':user' => trim($_POST['user'])); 
   
   try{
     $stmt = $db->prepare($query); 
     $result = $stmt->execute($query_params); 
-  } catch(
-    PDOException $ex){ die("Failed to run query: " . $ex->getMessage());
-  }
+  } catch(PDOException $ex){ 
+    die("Failed to run query: " . $ex->getMessage()); 
+  } 
   
-  $login_ok = false;
   $row = $stmt->fetch();
-
+  
   // Si la primera consulta no devuelve resultados, intentamos buscar al usuario en la tabla "personas_habilitadas"
   if(!$row){
     $query2 = "SELECT ph.id, ph.id_usuario, ph.nombre_completo, ph.dni, ph.email, ph.celular, ph.clave, u.id, u.nombre_apellido, u.fecha_nacimiento, u.imagen, u.domicilio, u.id_provincia, u.cuit, u.alias, u.cbu, u.cbte_cbu, u.notif_push, u.notif_whatsapp, u.notif_email, u.ficha, u.persona_id, u.token_app, u.requiere_cambio_clave, u.fecha_hora_alta FROM personas_habilitadas ph inner join usuarios u on u.id = ph.id_usuario WHERE ph.email = :user"; 
-    $query_params2 = array(':user' => $_POST['user']);
-    $titular=0;
+    $query_params2 = array(':user' => $_POST['user']); 
     
     try{ 
       $stmt2 = $db->prepare($query2); 
@@ -53,79 +47,54 @@ if(!empty($_POST)){
     
     $row = $stmt2->fetch();
   }
-
+  
   if($row){
+    $check_pass = trim($_POST['pass']); 
+    
+    // Verificar las credenciales de inicio de sesión
+    if(!empty($row['clave']) && password_verify($check_pass, $row['clave'])){
+      // Si las credenciales son válidas, determinar si el usuario es titular o no
+      $_SESSION['user'] = array(
+        'id' => isset($row['id']) ? $row['id'] : $row['id_usuario'],
+        'nombre_apellido' => isset($row['nombre_apellido']) ? $row['nombre_apellido'] : $row['nombre_completo'],
+        'email' => isset($row['email']) ? $row['email'] : $row['email'],
+        'celular' => isset($row['celular']) ? $row['celular'] : $row['celular'],
+        'persona_id' => isset($row['persona_id']) ? $row['persona_id'] : null
+      );
 
-    if($row){
-      $check_pass = trim($_POST['pass']); 
+      $_SESSION['titular'] = isset($row['id']) ? 1 : 0;
       
-      // Verificar las credenciales de inicio de sesión
-      //if(!empty($row['clave']) && password_verify($check_pass, $row['clave'])){
-      if($check_pass === $row['clave']){
-        // Si las credenciales son válidas cargamos la variables de la sesion
-        $_SESSION['user']=$row;
-  
-        $_SESSION['titular'] = $titular;
-
-        $_SESSION['nueva_app'] = $_POST['nueva_app'];
+      // Actualizar el token_app si está vacío o es diferente al proporcionado
+      if(!$row['token_app'] or $row['token_app']!==$_POST['token']){
+        $pdo = Database::connect();
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        if($titular==1){
-          // Actualizar el campo persona_id si está vacío
-          if(!$row['persona_id']){
+        $sql = "UPDATE usuarios set token_app = ? where id = ?";
+        $q = $pdo->prepare($sql);
+        $q->execute([$_POST['token'],$row['id']]);
 
-            $pdo = Database::connect();
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      
-            $dni=trim($row["dni"]);
-            $fecha_nacimiento=date("d/m/Y",strtotime(trim($row["fecha_nacimiento"])));
-            $email=trim($row["email"]);
-      
-            $url=$url_ws."?Modo=5&Usuario=$usuario_ws&FechaNacimiento=$fecha_nacimiento&Documento=$dni&email='$email'";
-            $jsonData = json_decode(file_get_contents($url),true);
-            
-            $sql = "UPDATE usuarios set persona_id = ? where id = ?";
-            $q = $pdo->prepare($sql);
-            $q->execute([$jsonData["Persona_Id"],$row['id']]);
-      
-            $row["persona_id"]=$jsonData["Persona_Id"];
-      
-            Database::disconnect();
-          }
+        $count = $q->rowCount();
 
-          // Actualizar el token_app si está vacío o es diferente al proporcionado
-          if(!$row['token_app'] or $row['token_app']!==$_POST['token']){
-            $pdo = Database::connect();
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            $sql = "UPDATE usuarios set token_app = ? where id = ?";
-            $q = $pdo->prepare($sql);
-            $q->execute([$_POST['token'],$row['id']]);
-    
-            $count = $q->rowCount();
-    
-            if($count==1){
-              $row['token_app']=$_POST['token'];
-            }
-    
-            Database::disconnect();
-          }
+        if($count==1){
+          $row['token_app']=$_POST['token'];
         }
-  
-        // Redirigir al usuario a la página principal después del inicio de sesión
-        header("Location: index.php"); 
-        exit();
-        
-      } else {
-        // Las credenciales son incorrectas
-        $error = 1;
-        $submitted_username = htmlentities(trim($_POST['user']), ENT_QUOTES, 'UTF-8'); 
+
+        Database::disconnect();
       }
+
+      // Redirigir al usuario a la página principal después del inicio de sesión
+      header("Location: index.php"); 
+      exit();
+      
     } else {
-      // El usuario no existe en ninguna de las tablas
+      // Las credenciales son incorrectas
       $error = 1;
       $submitted_username = htmlentities(trim($_POST['user']), ENT_QUOTES, 'UTF-8'); 
     }
-
+  } else {
+    // El usuario no existe en ninguna de las tablas
+    $error = 1;
+    $submitted_username = htmlentities(trim($_POST['user']), ENT_QUOTES, 'UTF-8'); 
   }
 }?>
 <!doctype html>
@@ -146,6 +115,13 @@ if(!empty($_POST)){
   <link rel="manifest" href="__manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head><?php
+
+if(isset($_GET["fcmToken"])){
+  $token=$_GET["fcmToken"];
+}
+if(isset($_POST["fcmToken"])){
+  $token=$_POST["fcmToken"];
+}
 if(!isset($email)) $email="";
 if(!isset($clave)) $clave="";?>
 <body class="bg1">
@@ -167,7 +143,6 @@ if(!isset($clave)) $clave="";?>
         <form action="page-login.php" method="post" id="myForm">
 
           <input type="hidden" name="token" value="<?=$token?>">
-          <input type="hidden" name="nueva_app" value="<?=$_GET["nueva_app"]?>">
 
           <div class="form-group boxed">
             <div class="input-wrapper">
