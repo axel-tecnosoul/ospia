@@ -26,17 +26,6 @@ function getAccessToken() {
 }
 
 
-//$server_key = 'dato a configurar';
-//$server_key = 'AAAAWv3X-68:APA91bHYHwsOQrKKs4fIIAx2K5e1hVCQJCa-IaQDnUa0TUz_MIkC_uesPqdoY0Yxt6CNPvpwf-dkLJ7NZhRin_H4qImiJI_Zs-ddD7ALdeWDaYhNSIo0LZR2LWvoOfroqpwBMBMJtKfR';
-$server_key = 'AAAAwX7IHbg:APA91bGGqGNPBel8rfonJYgx7Cu6wvFu_Y-0aaVzOjL_0mUAhI8Jxomfm0yuVmhdBHS03O7R9WMhAq0QTE2J_OdJYOyUGxq3KcDf8mVpMJQZgsgS4ow47917vebcvLjgm50lZQzktLhf'; //cuenta firebase ospia
-
-//axel
-//$token="epq-f-UoSxC1k-5LIakzt1:APA91bHyYJ69jlKG_R44_WzZS4Z4EuPienUHT0ds3R530lvAmzcscUKE2x241SQ3EZajtaWvTfCIPUtxYTB_UHjlR-f6X-f4k0fquosLJX1bhf5CoVzGNmI2kI_SnjYGJD8huln7xYUw";
-$token="eWhRhIz-RkcjsO5e-hnbsk:APA91bHF3bMgQI7toyQq2YPSjJEF66wdDAJFLfT93jKVgbjj8Ippj9fyU26EXjagroAwMHzTw3NBEmo2We-UFTguCHy44fFDMdKs89TYvBFh3vOZJkm5UaGSWNQTMmYyPQa_XGoPyOdg";
-
-//mat
-//$token="fFYv3CpWSaObW_js5B66d3:APA91bFHaDTd9ftn_oBiFPaq8DDaeDTWVPc4UIrUQp1begfqVF68wLz5OhL1JgDj7vgDOdpKyY8TbKK9SA5EQlGLub12fwG_vk7h0ngH9LF--VmFUuFq__umfMHCZ6GSHvAo4jAazaV5";
-
 function sendMessage($token, $payload) {
   $accessToken = getAccessToken();
   #ajustar url
