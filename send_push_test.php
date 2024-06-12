@@ -5,11 +5,26 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 
 require_once 'vendor/autoload.php';
 
+# composer require google/auth
+use Google\Auth\Credentials\ServiceAccountCredentials;
+use GuzzleHttp\Client;
 
-use sngrl\PhpFirebaseCloudMessaging\Client;
-use sngrl\PhpFirebaseCloudMessaging\Message;
-use sngrl\PhpFirebaseCloudMessaging\Recipient\Device;
-use sngrl\PhpFirebaseCloudMessaging\Notification;
+function getAccessToken() {
+    $scopes = ['https://www.googleapis.com/auth/firebase.messaging'];
+    #usar json del proyecto firebase correspondiente
+    #ospia testing
+    $jsonKey = 'ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json';
+
+    $credentials = new ServiceAccountCredentials($scopes, $jsonKey);
+    $accessToken = $credentials->fetchAuthToken();
+    
+    if (!isset($accessToken['access_token'])) {
+        throw new Exception('Failed to fetch access token');
+    }
+    
+    return $accessToken['access_token'];
+}
+
 
 //$server_key = 'dato a configurar';
 //$server_key = 'AAAAWv3X-68:APA91bHYHwsOQrKKs4fIIAx2K5e1hVCQJCa-IaQDnUa0TUz_MIkC_uesPqdoY0Yxt6CNPvpwf-dkLJ7NZhRin_H4qImiJI_Zs-ddD7ALdeWDaYhNSIo0LZR2LWvoOfroqpwBMBMJtKfR';
@@ -22,42 +37,52 @@ $token="eWhRhIz-RkcjsO5e-hnbsk:APA91bHF3bMgQI7toyQq2YPSjJEF66wdDAJFLfT93jKVgbjj8
 //mat
 //$token="fFYv3CpWSaObW_js5B66d3:APA91bFHaDTd9ftn_oBiFPaq8DDaeDTWVPc4UIrUQp1begfqVF68wLz5OhL1JgDj7vgDOdpKyY8TbKK9SA5EQlGLub12fwG_vk7h0ngH9LF--VmFUuFq__umfMHCZ6GSHvAo4jAazaV5";
 
-//Mara
-//$token="dJHZZQ83ThecTQCFsufLGt:APA91bFCtl2ZO39I3J5k5LsZag1FgjLQik32EKh1u2gqiQOB2zStgymS17L33NcAurkq9Qo_n2x57N0WfXj1bVbq0HuFYDajK2ml25f5XjkJqIGL_3MtFw-WE4M-JimyOG4qJfk6Vhpj";
-//$token="d3v5DgkcTXaHBmebu0Tg5t:APA91bHKjAEKGQY-biOoTU9Zsldul-VNtXR_Vetj-52Gmo0aa3LF-cWqx3DLORAAY0Q7LkC-hIYTfZ11lQ4Llja2VV-pHadw0-1UVBFaoibekiwQy6xJVG_lQYhhiLp0DtClAFTdhZi-";
+function sendMessage($token, $payload) {
+  $accessToken = getAccessToken();
+  #ajustar url
+  $url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
 
-//nelson
-//$token="fShLx2yCQtK-E9efeHeHrO:APA91bGSsmbhIIhdv5rgi128CLeZq_HIQ1SKFRri72p0NEk2rfuzV_YvoCYQd9eBx63yVsyt-ssxgm1WIC3hsyvwjgmbWyC2MEUN3xbTBBh4XNQG3Lj1HIzpdjuYmPYlJp25VLOYcXAz";
-//$email = "nelson.murstein@gmail.com";
+  $client = new Client();
+  $response = $client->post($url, [
+      'headers' => [
+          'Authorization' => 'Bearer ' . $accessToken,
+          'Content-Type' => 'application/json',
+      ],
+      'json' => [
+          'message' => [
+              'token' => $token,
+              'notification' => $payload['notification'],
+              'data' => array_merge($payload['data'], [
+                  'notification_foreground' => 'true'
+              ])
+          ]
+      ]
+  ]);
 
-$client = new Client();
-$client->setApiKey($server_key);
-$client->injectGuzzleHttpClient(new \GuzzleHttp\Client());
+  return $response->getBody()->getContents();
+}
 
-$titulo='Notificacion Particular';
-$cuerpo='Hola, viendo las push! ;)';
+//$token = 'DEVICE_REGISTRATION_TOKEN';
+//$regIdfijo ="dAjpcZYFQ2OLjVlKiG8QA1:APA91bEhPcjmBIoIzAPmUbQZ1qfURpjRrpyb1oyUKN7p-hcTcluz4BlhR0XxJHpESar0g_XZm_0JK6xWeoaEnZ7KGpYVI8N-x0jvub8OA9LHayyXgQeqrt7x4ReZHl9AhB7J8FFlPlBN";
+//$token="dZUJa92BTpeqEn2N5K6Q6f:APA91bFoyajam2ETs4cEhFLVLHV2-V5ONRXElIlX-AT0jikiyasmCLffU1bdcQagPmGlMVzV_Ut_FAjCN2nxdJza9A1CsAtT-70h2mJKngULCpb-tWGJhN6hXqipdA719kh_eqevuvJ1";
 
-$message = new Message();
-$message->setPriority('high');
-$message->addRecipient(new Device($token));
-$message
-    ->setNotification(new Notification($titulo, $cuerpo))
-    //->setData(['key' => 'value']);
-    ->setData(['title' => $titulo,'body' => $cuerpo, 'notification_foreground' => 'true']);
+$token=$_GET['fcmToken'];
 
-$response = $client->send($message);
+//print_r ($_GET);
+echo "<p>mobile token: ".$token."</p>";
+$payload = [
+    'notification' => [
+        'title' => 'Firebase HTTPv1 API',
+        'body' => 'Mensaje con Nueva api !'
+    ],
+    'data' => [
+        'key1' => 'value1',
+        'key2' => 'value2'
+    ]
+];
 
-//
-echo "<h2>Notificacion con token</h2>
-<h3>Enviada a:</h3>";
-echo "<h4> email: $email </h4>";
-echo "<p><b>token:</b> $token </p><br><br>";
-echo "<h3>Respuesta Firebase</h3>";
-var_dump($response->getStatusCode());
-$response_content=$response->getBody()->getContents();
-$response_content=json_decode($response_content,true);
-var_dump($response_content);
-var_dump($response_content["success"]);
+$result = sendMessage($token, $payload);
+echo "<p>result: ".$result."</p>";
 
 
 
