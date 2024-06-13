@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 if (isset($_SERVER['HTTP_ORIGIN'])) {
   header("Access-Control-Allow-Origin: *");
 }
@@ -66,7 +68,7 @@ $server_key = 'AAAAwX7IHbg:APA91bGGqGNPBel8rfonJYgx7Cu6wvFu_Y-0aaVzOjL_0mUAhI8Jx
 //$regIdfijo ="dAjpcZYFQ2OLjVlKiG8QA1:APA91bEhPcjmBIoIzAPmUbQZ1qfURpjRrpyb1oyUKN7p-hcTcluz4BlhR0XxJHpESar0g_XZm_0JK6xWeoaEnZ7KGpYVI8N-x0jvub8OA9LHayyXgQeqrt7x4ReZHl9AhB7J8FFlPlBN";
 //$token="dZUJa92BTpeqEn2N5K6Q6f:APA91bFoyajam2ETs4cEhFLVLHV2-V5ONRXElIlX-AT0jikiyasmCLffU1bdcQagPmGlMVzV_Ut_FAjCN2nxdJza9A1CsAtT-70h2mJKngULCpb-tWGJhN6hXqipdA719kh_eqevuvJ1";
 
-$token=$_GET['fcmToken'];
+//$token=$_GET['fcmToken'];
 
 //print_r ($_GET);
 $pdo = Database::connect();
@@ -75,7 +77,9 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "SELECT u.email,n.asunto,n.mensaje,u.token_app,nl.id FROM notificaciones n INNER JOIN notificaciones_lecturas nl ON nl.id_notificacion=n.id INNER JOIN usuarios u ON nl.id_usuario=u.id WHERE notif_push=1 AND enviada=0 AND nl.fecha_hora<=NOW() AND token_app IS NOT NULL AND token_app NOT IN ('1234','BLACKLISTED')";
 foreach ($pdo->query($sql) as $row) {
 
+  /*echo "<pre>";
   var_dump($row);
+  echo "</pre>";*/
   
   $titulo=$row["asunto"];
   $cuerpo=$row["mensaje"];
@@ -92,7 +96,41 @@ foreach ($pdo->query($sql) as $row) {
       ]
   ];
 
-  $result = sendMessage($token, $payload);
+  try {
+    $result = sendMessage($token, $payload);
+
+    echo "<h2>Notificacion con token</h2>";
+    echo $titulo." -> ".$cuerpo;
+    echo "<h3>Enviada a:</h3>";
+    echo "<h4> email: ".$row["email"]." </h4>";
+    echo "<p><b>token:</b> ".$token." </p>";
+    echo "<h3>Respuesta Firebase</h3>";
+    /*echo "response->getStatusCode(): ";
+    var_dump($response->getStatusCode());
+    $response_content=$response->getBody()->getContents();
+    $response_content=json_decode($response_content,true);
+    //var_dump($response_content);
+    echo "<br>response_content[success]: ";
+    var_dump($response_content["success"]);*/
+    echo "<p>result: ".$result."</p>";
+    $result=json_decode($result,true);
+    //echo $result["name"];
+
+    if(isset($result["name"])){
+      $sql2 = "UPDATE notificaciones_lecturas SET enviada = 1 WHERE id = ?";
+      $q2 = $pdo->prepare($sql2);
+      $q2->execute(array($row['id']));
+      echo "<br>".$sql2;
+      $afe2=$q2->rowCount();
+      echo "<br>Afe: ".$afe2;
+    }
+    
+  } catch (Exception $e) {
+    // Manejo del error
+    echo "Se ha producido un error: " . $e->getMessage();
+    // Registrar el error en el archivo de log
+    error_log($e->getMessage());
+  }
 
   /*$client = new Client();
   $client->setApiKey($server_key);
@@ -108,29 +146,6 @@ foreach ($pdo->query($sql) as $row) {
   $response = $client->send($message);
   var_dump($response);*/
   
-  echo "<h2>Notificacion con token</h2>";
-  echo $titulo." -> ".$cuerpo;
-  echo "<h3>Enviada a:</h3>";
-  echo "<h4> email: ".$row["email"]." </h4>";
-  echo "<p><b>token:</b> ".$token." </p>";
-  echo "<h3>Respuesta Firebase</h3>";
-  /*echo "response->getStatusCode(): ";
-  var_dump($response->getStatusCode());
-  $response_content=$response->getBody()->getContents();
-  $response_content=json_decode($response_content,true);
-  //var_dump($response_content);
-  echo "<br>response_content[success]: ";
-  var_dump($response_content["success"]);*/
-  echo "<p>result: ".$result."</p>";
-
-  if($response_content["success"]==1 and $response->getStatusCode()==200){
-    $sql2 = "UPDATE notificaciones_lecturas SET enviada = 1 WHERE id = ?";
-    $q2 = $pdo->prepare($sql2);
-    $q2->execute(array($row['id']));
-    echo "<br>".$sql2;
-    $afe2=$q2->rowCount();
-    echo "<br>Afe: ".$afe2;
-  }
 }
 Database::disconnect();
 
