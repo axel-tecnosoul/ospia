@@ -6,12 +6,6 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 include_once("admin/config.php");
 include_once("admin/database.php");
 include_once("admin/funciones.php");
-require "vendor/autoload.php";
-
-use sngrl\PhpFirebaseCloudMessaging\Client;
-use sngrl\PhpFirebaseCloudMessaging\Message;
-use sngrl\PhpFirebaseCloudMessaging\Recipient\Device;
-use sngrl\PhpFirebaseCloudMessaging\Notification;
 
 $pdo = Database::connect();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
