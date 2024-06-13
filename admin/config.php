@@ -1,10 +1,10 @@
 <?php
 
 //LOCALHOST
-$host = "localhost";
+/*$host = "localhost";
 $username = "root";
 $password = "";
-$dbname = "ospia_app";
+$dbname = "ospia_app";*/
 
 //PRODUCCION
 /*$host = "localhost";
@@ -14,10 +14,10 @@ $password = "ne51KAwoza";
 $dbname = "c2191641_db";*/
 
 //TESTING
-/*$host = "localhost";
+$host = "localhost";
 $username = "ospia";
 $password = "jksfjksdhfjkh123df";
-$dbname = "ospia";*/
+$dbname = "ospia";
 
 $debug=1;
 
