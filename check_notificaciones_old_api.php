@@ -6,69 +6,15 @@ require "vendor/autoload.php";
 require "admin/config.php";
 require "admin/database.php";
 
-/*use sngrl\PhpFirebaseCloudMessaging\Client;
+use sngrl\PhpFirebaseCloudMessaging\Client;
 use sngrl\PhpFirebaseCloudMessaging\Message;
 use sngrl\PhpFirebaseCloudMessaging\Recipient\Device;
-use sngrl\PhpFirebaseCloudMessaging\Notification;*/
-
-# composer require google/auth
-use Google\Auth\Credentials\ServiceAccountCredentials;
-use GuzzleHttp\Client;
-
-function getAccessToken() {
-    $scopes = ['https://www.googleapis.com/auth/firebase.messaging'];
-    #usar json del proyecto firebase correspondiente
-    #ospia testing
-    $jsonKey = 'ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json';
-
-    $credentials = new ServiceAccountCredentials($scopes, $jsonKey);
-    $accessToken = $credentials->fetchAuthToken();
-    
-    if (!isset($accessToken['access_token'])) {
-        throw new Exception('Failed to fetch access token');
-    }
-    
-    return $accessToken['access_token'];
-}
-
-
-function sendMessage($token, $payload) {
-  $accessToken = getAccessToken();
-  #ajustar url
-  $url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
-
-  $client = new Client();
-  $response = $client->post($url, [
-      'headers' => [
-          'Authorization' => 'Bearer ' . $accessToken,
-          'Content-Type' => 'application/json',
-      ],
-      'json' => [
-          'message' => [
-              'token' => $token,
-              'notification' => $payload['notification'],
-              'data' => array_merge($payload['data'], [
-                  'notification_foreground' => 'true'
-              ])
-          ]
-      ]
-  ]);
-
-  return $response->getBody()->getContents();
-}
+use sngrl\PhpFirebaseCloudMessaging\Notification;
 
 //$server_key = 'AAAAWv3X-68:APA91bHYHwsOQrKKs4fIIAx2K5e1hVCQJCa-IaQDnUa0TUz_MIkC_uesPqdoY0Yxt6CNPvpwf-dkLJ7NZhRin_H4qImiJI_Zs-ddD7ALdeWDaYhNSIo0LZR2LWvoOfroqpwBMBMJtKfR';
 //$server_key = 'AAAAPCs4egE:APA91bHgPHlkhjUTg-iD6AzE98bC0TChxwNP6c_MkWJb-ofO8BBaqA90JZlotsUX_bOI5u54tCK3jZfevnLqG-s8XpXB3TCa9rMDy8Ciu4xCGJC5gc34PXxrbBvYpqPjI-TIrnX4aJtM';//cuenta firebase Tecno
 $server_key = 'AAAAwX7IHbg:APA91bGGqGNPBel8rfonJYgx7Cu6wvFu_Y-0aaVzOjL_0mUAhI8Jxomfm0yuVmhdBHS03O7R9WMhAq0QTE2J_OdJYOyUGxq3KcDf8mVpMJQZgsgS4ow47917vebcvLjgm50lZQzktLhf'; //cuenta firebase ospia
 
-
-//$token = 'DEVICE_REGISTRATION_TOKEN';
-//$regIdfijo ="dAjpcZYFQ2OLjVlKiG8QA1:APA91bEhPcjmBIoIzAPmUbQZ1qfURpjRrpyb1oyUKN7p-hcTcluz4BlhR0XxJHpESar0g_XZm_0JK6xWeoaEnZ7KGpYVI8N-x0jvub8OA9LHayyXgQeqrt7x4ReZHl9AhB7J8FFlPlBN";
-//$token="dZUJa92BTpeqEn2N5K6Q6f:APA91bFoyajam2ETs4cEhFLVLHV2-V5ONRXElIlX-AT0jikiyasmCLffU1bdcQagPmGlMVzV_Ut_FAjCN2nxdJza9A1CsAtT-70h2mJKngULCpb-tWGJhN6hXqipdA719kh_eqevuvJ1";
-
-$token=$_GET['fcmToken'];
-
-//print_r ($_GET);
 $pdo = Database::connect();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -79,22 +25,8 @@ foreach ($pdo->query($sql) as $row) {
   
   $titulo=$row["asunto"];
   $cuerpo=$row["mensaje"];
-  $token=$row["token_app"];
 
-  $payload = [
-      'notification' => [
-          'title' => $titulo,//'Firebase HTTPv1 API',
-          'body' => $cuerpo,//'Mensaje con Nueva api !'
-      ],
-      'data' => [
-          'key1' => 'value1',
-          'key2' => 'value2'
-      ]
-  ];
-
-  $result = sendMessage($token, $payload);
-
-  /*$client = new Client();
+  $client = new Client();
   $client->setApiKey($server_key);
   $client->injectGuzzleHttpClient(new \GuzzleHttp\Client());
  
@@ -106,22 +38,21 @@ foreach ($pdo->query($sql) as $row) {
     ->setData(['title' => $titulo,'body' => $cuerpo, 'notification_foreground' => 'true']);
 
   $response = $client->send($message);
-  var_dump($response);*/
+  var_dump($response);
   
   echo "<h2>Notificacion con token</h2>";
-  echo $titulo." -> ".$cuerpo;
+  echo $row["asunto"]." -> ".$row["mensaje"];
   echo "<h3>Enviada a:</h3>";
   echo "<h4> email: ".$row["email"]." </h4>";
-  echo "<p><b>token:</b> ".$token." </p>";
+  echo "<p><b>token:</b> ".$row["token_app"]." </p>";
   echo "<h3>Respuesta Firebase</h3>";
-  /*echo "response->getStatusCode(): ";
+  echo "response->getStatusCode(): ";
   var_dump($response->getStatusCode());
   $response_content=$response->getBody()->getContents();
   $response_content=json_decode($response_content,true);
   //var_dump($response_content);
   echo "<br>response_content[success]: ";
-  var_dump($response_content["success"]);*/
-  echo "<p>result: ".$result."</p>";
+  var_dump($response_content["success"]);
 
   if($response_content["success"]==1 and $response->getStatusCode()==200){
     $sql2 = "UPDATE notificaciones_lecturas SET enviada = 1 WHERE id = ?";
