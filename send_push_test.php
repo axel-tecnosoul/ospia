@@ -30,8 +30,10 @@ function getAccessToken() {
 function sendMessage($token, $payload) {
   $accessToken = getAccessToken();
   #ajustar url
+  #testing
+  #$url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
+#prod
   $url = 'https://fcm.googleapis.com/v1/projects/app-ospiapba/messages:send';
-
   $client = new Client();
   $response = $client->post($url, [
       'headers' => [
