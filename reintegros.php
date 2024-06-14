@@ -59,6 +59,23 @@ if(!isset($_SESSION["user"]["ficha"])){
     border: solid 2px #0bd71c;
   }
 
+  .float2{
+    text-align: center;
+	  position: fixed;
+    width: 160px;
+    height: 100px;
+    bottom: 100px;
+	  margin-left: auto;
+    margin-right: auto;
+    /*right: 220px;*/
+    /*background-color: #25d366;*/
+    color: #FFF;
+    border-radius: 10px;
+    font-size: 60px;
+    /*box-shadow: 2px 2px 3px #999;*/
+    z-index: 100;
+  }
+
   .detalle{
     font-size: 10px;
     font-style: italic;
@@ -85,11 +102,17 @@ if(!isset($_SESSION["user"]["ficha"])){
   <!-- * App Header -->
 
   <!-- App Capsule -->
-
-  <span class="float btn-primary" id="btnAddNew" data-bs-toggle="modal" data-bs-target="#ModalNuevaAutorizacion">
-    <!-- <i class="fa fa-whatsapp my-float"></i> -->
-    <ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
-  </span>
+  <?php
+  if (!empty($_SESSION['user']['cuit']) and !empty($_SESSION['user']['cbu'])) {?>
+    <span class="float btn-primary" id="btnAddNew" data-bs-toggle="modal" data-bs-target="#ModalNuevaAutorizacion">
+      <!-- <i class="fa fa-whatsapp my-float"></i> -->
+      <ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
+    </span><?php
+  }else{?>
+    <span class="float2 " data-bs-toggle="modal">
+      <h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un reintegro debe cargar <br /><br /> el cuit y cbu en Datos Personales</span></h2>
+    </span><?php
+  }?>
 
   <div class="section full" style="height: calc( 100% - 56px - 16px - 13px);">
     <h2 class="text-center">Reintegros</h2>
