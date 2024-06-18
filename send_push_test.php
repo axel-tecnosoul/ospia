@@ -19,9 +19,9 @@ function getAccessToken() {
     $scopes = ['https://www.googleapis.com/auth/firebase.messaging'];
     #usar json del proyecto firebase correspondiente
     #ospia testing
-    $jsonKey = 'serviceAccountKey-ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json';
+   # $jsonKey = 'serviceAccountKey-ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json';
     #ospia produccion
-  #  $jsonKey = 'serviceAccountKey-app-ospiapba-9b946d02e0b8-ospia2024.json';
+   $jsonKey = 'serviceAccountKey-app-ospiapba-9b946d02e0b8-ospia2024.json';
     $credentials = new ServiceAccountCredentials($scopes, $jsonKey);
     $accessToken = $credentials->fetchAuthToken();
     
@@ -37,9 +37,9 @@ function sendMessage($token, $payload) {
   $accessToken = getAccessToken();
   #ajustar url
   #testing
-  $url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
+  #$url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
 #prod
-  #$url = 'https://fcm.googleapis.com/v1/projects/app-ospiapba/messages:send';
+  $url = 'https://fcm.googleapis.com/v1/projects/app-ospiapba/messages:send';
   $client = new Client();
   $response = $client->post($url, [
       'headers' => [
