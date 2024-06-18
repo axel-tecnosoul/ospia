@@ -15,7 +15,7 @@ function getAccessToken() {
     #ospia testing
     $jsonKey = 'serviceAccountKey-ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json';
     #ospia produccion
-   // $jsonKey = 'serviceAccountKey-app-ospiapba-c86dea275cf8.json';
+   # $jsonKey = 'serviceAccountKey-app-ospiapba-c86dea275cf8.json';
     $credentials = new ServiceAccountCredentials($scopes, $jsonKey);
     $accessToken = $credentials->fetchAuthToken();
     
