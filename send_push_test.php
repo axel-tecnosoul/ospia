@@ -4,7 +4,7 @@ if (!isset($_SERVER["HTTP_HOST"])) {
     parse_str($argv[1], $_GET);
     parse_str($argv[1], $_POST);
   }
-  
+
 if (isset($_SERVER['HTTP_ORIGIN'])) {
   header("Access-Control-Allow-Origin: *");
 }
@@ -37,9 +37,9 @@ function sendMessage($token, $payload) {
   $accessToken = getAccessToken();
   #ajustar url
   #testing
-  #$url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
+  $url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
 #prod
-  $url = 'https://fcm.googleapis.com/v1/projects/app-ospiapba/messages:send';
+ # $url = 'https://fcm.googleapis.com/v1/projects/app-ospiapba/messages:send';
   $client = new Client();
   $response = $client->post($url, [
       'headers' => [
