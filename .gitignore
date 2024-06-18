@@ -1,6 +1,7 @@
 /phpmyadmin/
-serviceAccountKey-ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json
-serviceAccountKey-app-ospiapba-c86dea275cf8.json
+#serviceAccountKey-ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json
+#serviceAccountKey-app-ospiapba-c86dea275cf8.json
+serviceAccountKey-*
 admin/config.php
 admin/database.php
 php.ini
