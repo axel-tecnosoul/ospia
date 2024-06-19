@@ -102,24 +102,9 @@ foreach ($pdo->query($sql) as $row) {
   ];
 
   try {
-    $result = sendMessage($token, $payload);
+    $json_result = sendMessage($token, $payload);
 
-    echo "<h2>Notificacion con token</h2>";
-    echo $titulo." -> ".$cuerpo;
-    echo "<h3>Enviada a:</h3>";
-    echo "<h4> email: ".$row["email"]." </h4>";
-    echo "<p><b>token:</b> ".$token." </p>";
-    echo "<h3>Respuesta Firebase</h3>";
-    /*echo "response->getStatusCode(): ";
-    var_dump($response->getStatusCode());
-    $response_content=$response->getBody()->getContents();
-    $response_content=json_decode($response_content,true);
-    //var_dump($response_content);
-    echo "<br>response_content[success]: ";
-    var_dump($response_content["success"]);*/
-    echo "<p>result: ".$result."</p>";
-    $result=json_decode($result,true);
-    //echo $result["name"];
+    $result=json_decode($json_result,true);
 
     if(isset($result["name"])){
       $sql2 = "UPDATE notificaciones_lecturas SET enviada = 1 WHERE id = ?";
@@ -131,11 +116,30 @@ foreach ($pdo->query($sql) as $row) {
     }
     
   } catch (Exception $e) {
+
+    
     // Manejo del error
-    echo "Se ha producido un error: " . $e->getMessage();
+    $json_result="<font color='red'>Se ha producido un error:" . $e->getMessage()."</font>";
     // Registrar el error en el archivo de log
     error_log($e->getMessage());
   }
+
+  echo "<h2>Notificacion con token</h2>";
+  echo $titulo." -> ".$cuerpo;
+  echo "<h3>Enviada a:</h3>";
+  echo "<h4> email: ".$row["email"]." </h4>";
+  echo "<p><b>token:</b> ".$token." </p>";
+  echo "<h3>Respuesta Firebase</h3>";
+  /*echo "response->getStatusCode(): ";
+  var_dump($response->getStatusCode());
+  $response_content=$response->getBody()->getContents();
+  $response_content=json_decode($response_content,true);
+  //var_dump($response_content);
+  echo "<br>response_content[success]: ";
+  var_dump($response_content["success"]);*/
+  echo "<p>result: ".$json_result."</p>";
+
+  //echo $result["name"];
 
   /*$client = new Client();
   $client->setApiKey($server_key);
