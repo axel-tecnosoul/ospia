@@ -62,11 +62,11 @@ if(!isset($_SESSION["user"]["ficha"])){
 
 	.float2{
     text-align: center;
-	position: fixed;
+	  position: fixed;
     width: 160px;
     height: 100px;
     bottom: 100px;
-	margin-left: auto;
+	  margin-left: auto;
     margin-right: auto;
     /*right: 220px;*/
     /*background-color: #25d366;*/
@@ -347,6 +347,24 @@ if(!isset($_SESSION["user"]["ficha"])){
   </div>
   <!-- * Modal Confirmar nuevo turno -->
 
+  <!-- Modal Confirmar nuevo turno -->
+  <div class="modal fade modalbox " id="ModalErrorTurno" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
+    <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
+      <div class="modal-content" style="padding-top: 0;height: min-content;">
+        <!-- <div class="modal-header">
+        </div> -->
+        <div class="modal-body" style="height: min-content;">
+          <h3 class="modal-title" style="color:black"></h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-block btn-lg" data-bs-dismiss="modal">OK</button>
+          <!-- <a href="turnos.php" type="button" class="btn btn-primary btn-block btn-lg">OK</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- * Modal Confirmar nuevo turno -->
+
   <!-- App Bottom Menu --><?php
   include_once("footer.php")?>
   <!-- * App Bottom Menu -->
@@ -444,13 +462,16 @@ if(!isset($_SESSION["user"]["ficha"])){
         console.log(data);
         data=JSON.parse(data);
         console.log(data);
-        if(data==true){
+        if(data.Ok=="true"){
           //document.location.href=document.location.href;
           $("#ModalConfirmNuevoTurno").modal("show")
+        }else{
+          let modal=$("#ModalErrorTurno")
+          modal.modal("show")
+          modal.find(".modal-title").text(data.Status)
         }
       });
     });
-
 
     function get_especialidades(){
       let id_policlinico=$("#id_policlinico").val();

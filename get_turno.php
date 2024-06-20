@@ -16,7 +16,7 @@ $jsonData = file_get_contents($url);
 $jsonData = json_decode($jsonData,true);
 //var_dump($jsonData);
 
-if($jsonData["Ok"]){
+if($jsonData["Ok"]=="true"){
   /*var_dump($jsonData);
   var_dump($jsonData->IdTurno);*/
   // insert data
@@ -95,4 +95,5 @@ if($jsonData["Ok"]){
   Database::disconnect();
 }
 
-echo $jsonData["Ok"];
+//echo $jsonData["Ok"];
+echo json_encode($jsonData);

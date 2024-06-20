@@ -1,9 +1,31 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-ini_set('display_errors', '1');
+
+// Log the start of the script execution
+$bytes=file_put_contents('cron_debug.log', "Script started at: " . date('Y-m-d H:i:s') . "\n", FILE_APPEND);
+
+// Your script logic here
 if (isset($_SERVER['HTTP_ORIGIN'])) {
   header("Access-Control-Allow-Origin: *");
 }
+
+/*
+// Lee el contenido del archivo
+$contenidoJson = file_get_contents($jsonKey);
+
+var_dump($contenidoJson);
+
+// Verifica si la lectura fue exitosa
+if ($contenidoJson === false) {
+    //die('No se pudo leer el archivo JSON');
+    $contenidoJson='No se pudo leer el archivo JSON';
+}
+//die();
+
+*/
+
 require "vendor/autoload.php";
 require "admin/config.php";
 require "admin/database.php";
@@ -23,7 +45,8 @@ function getAccessToken() {
     #ospia testing
     # $jsonKey = 'serviceAccountKey-ospiapbatesting-firebase-adminsdk-lbt4s-8db4ebc483.json';
     #ospia produccion
-    $jsonKey = 'serviceAccountKey-app-ospiapba-582ebadcf1dc-ospianuevaapi.json';
+    //$jsonKey = 'https://ospiaprovincia.org/serviceAccountKey-app-ospiapba-582ebadcf1dc-ospianuevaapi.json';
+    $jsonKey = '/home5/rxhvjzic/public_html/serviceAccountKey-app-ospiapba-582ebadcf1dc-ospianuevaapi.json';
 
     $credentials = new ServiceAccountCredentials($scopes, $jsonKey);
     $accessToken = $credentials->fetchAuthToken();
@@ -68,19 +91,17 @@ function sendMessage($token, $payload) {
 //$server_key = 'AAAAPCs4egE:APA91bHgPHlkhjUTg-iD6AzE98bC0TChxwNP6c_MkWJb-ofO8BBaqA90JZlotsUX_bOI5u54tCK3jZfevnLqG-s8XpXB3TCa9rMDy8Ciu4xCGJC5gc34PXxrbBvYpqPjI-TIrnX4aJtM';//cuenta firebase Tecno
 $server_key = 'AAAAwX7IHbg:APA91bGGqGNPBel8rfonJYgx7Cu6wvFu_Y-0aaVzOjL_0mUAhI8Jxomfm0yuVmhdBHS03O7R9WMhAq0QTE2J_OdJYOyUGxq3KcDf8mVpMJQZgsgS4ow47917vebcvLjgm50lZQzktLhf'; //cuenta firebase ospia
 
-
-//$token = 'DEVICE_REGISTRATION_TOKEN';
-//$regIdfijo ="dAjpcZYFQ2OLjVlKiG8QA1:APA91bEhPcjmBIoIzAPmUbQZ1qfURpjRrpyb1oyUKN7p-hcTcluz4BlhR0XxJHpESar0g_XZm_0JK6xWeoaEnZ7KGpYVI8N-x0jvub8OA9LHayyXgQeqrt7x4ReZHl9AhB7J8FFlPlBN";
-//$token="dZUJa92BTpeqEn2N5K6Q6f:APA91bFoyajam2ETs4cEhFLVLHV2-V5ONRXElIlX-AT0jikiyasmCLffU1bdcQagPmGlMVzV_Ut_FAjCN2nxdJza9A1CsAtT-70h2mJKngULCpb-tWGJhN6hXqipdA719kh_eqevuvJ1";
-
-//$token=$_GET['fcmToken'];
-
 //print_r ($_GET);
 $pdo = Database::connect();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+//$sql = "SELECT u.email,n.asunto,n.mensaje,u.token_app,nl.id FROM notificaciones n INNER JOIN notificaciones_lecturas nl ON nl.id_notificacion=n.id INNER JOIN usuarios u ON nl.id_usuario=u.id WHERE notif_push=1 AND enviada=0 AND nl.fecha_hora<=NOW() AND token_app IS NOT NULL AND token_app NOT IN ('1234','BLACKLISTED')";
+
 $sql = "SELECT u.email,n.asunto,n.mensaje,u.token_app,nl.id FROM notificaciones n INNER JOIN notificaciones_lecturas nl ON nl.id_notificacion=n.id INNER JOIN usuarios u ON nl.id_usuario=u.id WHERE notif_push=1 AND enviada=0 AND nl.fecha_hora<=NOW() AND token_app IS NOT NULL AND token_app NOT IN ('1234','BLACKLISTED')";
+$c=$c2=0;
+$txtDebug="";
 foreach ($pdo->query($sql) as $row) {
+  $c++;
 
   /*echo "<pre>";
   var_dump($row);
@@ -107,6 +128,7 @@ foreach ($pdo->query($sql) as $row) {
     $result=json_decode($json_result,true);
 
     if(isset($result["name"])){
+      $c2++;
       $sql2 = "UPDATE notificaciones_lecturas SET enviada = 1 WHERE id = ?";
       $q2 = $pdo->prepare($sql2);
       $q2->execute(array($row['id']));
@@ -117,19 +139,38 @@ foreach ($pdo->query($sql) as $row) {
     
   } catch (Exception $e) {
 
-    
     // Manejo del error
-    $json_result="<font color='red'>Se ha producido un error:" . $e->getMessage()."</font>";
+    $json_result="<font color='red'>";
+    
+    $json_result.="</br>Mensaje de error: " . $e->getMessage();
+    $json_result.="</br>Código de error: " . $e->getCode();
+    $json_result.="</br>Archivo: " . $e->getFile();
+    $json_result.="</br>Línea: " . $e->getLine();
+    //$json_result.="</br>Rastreo de la pila:" . $e->getTraceAsString();
+    
+    $json_result.="</font>";
+
     // Registrar el error en el archivo de log
     error_log($e->getMessage());
   }
 
-  echo "<h2>Notificacion con token</h2>";
+  /*echo "<h2>Notificacion con token</h2>";
   echo $titulo." -> ".$cuerpo;
   echo "<h3>Enviada a:</h3>";
   echo "<h4> email: ".$row["email"]." </h4>";
   echo "<p><b>token:</b> ".$token." </p>";
   echo "<h3>Respuesta Firebase</h3>";
+  echo "<p>result: ".$json_result."</p>";*/
+
+  $txtDebug.="<h2>Notificacion con token</h2>";
+  $txtDebug.=$titulo." -> ".$cuerpo;
+  $txtDebug.="<h3>Enviada a:</h3>";
+  $txtDebug.="<h4> email: ".$row["email"]." </h4>";
+  $txtDebug.="<p><b>token:</b> ".$token." </p>";
+  $txtDebug.="<h3>Respuesta Firebase</h3>";
+  $txtDebug.="<p>result: ".$json_result."</p>";
+  
+
   /*echo "response->getStatusCode(): ";
   var_dump($response->getStatusCode());
   $response_content=$response->getBody()->getContents();
@@ -137,25 +178,34 @@ foreach ($pdo->query($sql) as $row) {
   //var_dump($response_content);
   echo "<br>response_content[success]: ";
   var_dump($response_content["success"]);*/
-  echo "<p>result: ".$json_result."</p>";
-
-  //echo $result["name"];
-
-  /*$client = new Client();
-  $client->setApiKey($server_key);
-  $client->injectGuzzleHttpClient(new \GuzzleHttp\Client());
- 
-  $message = new Message();
-  $message->setPriority('high');
-  $message->addRecipient(new Device($row["token_app"]));
-  $message
-    ->setNotification(new Notification($titulo, $cuerpo))
-    ->setData(['title' => $titulo,'body' => $cuerpo, 'notification_foreground' => 'true']);
-
-  $response = $client->send($message);
-  var_dump($response);*/
   
 }
+
+echo $txtDebug;
+
+$resumen_ejecucion="$c2 de $c push enviados";
+//$resumen_ejecucion.="<br><br>".$contenidoJson;
+if(!$bytes){
+  $resumen_ejecucion.="<br><br>No anduvo escribir en cron_debug.log";
+}
+$resumen_ejecucion.="<br><br>".$txtDebug;
+
+$sql = "SELECT resumen_ejecucion FROM cron_log ORDER BY id DESC LIMIT 1;";
+$q = $pdo->prepare($sql);
+$q->execute();
+$row = $q->fetch();
+
+if($row["resumen_ejecucion"]!=$resumen_ejecucion){
+  $sql2 = "INSERT INTO cron_log (cron,resumen_ejecucion) VALUES ('check_notificaciones',?)";
+  $q2 = $pdo->prepare($sql2);
+  $q2->execute([$resumen_ejecucion]);
+  echo "<br>".$sql2;
+  $afe2=$q2->rowCount();
+  echo "<br>".$afe2;
+}
+
 Database::disconnect();
 
+// Log the end of the script execution
+file_put_contents('cron_debug.log', "Script ended at: " . date('Y-m-d H:i:s') . "\n", FILE_APPEND);
 ?>
