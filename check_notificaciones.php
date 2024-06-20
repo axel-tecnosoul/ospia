@@ -181,14 +181,14 @@ foreach ($pdo->query($sql) as $row) {
   
 }
 
-echo $txtDebug;
-
 $resumen_ejecucion="$c2 de $c push enviados";
 //$resumen_ejecucion.="<br><br>".$contenidoJson;
 if(!$bytes){
   $resumen_ejecucion.="<br><br>No anduvo escribir en cron_debug.log";
 }
 $resumen_ejecucion.="<br><br>".$txtDebug;
+
+echo $resumen_ejecucion;
 
 $sql = "SELECT resumen_ejecucion FROM cron_log ORDER BY id DESC LIMIT 1;";
 $q = $pdo->prepare($sql);
