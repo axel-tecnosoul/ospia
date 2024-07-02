@@ -118,8 +118,8 @@ if(!isset($_SESSION["user"]["ficha"])){
   <!-- App Capsule -->
 	<?php
 	if ($_SESSION['user']['id'] == 0) {?>
-		<span class="float2 " data-bs-toggle="modal">
-			<h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un turno debe cargar <br /><br /> el telefono en Datos Personales</span></h2>
+		<span class="float2 w-auto " data-bs-toggle="modal">
+			<h2><span class="badge bg-danger p-1 fs-5 h-auto" style="white-space: normal;">Para ingresar un turno debe cargar el telefono en Datos Personales</span></h2>
 		</span><?php
 	}
 	else{
@@ -130,8 +130,8 @@ if(!isset($_SESSION["user"]["ficha"])){
 		}
 		else{
 			?>
-			<span class="float2 " data-bs-toggle="modal">
-				<h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un turno debe cargar <br /><br /> el telefono en Datos Personales</span></h2>
+			<span class="float2 w-auto " data-bs-toggle="modal">
+				<h2><span class="badge bg-danger p-1 fs-5 h-auto" style="white-space: normal;">Para ingresar un turno debe cargar el telefono en Datos Personales</span></h2>
 			</span><?php
 		}
 	}?>

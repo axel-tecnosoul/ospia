@@ -109,8 +109,8 @@ if(!isset($_SESSION["user"]["ficha"])){
       <ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
     </span><?php
   }else{?>
-    <span class="float2 " data-bs-toggle="modal">
-      <h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un reintegro debe cargar <br /><br /> el cuit y cbu en Datos Personales</span></h2>
+    <span class="float2 w-auto" data-bs-toggle="modal">
+      <h2><span class="badge bg-danger p-1 fs-5 h-auto" style="white-space: normal;">Para ingresar un reintegro debe cargar el cuit y cbu en Datos Personales</span></h2>
     </span><?php
   }?>
 
