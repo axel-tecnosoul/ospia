@@ -4,9 +4,9 @@ function initializeMap(lat, lng, zoom = 15) {
         zoom: zoom
     });
 
-    // Function to create an AdvancedMarkerElement
     function createMarker(position, title) {
         if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
+            // Use AdvancedMarkerElement if available
             const markerElement = new google.maps.marker.AdvancedMarkerElement({
                 map: map,
                 position: position,
@@ -15,6 +15,15 @@ function initializeMap(lat, lng, zoom = 15) {
             return markerElement;
         } else {
             console.error("AdvancedMarkerElement is not available.");
+            // Fallback to a standard marker
+            if (google.maps.Marker) {
+                const marker = new google.maps.Marker({
+                    map: map,
+                    position: position,
+                    title: title
+                });
+                return marker;
+            }
             return null;
         }
     }
@@ -22,7 +31,7 @@ function initializeMap(lat, lng, zoom = 15) {
     // Add a marker for the default or received location
     createMarker({ lat: lat, lng: lng }, 'Location');
 
-    // Example array of other markers (add your own markers as needed)
+    // Example array of other markers
     var markers = [
         { lat: lat + 0.01, lng: lng + 0.01 },
         { lat: lat - 0.01, lng: lng - 0.01 }
@@ -42,10 +51,21 @@ function initializeMap(lat, lng, zoom = 15) {
     map.fitBounds(bounds);
 }
 
+// Initialize the map with default coordinates
+function initMap() {
+    if (typeof google !== 'undefined' && google.maps) {
+        var defaultLat = 40.7128; // Example latitude
+        var defaultLng = -74.0060; // Example longitude
+        initializeMap(defaultLat, defaultLng);
+    } else {
+        console.error("Google Maps API is not loaded.");
+    }
+}
+
+// Handle incoming messages with location data
 window.addEventListener('message', function(event) {
     var locationData = event.data;
     if (locationData.lat && locationData.lng) {
-        // Initialize the map with the received location data
         initializeMap(locationData.lat, locationData.lng);
     }
 }, false);
