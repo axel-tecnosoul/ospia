@@ -55,6 +55,8 @@ function initMap() {
     if (typeof google !== 'undefined' && google.maps) {
         var defaultLat = 40.7128; // Example latitude
         var defaultLng = -74.0060; // Example longitude
+        console.log("Google Maps API version:", google.maps.version); // Log the version
+
         initializeMap(defaultLat, defaultLng);
     } else {
         console.error("Google Maps API is not loaded.");
