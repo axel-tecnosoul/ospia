@@ -60,7 +60,7 @@ async function initMap(lat = 40.7128, lng = -74.0060, zoom = 15) {
   
   // Load the Google Maps API with async and defer attributes
   // Replace YOUR_API_KEY with your actual Google Maps API key
-  const script = document.createElement('script');
+  /*const script = document.createElement('script');
   script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyCNY8MsGHgM_ie57K4F8kKX8Gkt02yJa3U&callback=initMap&async=defer`;
-  document.head.appendChild(script);
+  document.head.appendChild(script);*/
   
