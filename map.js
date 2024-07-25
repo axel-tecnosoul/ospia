@@ -50,7 +50,7 @@ function initializeMap(lat, lng, zoom = 15) {
     map.fitBounds(bounds);
 }
 
-// Initialize the map with default coordinates
+// Initialize the map with default coordinates1
 function initMap() {
     if (typeof google !== 'undefined' && google.maps) {
         var defaultLat = 40.7128; // Example latitude
@@ -62,6 +62,7 @@ function initMap() {
         console.error("Google Maps API is not loaded.");
     }
 }
+
 
 // Handle incoming messages with location data
 window.addEventListener('message', function(event) {
