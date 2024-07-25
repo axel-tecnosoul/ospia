@@ -6,27 +6,26 @@ function initializeMap(lat, lng, zoom = 15) {
 
     function createMarker(position, title) {
         if (google.maps.marker && google.maps.marker.AdvancedMarkerElement) {
-            // Use AdvancedMarkerElement if available
-            const markerElement = new google.maps.marker.AdvancedMarkerElement({
-                map: map,
-                position: position,
-                title: title
-            });
-            return markerElement;
+          // Use AdvancedMarkerElement if available
+          return new google.maps.marker.AdvancedMarkerElement({
+            map: map,
+            position: position,
+            title: title
+          });
         } else {
-            console.error("AdvancedMarkerElement is not available.");
-            // Fallback to a standard marker
-            if (google.maps.Marker) {
-                const marker = new google.maps.Marker({
-                    map: map,
-                    position: position,
-                    title: title
-                });
-                return marker;
-            }
-            return null;
+          console.warn("AdvancedMarkerElement is not available.");
+          // Fallback to a standard marker
+          if (google.maps.Marker) {
+            return new google.maps.Marker({
+              map: map,
+              position: position,
+              title: title
+            });
+          }
+          return null;
         }
-    }
+      }
+      
 
     // Add a marker for the default or received location
     createMarker({ lat: lat, lng: lng }, 'Location');
