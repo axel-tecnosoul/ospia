@@ -51,7 +51,7 @@ function initializeMap(lat, lng, zoom = 15) {
 }
 
 // Initialize the map with default coordinates1
-function initMap() {
+/*function initMap() {
     if (typeof google !== 'undefined' && google.maps) {
         var defaultLat = 40.7128; // Example latitude
         var defaultLng = -74.0060; // Example longitude
@@ -61,7 +61,22 @@ function initMap() {
     } else {
         console.error("Google Maps API is not loaded.");
     }
-}
+}*/
+async function initMap() {
+    const { Map, AdvancedMarkerElement } = await google.maps.importLibrary("maps,marker");
+  
+    const map = new Map(document.getElementById('map'), {
+      center: { lat: 40.7128, lng: -74.0060 },
+      zoom: 15
+    });
+  
+    const marker = new AdvancedMarkerElement({
+      map: map,
+      position: { lat: 40.7128, lng: -74.0060 },
+      title: 'Hello, World!'
+    });
+  }
+  
 
 
 // Handle incoming messages with location data
