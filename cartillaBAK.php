@@ -185,231 +185,236 @@ if(!isset($_SESSION["user"])){
   <script src="admin/assets/js/map-js/mapsjs-mapevents.js"></script> -->
 
   <script>
-  var ver = "ver_listado";
-  var locations = [];
-  var ospia = {latitude: -34.6143656, longitude: -58.4253821};
-  var userLat = null;  // Default to null
-  var userLng = null;  // Default to null
+    var ver="ver_listado";
+    var locations = [];
+    var ospia={latitude:-34.6143656, longitude:-58.4253821};
+    $(document).ready(function() {
+      $('.servicios').select2();
 
-  $(document).ready(function() {
-    $('.servicios').select2();
+      $("#especialidad").on("change",get_cartilla);
+      $("#servicios").on("change",get_cartilla);
+      $("#localidades").on("change",get_cartilla);
+      $("#ver_listado").on("click",get_cartilla);
+      $("#ver_mapa").on("click",get_cartilla);
 
-    $("#especialidad").on("change", get_cartilla);
-    $("#servicios").on("change", get_cartilla);
-    $("#localidades").on("change", get_cartilla);
-    $("#ver_listado").on("click", get_cartilla);
-    $("#ver_mapa").on("click", get_cartilla);
+    });
 
-    // Listen for postMessage from the Cordova app
-    window.addEventListener('message', function(event) {
-      if (event.data && event.data.userLocation) {
-        userLat = event.data.userLocation.lat;
-        userLng = event.data.userLocation.lng;
+    function get_cartilla(event){
+      let spinner=$("#loader-spinner");
+      let growing=$("#loader-growing");
+      spinner.css("display","block");
+      growing.css("display","block");
+
+      let especialidad=$("#especialidad").val();
+      let servicios=$("#servicios").val();
+      let localidades=$("#localidades").val();
+      /*console.log(especialidad)
+      console.log(servicios);
+      console.log(localidades);*/
+
+      if(event.currentTarget.type=="button"){
+        ver=event.currentTarget.id;
       }
-    }, false);
-  });
+      console.log(ver);
+      //let mapa=document.getElementById('map12');
+      
+      if(especialidad==0 && servicios==0 && localidades==0){
+        spinner.css("display","none");
+        growing.css("display","none");
+        $container=`
+        <li>
+          <a href="#">
+            <div>
+              <h3 class="mb-05 titulo1">Seleccione algún dato</h3>
+            </div>
+          </a>
+        </li>`;
+        $("#cartilla").html($container);
+      }else{
+        $.post("get_cartilla.php",{especialidad:especialidad,servicios:servicios,localidades:localidades}, function(data){
+          //console.log(data);
+          data=JSON.parse(data);
+          spinner.css("display","none");
+          growing.css("display","none");
+          //var aLugares=[];
 
-  function get_cartilla(event) {
-    let spinner = $("#loader-spinner");
-    let growing = $("#loader-growing");
-    spinner.css("display", "block");
-    growing.css("display", "block");
+          if(ver=="ver_listado"){
+            $("#map").css("display","none");
+            $("#cartilla").css("display","block");
 
-    let especialidad = $("#especialidad").val();
-    let servicios = $("#servicios").val();
-    let localidades = $("#localidades").val();
-
-    if (event.currentTarget.type == "button") {
-      ver = event.currentTarget.id;
-    }
-
-    if (especialidad == 0 && servicios == 0 && localidades == 0) {
-      spinner.css("display", "none");
-      growing.css("display", "none");
-      $container = `
-      <li>
-        <a href="#">
-          <div>
-            <h3 class="mb-05 titulo1">Seleccione algún dato</h3>
-          </div>
-        </a>
-      </li>`;
-      $("#cartilla").html($container);
-    } else {
-      $.post("get_cartilla.php", {especialidad: especialidad, servicios: servicios, localidades: localidades}, function(data) {
-        data = JSON.parse(data);
-        spinner.css("display", "none");
-        growing.css("display", "none");
-
-        if (ver == "ver_listado") {
-          $("#map").css("display", "none");
-          $("#cartilla").css("display", "block");
-
-          $container = "";
-          if (data.Ok == "false") {
-            $container += `
-            <li>
-              <a href="#">
-                <div>
-                  <h3 class="mb-05 titulo1">No se han encontrado registros</h3>
-                </div>
-              </a>
-            </li>`;
-          } else {
-            data.Data.forEach(result => {
-              $container += `
-              <li id="prestador${result.Prestador_Id}">
-                <a href="#prestador${result.Prestador_Id}">
+            $container="";
+            if(data.Ok=="false"){
+              $container+=`
+              <li>
+                <a href="#">
                   <div>
-                    <h3 class="mb-05 titulo1">${result.Prestador}</h3>
-                    <div class="text-muted">
-                      <span onclick="window.open('http://www.google.com/maps/place/${result.Latitud.replace(',','.')},${result.Longitud.replace(',','.')}', '_blank')">
-                        ${result.Domicilio}, ${result.Localidad}
-                        <span class='btn btn-sm btn-link border'>(ir)</span>
-                      </span>`;
-                      result.Contactos.forEach(contacto => {
-                        $container += `<div class="mt-05"><strong>${contacto.TipoContacto}: ${contacto.Detalle}</strong></div>`;
-                      });
-              $container += `
-                      <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="${result.Prestador_Id}">Ver especialidades</span>
-                    </div>
+                    <h3 class="mb-05 titulo1">No se han encontrado registros</h3>
                   </div>
                 </a>
               </li>`;
-            });
-          }
-          $("#cartilla").html($container);
-
-          $(document).on("click", ".prestadores", function() {
-            let prestador_id = this.dataset.id;
-            $.post("get_especialidades_prestador.php", {prestador_id: prestador_id}, function(data) {
-              data = JSON.parse(data);
-              $container = "<ul>";
+            }else{
               data.Data.forEach(result => {
-                $container += `<li>${result.Especialidad}</li>`;
-              });
-              $container += "</ul>";
-              $("#DialogEspecialidadesPrestador").modal("show").find(".modal-body").html($container);
-            });
-          });
-
-        } else if (ver == "ver_mapa") {
-          $("#map").css("display", "block");
-          $("#cartilla").css("display", "none");
-
-          let mapa = document.getElementById('map');
-          locations = [];
-          mapa.innerHTML = "";
-
-          if (data.Ok == "false") {
-            // Center map on user's location if available, otherwise use default location
-            if (userLat && userLng) {
-              locations.push({latitude: userLat, longitude: userLng});
-            } else {
-              locations.push(ospia);
+                //console.log(result);
+                $container+=`
+                <li id="prestador${result.Prestador_Id}">
+                  <a href="#prestador${result.Prestador_Id}">
+                    <div>
+                      <h3 class="mb-05 titulo1">${result.Prestador}</h3>
+                      <div class="text-muted">
+                        <span onclick="window.open('http://www.google.com/maps/place/${result.Latitud.replace(',','.')},${result.Longitud.replace(',','.')}', '_blank')">
+                          ${result.Domicilio}, ${result.Localidad} 
+                          <span class='btn btn-sm btn-link border'>(ir)</span>
+                        </span>`;
+                        result.Contactos.forEach(contacto => {
+                          $container+=`<div class="mt-05"><strong>${contacto.TipoContacto}: ${contacto.Detalle}</strong></div>`;
+                        })
+                $container+=`
+                        <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="${result.Prestador_Id}">Ver especialidades</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>`;
+              })
             }
-            flag = undefined;
-          } else {
-            flag = 1;
-            data.Data.forEach(result => {
-              locations.push({
-                "latitude": result.Latitud.replace(',', '.'),
-                "longitude": result.Longitud.replace(',', '.'),
-                "marker": null,
-                "infoWindow": null,
-                "title": result.Prestador,
-                "infoContent": "<div class='info-window'><address><b>" + result.Prestador + "</b><br/>" + result.Domicilio + ", " + result.Localidad + "<br/>" + result.Localidad + "<br /><a class='btn btn-sm btn-link' target='_blank' href='http://www.google.com/maps/place/" + result.Latitud.replace(',', '.') + "," + result.Longitud.replace(',', '.') + "'>(ir)</a></address></div>"
+            $("#cartilla").html($container);
+
+            $(document).on("click",".prestadores",function(){
+              let prestador_id=this.dataset.id;
+              //console.log(prestador_id)
+              $.post("get_especialidades_prestador.php",{prestador_id:prestador_id}, function(data){
+                data=JSON.parse(data);
+                $container="<ul>";
+                data.Data.forEach(result => {
+                  console.log(result);
+                  $container+=`
+                  <li>${result.Especialidad}</li>`;
+                })
+                $container+="</ul>";
+                $("#DialogEspecialidadesPrestador").modal("show").find(".modal-body").html($container);
               });
-            });
+            })
+
+          }else if(ver=="ver_mapa"){
+
+            $("#map").css("display","block");
+            $("#cartilla").css("display","none");
+
+            let mapa=document.getElementById('map');
+            locations = []
+            mapa.innerHTML="";
+            if(data.Ok=="false"){
+              //center=ospia
+              locations.push(ospia);
+              flag=undefined
+            }else{
+              flag=1
+              data.Data.forEach(result => {
+                //console.log(result);
+                locations.push({
+                  "latitude": result.Latitud.replace(',','.'),
+                  "longitude": result.Longitud.replace(',','.'),
+                  "marker": null,
+                  "infoWindow": null,
+                  "title": result.Prestador,
+                  "infoContent": "<div class='info-window'><address><b>"+result.Prestador+"</b><br/>"+result.Domicilio+", "+result.Localidad+"<br/>"+result.Localidad+"<br /><a class='btn btn-sm btn-link' target='_blank' href='http://www.google.com/maps/place/"+result.Latitud.replace(',','.')+","+result.Longitud.replace(',','.')+"'>(ir)</a></address></div>"
+                });
+              })
+            }
+            gmapController.initialize(flag)
+
           }
-          gmapController.initialize(flag);
-        }
-      });
+
+        });
+      }
     }
-  }
 
-  'use strict';
+  </script>
+  <script>
+    'use strict';
 
-  var gmapController = (function () {
-    // ************************************
-    // Private Variables
-    // ************************************
-    let map = null;
+    var gmapController = (function () {
+      // ************************************
+      // Private Variables
+      // ************************************
+      let map = null;
+      //let locations = [];
 
-    // ************************************
-    // Private Functions
-    // ************************************     
-    function initialize(flag) {
-      // Create a lat/lng boundary
-      let bounds = new google.maps.LatLngBounds();
+      // ************************************
+      // Private Functions
+      // ************************************     
+      function initialize(flag) {
+        // Create a lat/lng boundary
+        let bounds = new google.maps.LatLngBounds();
 
-      // Draw the map
-      if (locations.length > 0) {
+        if(flag==undefined){
+          locations.push(ospia);
+        }
+
+        // Draw the map
         addMap(locations[0]);
-      }
 
-      // Draw the locations
-      for (let index = 0; index < locations.length; index++) {
-        if (flag == 1) {
-          // Add marker for location
-          addMarker(locations[index]);
+        // Draw the locations
+        for (let index = 0; index < locations.length; index++) {
+          if(flag==1){
+            // Add marker for location
+            addMarker(locations[index]);
+          }
+          // Add info window for location
+          addInfoWindow(locations[index]);
+          // Extend boundaries to encompass marker
+          bounds.extend(locations[index].marker.position);
         }
-        // Add info window for location
-        addInfoWindow(locations[index]);
-        // Extend boundaries to encompass marker
-        bounds.extend(new google.maps.LatLng(locations[index].latitude, locations[index].longitude));
+
+        // Fit the map to boundaries
+        if (locations.length > 1) {
+          map.fitBounds(bounds);
+        }
       }
 
-      // Fit the map to boundaries
-      if (locations.length > 1) {
-        map.fitBounds(bounds);
+      function addMap(mapObject) {
+        console.log(mapObject);
+        // Create map options
+        let mapOptions = {
+          center: new google.maps.LatLng(mapObject.latitude, mapObject.longitude),
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        // Create new google map
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
       }
-    }
 
-    function addMap(mapObject) {
-      // Create map options
-      let mapOptions = {
-        center: new google.maps.LatLng(mapObject.latitude, mapObject.longitude),
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
+      function addMarker(location) {
+        // Create a new marker since you may need more than one
+        location.marker = new google.maps.Marker({
+          position: new google.maps.LatLng(location.latitude, location.longitude),
+          map: map,
+          title: location.title
+        });
 
-      // Create new google map
-      map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    }
+        // Add marker to the map
+        location.marker.setMap(map);
+      }
 
-    function addMarker(location) {
-      // Create a new marker since you may need more than one
-      location.marker = new google.maps.Marker({
-        position: new google.maps.LatLng(location.latitude, location.longitude),
-        map: map,
-        title: location.title
-      });
+      function addInfoWindow(mapObject) {
+        mapObject.infoWindow = new google.maps.InfoWindow();
+        // Add click event to marker
+        google.maps.event.addListener(mapObject.marker, 'click', function () {
+          // Add HTML content for window
+          mapObject.infoWindow.setContent(mapObject.infoContent);
+          // Open the window
+          mapObject.infoWindow.open(map, mapObject.marker);
+        });
+      }
 
-      // Add marker to the map
-      location.marker.setMap(map);
-    }
-
-    function addInfoWindow(mapObject) {
-      mapObject.infoWindow = new google.maps.InfoWindow();
-      // Add click event to marker
-      google.maps.event.addListener(mapObject.marker, 'click', function () {
-        // Add HTML content for window
-        mapObject.infoWindow.setContent(mapObject.infoContent);
-        // Open the window
-        mapObject.infoWindow.open(map, mapObject.marker);
-      });
-    }
-
-    // ************************************
-    // Public Functions
-    // ************************************
-    return {
-      "initialize": initialize,
-    }
-  })();
-</script>
-
+      // ************************************
+      // Public Functions
+      // ************************************
+      return {
+        "initialize": initialize,
+      }
+    })();
+  </script>
   <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbj0zB-KPTqxlLn_jtJ9OA225OAFu1CUg&callback=gmapController.initialize"
     type="text/javascript"></script> -->
