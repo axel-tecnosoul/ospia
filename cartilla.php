@@ -23,8 +23,11 @@ if(!isset($_SESSION["user"])){
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="__manifest.json">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </head>
 <style>
   html, body, #map {
@@ -163,11 +166,8 @@ if(!isset($_SESSION["user"])){
   include_once("footer.php")?>
   <!-- * App Bottom Menu -->
 
-  <!-- ============== Js Files ==============  -->
-  <!-- Bootstrap -->
-  <script src="assets/js/lib/bootstrap.min.js"></script>
-  <!-- jQuery Js File -->
-  <script src="assets/js/lib/jquery-3.4.1.min.js"></script>
+  <!-- ============== Js Files ============== (mas en head) -->
+
   <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <!-- Splide -->
@@ -176,8 +176,8 @@ if(!isset($_SESSION["user"])){
   <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
   <!-- Base Js File -->
   <!-- <script src="assets/js/base.js"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+ <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- <script src="admin/assets/js/map-js/mapsjs-core.js"></script>
   <script src="admin/assets/js/map-js/mapsjs-service.js"></script>
