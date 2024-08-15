@@ -112,6 +112,13 @@ if(!isset($_SESSION["user"])){
               </button>
             </div>
           </div>
+          <div class="row">
+            <div class="col-12 mt-1">
+              <button type="button" class="btn btn-primary btn5 btn-sm d-none" id="ver_prestadores_cercanos">
+                <ion-icon name="location-outline"></ion-icon>Ver prestadores cercanos
+              </button>
+            </div>
+          </div>
           <div class="row mt-1" id="loader-spinner" style="display:none">
             <div class="col-12" style="text-align: center;">
               <div class="spinner-border" role="status">
@@ -243,6 +250,7 @@ if(!isset($_SESSION["user"])){
         growing.css("display", "none");
 
         if (ver == "ver_listado") {
+          $("#ver_prestadores_cercanos").addClass("d-none");
           $("#map").css("display", "none");
           $("#cartilla").css("display", "block");
 
@@ -295,6 +303,7 @@ if(!isset($_SESSION["user"])){
           });
 
         } else if (ver == "ver_mapa") {
+          $("#ver_prestadores_cercanos").removeClass("d-none");
           $("#map").css("display", "block");
           $("#cartilla").css("display", "none");
 
