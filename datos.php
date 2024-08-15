@@ -178,7 +178,7 @@ if (!empty($_POST)) {
       </li>
     </ul>
     <br><?php
-    $query = "SELECT id, nombre_apellido, fecha_nacimiento, dni, imagen, domicilio, id_provincia, email, celular, ficha, cuit, alias, cbu, cbte_cbu, token_app, notif_push, notif_whatsapp, notif_email, persona_id, requiere_cambio_clave FROM usuarios WHERE id = :id";
+    $query = "SELECT id, nombre_apellido, fecha_nacimiento, dni, imagen, domicilio, id_provincia, email, celular, ficha, cuit, alias, cbu, cbte_cbu, token_app, notif_push, notif_whatsapp, notif_email, persona_id, requiere_cambio_clave, titular FROM usuarios WHERE id = :id";
     $query_params = array(':id' => $_SESSION["user"]['id']); 
     try{
       $stmt = $db->prepare($query); 
@@ -300,7 +300,7 @@ if (!empty($_POST)) {
                     </select>
                   </div>
 				  <?php 
-				  if ($_SESSION['titular']==1) {
+				  if ($row['titular']==1) {
 				  ?>
                   <div class="form-group mt-2">
                     <h3 style="color:black">Datos Bancarios</h3>

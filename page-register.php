@@ -75,7 +75,7 @@ $token=$_GET["token"]?>
           <div class="form-group boxed text-start">
             <div class="input-wrapper">
               <label class="lblRegister">DNI:</label><br>
-              <input type="text" required class="form-control" id="dni" placeholder="DNI" value="<?=$dni?>">
+              <input type="number" required class="form-control" id="dni" placeholder="DNI" value="<?=$dni?>">
               <i class="clear-input">
                 <ion-icon name="close-circle"></ion-icon>
               </i>

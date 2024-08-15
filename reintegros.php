@@ -128,33 +128,41 @@ if(!isset($_SESSION["user"]["ficha"])){
           $url=$url_ws."?Modo=24&Persona=$persona";
           //echo $url;
           $jsonData = json_decode(file_get_contents($url),true);
-          //var_dump($jsonData);
-          $reintegros=$jsonData["Reintegros"];
-          //var_dump($reintegros[0]);
-          foreach ($reintegros as $reintegro) {
-            $ImporteReclamado=number_format(str_replace(",",".",$reintegro["ImporteReclamado"]),2);
-            //$ImporteReclamado=$reintegro["ImporteReclamado"];
-            $ImporteAprobado=number_format(str_replace(",",".",$reintegro["ImporteAprobado"]),2);
-            //$ImporteAprobado=$reintegro["ImporteAprobado"];
-            ?>
-            <div class="row border m-2">
-              <div class="col-12">
-                <h3 class="mb-05 titulo1">Reintegro Nro. <?=$reintegro["Reintegro"]?> - <?=$reintegro["Fecha"]?></h3>
-                <div class="text-muted">
-                  <span onclick="">
-                    Nombre: <?=$reintegro["Nombre"]?>
-                  </span>
-                  <!-- <span onclick="">
-                    <?php //echo $reintegro["TipoReintegro"]."<br>Reclamado: $".$ImporteReclamado."<br>Aprobado: $".$ImporteAprobado?>
-                  </span> -->
-                  <!-- <div class="mt-05"><strong>Tipo: <?php //echo $TipoTurno?> </strong></div> -->
-                  <div class="mt-05"><strong>Estado: <?=$reintegro["Estado"]?> </strong></div>
-                  <!-- <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="Prestador_Id">Ver especialidades</span> -->
+
+          if($jsonData["Ok"]!="false"){
+            $reintegros=$jsonData["Reintegros"];
+            //var_dump($reintegros[0]);
+            foreach ($reintegros as $reintegro) {
+              $ImporteReclamado=number_format(str_replace(",",".",$reintegro["ImporteReclamado"]),2);
+              //$ImporteReclamado=$reintegro["ImporteReclamado"];
+              $ImporteAprobado=number_format(str_replace(",",".",$reintegro["ImporteAprobado"]),2);
+              //$ImporteAprobado=$reintegro["ImporteAprobado"];
+              ?>
+              <div class="row border m-2">
+                <div class="col-12">
+                  <h3 class="mb-05 titulo1">Reintegro Nro. <?=$reintegro["Reintegro"]?> - <?=$reintegro["Fecha"]?></h3>
+                  <div class="text-muted">
+                    <span onclick="">
+                      Nombre: <?=$reintegro["Nombre"]?>
+                    </span>
+                    <!-- <span onclick="">
+                      <?php //echo $reintegro["TipoReintegro"]."<br>Reclamado: $".$ImporteReclamado."<br>Aprobado: $".$ImporteAprobado?>
+                    </span> -->
+                    <!-- <div class="mt-05"><strong>Tipo: <?php //echo $TipoTurno?> </strong></div> -->
+                    <div class="mt-05"><strong>Estado: <?=$reintegro["Estado"]?> </strong></div>
+                    <!-- <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="Prestador_Id">Ver especialidades</span> -->
+                  </div>
                 </div>
+                <!-- <div class="col-2" style="text-align: center;align-self: center;">
+                  <div class="delete_reintegro bg-danger" data-reintegro="<?=$reintegro["Autorizacion"]?>" style="margin-top:0;max-width: 40px;padding-top: 5px;padding-bottom: 5px;"><ion-icon name="trash"></ion-icon></div>
+                </div> -->
+              </div><?php
+            }
+          }else{?>
+            <div class="row border border-2 border-secondary rounded m-2 p-1">
+              <div class="col-12">
+                <h3 class="mb-05 mt-05 titulo1">Sin reintegros</h3>
               </div>
-              <!-- <div class="col-2" style="text-align: center;align-self: center;">
-                <div class="delete_reintegro bg-danger" data-reintegro="<?=$reintegro["Autorizacion"]?>" style="margin-top:0;max-width: 40px;padding-top: 5px;padding-bottom: 5px;"><ion-icon name="trash"></ion-icon></div>
-              </div> -->
             </div><?php
           }?>
         </ul>
@@ -302,12 +310,14 @@ if(!isset($_SESSION["user"]["ficha"])){
           $("input[name='files[]']").each(function(){
             let file=$(this).prop('files')[0];
             console.log(file);
-            datosEnviar.append('file'+i, file);
-            i++;
+            if(file!=undefined){
+              datosEnviar.append('file'+i, file);
+              i++;
+            }
           });
           
           //console.log("enviar datos");
-          $(this).addClass("disabled")
+          $(this).addClass("disabled");
           $.ajax({
             data: datosEnviar,
             url: "enviar_reintegro.php",
@@ -320,15 +330,14 @@ if(!isset($_SESSION["user"]["ficha"])){
               //$("#btnGuardar").removeClass("disabled")
               //$("#spinner_guardar").toggleClass("d-none");
               if(data=="1"){
-				  //document.location.href=document.location.href;
-				  $("#ModalConfirmNuevoReintegro").modal("show")
-				}else{
+                //document.location.href=document.location.href;
+                $("#ModalConfirmNuevoReintegro").modal("show")
+              }else{
                 $(this).removeClass("disabled")
               }
             }
           });
         }
-
       });
 
       $(document).on("click", ".fileinput-button", function() {
@@ -365,15 +374,20 @@ if(!isset($_SESSION["user"]["ficha"])){
         //console.log(data);
         var requisitos_container = document.getElementById("requisitos_container");
         requisitos_container.innerHTML=""
-        data.Data.forEach((requisito)=>{
+        data.Data.forEach((requisito, index)=>{
 
           if(this.nextElementSibling!=null){
             this.nextElementSibling.remove();
           }
-          // Define el código HTML que deseas agregar
+          
           let detalle=""
           if(requisito.MuestraDetalle=="SI"){
             detalle=": <span class='detalle'>"+requisito.Detalle+"</span>"
+          }
+
+          let required="required"
+          if(id_tipo_reintegro==11 && index>0){//id_tipo_reintegro == 11 -> CONSULTAS MEDICAS
+            required=""
           }
           //<ion-icon name="add-outline"></ion-icon>
           var nuevoHTML = `
@@ -383,12 +397,11 @@ if(!isset($_SESSION["user"]["ficha"])){
                 <span>Agregar</span>
               </span>
               <span class="files_container col-9">
-                <input type='file' name='files[]' style='width: 1px;height: 1px;' capture required accept='image/*, application/pdf'>
+                <input type='file' name='files[]' style='width: 1px;height: 1px;' capture ${required} accept='image/*, application/pdf'>
                 <span class="files_preview"></span>
               </span>
             </div>`;// accept='.pdf, image/*'
 
-          // Conserva el contenido existente y agrega el nuevo código HTML
           requisitos_container.innerHTML += nuevoHTML;
         })
       });
@@ -397,10 +410,10 @@ if(!isset($_SESSION["user"]["ficha"])){
     function readFile(input, files_preview) {
       //$("#clear_file").css("d-none");
       //$("#clear_file").css("display","block");
-      debugger
-      console.log(files_preview);
+      //debugger
+      //console.log(files_preview);
       files_preview.innerHTML="";
-      console.log(files_preview);
+      //console.log(files_preview);
       if (input.files && input.files[0]) {
 
         const celda1=document.createElement("span")

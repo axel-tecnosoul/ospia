@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     //$id_notificacion = $pdo->lastInsertId();
 
-    $query = " SELECT id FROM usuarios WHERE persona_id IN ($personas_id)";
+    $query = " SELECT id FROM usuarios WHERE persona_id IN ($personas_id) AND notif_push=1";
     //$query_params = array(':personas_id' => trim($personas_id));
     // Imprimir la consulta preparada con los parámetros
     //echo "Consulta preparada: " . $query . "\n";
