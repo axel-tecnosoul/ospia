@@ -66,7 +66,7 @@ if(!empty($_POST)){
 
       $url=$url_ws."?Modo=5&Usuario=$usuario_ws&FechaNacimiento=$fecha_nacimiento&Documento=$dni&email='$email'";
       $jsonData = json_decode(file_get_contents($url),true);
-      /*if($row["id"]==1){
+      /*if($row["id"]==20){
         echo $url;
         var_dump($jsonData);
         die();

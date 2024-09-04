@@ -47,8 +47,38 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
 
   <!-- App Capsule -->
   <div id="appCapsule" class="pt-0"><?php
-  //var_dump($_SESSION);
-  //var_dump($_SESSION["titular"])?>
+    //var_dump($_SESSION);
+    //var_dump($_SESSION["titular"])
+    
+    $plan="";
+    if(isset($_SESSION["plan"])){
+      $plan="Plan ".$_SESSION["plan"];
+      //$plan="Plan B";
+    }
+    //var_dump($plan);
+
+    $pdo = Database::connect();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $sql = " SELECT COUNT(l.id) AS cant_notificaciones FROM notificaciones_lecturas l inner join notificaciones n on n.id = l.id_notificacion WHERE n.mostrar_en_app=1 AND l.enviada=1 AND l.leida=0 AND l.id_usuario = ".$_SESSION['user']['id'];
+    $stmt = $db->prepare($sql);
+    $result = $stmt->execute();
+    $row = $stmt->fetch();
+    $class_notificaciones="";
+    if ($row["cant_notificaciones"]>0){
+      $class_notificaciones="text-danger";
+    }
+
+    $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar FROM botones_x_plan bp INNER JOIN botones b ON bp.id_boton=b.id INNER JOIN planes p ON bp.id_plan=p.id WHERE bp.visible = 1 AND p.plan= :plan ORDER BY b.orden_aparicion";
+    $query_params = array(':plan' => trim($plan));
+    try{
+      $stmt = $db->prepare($query); 
+      $result = $stmt->execute($query_params); 
+    } catch(
+      PDOException $ex){ die("Failed to run query: " . $ex->getMessage());
+    }
+
+    Database::disconnect();?>
 
     <div class="login-form mt-1">
       <div class="section animate__animated animate__zoomIn">
@@ -59,37 +89,34 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
         <div class="section">
           <h3 class="animate__animated animate__zoomIn">¿Qué servicio buscas hoy?</h3>
         </div>
-      </div>
-			
-      <a class="a1boton" href="credencial.php">
-				<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-					<ion-icon name="card-outline"></ion-icon>
-					MI CREDENCIAL
-				</button>
-			</a>
-			
-      <a class="a1boton" href="turnos.php">
-				<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-					<ion-icon name="calendar-outline"></ion-icon>
-					TURNOS
-				</button>
-			</a>
+      </div><?php
 
-			<a class="a1boton" href="cartilla.php">
-				<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-					<ion-icon name="search-circle-outline"></ion-icon>
-					CARTILLA MEDICA
-				</button>
-			</a>
-			
-			<a class="a1boton" href="autorizaciones.php">
-        <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-          <ion-icon name="newspaper-outline"></ion-icon>
-          AUTORIZACIONES
-        </button>
-      </a><?php
+      while($row=$stmt->fetch()){
+        $boton=$row['boton'];
+        if($row["solo_titular"] == 1 && $_SESSION["titular"]==1){
+          continue;
+        }
+
+        $class=$class_icon="";
+        $href=$row['href'];
+        if($row['habilitado']==0){
+          $href="#";
+          $class="disabled";
+        }
+        
+        if($boton=="Notifiaciones"){
+          $class_icon=$class_notificaciones;
+        }?>
+        <a class="a1boton <?=$class?>" href="<?=$href?>" data-msj="<?=$row['msj_mostrar']?>">
+          <button  type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
+            <ion-icon name="<?=$row['ion_icon']?>" class="<?=$class_icon?>"></ion-icon>
+            <?=strtoupper($boton)?>
+          </button>
+        </a><?php
+      }
 
       if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
+        <h3 class="animate__animated animate__zoomIn">EN DESARROLLO</h3>
         <a class="a1boton" href="#">
           <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
             <ion-icon name="disc-outline"></ion-icon>
@@ -110,51 +137,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
             </button>
           </a><?php
         }
-      }
-      
-      /*if(isset($_GET["plan"])){
-        $_SESSION['plan']=$_GET["plan"];
-      }*/
-      
-      $class="";
-      $href="reintegros.php";
-      if(isset($_SESSION['plan']) and $_SESSION['plan']=="B"){
-        $href="#";
-        $class="disabled";
       }?>
-
-			<a id="btnReintegros" class="a1boton <?=$class?>" href="<?=$href?>">
-				<button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-					  <ion-icon name="cash-outline"></ion-icon>
-					  REINTEGROS
-				</button>
-			</a><?php
-
-      if($_SESSION["titular"]==1){?>
-        <a class="a1boton" href="personas-habilitadas.php">
-          <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-            <ion-icon name="person-outline"></ion-icon>
-            PERSONAS HABILITADAS
-          </button>
-        </a><?php
-      }
-
-      $pdo = Database::connect();
-      $sql = " SELECT COUNT(l.id) AS cant_notificaciones FROM notificaciones_lecturas l inner join notificaciones n on n.id = l.id_notificacion WHERE n.mostrar_en_app=1 AND l.enviada=1 AND l.leida=0 AND l.id_usuario = ".$_SESSION['user']['id'];
-      $stmt = $db->prepare($sql);
-      $result = $stmt->execute();
-      $row = $stmt->fetch();
-      $class="";
-      if ($row["cant_notificaciones"]>0){
-        $class="text-danger";
-      }
-      Database::disconnect();?>
-      <a class="a1boton" href="notificaciones.php">
-        <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
-          <ion-icon name="notifications-circle-outline" class="<?=$class?>"></ion-icon>
-          PANEL DE NOTIFICACIONES
-        </button>
-      </a>
 
     </div>
 
@@ -212,6 +195,16 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
         console.log(this.href);
         if(this.href==window.location.href+"#"){
           $("#funcionDeshabilitada").modal("show")
+        }
+      })
+
+      $(document).on("click",".a1boton",function(){
+        console.log(this.href);
+        console.log(this.dataset.msj);
+        if(this.href==window.location.href+"#"){
+          let modal=$("#funcionDeshabilitada");
+          modal.find(".modal-title").text(this.dataset.msj)
+          modal.modal("show")
         }
       })
     });
