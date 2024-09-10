@@ -69,7 +69,18 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
       $class_notificaciones="text-danger";
     }
 
-    $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar FROM botones_x_plan bp INNER JOIN botones b ON bp.id_boton=b.id INNER JOIN planes p ON bp.id_plan=p.id WHERE bp.visible = 1 AND p.plan= :plan ORDER BY b.orden_aparicion";
+    $aDesarrolladores=[1,20];
+    $agregarBotonesEnDesarrollo=0;
+    if (in_array($_SESSION['user']['id'],$aDesarrolladores)){
+      $agregarBotonesEnDesarrollo=1;
+    }
+
+    $mostrarBotonesEnDesarrollo="";
+    if($agregarBotonesEnDesarrollo==1){
+      $mostrarBotonesEnDesarrollo="OR b.activo=0";
+    }
+
+    $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar,b.activo FROM botones b LEFT JOIN botones_x_plan bp ON bp.id_boton=b.id LEFT JOIN planes p ON bp.id_plan=p.id WHERE (bp.visible = 1 AND p.plan = :plan) $mostrarBotonesEnDesarrollo ORDER BY b.activo DESC, b.orden_aparicion ASC";
     $query_params = array(':plan' => trim($plan));
     try{
       $stmt = $db->prepare($query); 
@@ -90,22 +101,29 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
           <h3 class="animate__animated animate__zoomIn">¿Qué servicio buscas hoy?</h3>
         </div>
       </div><?php
-
+      $b=1;
       while($row=$stmt->fetch()){
         $boton=$row['boton'];
-        if($row["solo_titular"] == 1 && $_SESSION["titular"]==1){
+        if($row["solo_titular"]==1 && $_SESSION["titular"]==0){
           continue;
         }
 
         $class=$class_icon="";
         $href=$row['href'];
         if($row['habilitado']==0){
-          $href="#";
           $class="disabled";
         }
         
         if($boton=="Notifiaciones"){
           $class_icon=$class_notificaciones;
+        }
+        
+        if($row["activo"]==0){
+          $class="";
+          if($b==1){
+            $b=0;?>
+            <h3 class="animate__animated animate__zoomIn">EN DESARROLLO</h3><?php
+          }
         }?>
         <a class="a1boton <?=$class?>" href="<?=$href?>" data-msj="<?=$row['msj_mostrar']?>">
           <button  type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
@@ -115,7 +133,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
         </a><?php
       }
 
-      if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
+      /*if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
         <h3 class="animate__animated animate__zoomIn">EN DESARROLLO</h3>
         <a class="a1boton" href="#">
           <button type="button" class="btn btn-secondary1 btn-lg me-1 mb-1 animate__animated animate__backInRight">
@@ -137,7 +155,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
             </button>
           </a><?php
         }
-      }?>
+      }*/?>
 
     </div>
 

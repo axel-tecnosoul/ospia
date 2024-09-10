@@ -54,29 +54,27 @@ if(!isset($_SESSION["user"]["ficha"])){
       left: 160px;
     }
 	 .float{
-		position: fixed;
-		width: 60px;
-		height: 60px;
-		bottom: 70px;
-		right: 20px;
-		/*background-color: #25d366;*/
-		color: #FFF;
-		border-radius: 50px;
-		text-align: center;
-		font-size: 50px;
-		/*box-shadow: 2px 2px 3px #999;*/
-		z-index: 100;
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 70px;
+      right: 20px;
+      /*background-color: #25d366;*/
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 50px;
+      /*box-shadow: 2px 2px 3px #999;*/
+      z-index: 100;
 	  }
-
 	  .float :hover{
-		border-radius: 50px;
-		border: solid 2px #0bd71c;
+      border-radius: 50px;
+      border: solid 2px #0bd71c;
 	  }
   </style>
 </head>
 
 <body class="bg1">
-
   <!-- App Header -->
   <div class="appHeader no-border transparent position-absolute">
     <div class="left animate__animated animate__fadeInRight">
@@ -89,11 +87,14 @@ if(!isset($_SESSION["user"]["ficha"])){
   </div>
   <br>
   <br>
+  <!-- * App Header -->
+
+  <!-- App Capsule -->
   <div id="appCapsule" class="pt-0">
     <ul class="listview image-listview text animate__animated animate__fadeInRight">
       <li>
         <div class="in item">
-          <div><strong>Personas Habilitadas</strong></div>
+          <strong>Personas Habilitadas</strong>
         </div>
       </li>
     </ul>
