@@ -50,10 +50,12 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
     //var_dump($_SESSION);
     //var_dump($_SESSION["titular"])
     
-    $plan="";
+    //$plan="";
+    $plan_valida="";
     if(isset($_SESSION["plan"])){
-      $plan="Plan ".$_SESSION["plan"];
+      //$plan="Plan ".$_SESSION["plan"];
       //$plan="Plan B";
+      $plan_valida=$_SESSION["plan_valida"];
     }
     //var_dump($plan);
 
@@ -80,8 +82,8 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
       $mostrarBotonesEnDesarrollo="OR b.activo=0";
     }
 
-    $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar,b.activo FROM botones b LEFT JOIN botones_x_plan bp ON bp.id_boton=b.id LEFT JOIN planes p ON bp.id_plan=p.id WHERE (bp.visible = 1 AND p.plan = :plan) $mostrarBotonesEnDesarrollo ORDER BY b.activo DESC, b.orden_aparicion ASC";
-    $query_params = array(':plan' => trim($plan));
+    $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar,b.activo FROM botones b LEFT JOIN botones_x_plan bp ON bp.id_boton=b.id LEFT JOIN planes p ON bp.id_plan=p.id WHERE (bp.visible = 1 AND p.id = :plan_valida) $mostrarBotonesEnDesarrollo ORDER BY b.activo DESC, b.orden_aparicion ASC";
+    $query_params = array(':plan_valida' => trim($plan_valida));
     try{
       $stmt = $db->prepare($query); 
       $result = $stmt->execute($query_params); 
@@ -108,10 +110,12 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
           continue;
         }
 
-        $class=$class_icon="";
         $href=$row['href'];
+
+        $class=$class_icon="";
         if($row['habilitado']==0){
           $class="disabled";
+          $href="#";
         }
         
         if($boton=="Notifiaciones"){
