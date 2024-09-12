@@ -200,25 +200,14 @@ if(!isset($_SESSION["user"]["ficha"])){
         $("#medicamentos").html($container);
       }else{
         $.post("get_medicamentos.php",{nombre:nombre,droga:droga}, function(data){
-          //console.log(data);
-          data=JSON.parse(data);
-          let result=data[0].Ok;
-          let datos=data[0].Data;
           spinner.css("display","none");
           growing.css("display","none");
-          //var aLugares=[];
-
+          //console.log(data);
+          data=JSON.parse(data);
           $container="";
-          if(result=="false"){
-            $container+=`
-            <li>
-              <a href="#">
-                <div>
-                  <h3 class="mb-05 titulo1">No se han encontrado medicamentos</h3>
-                </div>
-              </a>
-            </li>`;
-          }else{
+          if(data[0]!=undefined){
+            let result=data[0].Ok;
+            let datos=data[0].Data;
             datos.forEach(medicamento => {
               //console.log(medicamento);
               $container+=`
@@ -230,6 +219,18 @@ if(!isset($_SESSION["user"]["ficha"])){
                 </div>
               </div>`;
             })
+          }else{
+          //if(result=="false"){
+            $container+=`
+            <li>
+              <a href="#">
+                <div>
+                  <h3 class="mb-05 titulo1">No se han encontrado medicamentos</h3>
+                </div>
+              </a>
+            </li>`;
+          //}else{
+            
           }
           $("#medicamentos").html($container);
         });
