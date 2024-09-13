@@ -84,8 +84,8 @@ if(!empty($_POST)){
           $_SESSION['titular'] = $titular;
           $_SESSION['nueva_app'] = $_POST['nueva_app'];
           $_SESSION['plan'] = $jsonData['Plan'];
-          //$_SESSION['plan_valida'] = $jsonData['PlanValida'];
-          $_SESSION['plan_valida'] = 2;
+          $_SESSION['plan_valida'] = $jsonData['PlanValida'];
+          //$_SESSION['plan_valida'] = 2;
           $_SESSION['persona_id'] = $jsonData['Persona_Id'];
           
           //if($titular==1){
