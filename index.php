@@ -56,6 +56,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
       //$plan="Plan ".$_SESSION["plan"];
       //$plan="Plan B";
       $plan_valida=$_SESSION["plan_valida"];
+      //$plan_valida=2;
     }
     //var_dump($plan);
 
@@ -113,7 +114,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
         $href=$row['href'];
 
         $class=$class_icon="";
-        if($row['habilitado']==0){
+        if($row['habilitado']==="0"){//realizamos un chequeo estricto para que no tome NULL como si fuera igual a 0
           $class="disabled";
           $href="#";
         }
