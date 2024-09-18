@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //echo "Parámetros: " . json_encode($query_params) . "\n";
     //die();
     try{
-      $stmt = $db->prepare($query); 
+      $stmt = $pdo->prepare($query); 
       $result = $stmt->execute([]);
     } catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); }
 

@@ -64,7 +64,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = " SELECT COUNT(l.id) AS cant_notificaciones FROM notificaciones_lecturas l inner join notificaciones n on n.id = l.id_notificacion WHERE n.mostrar_en_app=1 AND l.enviada=1 AND l.leida=0 AND l.id_usuario = ".$_SESSION['user']['id'];
-    $stmt = $db->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $result = $stmt->execute();
     $row = $stmt->fetch();
     $class_notificaciones="";
@@ -86,7 +86,7 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
     $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar,b.activo FROM botones b LEFT JOIN botones_x_plan bp ON bp.id_boton=b.id LEFT JOIN planes p ON bp.id_plan=p.id WHERE (bp.visible = 1 AND p.id = :plan_valida) $mostrarBotonesEnDesarrollo ORDER BY b.activo DESC, b.orden_aparicion ASC";
     $query_params = array(':plan_valida' => trim($plan_valida));
     try{
-      $stmt = $db->prepare($query); 
+      $stmt = $pdo->prepare($query); 
       $result = $stmt->execute($query_params); 
     } catch(
       PDOException $ex){ die("Failed to run query: " . $ex->getMessage());

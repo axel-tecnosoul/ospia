@@ -27,14 +27,16 @@ if(!empty($_POST)){
   $es_persona_habilitada=0;
   
   try{
-    $stmt = $db->prepare($query); 
-    $result = $stmt->execute($query_params); 
+    $pdo = Database::connect();
+    $stmt = $pdo->prepare($query);
+    $result = $stmt->execute($query_params);
   } catch(
     PDOException $ex){ die("Failed to run query: " . $ex->getMessage());
   }
   
   $login_ok = false;
   $row = $stmt->fetch();
+  Database::disconnect();
 
   // Si la primera consulta no devuelve resultados, intentamos buscar al usuario en la tabla "personas_habilitadas"
   if(!$row){
@@ -43,14 +45,16 @@ if(!empty($_POST)){
     $titular=0;
     $es_persona_habilitada=1;
     
-    try{ 
-      $stmt2 = $db->prepare($query2); 
+    try{
+      $pdo = Database::connect();
+      $stmt2 = $pdo->prepare($query2); 
       $result2 = $stmt2->execute($query_params2); 
     } catch(PDOException $ex){ 
       die("Failed to run query: " . $ex->getMessage()); 
     } 
     
     $row = $stmt2->fetch();
+    Database::disconnect();
   }
 
   if($row){

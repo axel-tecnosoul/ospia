@@ -181,10 +181,12 @@ if (!empty($_POST)) {
     $query = "SELECT id, nombre_apellido, fecha_nacimiento, dni, imagen, domicilio, id_provincia, email, celular, ficha, cuit, alias, cbu, cbte_cbu, token_app, notif_push, notif_whatsapp, notif_email, persona_id, requiere_cambio_clave, titular FROM usuarios WHERE id = :id";
     $query_params = array(':id' => $_SESSION["user"]['id']); 
     try{
-      $stmt = $db->prepare($query); 
+      $pdo = Database::connect();
+      $stmt = $pdo->prepare($query); 
       $result = $stmt->execute($query_params); 
     } catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
     $row = $stmt->fetch();
+    Database::disconnect();
     if($row){
       $_SESSION['user'] = $row;
     }?>

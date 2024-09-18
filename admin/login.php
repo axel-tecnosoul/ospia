@@ -7,23 +7,27 @@
         $query_params = [':user' => $_POST['user']];
         
         try {
-            $stmt = $db->prepare($query);
+            $pdo = Database::connect();
+            $stmt = $pdo->prepare($query);
             $result = $stmt->execute($query_params);
         } catch (PDOException $ex) {
             die("Failed to run query: " . $ex->getMessage());
         }
         $login_ok = false;
         $row = $stmt->fetch();
+        Database::disconnect();
         if ($row) {
             $query = "SELECT `valor` FROM `parametros` WHERE `id` = 2 and `valor` = :pass";
 			$query_params = [':pass' => $_POST['pass']];
 			try {
-				$stmt = $db->prepare($query);
+        $pdo = Database::connect();
+				$stmt = $pdo->prepare($query);
 				$result = $stmt->execute($query_params);
 			} catch (PDOException $ex) {
 				die("Failed to run query: " . $ex->getMessage());
 			}
 			$row = $stmt->fetch();
+      Database::disconnect();
 			if ($row) {
 				$login_ok = true;
 			}
