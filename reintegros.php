@@ -90,74 +90,95 @@ if(!isset($_SESSION["user"]["ficha"])){
 <body class="bg1">
   <!-- App Header -->
   <div class="appHeader no-border transparent position-absolute">
-  <div class="left animate__animated animate__fadeInRight">
-    <a href="index.php" class="headerButton goBack">
-      <ion-icon name="chevron-back-outline"></ion-icon>VOLVER
-    </a>
+    <div class="left animate__animated animate__fadeInRight">
+      <a href="index.php" class="headerButton goBack">
+        <ion-icon name="chevron-back-outline"></ion-icon>VOLVER
+      </a>
+    </div>
+    <div class="pageTitle">
+
+    </div>
   </div>
-  <div class="pageTitle"></div>
-        
-  </div>
+  <br>
   <br>
   <!-- * App Header -->
 
   <!-- App Capsule -->
-  <?php
-  if (!empty($_SESSION['user']['cuit']) and !empty($_SESSION['user']['cbu'])) {?>
-    <span class="float btn-primary" id="btnAddNew" data-bs-toggle="modal" data-bs-target="#ModalNuevaAutorizacion">
-      <!-- <i class="fa fa-whatsapp my-float"></i> -->
-      <ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
-    </span><?php
-  }else{?>
-    <span class="float2 " data-bs-toggle="modal">
-      <h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un reintegro debe cargar <br /><br /> el cuit y cbu en Datos Personales</span></h2>
-    </span><?php
-  }?>
+  <!-- <div id="appCapsule" class="pt-0"> -->
+    <!-- <ul class="listview image-listview text animate__animated animate__fadeInRight">
+      <li>
+        <div class="in item">
+          <strong>Reintegros</strong>
+        </div>
+      </li>
+    </ul>
+    <br> -->
+    <?php
 
-  <div class="section full" style="height: calc( 100% - 56px - 16px - 13px);">
-    <h2 class="text-center">Reintegros</h2>
-    <div class="row" style="height: calc( 100% - 16px - 9px);overflow: scroll;">
-      <div class="col-12">
-        <ul id="cartilla" class="listview link-listview search-result animate__animated animate__fadeInRight" style="border-radius: 10px;"><?php
-          $id=$_SESSION["user"]["id"];
-          //$imagen=$_SESSION["user"]["imagen"];
-          $ficha=$_SESSION["user"]["ficha"];
-          $persona=$_SESSION["user"]["persona_id"];
+    if (!empty($_SESSION['user']['cuit']) and !empty($_SESSION['user']['cbu'])) {?>
+      <span class="float btn-primary" id="btnAddNew" data-bs-toggle="modal" data-bs-target="#ModalNuevaAutorizacion">
+        <!-- <i class="fa fa-whatsapp my-float"></i> -->
+        <ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
+      </span><?php
+    }else{?>
+      <span class="float2 w-auto" data-bs-toggle="modal">
+        <h2><span class="badge bg-danger p-1 fs-5 h-auto" style="white-space: normal;">Para ingresar un reintegro debe cargar el cuit y cbu en Datos Personales</span></h2>
+      </span><?php
+    }?>
 
-          //$url=$url_ws."?Modo=20&Usuario=$usuario_ws&Ficha=$ficha";
-          $url=$url_ws."?Modo=24&Persona=$persona";
-          //echo $url;
-          $jsonData = json_decode(file_get_contents($url),true);
-          //var_dump($jsonData);
-          $reintegros=$jsonData["Reintegros"];
-          //var_dump($reintegros[0]);
-          foreach ($reintegros as $reintegro) {
-            $ImporteReclamado=number_format(str_replace(",",".",$reintegro["ImporteReclamado"]),2);
-            //$ImporteReclamado=$reintegro["ImporteReclamado"];
-            $ImporteAprobado=number_format(str_replace(",",".",$reintegro["ImporteAprobado"]),2);
-            //$ImporteAprobado=$reintegro["ImporteAprobado"];
-            ?>
-            <div class="row border m-2">
-              <div class="col-12">
-                <h3 class="mb-05 titulo1">Reintegro Nro. <?=$reintegro["Reintegro"]?> - <?=$reintegro["Fecha"]?></h3>
-                <div class="text-muted">
-                  <span onclick="">
-                    Nombre: <?=$reintegro["Nombre"]?>
-                  </span>
-                  <!-- <span onclick="">
-                    <?php //echo $reintegro["TipoReintegro"]."<br>Reclamado: $".$ImporteReclamado."<br>Aprobado: $".$ImporteAprobado?>
-                  </span> -->
-                  <!-- <div class="mt-05"><strong>Tipo: <?php //echo $TipoTurno?> </strong></div> -->
-                  <div class="mt-05"><strong>Estado: <?=$reintegro["Estado"]?> </strong></div>
-                  <!-- <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="Prestador_Id">Ver especialidades</span> -->
+    <div class="section full" style="height: calc( 100% - 56px - 16px - 13px);">
+      <h2 class="text-center">Reintegros</h2>
+      <div class="row" style="height: calc( 100% - 16px - 9px);overflow: scroll;">
+        <div class="col-12">
+          <ul id="cartilla" class="listview link-listview search-result animate__animated animate__fadeInRight" style="border-radius: 10px;"><?php
+            $id=$_SESSION["user"]["id"];
+            //$imagen=$_SESSION["user"]["imagen"];
+            $ficha=$_SESSION["user"]["ficha"];
+            $persona=$_SESSION["user"]["persona_id"];
+
+            //$url=$url_ws."?Modo=20&Usuario=$usuario_ws&Ficha=$ficha";
+            $url=$url_ws."?Modo=24&Persona=$persona";
+            //echo $url;
+            $jsonData = json_decode(file_get_contents($url),true);
+
+            if($jsonData["Ok"]!="false"){
+              $reintegros=$jsonData["Reintegros"];
+              //var_dump($reintegros[0]);
+              foreach ($reintegros as $reintegro) {
+                $ImporteReclamado=number_format(str_replace(",",".",$reintegro["ImporteReclamado"]),2);
+                //$ImporteReclamado=$reintegro["ImporteReclamado"];
+                $ImporteAprobado=number_format(str_replace(",",".",$reintegro["ImporteAprobado"]),2);
+                //$ImporteAprobado=$reintegro["ImporteAprobado"];
+                ?>
+                <div class="row border m-2">
+                  <div class="col-12">
+                    <h3 class="mb-05 titulo1">Reintegro Nro. <?=$reintegro["Reintegro"]?> - <?=$reintegro["Fecha"]?></h3>
+                    <div class="text-muted">
+                      <span onclick="">
+                        Nombre: <?=$reintegro["Nombre"]?>
+                      </span>
+                      <!-- <span onclick="">
+                        <?php //echo $reintegro["TipoReintegro"]."<br>Reclamado: $".$ImporteReclamado."<br>Aprobado: $".$ImporteAprobado?>
+                      </span> -->
+                      <!-- <div class="mt-05"><strong>Tipo: <?php //echo $TipoTurno?> </strong></div> -->
+                      <div class="mt-05"><strong>Estado: <?=$reintegro["Estado"]?> </strong></div>
+                      <!-- <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="Prestador_Id">Ver especialidades</span> -->
+                    </div>
+                  </div>
+                  <!-- <div class="col-2" style="text-align: center;align-self: center;">
+                    <div class="delete_reintegro bg-danger" data-reintegro="<?=$reintegro["Autorizacion"]?>" style="margin-top:0;max-width: 40px;padding-top: 5px;padding-bottom: 5px;"><ion-icon name="trash"></ion-icon></div>
+                  </div> -->
+                </div><?php
+              }
+            }else{?>
+              <div class="row border border-2 border-secondary rounded m-2 p-1">
+                <div class="col-12">
+                  <h3 class="mb-05 mt-05 titulo1">Sin reintegros</h3>
                 </div>
-              </div>
-              <!-- <div class="col-2" style="text-align: center;align-self: center;">
-                <div class="delete_reintegro bg-danger" data-reintegro="<?=$reintegro["Autorizacion"]?>" style="margin-top:0;max-width: 40px;padding-top: 5px;padding-bottom: 5px;"><ion-icon name="trash"></ion-icon></div>
-              </div> -->
-            </div><?php
-          }?>
-        </ul>
+              </div><?php
+            }?>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -302,12 +323,14 @@ if(!isset($_SESSION["user"]["ficha"])){
           $("input[name='files[]']").each(function(){
             let file=$(this).prop('files')[0];
             console.log(file);
-            datosEnviar.append('file'+i, file);
-            i++;
+            if(file!=undefined){
+              datosEnviar.append('file'+i, file);
+              i++;
+            }
           });
           
           //console.log("enviar datos");
-          $(this).addClass("disabled")
+          $(this).addClass("disabled");
           $.ajax({
             data: datosEnviar,
             url: "enviar_reintegro.php",
@@ -320,15 +343,14 @@ if(!isset($_SESSION["user"]["ficha"])){
               //$("#btnGuardar").removeClass("disabled")
               //$("#spinner_guardar").toggleClass("d-none");
               if(data=="1"){
-				  //document.location.href=document.location.href;
-				  $("#ModalConfirmNuevoReintegro").modal("show")
-				}else{
+                //document.location.href=document.location.href;
+                $("#ModalConfirmNuevoReintegro").modal("show")
+              }else{
                 $(this).removeClass("disabled")
               }
             }
           });
         }
-
       });
 
       $(document).on("click", ".fileinput-button", function() {
@@ -365,15 +387,20 @@ if(!isset($_SESSION["user"]["ficha"])){
         //console.log(data);
         var requisitos_container = document.getElementById("requisitos_container");
         requisitos_container.innerHTML=""
-        data.Data.forEach((requisito)=>{
+        data.Data.forEach((requisito, index)=>{
 
           if(this.nextElementSibling!=null){
             this.nextElementSibling.remove();
           }
-          // Define el código HTML que deseas agregar
+          
           let detalle=""
           if(requisito.MuestraDetalle=="SI"){
             detalle=": <span class='detalle'>"+requisito.Detalle+"</span>"
+          }
+
+          let required="required"
+          if(id_tipo_reintegro==11 && index>0){//id_tipo_reintegro == 11 -> CONSULTAS MEDICAS
+            required=""
           }
           //<ion-icon name="add-outline"></ion-icon>
           var nuevoHTML = `
@@ -383,12 +410,11 @@ if(!isset($_SESSION["user"]["ficha"])){
                 <span>Agregar</span>
               </span>
               <span class="files_container col-9">
-                <input type='file' name='files[]' style='width: 1px;height: 1px;' capture required accept='image/*, application/pdf'>
+                <input type='file' name='files[]' style='width: 1px;height: 1px;' capture ${required} accept='image/*, application/pdf'>
                 <span class="files_preview"></span>
               </span>
             </div>`;// accept='.pdf, image/*'
 
-          // Conserva el contenido existente y agrega el nuevo código HTML
           requisitos_container.innerHTML += nuevoHTML;
         })
       });
@@ -397,10 +423,10 @@ if(!isset($_SESSION["user"]["ficha"])){
     function readFile(input, files_preview) {
       //$("#clear_file").css("d-none");
       //$("#clear_file").css("display","block");
-      debugger
-      console.log(files_preview);
+      //debugger
+      //console.log(files_preview);
       files_preview.innerHTML="";
-      console.log(files_preview);
+      //console.log(files_preview);
       if (input.files && input.files[0]) {
 
         const celda1=document.createElement("span")

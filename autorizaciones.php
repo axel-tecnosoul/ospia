@@ -187,7 +187,7 @@ if(!isset($_SESSION["user"]["ficha"])){
                     $jsonData = json_decode(file_get_contents($url),true);
                     $grupo_fliar=$jsonData[0]["Data"];
                     foreach ($grupo_fliar as $persona) {?>
-                      <option value='<?=$persona['Id']?>'><?=$persona['Apellido']." ".$persona['Nombre']?></option><?php
+                      <option value='<?=$persona['Id']?>' data-dni='<?=$persona['DNI']?>'><?=$persona['Apellido']." ".$persona['Nombre']?></option><?php
                     }?>
                   </select>
                 </div>
@@ -308,6 +308,8 @@ if(!isset($_SESSION["user"]["ficha"])){
         let id_afiliado=select_afiliado.val();
         let selected_afiliado=select_afiliado.find("option[value='"+id_afiliado+"']");
         let nombre_afiliado=selected_afiliado[0].innerText;
+        let dni=selected_afiliado.data("dni");
+
 
         let select_delegacion=$("#id_delegacion");
         let id_delegacion=select_delegacion.val();
@@ -318,6 +320,7 @@ if(!isset($_SESSION["user"]["ficha"])){
         let datosEnviar = new FormData();
         datosEnviar.append("id_afiliado", id_afiliado);
         datosEnviar.append("nombre_afiliado", nombre_afiliado);
+        datosEnviar.append("dni", dni);
         datosEnviar.append("id_delegacion", id_delegacion);
         datosEnviar.append("nombre_delegacion", nombre_delegacion);
         datosEnviar.append("mail_delegacion", mail_delegacion);

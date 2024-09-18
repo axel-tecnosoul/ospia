@@ -4,6 +4,7 @@ include_once("admin/database.php");
 include_once("admin/funciones.php");
 
 $dni=trim($_POST["dni"]);
+$dni = preg_replace('/\D/', '', $dni);
 
 $daySelect=trim($_POST["daySelect"]);
 $monthSelect=trim($_POST["monthSelect"]);
@@ -27,6 +28,7 @@ $url="";
 $envio="";
 if($count==0){
   $sql = "SELECT id,email FROM usuarios WHERE fecha_nacimiento=? AND dni=?";
+  //$sql.=" AND id NOT IN (1,20)";
   $q = $pdo->prepare($sql);
   $q->execute([$fecha_nacimiento,$dni]);
   $count = $q->rowCount();

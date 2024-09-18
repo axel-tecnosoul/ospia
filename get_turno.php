@@ -26,18 +26,20 @@ if($jsonData["Ok"]=="true"){
   $asunto="Turnos OSPIA";
   $mensaje="El turno ID # ".$jsonData["IdTurno"]." ha sido creado con éxito";
 
-  //$fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")."+2 minute"));
-  $fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")));
+  if($_SESSION["user"]["notif_push"]){
+    //$fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")."+2 minute"));
+    $fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")));
 
-  $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, ejecutada) VALUES (?,?,'$fecha_hora',0)";
-  $q = $pdo->prepare($sql);
-  $q->execute(array($asunto,$mensaje));
-  $id_notificacion = $pdo->lastInsertId();
+    $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, ejecutada) VALUES (?,?,'$fecha_hora',0)";
+    $q = $pdo->prepare($sql);
+    $q->execute(array($asunto,$mensaje));
+    $id_notificacion = $pdo->lastInsertId();
 
-  $sql = "INSERT INTO notificaciones_lecturas (id_notificacion, id_usuario, fecha_hora, enviada, leida) VALUES (?,?,'$fecha_hora',0,0)";
-  $q = $pdo->prepare($sql);
-  $q->execute(array($id_notificacion,$_SESSION["user"]["id"]));
-  $afe=$q->rowCount();
+    $sql = "INSERT INTO notificaciones_lecturas (id_notificacion, id_usuario, fecha_hora, enviada, leida) VALUES (?,?,'$fecha_hora',0,0)";
+    $q = $pdo->prepare($sql);
+    $q->execute(array($id_notificacion,$_SESSION["user"]["id"]));
+    $afe=$q->rowCount();
+  }
   //echo "<br>Afe: ".$afe;
 
   /*

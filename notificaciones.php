@@ -7,28 +7,29 @@ if(!isset($_SESSION["user"])){
 <!doctype html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#000000">
-    <title>OSPIA APP Notificaciones</title>
-    <meta name="description" content="Mobilekit HTML Mobile UI Kit">
-    <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="manifest" href="__manifest.json">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#000000">
+  <title>OSPIA APP Notificaciones</title>
+  <meta name="description" content="Mobilekit HTML Mobile UI Kit">
+  <meta name="keywords" content="bootstrap 5, mobile template, cordova, phonegap, mobile, html" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="__manifest.json">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    .image-listview > li a.item:after{
+      background-image: none;
+    }
+    .item :hover{
+      cursor: pointer;
+    }
+  </style>
 </head>
-<style>
-  .image-listview > li a.item:after{
-    background-image: none;
-  }
-  .item :hover{
-    cursor: pointer;
-  }
-</style>
+
 <body class="bg1">
   <!-- App Header -->
   <div class="appHeader no-border transparent position-absolute">
@@ -48,7 +49,7 @@ if(!isset($_SESSION["user"])){
     <ul class="listview image-listview text animate__animated animate__fadeInRight">
       <li>
         <div class="in item">
-          <div>Notificaciones</div>
+          <strong>Notificaciones</strong>
         </div>
       </li>
     </ul>

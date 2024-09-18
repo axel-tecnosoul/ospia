@@ -12,6 +12,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $pdo->beginTransaction();
 
 $ok=0;
+$debug=0;
 
 $sql = "INSERT INTO autorizaciones (id_afiliado,id_delegacion,id_usuario) VALUES (?,?,?)";
 $q = $pdo->prepare($sql);
@@ -66,7 +67,7 @@ if($afe==1){
   }
 }
 if($cantArchivos==$cantArchivosSubidos){
-  if($debug==1){
+  if($_SESSION["user"]["email"]=="axelbritzius@gmail.com"){
     $destinatarios=[
       "axelbritzius@gmail.com"=> $_POST["nombre_delegacion"],
     ];
@@ -75,8 +76,8 @@ if($cantArchivos==$cantArchivosSubidos){
       $_POST["mail_delegacion"]=> $_POST["nombre_delegacion"],
     ];
   }
-  
-  $asunto="Autorizaciones OSPIA";
+  $dni=$_POST["dni"];
+  $asunto="Autorizaciones OSPIA DNI ".$dni;
 
   $email="";
   if(isset($_SESSION["user"]["email"])){
@@ -88,7 +89,7 @@ if($cantArchivos==$cantArchivosSubidos){
   }
   $cuerpo="Hola ".$_POST["nombre_delegacion"]."!
   
-  El afiliado ".$_POST["nombre_afiliado"]." (DNI ".$_SESSION["user"]["dni"].") ha solicitado una autorizacion por medio de la app
+  El afiliado ".$_POST["nombre_afiliado"]." (DNI ".$dni.") ha solicitado una autorizacion por medio de la app
 
   $texto_email
 
@@ -105,19 +106,21 @@ if($cantArchivos==$cantArchivosSubidos){
     $asunto="Autorizaciones OSPIA";
     $mensaje="La autorización ha sido enviada correctamente";
 
-    $fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")."+2 minute"));
-    //$fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")));
+    if($_SESSION["user"]["notif_push"]){
+      $fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")."+2 minute"));
+      //$fecha_hora=date("Y-m-d H:i",strtotime(date("Y-m-d H:i")));
 
-    $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, ejecutada) VALUES (?,?,'$fecha_hora',0)";
-    $q = $pdo->prepare($sql);
-    $q->execute(array($asunto,$mensaje));
-    $id_notificacion = $pdo->lastInsertId();
+      $sql = "INSERT INTO notificaciones (asunto, mensaje, fecha_hora, ejecutada) VALUES (?,?,'$fecha_hora',0)";
+      $q = $pdo->prepare($sql);
+      $q->execute(array($asunto,$mensaje));
+      $id_notificacion = $pdo->lastInsertId();
 
-    $sql = "INSERT INTO notificaciones_lecturas (id_notificacion, id_usuario, fecha_hora, enviada, leida) VALUES (?,?,'$fecha_hora',0,0)";
-    $q = $pdo->prepare($sql);
-    $q->execute(array($id_notificacion,$_SESSION["user"]["id"]));
-    $afe=$q->rowCount();
-    //echo "<br>Afe: ".$afe;
+      $sql = "INSERT INTO notificaciones_lecturas (id_notificacion, id_usuario, fecha_hora, enviada, leida) VALUES (?,?,'$fecha_hora',0,0)";
+      $q = $pdo->prepare($sql);
+      $q->execute(array($id_notificacion,$_SESSION["user"]["id"]));
+      $afe=$q->rowCount();
+      //echo "<br>Afe: ".$afe;
+    }
     
     $pdo->commit();
   }else{

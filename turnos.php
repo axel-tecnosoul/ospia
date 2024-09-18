@@ -118,36 +118,21 @@ if(!isset($_SESSION["user"]["ficha"])){
   <!-- App Capsule -->
 	<?php
 	if ($_SESSION['user']['id'] == 0) {?>
-		<span class="float2 " data-bs-toggle="modal">
-			<h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un turno debe cargar <br /><br /> el telefono en Datos Personales</span></h2>
+		<span class="float2 w-auto " data-bs-toggle="modal">
+			<h2><span class="badge bg-danger p-1 fs-5 h-auto" style="white-space: normal;">Para ingresar un turno debe cargar el telefono en Datos Personales</span></h2>
 		</span><?php
-	}
-	else{
+	}else{
 		if (!empty($_SESSION['user']['celular'])) {?>
 			<span class="float btn-primary" data-bs-toggle="modal" data-bs-target="#ModalNuevoTurno">
 				<ion-icon name="add-outline" style="vertical-align: -webkit-baseline-middle;"></ion-icon>
 			</span><?php
-		}
-		else{
-			?>
-			<span class="float2 " data-bs-toggle="modal">
-				<h2><span class="badge bg-danger p-3"><span class="fs-5">Para ingresar un turno debe cargar <br /><br /> el telefono en Datos Personales</span></h2>
+		}else{?>
+			<span class="float2 w-auto " data-bs-toggle="modal">
+				<h2><span class="badge bg-danger p-1 fs-5 h-auto" style="white-space: normal;">Para ingresar un turno debe cargar el telefono en Datos Personales</span></h2>
 			</span><?php
 		}
 	}?>
 	
-	
-	
-
-
-
-
-
-
-
-
-
-  
   <div class="section full" style="height: calc( 100% - 56px - 16px - 13px);">
     <h2 class="text-center">Turnos</h2>
     <div class="row" style="height: calc( 100% - 16px - 9px);overflow: scroll;">
@@ -160,63 +145,73 @@ if(!isset($_SESSION["user"]["ficha"])){
 
           //$url=$url_ws."?Modo=20&Usuario=$usuario_ws&Ficha=$ficha";
           $url=$url_ws."?Modo=20&Persona=$persona";
-          //echo $url;
+          if($id==20){
+            //echo $url;
+          }
           $jsonData = json_decode(file_get_contents($url),true);
-          //var_dump($jsonData);
-          $turnos=$jsonData["Turnos"];
-          //var_dump($turnos[0]);
-          foreach ($turnos as $turno) {
-            //var_dump($turno);
-            
-            //var_dump($turno["TurnoCompleto"]);
-            $fecha_turno=date("Y-m-d H:i",strtotime(str_replace("/","-",$turno["TurnoCompleto"])));
-            //var_dump($fecha_turno);
-            /*$TipoTurno="Turno normal";
-            if($turno["TipoTurno"]==1){
-              $TipoTurno="Sobre Turno";
-            }*/
-            $Estado="Confirmado / Ejecutado";
-            if($turno["Estado"]=="A"){
-              $Estado="Asignado";
-            }?>
-            <div class="row border m-2">
-              <div class="col-10">
-                <!-- <h3 class="mb-05 titulo1">#<?=$turno["TurnoNumero"]?> - <?=$turno["TurnoCompleto"]?></h3> -->
-                <h3 class="mb-05 titulo1" style="text-align: center;"><?=$turno["TurnoCompleto"]?></h3>
-                <div class="text-muted">
-                  <span onclick="" style="display: none;">
-                    <?=$turno["Policlinico"]." - ".$turno["Especialidad"]." - ".$turno["Medico"]?>
-                    <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
-                  </span>
-                  <div onclick="">
-                    <!--Nombre: --><?// echo $turno["Apellido"]." ".$turno["Nombre"];?>
-					Nombre: <? echo $turno["Nombre"];?>
-                    <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
+          if($jsonData["Ok"]!="false"){
+            //var_dump($jsonData);
+            $turnos=$jsonData["Turnos"];
+            //var_dump($turnos[0]);
+            foreach ($turnos as $turno) {
+              //var_dump($turno);
+              
+              //var_dump($turno["TurnoCompleto"]);
+              $fecha_turno=date("Y-m-d H:i",strtotime(str_replace("/","-",$turno["TurnoCompleto"])));
+              //var_dump($fecha_turno);
+              /*$TipoTurno="Turno normal";
+              if($turno["TipoTurno"]==1){
+                $TipoTurno="Sobre Turno";
+              }*/
+              $Estado="Confirmado / Ejecutado";
+              if($turno["Estado"]=="A"){
+                $Estado="Asignado";
+              }?>
+              <div class="row border m-2">
+                <div class="col-10">
+                  <!-- <h3 class="mb-05 titulo1">#<?=$turno["TurnoNumero"]?> - <?=$turno["TurnoCompleto"]?></h3> -->
+                  <h3 class="mb-05 titulo1" style="text-align: center;"><?=$turno["TurnoCompleto"]?></h3>
+                  <div class="text-muted">
+                    <span onclick="" style="display: none;">
+                      <?=$turno["Policlinico"]." - ".$turno["Especialidad"]." - ".$turno["Medico"]?>
+                      <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
+                    </span>
+                    <div onclick="">
+                      <!--Nombre: --><?// echo $turno["Apellido"]." ".$turno["Nombre"];?>
+                      Nombre: <? echo $turno["Nombre"];?>
+                      <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
+                    </div>
+                    <div onclick="">
+                      <!-- Policlinico: <?=$turno["Policlinico"]?> -->
+                      <?=$turno["Policlinico"]." (".$turno["PoliclinicoDireccion"].")<br>Tel: ".$turno["PoliclinicoTelefono"]?>
+                      <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
+                    </div>
+                    <div onclick="">
+                      <!-- Especialidad: <?=$turno["Especialidad"]?> -->
+                      <?=$turno["Especialidad"]?>
+                      <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
+                    </div>
+                    <div onclick="">
+                      <!-- Profesional: <?=$turno["Medico"]?> -->
+                      <?=$turno["Medico"]?>
+                      <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
+                    </div>
+                    <!-- <div class="mt-05"><strong>Tipo: <?php //echo $TipoTurno?> </strong></div> -->
+                    <div class="mt-05"><strong>Estado: <?=$Estado?> </strong></div>
+                    <!-- <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="Prestador_Id">Ver especialidades</span> -->
                   </div>
-                  <div onclick="">
-                    <!-- Policlinico: <?=$turno["Policlinico"]?> -->
-                    <?=$turno["Policlinico"]." (".$turno["PoliclinicoDireccion"].")<br>Tel: ".$turno["PoliclinicoTelefono"]?>
-                    <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
-                  </div>
-                  <div onclick="">
-                    <!-- Especialidad: <?=$turno["Especialidad"]?> -->
-                    <?=$turno["Especialidad"]?>
-                    <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
-                  </div>
-                  <div onclick="">
-                    <!-- Profesional: <?=$turno["Medico"]?> -->
-                    <?=$turno["Medico"]?>
-                    <!-- <span class='btn btn-sm btn-link border'>(ir)</span> -->
-                  </div>
-                  <!-- <div class="mt-05"><strong>Tipo: <?php //echo $TipoTurno?> </strong></div> -->
-                  <div class="mt-05"><strong>Estado: <?=$Estado?> </strong></div>
-                  <!-- <span class="mt-05 btn btn-sm btn-link border prestadores" data-id="Prestador_Id">Ver especialidades</span> -->
                 </div>
-              </div>
-              <div class="col-2" style="text-align: center;align-self: center;"><?php
-                if($fecha_turno>=date("Y-m-d H:i")){?>
-                  <div class="delete_turno bg-danger" data-turno="<?=$turno["TurnoNumero"]?>" style="margin-top:0;max-width: 40px;padding-top: 5px;padding-bottom: 5px;"><ion-icon name="trash"></ion-icon></div><?php
-                }?>
+                <div class="col-2" style="text-align: center;align-self: center;"><?php
+                  if($fecha_turno>=date("Y-m-d H:i")){?>
+                    <div class="delete_turno bg-danger" data-turno="<?=$turno["TurnoNumero"]?>" style="margin-top:0;max-width: 40px;padding-top: 5px;padding-bottom: 5px;"><ion-icon name="trash"></ion-icon></div><?php
+                  }?>
+                </div>
+              </div><?php
+            }
+          }else{?>
+            <div class="row border border-2 border-secondary rounded m-2 p-1">
+              <div class="col-12">
+                <h3 class="mb-05 mt-05 titulo1">Sin turnos</h3>
               </div>
             </div><?php
           }?>
@@ -347,7 +342,7 @@ if(!isset($_SESSION["user"]["ficha"])){
   </div>
   <!-- * Modal Confirmar nuevo turno -->
 
-  <!-- Modal Confirmar nuevo turno -->
+  <!-- Modal error nuevo turno -->
   <div class="modal fade modalbox " id="ModalErrorTurno" data-bs-backdrop="static" tabindex="-1" role="dialog" style="background-color: rgb(0 0 0 / 50%);">
     <div class="modal-dialog" role="document" style="top: 25%;left: 10%;width: 80%;min-width: 0;max-height: 30%;">
       <div class="modal-content" style="padding-top: 0;height: min-content;">
@@ -363,7 +358,7 @@ if(!isset($_SESSION["user"]["ficha"])){
       </div>
     </div>
   </div>
-  <!-- * Modal Confirmar nuevo turno -->
+  <!-- * Modal error nuevo turno -->
 
   <!-- App Bottom Menu --><?php
   include_once("footer.php")?>
