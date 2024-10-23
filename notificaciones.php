@@ -94,7 +94,8 @@ if(!isset($_SESSION["user"])){
         </li>
         <?php
       }
-      Database::disconnect();?>
+      Database::disconnect();
+      $pdo = null; // Libera la referencia en la variable local?>
     </ul>
   </div>
   <!-- * App Capsule -->

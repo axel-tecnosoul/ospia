@@ -32,8 +32,6 @@ if($count==0){
     $q = $pdo->prepare($sql);
     $q->execute(array($_POST["id_usuario"],$_POST["nombre_completo"],$_POST["dni"],$email,$_POST["celular"],$claveRDM));
 
-    Database::disconnect();
-
     $asunto="OSPIA PBA - Nueva Persona Habilitada";
     $cuerpo="Ha sido habilitado/a para ingresar a la APP de OSPIA Provincia. Por favor accedé con la siguiente contraseña: ".$claveRDM;
     $destinatarios=[$email];
@@ -42,4 +40,8 @@ if($count==0){
     $ok=0;
   }
 }
+
+Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
+
 echo $ok;

@@ -18,4 +18,5 @@ $afe=$q->rowCount();
 echo "<br>Afe: ".$afe;
 
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 ?>

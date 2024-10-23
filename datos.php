@@ -129,6 +129,7 @@ if (!empty($_POST)) {
 
 
   Database::disconnect();
+  $pdo = null; // Libera la referencia en la variable local
   //var_dump($_SESSION);
   
   //die();
@@ -184,9 +185,14 @@ if (!empty($_POST)) {
       $pdo = Database::connect();
       $stmt = $pdo->prepare($query); 
       $result = $stmt->execute($query_params); 
-    } catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-    $row = $stmt->fetch();
-    Database::disconnect();
+      $row = $stmt->fetch();
+    } catch(PDOException $ex){
+      die("Failed to run query: " . $ex->getMessage());
+    } finally{
+      Database::disconnect();
+      $pdo = null; // Libera la referencia en la variable local
+    }
+    
     if($row){
       $_SESSION['user'] = $row;
     }?>
@@ -298,7 +304,8 @@ if (!empty($_POST)) {
                         }
                         echo ">".$fila['provincia']."</option>";
                       }
-                      Database::disconnect();?>
+                      Database::disconnect();
+                      $pdo = null; // Libera la referencia en la variable local?>
                     </select>
                   </div>
 				  <?php 
