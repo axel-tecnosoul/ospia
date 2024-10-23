@@ -80,6 +80,7 @@ if(!empty($_POST)){
         }
 
         Database::disconnect();
+        $pdo = null; // Libera la referencia en la variable local
       }
 
       // Redirigir al usuario a la página principal después del inicio de sesión

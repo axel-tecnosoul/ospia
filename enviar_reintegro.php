@@ -144,5 +144,6 @@ if($cantArchivos==$cantArchivosSubidos){
 }
 
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 
 echo $ok;

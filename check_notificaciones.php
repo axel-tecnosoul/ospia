@@ -205,6 +205,7 @@ if($row["resumen_ejecucion"]!=$resumen_ejecucion){
 }
 
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 
 // Log the end of the script execution
 file_put_contents('cron_debug.log', "Script ended at: " . date('Y-m-d H:i:s') . "\n", FILE_APPEND);

@@ -171,6 +171,10 @@ if(!isset($_SESSION["user"]["ficha"])){
       //echo $url;
       $jsonData = json_decode(file_get_contents($url),true);
       
+
+      if ($_SESSION['user']['id']==20){
+        //var_dump($_SESSION);
+      }
       //var_dump($jsonData[0]["Data"]);
       //var_dump($jsonData);
       ?>

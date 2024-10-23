@@ -95,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     Database::disconnect();
+    $pdo = null; // Libera la referencia en la variable local
     
     // Retornar una respuesta, por ejemplo, un mensaje de éxito
     //return "Datos recibidos y procesados correctamente.";

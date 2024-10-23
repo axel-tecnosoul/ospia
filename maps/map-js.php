@@ -88,7 +88,7 @@ include_once("../admin/config.php");?>
         map.addObject(londonMarker);
       }
       function addMarkersToMap(map) {<?php
-        $url="http://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?Modo=10&Usuario=101208?&Especialidad=37&TipoPrestador=7";
+        $url="http://www.ospiapba.org.ar/app_desarrollo/APP_ReqRes.asp?o=101208?&Especialidad=37&TipoPrestador=7";
         $jsonData = json_decode(file_get_contents($url),true);
         //var_dump($jsonData);
         foreach ($jsonData["Data"] as $row) {?>

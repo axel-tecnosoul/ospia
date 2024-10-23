@@ -14,4 +14,5 @@ $url=$url_ws."?Modo=27&Tipo=1&Autorizacion=".$_POST["codAut"];
 $jsonData = json_decode(file_get_contents($url),true);
 
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 header("Location: autorizaciones.php");
