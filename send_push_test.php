@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 /* If started from the command line, wrap parameters to $_POST and $_GET */
 if (!isset($_SERVER["HTTP_HOST"])) {
     parse_str($argv[1], $_GET);
@@ -63,7 +67,7 @@ function sendMessage($token, $payload) {
 
 //$token = 'DEVICE_REGISTRATION_TOKEN';
 //$regIdfijo ="dAjpcZYFQ2OLjVlKiG8QA1:APA91bEhPcjmBIoIzAPmUbQZ1qfURpjRrpyb1oyUKN7p-hcTcluz4BlhR0XxJHpESar0g_XZm_0JK6xWeoaEnZ7KGpYVI8N-x0jvub8OA9LHayyXgQeqrt7x4ReZHl9AhB7J8FFlPlBN";
-2$token="eTh6c5s8TmyVl6VYj0FHhR:APA91bGLJ0GGdQIW3WnRBalbMdguTCLOrit8JwwzF46n1S1RKI9hWdPxGWLg5KHAgOHCcEOrK3qbZa9A4TnWWXL5-75piMaLe8upngdq-bnHp5gYR9JwCY2gW_xCufNpQm5iTpnFBhK0";
+$token="eTh6c5s8TmyVl6VYj0FHhR:APA91bGLJ0GGdQIW3WnRBalbMdguTCLOrit8JwwzF46n1S1RKI9hWdPxGWLg5KHAgOHCcEOrK3qbZa9A4TnWWXL5-75piMaLe8upngdq-bnHp5gYR9JwCY2gW_xCufNpQm5iTpnFBhK0";
 
 //$token=$_GET['fcmToken'];
 
