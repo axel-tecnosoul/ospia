@@ -64,5 +64,6 @@ foreach ($pdo->query($sql) as $row) {
   }
 }
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 
 ?>

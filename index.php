@@ -60,6 +60,12 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
     }
     //var_dump($plan);
 
+    //echo $_SESSION['user']['id'];
+    
+    if ($_SESSION['user']['id']==20){
+      //var_dump($_SESSION);
+    }
+
     $pdo = Database::connect();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -85,14 +91,8 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
 
     $query = "SELECT b.boton,b.href,b.ion_icon,b.solo_titular,bp.visible,bp.habilitado,bp.msj_mostrar,b.activo FROM botones b LEFT JOIN botones_x_plan bp ON bp.id_boton=b.id LEFT JOIN planes p ON bp.id_plan=p.id WHERE (bp.visible = 1 AND p.id = :plan_valida) $mostrarBotonesEnDesarrollo ORDER BY b.activo DESC, b.orden_aparicion ASC";
     $query_params = array(':plan_valida' => trim($plan_valida));
-    try{
-      $stmt = $pdo->prepare($query); 
-      $result = $stmt->execute($query_params); 
-    } catch(
-      PDOException $ex){ die("Failed to run query: " . $ex->getMessage());
-    }
-
-    Database::disconnect();?>
+    $stmt = $pdo->prepare($query);
+    $result = $stmt->execute($query_params);?>
 
     <div class="login-form mt-1">
       <div class="section animate__animated animate__zoomIn">
@@ -139,6 +139,9 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
           </button>
         </a><?php
       }
+
+      Database::disconnect();
+      $pdo = null; // Libera la referencia en la variable local
 
       /*if ($_SESSION['user']['id'] == 1 or $_SESSION['user']['id'] == 20){?>
         <h3 class="animate__animated animate__zoomIn">EN DESARROLLO</h3>

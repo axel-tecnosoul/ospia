@@ -9,9 +9,9 @@ $url=$url_ws."?Modo=6&Usuario=$usuario_ws&Ficha=$ficha";
 $jsonData = json_decode(file_get_contents($url),true);
 $persona_id=$jsonData[0]["Data"][0]["Id"];*/
 $persona_id=$_SESSION['persona_id'];
+$dni=$_SESSION["user"]["dni"];
 
-$url2=$url_ws."?Modo=10&Usuario=$usuario_ws&Persona=$persona_id";
-//echo $url."<br>";
+$url2=$url_ws."?Modo=10&Usuario=$usuario_ws&Persona=$persona_id&Documento=$dni";
 
 $especialidad=$_POST["especialidad"];
 if($especialidad!=0){

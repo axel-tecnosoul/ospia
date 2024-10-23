@@ -15,5 +15,6 @@ $q = $pdo->prepare($sql);
 $q->execute(array($_POST["id"]));
 
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 
 echo 0;

@@ -30,6 +30,7 @@ if(isset($_GET['fcmToken']) and strlen($_GET['fcmToken'])>0){
   $count = $q->rowCount();
   
   Database::disconnect();
+  $pdo = null; // Libera la referencia en la variable local
   
   $email = "";
   $clave = "";

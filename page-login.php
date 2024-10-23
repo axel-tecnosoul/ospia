@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("admin/config.php"); 
 require_once 'admin/database.php';
 
@@ -25,18 +25,19 @@ if(!empty($_POST)){
   $query_params = array(':user' => trim($_POST['user']));
   $titular=1;
   $es_persona_habilitada=0;
+  $login_ok = false;
   
   try{
     $pdo = Database::connect();
     $stmt = $pdo->prepare($query);
     $result = $stmt->execute($query_params);
+    $row = $stmt->fetch();
   } catch(
     PDOException $ex){ die("Failed to run query: " . $ex->getMessage());
+  } finally{
+    Database::disconnect();
+    $pdo = null; // Libera la referencia en la variable local
   }
-  
-  $login_ok = false;
-  $row = $stmt->fetch();
-  Database::disconnect();
 
   // Si la primera consulta no devuelve resultados, intentamos buscar al usuario en la tabla "personas_habilitadas"
   if(!$row){
@@ -48,13 +49,15 @@ if(!empty($_POST)){
     try{
       $pdo = Database::connect();
       $stmt2 = $pdo->prepare($query2); 
-      $result2 = $stmt2->execute($query_params2); 
+      $result2 = $stmt2->execute($query_params2);
+      $row = $stmt2->fetch();
     } catch(PDOException $ex){ 
       die("Failed to run query: " . $ex->getMessage()); 
-    } 
+    } finally{
+      Database::disconnect();
+      $pdo = null; // Libera la referencia en la variable local
+    }
     
-    $row = $stmt2->fetch();
-    Database::disconnect();
   }
 
   if($row){
@@ -106,6 +109,8 @@ if(!empty($_POST)){
               $row["persona_id"]=$jsonData["Persona_Id"];
       
               Database::disconnect();
+              $pdo = null; // Libera la referencia en la variable local
+              
             //}
 
             if($es_persona_habilitada==0){
@@ -126,6 +131,7 @@ if(!empty($_POST)){
                 }
         
                 Database::disconnect();
+                $pdo = null; // Libera la referencia en la variable local
               }
             }
           //}
@@ -172,6 +178,14 @@ if(!empty($_POST)){
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="manifest" href="__manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ERH0N0XGD4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-ERH0N0XGD4');
+  </script>
 </head><?php
 if(!isset($email)) $email="";
 if(!isset($clave)) $clave="";?>
