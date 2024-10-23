@@ -188,7 +188,7 @@ if(!isset($clave)) $clave="";?>
         <img src="assets/img/logo.png" alt="image" width="95%" id="logo">
       </div>
       <div class="section mt-1 animate__animated animate__fadeInRight">
-        <h1>Server Staging</h1>
+        <h1>Version Staging</h1>
         <h2>Acceso</h2>
 
       </div>
