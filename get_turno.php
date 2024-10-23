@@ -95,6 +95,7 @@ if($jsonData["Ok"]=="true"){
   }*/
 
   Database::disconnect();
+  $pdo = null; // Libera la referencia en la variable local
 }
 
 //echo $jsonData["Ok"];

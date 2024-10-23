@@ -100,6 +100,7 @@ if($count==0){
 }
 
 Database::disconnect();
+$pdo = null; // Libera la referencia en la variable local
 
 $resp=[
   "status" =>$ok,

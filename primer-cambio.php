@@ -18,8 +18,12 @@ if(!empty($_POST)){
   $sql = "UPDATE $tabla set clave = ?, requiere_cambio_clave = 0 where id = ?";
   $q = $pdo->prepare($sql);
   $q->execute([$_POST['clave1'],$id]);
+  
   $_SESSION['user']['requiere_cambio_clave'] = 0;
+  
   Database::disconnect();
+  $pdo = null; // Libera la referencia en la variable local
+
   header("Location: index.php"); 
   die("Redirecting to: index.php"); 
 }?>
