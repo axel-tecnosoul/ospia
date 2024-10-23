@@ -97,6 +97,8 @@ if (isset($_SESSION['user']['requiere_cambio_clave']) and $_SESSION['user']['req
     <div class="login-form mt-1">
       <div class="section animate__animated animate__zoomIn">
         <img src="assets/img/logo.png" alt="image" width="95%" id="logo">
+        <h1>Server Staging</h1>
+
       </div>
       <br>
       <div class="login-form">
