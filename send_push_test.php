@@ -73,7 +73,7 @@ function sendMessage($token, $payload) {
 
 //$token = 'DEVICE_REGISTRATION_TOKEN';
 //$regIdfijo ="dAjpcZYFQ2OLjVlKiG8QA1:APA91bEhPcjmBIoIzAPmUbQZ1qfURpjRrpyb1oyUKN7p-hcTcluz4BlhR0XxJHpESar0g_XZm_0JK6xWeoaEnZ7KGpYVI8N-x0jvub8OA9LHayyXgQeqrt7x4ReZHl9AhB7J8FFlPlBN";
-//$token="dZUJa92BTpeqEn2N5K6Q6f:APA91bFoyajam2ETs4cEhFLVLHV2-V5ONRXElIlX-AT0jikiyasmCLffU1bdcQagPmGlMVzV_Ut_FAjCN2nxdJza9A1CsAtT-70h2mJKngULCpb-tWGJhN6hXqipdA719kh_eqevuvJ1";
+$token="eTh6c5s8TmyVl6VYj0FHhR:APA91bGLJ0GGdQIW3WnRBalbMdguTCLOrit8JwwzF46n1S1RKI9hWdPxGWLg5KHAgOHCcEOrK3qbZa9A4TnWWXL5-75piMaLe8upngdq-bnHp5gYR9JwCY2gW_xCufNpQm5iTpnFBhK0";
 
 $token=$_GET['fcmToken'];
 //$token="d9Oy0zBOQuO8JGLu5MPfVl:APA91bFQp6iVuMjKRzhV4kQYtJVR_z1fBaLe4VV_SDm-1a5jDp9bA2aAhaXsT_qklu10Fda_-7sLJoWz1RotIgDfRw7WgiCRRzb9GwTD9CIilVr598NEwK6bdAlx0E40sKfgrP43yx3k";
