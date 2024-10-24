@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 /* If started from the command line, wrap parameters to $_POST and $_GET */
 if (!isset($_SERVER["HTTP_HOST"])) {
     parse_str($argv[1], $_GET);
@@ -35,6 +39,8 @@ function getAccessToken() {
 
 function sendMessage($token, $payload) {
   $accessToken = getAccessToken();
+  var_dump($accessToken);
+  
   #ajustar url
   #testing
   #$url = 'https://fcm.googleapis.com/v1/projects/ospiapbatesting/messages:send';
@@ -42,6 +48,8 @@ function sendMessage($token, $payload) {
   $url = 'https://fcm.googleapis.com/v1/projects/app-ospiapba/messages:send';
   
   $client = new Client();
+  var_dump($client);
+  echo "<br/><br/>";
   $response = $client->post($url, [
       'headers' => [
           'Authorization' => 'Bearer ' . $accessToken,
@@ -57,6 +65,8 @@ function sendMessage($token, $payload) {
           ]
       ]
   ]);
+  var_dump($response);
+  echo "<br/><br/>";
 
   return $response->getBody()->getContents();
 }
@@ -66,9 +76,10 @@ function sendMessage($token, $payload) {
 //$token="dZUJa92BTpeqEn2N5K6Q6f:APA91bFoyajam2ETs4cEhFLVLHV2-V5ONRXElIlX-AT0jikiyasmCLffU1bdcQagPmGlMVzV_Ut_FAjCN2nxdJza9A1CsAtT-70h2mJKngULCpb-tWGJhN6hXqipdA719kh_eqevuvJ1";
 
 $token=$_GET['fcmToken'];
+//$token="d9Oy0zBOQuO8JGLu5MPfVl:APA91bFQp6iVuMjKRzhV4kQYtJVR_z1fBaLe4VV_SDm-1a5jDp9bA2aAhaXsT_qklu10Fda_-7sLJoWz1RotIgDfRw7WgiCRRzb9GwTD9CIilVr598NEwK6bdAlx0E40sKfgrP43yx3k";
 
 //print_r ($_GET);
-echo "<p>mobile token: ".$token."</p>";
+echo "<pre><p>mobile token: ".$token."</p>";
 $payload = [
     'notification' => [
         'title' => 'Firebase HTTPv1 API',
@@ -81,15 +92,4 @@ $payload = [
 ];
 
 $result = sendMessage($token, $payload);
-echo "<p>result: ".$result."</p>";
-
-
-
-
-
-
-
-
-
-
-?>
+echo "<p>result: ".$result."</p></pre>";
